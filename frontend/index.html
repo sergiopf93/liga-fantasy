@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaLiga Fantasy — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">Liga Fantasy</span>
+      </div>
+      <nav class="header__nav">
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="team">Mi Equipo</button>
+        <button class="nav-btn" data-view="market">Mercado</button>
+        <button class="nav-btn" data-view="rivals">Rivales</button>
+        <button class="nav-btn" data-view="players">Jugadores</button>
+      </nav>
+      <div class="header__actions">
+        <span id="last-update" class="last-update">—</span>
+        <button id="refresh-btn" class="btn btn--primary">↻ Actualizar</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <!-- ===== VIEW: DASHBOARD ===== -->
+    <section id="view-dashboard" class="view active">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card__label">Presupuesto</div>
+          <div class="stat-card__value" id="stat-budget">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Valor Plantilla</div>
+          <div class="stat-card__value" id="stat-value">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Puntos Totales</div>
+          <div class="stat-card__value" id="stat-points">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Posición Liga</div>
+          <div class="stat-card__value" id="stat-rank">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Jornada</div>
+          <div class="stat-card__value" id="stat-matchday">—</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Score de jugadores por posición -->
+        <div class="card">
+          <h3 class="card__title">Score por Posición</h3>
+          <canvas id="chart-position-scores" height="220"></canvas>
+        </div>
+
+        <!-- Oportunidades de mercado -->
+        <div class="card">
+          <h3 class="card__title">🔥 Oportunidades de Mercado</h3>
+          <div id="market-opportunities" class="opportunities-list">
+            <p class="empty-state">Cargando...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Cláusulas en riesgo -->
+        <div class="card">
+          <h3 class="card__title">⚠️ Cláusulas en Riesgo</h3>
+          <div id="clause-risks" class="risk-list">
+            <p class="empty-state">Cargando...</p>
+          </div>
+        </div>
+
+        <!-- Evolución de valor del equipo -->
+        <div class="card">
+          <h3 class="card__title">Evolución Valor del Equipo</h3>
+          <canvas id="chart-team-value" height="220"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIEW: MY TEAM ===== -->
+    <section id="view-team" class="view">
+      <div class="card">
+        <h3 class="card__title">Mi Plantilla</h3>
+        <div class="position-filter">
+          <button class="filter-btn active" data-pos="ALL">Todos</button>
+          <button class="filter-btn" data-pos="GK">Porteros</button>
+          <button class="filter-btn" data-pos="DEF">Defensas</button>
+          <button class="filter-btn" data-pos="MID">Centrocampistas</button>
+          <button class="filter-btn" data-pos="FWD">Delanteros</button>
+        </div>
+        <div id="team-table-container">
+          <table class="data-table" id="team-table">
+            <thead>
+              <tr>
+                <th>Jugador</th>
+                <th>Pos</th>
+                <th>Equipo</th>
+                <th>Valor</th>
+                <th>Pts</th>
+                <th>Ult.5</th>
+                <th>Score</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="team-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">Distribución de Valor por Posición</h3>
+        <canvas id="chart-team-composition" height="250"></canvas>
+      </div>
+    </section>
+
+    <!-- ===== VIEW: MARKET ===== -->
+    <section id="view-market" class="view">
+      <div class="market-controls">
+        <input id="market-search" type="text" placeholder="🔍 Buscar jugador..." class="search-input" />
+        <select id="market-pos-filter" class="select-filter">
+          <option value="">Todas las posiciones</option>
+          <option value="GK">Porteros</option>
+          <option value="DEF">Defensas</option>
+          <option value="MID">Centrocampistas</option>
+          <option value="FWD">Delanteros</option>
+        </select>
+        <select id="market-sort" class="select-filter">
+          <option value="urgency">Por urgencia</option>
+          <option value="price_asc">Precio ↑</option>
+          <option value="price_desc">Precio ↓</option>
+          <option value="score">Por score</option>
+        </select>
+      </div>
+
+      <div id="market-cards" class="market-grid">
+        <p class="empty-state">Cargando mercado...</p>
+      </div>
+    </section>
+
+    <!-- ===== VIEW: RIVALS ===== -->
+    <section id="view-rivals" class="view">
+      <div class="card">
+        <h3 class="card__title">Clasificación de la Liga</h3>
+        <table class="data-table" id="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Equipo</th>
+              <th>Puntos</th>
+              <th>Valor Plantilla</th>
+              <th>Amenaza</th>
+            </tr>
+          </thead>
+          <tbody id="standings-tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="rival-reports" class="rival-cards-grid"></div>
+    </section>
+
+    <!-- ===== VIEW: PLAYERS ===== -->
+    <section id="view-players" class="view">
+      <div class="market-controls">
+        <input id="players-search" type="text" placeholder="🔍 Buscar jugador..." class="search-input" />
+        <select id="players-pos-filter" class="select-filter">
+          <option value="">Todas las posiciones</option>
+          <option value="GK">Porteros</option>
+          <option value="DEF">Defensas</option>
+          <option value="MID">Centrocampistas</option>
+          <option value="FWD">Delanteros</option>
+        </select>
+        <select id="players-team-filter" class="select-filter">
+          <option value="">Todos los equipos</option>
+        </select>
+        <select id="players-sort" class="select-filter">
+          <option value="score">Por score</option>
+          <option value="points">Por puntos</option>
+          <option value="value">Por valor</option>
+          <option value="form">Por forma</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <table class="data-table" id="players-table">
+          <thead>
+            <tr>
+              <th>Jugador</th>
+              <th>Pos</th>
+              <th>Equipo LaLiga</th>
+              <th>Valor</th>
+              <th>Cláusula</th>
+              <th>Pts</th>
+              <th>Media 5j</th>
+              <th>Score</th>
+              <th>Rec.</th>
+            </tr>
+          </thead>
+          <tbody id="players-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== TOAST NOTIFICATIONS ===== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal hidden">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

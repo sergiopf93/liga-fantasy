@@ -1,0 +1,67 @@
+name: Daily Fantasy Report
+
+on:
+  schedule:
+    # Todos los días a las 08:00 UTC (10:00 Madrid)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      league_id:
+        description: 'ID de la liga'
+        required: false
+      send_telegram:
+        description: 'Enviar por Telegram (true/false)'
+        required: false
+        default: 'true'
+
+env:
+  FANTASY_ACCESS_TOKEN:  ${{ secrets.FANTASY_ACCESS_TOKEN }}
+  FANTASY_REFRESH_TOKEN: ${{ secrets.FANTASY_REFRESH_TOKEN }}
+  TELEGRAM_TOKEN:        ${{ secrets.TELEGRAM_TOKEN }}
+  TELEGRAM_CHAT_ID:      ${{ secrets.TELEGRAM_CHAT_ID }}
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write tokens file
+        run: |
+          echo '{
+            "access_token": "${{ secrets.FANTASY_ACCESS_TOKEN }}",
+            "refresh_token": "${{ secrets.FANTASY_REFRESH_TOKEN }}",
+            "saved_at": '$( date +%s )'
+          }' > .tokens.json
+
+      - name: Refresh token
+        run: python scripts/refresh_token.py
+
+      - name: Generate and send report
+        run: |
+          LEAGUE_ID="${{ github.event.inputs.league_id || '' }}"
+          SEND_TG="${{ github.event.inputs.send_telegram || 'true' }}"
+          ARGS="--output data/report_$(date +%Y%m%d).md"
+          if [ -n "$LEAGUE_ID" ]; then ARGS="$ARGS --league $LEAGUE_ID"; fi
+          if [ "$SEND_TG" = "true" ]; then ARGS="$ARGS --telegram"; fi
+          python scripts/generate_report.py $ARGS
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-report-${{ github.run_id }}
+          path: data/report_*.md
+          retention-days: 30

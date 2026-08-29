@@ -1,0 +1,52 @@
+# ===========================
+# LaLiga Fantasy — .gitignore
+# ===========================
+
+# --- NUNCA subir al repo ---
+.tokens.json
+.env
+.env.*
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.log
+
+# --- Datos locales ---
+data/fantasy.db
+data/*.db
+data/*.log
+data/report_*.md
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- GitHub Actions secretos de debug ---
+.tokens_debug.json
