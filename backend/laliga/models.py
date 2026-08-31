@@ -1,132 +1,163 @@
-"""Modelos de datos para la API de LaLiga Fantasy."""
-from __future__ import annotations
+"""
+Modelos de datos basados en la estructura JSON real de la API (verificada 31/08/2026)
+"""
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any
+from typing import Optional, List
 from datetime import datetime
-
-
-@dataclass
-class PlayerStats:
-    season_points: int = 0
-    last_5_avg: float = 0.0
-    last_match_points: int = 0
-    total_matches: int = 0
-    goals: int = 0
-    assists: int = 0
-    yellow_cards: int = 0
-    red_cards: int = 0
-    minutes_played: int = 0
-    fitness: int = 100  # 0-100
-
-    @property
-    def points_per_match(self) -> float:
-        if self.total_matches == 0:
-            return 0.0
-        return round(self.season_points / self.total_matches, 2)
 
 
 @dataclass
 class Player:
     id: str
     name: str
-    team: str
-    position: str  # "GK", "DEF", "MID", "FWD"
-    market_value: int = 0
-    clause_value: int = 0
-    points: int = 0
-    status: str = "ok"  # "ok", "injured", "doubt", "suspended"
-    stats: Optional[PlayerStats] = None
-    raw: Dict[str, Any] = field(default_factory=dict)
+    nickname: str
+    position: str          # "Portero", "Defensa", "Centrocampista", "Delantero"
+    position_id: int       # 1=POR, 2=DEF, 3=MID, 4=DEL
+    team_id: int
+    market_value: int      # valor de mercado en €
+    points: int            # puntos totales temporada
+    week_points: int       # puntos última jornada
+    average_points: float
+    last_season_points: int
+    status: str            # "ok", "injured", "out_of_league", "doubtful"
+    image_url: str = ""
+    buyout_clause: int = 0
+    player_team_id: str = ""
 
-    @property
-    def value_per_point(self) -> float:
-        if self.points == 0:
-            return float("inf")
-        return round(self.market_value / self.points, 2)
+    @classmethod
+    def from_lineup_entry(cls, entry: dict) -> "Player":
+        pm = entry.get("playerMaster", {})
+        images = pm.get("images", {}).get("transparent", {})
+        return cls(
+            id=pm.get("id", ""),
+            name=pm.get("name", ""),
+            nickname=pm.get("nickname", ""),
+            position=pm.get("position", ""),
+            position_id=pm.get("positionId", 0),
+            team_id=pm.get("teamId", 0),
+            market_value=pm.get("marketValue", 0),
+            points=pm.get("points", 0),
+            week_points=entry.get("weekPoints", 0) or pm.get("weekPoints", 0),
+            average_points=pm.get("averagePoints", 0.0),
+            last_season_points=pm.get("lastSeasonPoints", 0),
+            status=pm.get("playerStatus", "ok"),
+            image_url=images.get("256x256", ""),
+            buyout_clause=entry.get("buyoutClause", 0),
+            player_team_id=entry.get("playerTeamId", ""),
+        )
 
-    @property
-    def is_available(self) -> bool:
-        return self.status == "ok"
 
-    def __repr__(self) -> str:
-        return f"Player({self.name}, {self.position}, {self.market_value:,}€, {self.points}pts)"
+@dataclass
+class MyTeam:
+    team_id: str
+    team_value: int
+    team_points: int
+    budget: int
+    players: List[Player] = field(default_factory=list)
+    formation: List[int] = field(default_factory=list)
+    updated_at: str = ""
+
+    @classmethod
+    def from_api(cls, data: dict, money_data: Optional[dict] = None) -> "MyTeam":
+        team = data.get("team", {})
+        formation_data = data.get("formation", {})
+        players = []
+        for pos in ["goalkeeper", "defender", "midfield", "striker"]:
+            for entry in formation_data.get(pos, []):
+                players.append(Player.from_lineup_entry(entry))
+        budget = 0
+        if money_data:
+            budget = money_data.get("teamMoney", 0) or money_data.get("money", 0)
+        return cls(
+            team_id=team.get("id", ""),
+            team_value=team.get("teamValue", 0),
+            team_points=team.get("teamPoints", 0),
+            budget=budget,
+            players=players,
+            formation=data.get("formation", {}).get("tacticalFormation", []),
+            updated_at=data.get("updatedAt", ""),
+        )
 
 
 @dataclass
 class MarketPlayer:
+    market_id: str
     player: Player
-    sell_price: int = 0
-    time_left: int = 0  # seconds
-    seller_name: str = ""
-    on_sale: bool = True
+    sale_price: int
+    buyout_clause: int
+    expiration_date: str
+    seller_manager: str
+    seller_team_id: str
+    seller_team_value: int
+    seller_team_points: int
+    is_shielded: bool
+    number_of_offers: int
 
-    @property
-    def is_bargain(self) -> bool:
-        """True si el precio de venta es menor que el valor de cláusula."""
-        return self.sell_price < self.player.clause_value
+    @classmethod
+    def from_api(cls, entry: dict) -> "MarketPlayer":
+        pm = entry.get("playerMaster", {})
+        pt = entry.get("playerTeam", {})
+        seller = entry.get("sellerTeam", {})
+        manager = seller.get("manager", {})
+        images = pm.get("images", {}).get("transparent", {})
+        player = Player(
+            id=pm.get("id", ""),
+            name=pm.get("name", ""),
+            nickname=pm.get("nickname", ""),
+            position=pm.get("position", ""),
+            position_id=pm.get("positionId", 0),
+            team_id=pm.get("teamId", 0),
+            market_value=pm.get("marketValue", 0),
+            points=pm.get("points", 0),
+            week_points=0,
+            average_points=pm.get("averagePoints", 0.0),
+            last_season_points=pm.get("lastSeasonPoints", 0),
+            status=pm.get("playerStatus", "ok"),
+            image_url=images.get("256x256", ""),
+            buyout_clause=pt.get("buyoutClause", 0),
+            player_team_id=pt.get("playerTeamId", ""),
+        )
+        return cls(
+            market_id=str(entry.get("id", "")),
+            player=player,
+            sale_price=entry.get("salePrice", 0),
+            buyout_clause=pt.get("buyoutClause", 0),
+            expiration_date=entry.get("expirationDate", ""),
+            seller_manager=manager.get("managerName", ""),
+            seller_team_id=str(seller.get("id", "")),
+            seller_team_value=seller.get("teamValue", 0),
+            seller_team_points=seller.get("teamPoints", 0),
+            is_shielded=pt.get("isShielded", False),
+            number_of_offers=entry.get("numberOfOffers", 0),
+        )
 
 
 @dataclass
-class Market:
-    players: List[MarketPlayer] = field(default_factory=list)
-    last_updated: Optional[datetime] = None
-
-    def get_by_position(self, position: str) -> List[MarketPlayer]:
-        return [mp for mp in self.players if mp.player.position == position]
-
-    def get_bargains(self) -> List[MarketPlayer]:
-        return [mp for mp in self.players if mp.is_bargain]
-
-
-@dataclass
-class TeamPlayer:
-    player: Player
-    in_lineup: bool = True
-    is_captain: bool = False
-    buy_price: int = 0
-
-
-@dataclass
-class Team:
-    id: str
-    name: str
-    manager: str = ""
+class RivalTeam:
+    team_id: str
+    manager_name: str
+    manager_id: str
+    team_value: int
+    team_points: int
     budget: int = 0
-    team_value: int = 0
-    players: List[TeamPlayer] = field(default_factory=list)
-    points: int = 0
-    rank: int = 0
+    players: List[Player] = field(default_factory=list)
 
-    def get_by_position(self, position: str) -> List[TeamPlayer]:
-        return [tp for tp in self.players if tp.player.position == position]
-
-    @property
-    def lineup(self) -> List[TeamPlayer]:
-        return [tp for tp in self.players if tp.in_lineup]
-
-
-@dataclass
-class League:
-    id: str
-    name: str
-    my_team: Optional[Team] = None
-    rival_teams: List[Team] = field(default_factory=list)
-    matchday: int = 0
-    total_matchdays: int = 38
-
-    @property
-    def all_teams(self) -> List[Team]:
-        teams = list(self.rival_teams)
-        if self.my_team:
-            teams.insert(0, self.my_team)
-        return teams
+    @classmethod
+    def from_standing(cls, entry: dict) -> "RivalTeam":
+        manager = entry.get("manager", {})
+        return cls(
+            team_id=str(entry.get("id", "")),
+            manager_name=manager.get("managerName", entry.get("managerName", "")),
+            manager_id=str(entry.get("managerId", "")),
+            team_value=entry.get("teamValue", 0),
+            team_points=entry.get("teamPoints", 0),
+        )
 
 
 @dataclass
-class Fixture:
-    home_team: str
-    away_team: str
-    matchday: int
-    date: Optional[datetime] = None
-    home_difficulty: int = 3  # 1-5
-    away_difficulty: int = 3  # 1-5
+class ClauseRisk:
+    player: Player
+    risk_level: str       # "BAJO", "MEDIO", "ALTO", "CRÍTICO"
+    risk_score: float     # 0-100
+    reasons: List[str] = field(default_factory=list)
+    recommendation: str = ""

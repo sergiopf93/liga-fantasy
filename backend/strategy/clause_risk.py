@@ -1,89 +1,143 @@
 """
-Análisis de riesgo de cláusula de liberación.
-Evalúa si un jugador propio puede ser adquirido por rivales.
+Análisis de riesgo de clausulazo
+Niveles: BAJO, MEDIO, ALTO, CRÍTICO
+Atención especial a porteros (positionId == 1)
 """
-from __future__ import annotations
-
-import logging
-from dataclasses import dataclass
-from typing import Dict, List, Optional
-
-from ..laliga.models import League, Player, Team, TeamPlayer
-
-logger = logging.getLogger(__name__)
+from typing import List
+from backend.laliga.models import Player, RivalTeam, ClauseRisk
 
 
-@dataclass
-class ClauseRiskResult:
-    player: Player
-    clause_value: int
-    risk_level: str      # "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"
-    rivals_can_afford: int
-    recommendation: str
-    notes: List[str]
+LEVELS = {
+    (0, 25): "BAJO",
+    (25, 50): "MEDIO",
+    (50, 75): "ALTO",
+    (75, 101): "CRÍTICO",
+}
 
 
-class ClauseRisk:
+def get_risk_level(score: float) -> str:
+    for (low, high), label in LEVELS.items():
+        if low <= score < high:
+            return label
+    return "BAJO"
+
+
+def assess_clause_risk(player: Player, rivals: List[RivalTeam], my_goalkeepers: List[Player]) -> ClauseRisk:
     """
-    Evalúa el riesgo de que un rival active la cláusula de un jugador propio.
-
-    Criterios:
-    - ¿Cuántos rivales tienen presupuesto suficiente para la cláusula?
-    - ¿Está el jugador en un buen momento de forma? (tentador para rivales)
-    - ¿Vale la pena reducir el precio de venta para dificultar la compra?
+    Calcula el riesgo de clausulazo de un jugador de mi plantilla.
     """
+    score = 0.0
+    reasons = []
+    rec = ""
 
-    CRITICAL_THRESHOLD = 3   # Si +3 rivales pueden permitírselo → CRITICAL
-    HIGH_THRESHOLD = 2
-    MEDIUM_THRESHOLD = 1
+    clause = player.buyout_clause
+    market_val = player.market_value
 
-    def assess_player(self, tp: TeamPlayer, league: League) -> ClauseRiskResult:
-        player = tp.player
-        clause = player.clause_value
-        notes: List[str] = []
+    # ── 1. Portero único → riesgo estructural ────────────────────────────
+    is_goalkeeper = player.position_id == 1
+    only_goalkeeper = is_goalkeeper and len(my_goalkeepers) == 1
 
-        rivals_can_afford = sum(
-            1 for rival in league.rival_teams
-            if rival.budget >= clause
-        )
+    if only_goalkeeper:
+        score += 35
+        reasons.append("ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave")
 
-        if rivals_can_afford >= self.CRITICAL_THRESHOLD:
-            risk_level = "CRITICAL"
-            recommendation = (
-                f"Reduce el precio de venta urgentemente. "
-                f"{rivals_can_afford} rivales pueden activar la cláusula ({clause:,}€)."
-            )
-        elif rivals_can_afford >= self.HIGH_THRESHOLD:
-            risk_level = "HIGH"
-            recommendation = f"Considera reducir cláusula. {rivals_can_afford} rivales con fondos suficientes."
-        elif rivals_can_afford >= self.MEDIUM_THRESHOLD:
-            risk_level = "MEDIUM"
-            recommendation = f"Vigilar. 1 rival puede permitirse la cláusula ({clause:,}€)."
+    if is_goalkeeper:
+        score += 15
+        reasons.append("Portero: posición especialmente sensible a clausulazos tácticos de rivales")
+
+    # ── 2. Relación precio/valor ─────────────────────────────────────────
+    if clause > 0 and market_val > 0:
+        ratio = clause / market_val
+        if ratio <= 1.05:
+            score += 25
+            reasons.append(f"Cláusula {_fmt(clause)} muy cercana al valor de mercado {_fmt(market_val)} — fácil de ejecutar")
+        elif ratio <= 1.20:
+            score += 12
+            reasons.append(f"Cláusula {_fmt(clause)} razonablemente ejecutable")
         else:
-            risk_level = "LOW"
-            recommendation = "Sin riesgo significativo de cláusula a corto plazo."
+            reasons.append(f"Cláusula {_fmt(clause)} elevada respecto al valor {_fmt(market_val)} — protección moderada")
 
-        if player.stats and player.stats.last_5_avg > 10:
-            notes.append(f"En buena forma ({player.stats.last_5_avg:.1f} pts/jornada) → más atractivo para rivales")
+    # ── 3. Dinero disponible de rivales ──────────────────────────────────
+    rivals_who_can_afford = [
+        r for r in rivals
+        if r.budget > clause * 0.9 and r.team_id != "37889563"
+    ]
+    if rivals_who_can_afford:
+        score += min(20, len(rivals_who_can_afford) * 7)
+        names = ", ".join(r.manager_name for r in rivals_who_can_afford[:3])
+        reasons.append(f"{len(rivals_who_can_afford)} rival(es) con dinero suficiente: {names}")
 
-        if player.market_value > 0 and clause < player.market_value * 1.5:
-            notes.append("Cláusula relativamente baja respecto al valor de mercado")
+    # ── 4. Rendimiento del jugador ───────────────────────────────────────
+    if player.average_points >= 6:
+        score += 15
+        reasons.append(f"Alto rendimiento ({player.average_points:.1f} pts/j) — jugador codiciado")
+    elif player.average_points >= 4:
+        score += 8
 
-        return ClauseRiskResult(
-            player=player,
-            clause_value=clause,
-            risk_level=risk_level,
-            rivals_can_afford=rivals_can_afford,
-            recommendation=recommendation,
-            notes=notes,
+    # ── 5. Estado del jugador ────────────────────────────────────────────
+    if player.status in ("injured", "out_of_league"):
+        score = max(0, score - 20)
+        reasons.append("Lesión/baja reduce el interés rival temporalmente")
+
+    score = min(100, score)
+    level = get_risk_level(score)
+
+    if level == "CRÍTICO":
+        rec = f"Acción inmediata recomendada. Blindar o buscar alternativa antes del cierre de mercado."
+    elif level == "ALTO":
+        rec = f"Vigilar activamente. Considera blindar si tienes presupuesto."
+    elif level == "MEDIO":
+        rec = f"Monitorizar diariamente. Sin urgencia inmediata."
+    else:
+        rec = f"Riesgo bajo. Sin acción necesaria."
+
+    if only_goalkeeper:
+        rec = "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+
+    return ClauseRisk(
+        player=player,
+        risk_level=level,
+        risk_score=round(score, 1),
+        reasons=reasons,
+        recommendation=rec,
+    )
+
+
+def analyze_goalkeeper_situation(my_players: List[Player], market_players=None) -> dict:
+    """
+    Análisis específico de la situación de porteros.
+    """
+    my_goalkeepers = [p for p in my_players if p.position_id == 1]
+    result = {
+        "count": len(my_goalkeepers),
+        "goalkeepers": my_goalkeepers,
+        "risk": "BAJO",
+        "recommendation": "",
+        "alternatives": [],
+    }
+
+    if len(my_goalkeepers) == 0:
+        result["risk"] = "CRÍTICO"
+        result["recommendation"] = "No tienes portero. El equipo no puede puntuar. Compra uno inmediatamente."
+    elif len(my_goalkeepers) == 1:
+        gk = my_goalkeepers[0]
+        clause = gk.buyout_clause
+        result["risk"] = "ALTO"
+        result["recommendation"] = (
+            f"Solo tienes a {gk.nickname} (cláusula {_fmt(clause)}). "
+            f"Un rival puede ejecutar la cláusula y dejarte sin portero. "
+            f"Considera comprar un segundo portero de bajo coste como seguro."
         )
+        if market_players:
+            gk_market = [mp for mp in market_players if mp.player.position_id == 1]
+            cheap_gks = sorted(gk_market, key=lambda x: x.sale_price)[:3]
+            result["alternatives"] = cheap_gks
+    else:
+        result["risk"] = "BAJO"
+        result["recommendation"] = f"Tienes {len(my_goalkeepers)} porteros. Situación segura."
 
-    def assess_team(self, league: League) -> List[ClauseRiskResult]:
-        if not league.my_team:
-            return []
-        results = [self.assess_player(tp, league) for tp in league.my_team.players]
-        order = {"CRITICAL": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3}
-        return sorted(results, key=lambda r: order[r.risk_level])
+    return result
 
-    def critical_players(self, league: League) -> List[ClauseRiskResult]:
-        return [r for r in self.assess_team(league) if r.risk_level in ("CRITICAL", "HIGH")]
+
+def _fmt(value: int) -> str:
+    return f"{value/1_000_000:.2f}M€"

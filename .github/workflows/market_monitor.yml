@@ -1,12 +1,15 @@
-name: Informe diario 20:00
+name: Vigilancia mercado 20-21h
 
 on:
   schedule:
-    - cron: '0 18 * * *'   # 20:00 hora España (UTC+2 verano / UTC+1 invierno)
-  workflow_dispatch:         # Permite ejecutarlo manualmente
+    - cron: '15 18 * * *'   # 20:15 España
+    - cron: '30 18 * * *'   # 20:30 España
+    - cron: '45 18 * * *'   # 20:45 España
+    - cron: '55 18 * * *'   # 20:55 España
+  workflow_dispatch:
 
 jobs:
-  report:
+  monitor:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,17 +25,19 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests pyyaml
 
-      - name: Generar informe
+      - name: Actualizar mercado
         env:
           LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
           LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/generate_report.py
 
-      - name: Commit y push de datos
+      - name: Commit y push
         run: |
           git config user.name "Fantasy Bot"
           git config user.email "bot@liga-fantasy"
           git add data/
-          git diff --staged --quiet || git commit -m "Informe 20:00 - $(date '+%d/%m %H:%M')"
+          git diff --staged --quiet || git commit -m "Monitor mercado - $(date '+%H:%M')"
           git push

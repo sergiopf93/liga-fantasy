@@ -1,59 +1,37 @@
-# ============================================================
-# LaLiga Fantasy — Configuración principal
-# ============================================================
-# Copia este archivo y ajusta los valores a tu liga.
-# Los valores sensibles pueden definirse como variables de entorno.
+daily_report_time: "20:00"
+market_close_time: "21:00"
 
-# ---- Liga ----
-league_id: "R.L."          # Rellena con el ID de tu liga (ve a la URL de tu liga)
+league_id: "017948446"
+team_id: "37889563"
+manager_email: "sergio.pf93@gmail.com"
 
-# ---- Tokens ----
-# Los tokens se guardan en .tokens.json tras hacer auth.py.
-# También se pueden pasar como variables de entorno:
-#   FANTASY_ACCESS_TOKEN
-#   FANTASY_REFRESH_TOKEN
+api:
+  base_url: "https://fantasy-api.llt-services.com"
+  x_app: "Fantasy-iOS"
+  x_version: "10.0.5"
+  timeout: 15
+  retries: 3
 
-# ---- Telegram (opcional) ----
+strategy_weights:
+  revalorizacion: 0.35
+  rendimiento: 0.25
+  oportunidad: 0.20
+  situacion: 0.15
+  riesgo: 0.30
+  precio_excesivo: 0.20
+
+min_cash_reserve: 5000000
+max_bid_multiplier: 1.15
+max_daily_spend: 20000000
+max_operations_day: 3
+
+goalkeeper_protection: "high"
+
+automation:
+  enabled: false
+  dry_run: true
+
 telegram:
-  token: ""            # Token del bot de Telegram (@BotFather)
-  chat_id: ""          # ID del chat/grupo donde enviar los informes
-
-# ---- Estrategia ----
-strategy:
-  budget_alert_pct: 0.20     # Alerta cuando el presupuesto baja del 20%
-  clause_risk_threshold: 2   # Alerta si +N rivales pueden pagar la cláusula
-  market_check_interval: 300 # Segundos entre comprobaciones del mercado (5 min)
-  min_score_to_buy: 0.60     # Score mínimo para recomendar compra
-  max_price_ratio: 0.95      # No comprar si precio > 95% del valor de mercado
-
-# ---- Puntuación de jugadores (pesos por posición) ----
-scoring:
-  GK:
-    value_weight: 0.25
-    form_weight: 0.50
-    season_weight: 0.25
-  DEF:
-    value_weight: 0.30
-    form_weight: 0.35
-    season_weight: 0.35
-  MID:
-    value_weight: 0.25
-    form_weight: 0.40
-    season_weight: 0.35
-  FWD:
-    value_weight: 0.20
-    form_weight: 0.45
-    season_weight: 0.35
-
-# ---- Base de datos ----
-database:
-  path: "data/fantasy.db"    # Ruta relativa al directorio raíz del proyecto
-
-# ---- Logging ----
-logging:
-  level: "INFO"              # DEBUG | INFO | WARNING | ERROR
-  file: "data/fantasy.log"   # Ruta del archivo de log (vacío = solo consola)
-
-# ---- GitHub Actions ----
-# Las acciones leen league_id, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID,
-# FANTASY_ACCESS_TOKEN y FANTASY_REFRESH_TOKEN desde los Secrets del repositorio.
+  enabled: false
+  bot_token: ""
+  chat_id: ""

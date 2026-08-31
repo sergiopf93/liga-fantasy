@@ -1,302 +1,109 @@
 """
-Cliente principal para la API de LaLiga Fantasy.
-Gestiona autenticación, rate limiting y parsing de respuestas.
+Cliente API LaLiga Fantasy
+Endpoints verificados a 31/08/2026 via proxy
+Base: https://fantasy-api.llt-services.com
 """
-from __future__ import annotations
-
-import json
+import requests
 import logging
 import time
-from pathlib import Path
-from typing import Any, Dict, List, Optional
-
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
-
-from .endpoints import DEFAULT_HEADERS, TOKEN_ENDPOINT, LEAGUES, MY_TEAM, MARKET, PLAYERS, PLAYER_STATS, RIVAL_TEAMS, LEAGUE_STANDINGS
-from .models import Player, PlayerStats, Team, TeamPlayer, MarketPlayer, Market, League, Fixture
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-TOKENS_FILE = Path(__file__).parents[3] / ".tokens.json"
+BASE_URL = "https://fantasy-api.llt-services.com"
+
+HEADERS_BASE = {
+    "X-App": "Fantasy-iOS",
+    "X-Version": "10.0.5",
+    "X-Lang": "es",
+    "accept": "*/*",
+    "accept-language": "es-ES;q=1.0",
+    "user-agent": "LaLigaFantasy/10.0.5 (com.lfp.laligafantasy; build:2; iOS 26.5.0) Alamofire/5.10.2",
+}
 
 
-class AuthError(Exception):
-    pass
+def _headers(token: Optional[str] = None) -> dict:
+    h = HEADERS_BASE.copy()
+    if token:
+        h["authorization"] = f"Bearer {token}"
+    return h
 
 
-class APIError(Exception):
-    def __init__(self, status: int, message: str):
-        self.status = status
-        super().__init__(f"API {status}: {message}")
-
-
-class LaLigaFantasyClient:
-    """Cliente HTTP para la API de LaLiga Fantasy."""
-
-    def __init__(self, access_token: Optional[str] = None, tokens_file: Optional[Path] = None):
-        self._tokens_path = tokens_file or TOKENS_FILE
-        self._access_token = access_token
-        self._session = self._build_session()
-
-        if not self._access_token:
-            self._load_token()
-
-    # ------------------------------------------------------------------ #
-    # Configuración interna                                                #
-    # ------------------------------------------------------------------ #
-
-    def _build_session(self) -> requests.Session:
-        session = requests.Session()
-        retry = Retry(total=3, backoff_factor=0.5, status_forcelist=[429, 500, 502, 503, 504])
-        adapter = HTTPAdapter(max_retries=retry)
-        session.mount("https://", adapter)
-        session.headers.update(DEFAULT_HEADERS)
-        return session
-
-    def _load_token(self) -> None:
-        if not self._tokens_path.exists():
-            raise AuthError(
-                f"No se encontró el archivo de tokens en {self._tokens_path}. "
-                "Ejecuta 'python scripts/auth.py' para autenticarte."
-            )
-        data = json.loads(self._tokens_path.read_text(encoding="utf-8"))
-        self._access_token = data.get("access_token")
-        if not self._access_token:
-            raise AuthError("El archivo de tokens no contiene access_token válido.")
-        logger.debug("Token cargado desde %s", self._tokens_path)
-
-    def _auth_headers(self) -> Dict[str, str]:
-        return {"Authorization": f"Bearer {self._access_token}"}
-
-    # ------------------------------------------------------------------ #
-    # Método base de petición                                              #
-    # ------------------------------------------------------------------ #
-
-    def _request(
-        self,
-        method: str,
-        url: str,
-        *,
-        params: Optional[Dict] = None,
-        json_body: Optional[Dict] = None,
-        retry_auth: bool = True,
-    ) -> Any:
-        headers = self._auth_headers()
+def _get(path: str, token: Optional[str] = None, params: Optional[dict] = None, retries: int = 3) -> Optional[dict]:
+    url = f"{BASE_URL}{path}"
+    for attempt in range(retries):
         try:
-            resp = self._session.request(method, url, headers=headers, params=params, json=json_body, timeout=30)
-        except requests.RequestException as exc:
-            raise APIError(0, str(exc)) from exc
+            r = requests.get(url, headers=_headers(token), params=params, timeout=15)
+            if r.status_code == 200:
+                return r.json()
+            elif r.status_code == 401:
+                logger.error("Token inválido o caducado (401)")
+                return None
+            elif r.status_code == 429:
+                wait = 2 ** attempt
+                logger.warning(f"Rate limit (429), esperando {wait}s")
+                time.sleep(wait)
+            else:
+                logger.warning(f"HTTP {r.status_code} en {path}")
+                return None
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Error de red en {path}: {e}")
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+    return None
 
-        if resp.status_code == 401 and retry_auth:
-            logger.info("Token expirado, intentando renovar...")
-            self._refresh_token()
-            return self._request(method, url, params=params, json_body=json_body, retry_auth=False)
 
-        if not resp.ok:
-            raise APIError(resp.status_code, resp.text[:500])
+# ── Datos públicos (sin token) ──────────────────────────────────────────────
 
-        try:
-            return resp.json()
-        except ValueError:
-            return resp.text
+def get_competition_config() -> Optional[dict]:
+    return _get("/api/v1/competition/1/config")
 
-    def _get(self, url: str, **kwargs) -> Any:
-        return self._request("GET", url, **kwargs)
+def get_all_players() -> Optional[list]:
+    """Todos los jugadores con precios y estadísticas"""
+    data = _get("/api/v1/competition/1/players", params={"x-lang": "es"})
+    return data if isinstance(data, list) else None
 
-    def _post(self, url: str, **kwargs) -> Any:
-        return self._request("POST", url, **kwargs)
+def get_fixture_player_values() -> Optional[list]:
+    """Historial de valores de mercado por jornada"""
+    return _get("/classic/v1/competition/1/fixture-player-values", params={"x-lang": "es"})
 
-    def _put(self, url: str, **kwargs) -> Any:
-        return self._request("PUT", url, **kwargs)
+def get_calendar(week: int = 3) -> Optional[dict]:
+    return _get(f"/api/v1/competition/1/calendar", params={"weekNumber": week, "x-lang": "es"})
 
-    # ------------------------------------------------------------------ #
-    # Renovación de token                                                  #
-    # ------------------------------------------------------------------ #
+def get_league_definitions() -> Optional[list]:
+    return _get("/classic/v1/competition/1/league-definitions", params={"x-lang": "es"})
 
-    def _refresh_token(self) -> None:
-        if not self._tokens_path.exists():
-            raise AuthError("No hay tokens guardados para renovar.")
-        data = json.loads(self._tokens_path.read_text(encoding="utf-8"))
-        refresh_token = data.get("refresh_token")
-        if not refresh_token:
-            raise AuthError("No hay refresh_token disponible. Re-autentica con scripts/auth.py.")
 
-        resp = self._session.get(
-            TOKEN_ENDPOINT,
-            headers={**DEFAULT_HEADERS, "Authorization": f"Bearer {refresh_token}"},
-            timeout=15,
-        )
-        if not resp.ok:
-            raise AuthError(f"No se pudo renovar el token: {resp.status_code} {resp.text[:200]}")
+# ── Datos privados (requieren token) ────────────────────────────────────────
 
-        new_data = resp.json()
-        data["access_token"] = new_data.get("access_token", data["access_token"])
-        if "refresh_token" in new_data:
-            data["refresh_token"] = new_data["refresh_token"]
-        data["refreshed_at"] = time.time()
-        self._tokens_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
-        self._access_token = data["access_token"]
-        logger.info("Token renovado exitosamente.")
+def get_my_team(token: str, team_id: str = "37889563") -> Optional[dict]:
+    """Plantilla completa con jugadores, formación y valor"""
+    return _get(f"/api/v1/competition/1/teams/{team_id}/lineup", token=token, params={"x-lang": "es"})
 
-    # ------------------------------------------------------------------ #
-    # Leagues                                                              #
-    # ------------------------------------------------------------------ #
+def get_my_money(token: str, team_id: str = "37889563") -> Optional[dict]:
+    """Dinero disponible del equipo"""
+    return _get(f"/api/v1/competition/1/teams/{team_id}/money", token=token, params={"x-lang": "es"})
 
-    def get_leagues(self) -> List[Dict]:
-        return self._get(LEAGUES) or []
+def get_league_standing(token: str, league_id: str = "017948446") -> Optional[list]:
+    """Clasificación de la liga"""
+    return _get(f"/api/v1/competition/1/leagues/{league_id}/standing/3", token=token, params={"x-lang": "es"})
 
-    def get_league(self, league_id: str) -> League:
-        raw = self._get(LEAGUES + f"/{league_id}")
-        return self._parse_league(raw, league_id)
+def get_league_market(token: str, league_id: str = "017948446") -> Optional[list]:
+    """Mercado privado de la liga"""
+    return _get(f"/api/v1/competition/1/league/{league_id}/market", token=token, params={"x-lang": "es"})
 
-    # ------------------------------------------------------------------ #
-    # Team                                                                 #
-    # ------------------------------------------------------------------ #
+def get_team_lineup(token: str, team_id: str) -> Optional[dict]:
+    """Plantilla de cualquier equipo de la liga"""
+    return _get(f"/api/v1/competition/1/teams/{team_id}/lineup", token=token, params={"x-lang": "es"})
 
-    def get_my_team(self, league_id: str) -> Team:
-        url = MY_TEAM.format(league_id=league_id)
-        raw = self._get(url)
-        return self._parse_team(raw)
+def get_team_money(token: str, team_id: str) -> Optional[dict]:
+    """Dinero de cualquier equipo"""
+    return _get(f"/api/v1/competition/1/teams/{team_id}/money", token=token, params={"x-lang": "es"})
 
-    def get_rival_teams(self, league_id: str) -> List[Team]:
-        url = RIVAL_TEAMS.format(league_id=league_id)
-        raw = self._get(url) or []
-        return [self._parse_team(t) for t in raw]
+def get_league_formations(token: str) -> Optional[dict]:
+    """Formaciones disponibles"""
+    return _get("/api/v4/teams/lineup/formations", token=token, params={"option": "free", "x-lang": "es"})
 
-    # ------------------------------------------------------------------ #
-    # Market                                                               #
-    # ------------------------------------------------------------------ #
-
-    def get_market(self, league_id: str) -> Market:
-        url = MARKET.format(league_id=league_id)
-        raw = self._get(url) or {}
-        players_raw = raw.get("players", raw) if isinstance(raw, dict) else raw
-        market_players = [self._parse_market_player(p) for p in players_raw]
-        return Market(players=market_players)
-
-    def buy_player(self, league_id: str, player_id: str, bid: int) -> Dict:
-        from .endpoints import MARKET_BUY
-        url = MARKET_BUY.format(league_id=league_id)
-        return self._post(url, json_body={"playerId": player_id, "bid": bid})
-
-    def sell_player(self, league_id: str, player_id: str, price: int) -> Dict:
-        from .endpoints import MARKET_SELL
-        url = MARKET_SELL.format(league_id=league_id)
-        return self._post(url, json_body={"playerId": player_id, "price": price})
-
-    def remove_from_market(self, league_id: str, player_id: str) -> Dict:
-        from .endpoints import MARKET_REMOVE
-        url = MARKET_REMOVE.format(league_id=league_id)
-        return self._post(url, json_body={"playerId": player_id})
-
-    # ------------------------------------------------------------------ #
-    # Players                                                              #
-    # ------------------------------------------------------------------ #
-
-    def get_all_players(self) -> List[Player]:
-        raw = self._get(PLAYERS) or []
-        return [self._parse_player(p) for p in raw]
-
-    def get_player_stats(self, player_id: str) -> PlayerStats:
-        url = PLAYER_STATS.format(player_id=player_id)
-        raw = self._get(url) or {}
-        return self._parse_player_stats(raw)
-
-    # ------------------------------------------------------------------ #
-    # Standings                                                            #
-    # ------------------------------------------------------------------ #
-
-    def get_standings(self, league_id: str) -> List[Dict]:
-        url = LEAGUE_STANDINGS.format(league_id=league_id)
-        return self._get(url) or []
-
-    # ------------------------------------------------------------------ #
-    # Parsers                                                              #
-    # ------------------------------------------------------------------ #
-
-    @staticmethod
-    def _parse_player_stats(raw: Dict) -> PlayerStats:
-        return PlayerStats(
-            season_points=raw.get("totalPoints", raw.get("season_points", 0)),
-            last_5_avg=raw.get("averageLast5", raw.get("last_5_avg", 0.0)),
-            last_match_points=raw.get("lastMatchPoints", raw.get("last_match_points", 0)),
-            total_matches=raw.get("totalMatches", raw.get("total_matches", 0)),
-            goals=raw.get("goals", 0),
-            assists=raw.get("assists", 0),
-            yellow_cards=raw.get("yellowCards", raw.get("yellow_cards", 0)),
-            red_cards=raw.get("redCards", raw.get("red_cards", 0)),
-            minutes_played=raw.get("minutesPlayed", raw.get("minutes_played", 0)),
-            fitness=raw.get("fitness", 100),
-        )
-
-    @classmethod
-    def _parse_player(cls, raw: Dict) -> Player:
-        pos_map = {"1": "GK", "2": "DEF", "3": "MID", "4": "FWD",
-                   "goalkeeper": "GK", "defender": "DEF", "midfielder": "MID", "forward": "FWD"}
-        pos_raw = str(raw.get("positionId", raw.get("position", "MID")))
-        position = pos_map.get(pos_raw.lower(), pos_raw.upper())
-
-        stats_raw = raw.get("stats", raw.get("playerStats", {}))
-        stats = cls._parse_player_stats(stats_raw) if stats_raw else None
-
-        return Player(
-            id=str(raw.get("id", raw.get("playerId", ""))),
-            name=raw.get("name", raw.get("playerName", "Unknown")),
-            team=raw.get("teamName", raw.get("team", {}).get("name", "")),
-            position=position,
-            market_value=int(raw.get("marketValue", raw.get("value", 0))),
-            clause_value=int(raw.get("clauseValue", raw.get("clause", 0))),
-            points=int(raw.get("totalPoints", raw.get("points", 0))),
-            status=raw.get("status", raw.get("playerStatus", "ok")).lower(),
-            stats=stats,
-            raw=raw,
-        )
-
-    @classmethod
-    def _parse_market_player(cls, raw: Dict) -> MarketPlayer:
-        player_raw = raw.get("player", raw)
-        player = cls._parse_player(player_raw)
-        return MarketPlayer(
-            player=player,
-            sell_price=int(raw.get("sellPrice", raw.get("price", raw.get("bid", 0)))),
-            time_left=int(raw.get("timeLeft", raw.get("time_left", 0))),
-            seller_name=raw.get("sellerName", raw.get("seller", {}).get("name", "")),
-        )
-
-    @classmethod
-    def _parse_team(cls, raw: Dict) -> Team:
-        if isinstance(raw, list):
-            raw = {"players": raw}
-        team_players = [
-            TeamPlayer(
-                player=cls._parse_player(p.get("player", p)),
-                in_lineup=p.get("inLineup", p.get("in_lineup", True)),
-                is_captain=p.get("isCaptain", p.get("is_captain", False)),
-                buy_price=int(p.get("buyPrice", p.get("buy_price", 0))),
-            )
-            for p in raw.get("players", [])
-        ]
-        return Team(
-            id=str(raw.get("id", raw.get("teamId", ""))),
-            name=raw.get("name", raw.get("teamName", "")),
-            manager=raw.get("managerName", raw.get("manager", "")),
-            budget=int(raw.get("budget", raw.get("money", 0))),
-            team_value=int(raw.get("teamValue", raw.get("value", 0))),
-            players=team_players,
-            points=int(raw.get("points", 0)),
-            rank=int(raw.get("rank", 0)),
-        )
-
-    @classmethod
-    def _parse_league(cls, raw: Dict, league_id: str) -> League:
-        my_team_raw = raw.get("myTeam", raw.get("team"))
-        rival_raw = raw.get("teams", [])
-        return League(
-            id=league_id,
-            name=raw.get("name", ""),
-            my_team=cls._parse_team(my_team_raw) if my_team_raw else None,
-            rival_teams=[cls._parse_team(t) for t in rival_raw],
-            matchday=int(raw.get("currentMatchday", raw.get("matchday", 0))),
-        )
+def get_favourite_players(token: str, team_id: str = "37889563") -> Optional[list]:
+    """Jugadores favoritos del equipo"""
+    return _get(f"/api/v1/competition/1/teams/{team_id}/favourite-players", token=token, params={"x-lang": "es"})

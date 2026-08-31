@@ -1,154 +1,198 @@
 """
-Sistema de puntuación y valoración de jugadores.
-Calcula scores compuestos para comparar jugadores entre posiciones.
+Motor de puntuación de jugadores 0-100
+Cada recomendación incluye explicación detallada del por qué
 """
-from __future__ import annotations
-
-import logging
+import yaml
+import os
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Tuple
+from typing import List
+from backend.laliga.models import Player, MarketPlayer
 
-from ..laliga.models import Player, PlayerStats
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../../config/config.yaml")
 
-logger = logging.getLogger(__name__)
+
+def load_weights() -> dict:
+    try:
+        with open(CONFIG_PATH) as f:
+            cfg = yaml.safe_load(f)
+            return cfg.get("strategy_weights", {})
+    except Exception:
+        return {
+            "revalorizacion": 0.35,
+            "rendimiento": 0.25,
+            "oportunidad": 0.20,
+            "situacion": 0.15,
+            "riesgo": 0.30,
+            "precio_excesivo": 0.20,
+        }
 
 
 @dataclass
-class ScoredPlayer:
+class PlayerScore:
     player: Player
-    raw_score: float
-    value_score: float      # puntos / valor de mercado
-    form_score: float       # media últimas 5 jornadas
-    consistency: float      # desviación estándar (menor = mejor)
-    composite: float        # score final ponderado
-    recommendation: str     # "BUY" | "HOLD" | "SELL" | "WATCH"
-    notes: List[str]
+    score: float            # 0-100
+    reasons: List[str]
+    max_bid: int
+    recommended_bid: int
+    value_ratio: float      # marketValue / salePrice
+    trend: str              # "subiendo", "estable", "bajando"
 
 
-class PlayerScoring:
+def score_market_player(mp: MarketPlayer, my_budget: int = 0) -> PlayerScore:
     """
-    Calcula puntuaciones multicritério para jugadores.
-
-    Pesos por defecto (sumatorio = 1.0):
-      - value_weight:   rendimiento por precio (eficiencia)
-      - form_weight:    forma reciente (últimas 5)
-      - season_weight:  puntos totales en la temporada
+    Puntúa un jugador del mercado de 0 a 100 con explicación completa.
     """
+    w = load_weights()
+    p = mp.player
+    reasons = []
+    sale = mp.sale_price
+    market_val = p.market_value
+    clause = mp.buyout_clause
 
-    POSITION_WEIGHTS = {
-        "GK":  {"value_weight": 0.35, "form_weight": 0.40, "season_weight": 0.25},
-        "DEF": {"value_weight": 0.30, "form_weight": 0.35, "season_weight": 0.35},
-        "MID": {"value_weight": 0.25, "form_weight": 0.40, "season_weight": 0.35},
-        "FWD": {"value_weight": 0.20, "form_weight": 0.45, "season_weight": 0.35},
+    # ── 1. Potencial de revalorización (0-100) ──────────────────────────
+    if sale > 0 and market_val > 0:
+        value_ratio = market_val / sale
+    else:
+        value_ratio = 1.0
+
+    if value_ratio >= 1.15:
+        rev_score = 90
+        reasons.append(f"Precio {_fmt(sale)} muy por debajo del valor de mercado {_fmt(market_val)} (+{(value_ratio-1)*100:.1f}%)")
+    elif value_ratio >= 1.05:
+        rev_score = 65
+        reasons.append(f"Precio ligeramente inferior al valor de mercado ({(value_ratio-1)*100:.1f}% de margen)")
+    elif value_ratio >= 0.97:
+        rev_score = 40
+        reasons.append(f"Precio en línea con el valor de mercado")
+    else:
+        rev_score = 15
+        reasons.append(f"Precio superior al valor de mercado — sobrevalorado")
+
+    # ── 2. Rendimiento deportivo (0-100) ────────────────────────────────
+    avg = p.average_points
+    week = p.week_points
+
+    if avg >= 6:
+        rend_score = 90
+        reasons.append(f"Rendimiento excelente: {avg:.1f} pts/jornada de media")
+    elif avg >= 4:
+        rend_score = 70
+        reasons.append(f"Buen rendimiento: {avg:.1f} pts/jornada de media")
+    elif avg >= 2.5:
+        rend_score = 45
+        reasons.append(f"Rendimiento moderado: {avg:.1f} pts/jornada")
+    else:
+        rend_score = 20
+        reasons.append(f"Bajo rendimiento: {avg:.1f} pts/jornada")
+
+    if week >= 10:
+        rend_score = min(100, rend_score + 15)
+        reasons.append(f"Excelente última jornada: {week} pts")
+    elif week >= 6:
+        rend_score = min(100, rend_score + 8)
+        reasons.append(f"Buena última jornada: {week} pts")
+
+    # ── 3. Oportunidad de mercado (0-100) ────────────────────────────────
+    opor_score = 50
+    if mp.number_of_offers == 0:
+        opor_score += 20
+        reasons.append("Sin ofertas activas — oportunidad de comprar sin competencia")
+    else:
+        opor_score -= 10
+        reasons.append(f"{mp.number_of_offers} ofertas activas — hay competencia")
+
+    if mp.is_shielded:
+        opor_score -= 30
+        reasons.append("Jugador blindado — cláusula más cara")
+
+    # ── 4. Situación deportiva (0-100) ──────────────────────────────────
+    if p.status == "ok":
+        sit_score = 80
+    elif p.status == "doubtful":
+        sit_score = 40
+        reasons.append("Estado dudoso para próxima jornada")
+    elif p.status == "injured":
+        sit_score = 10
+        reasons.append("LESIONADO — riesgo alto")
+    elif p.status == "out_of_league":
+        sit_score = 0
+        reasons.append("FUERA DE LA LIGA — no puntúa")
+    else:
+        sit_score = 50
+
+    # ── 5. Riesgo (penalización) ─────────────────────────────────────────
+    riesgo = 0
+    if p.status in ("injured", "out_of_league"):
+        riesgo += 60
+    if sale > my_budget * 0.5 and my_budget > 0:
+        riesgo += 20
+        reasons.append("Precio alto en relación al presupuesto disponible")
+    if p.position_id == 1 and avg < 3:
+        riesgo += 15
+        reasons.append("Portero con bajo rendimiento")
+
+    # ── Score final ──────────────────────────────────────────────────────
+    score = (
+        rev_score * w.get("revalorizacion", 0.35)
+        + rend_score * w.get("rendimiento", 0.25)
+        + opor_score * w.get("oportunidad", 0.20)
+        + sit_score * w.get("situacion", 0.15)
+        - riesgo * w.get("riesgo", 0.30)
+    )
+    score = max(0, min(100, score))
+
+    # ── Puja recomendada ─────────────────────────────────────────────────
+    if value_ratio >= 1.1:
+        recommended_bid = int(sale * 1.05)
+        max_bid = int(market_val * 0.95)
+    elif value_ratio >= 1.0:
+        recommended_bid = int(sale * 1.02)
+        max_bid = int(market_val * 0.90)
+    else:
+        recommended_bid = int(sale * 0.98)
+        max_bid = int(sale * 1.05)
+
+    trend = "subiendo" if value_ratio > 1.05 else ("bajando" if value_ratio < 0.95 else "estable")
+
+    return PlayerScore(
+        player=p,
+        score=round(score, 1),
+        reasons=reasons,
+        max_bid=max_bid,
+        recommended_bid=recommended_bid,
+        value_ratio=round(value_ratio, 3),
+        trend=trend,
+    )
+
+
+def score_my_player_for_sale(p: Player) -> dict:
+    """
+    Evalúa si conviene vender un jugador de mi plantilla.
+    Retorna dict con score_venta (0-100) y razones.
+    """
+    reasons = []
+    score = 0
+
+    if p.average_points < 2:
+        score += 40
+        reasons.append(f"Bajo rendimiento: {p.average_points:.1f} pts/jornada")
+    if p.status == "injured":
+        score += 35
+        reasons.append("Lesionado — ocupando plaza sin puntuar")
+    if p.status == "out_of_league":
+        score += 50
+        reasons.append("Fuera de la liga — no puntúa")
+    if p.week_points <= 0 and p.average_points < 3:
+        score += 15
+        reasons.append(f"Sin puntuar última jornada con media baja")
+
+    return {
+        "player": p,
+        "sell_score": min(100, score),
+        "reasons": reasons,
+        "should_sell": score >= 40,
     }
 
-    BUY_THRESHOLD = 0.65
-    SELL_THRESHOLD = 0.35
 
-    def __init__(self, custom_weights: Optional[Dict[str, Dict]] = None):
-        if custom_weights:
-            self.POSITION_WEIGHTS = {**self.POSITION_WEIGHTS, **custom_weights}
-
-    # ------------------------------------------------------------------ #
-    # API pública                                                          #
-    # ------------------------------------------------------------------ #
-
-    def score_player(self, player: Player) -> ScoredPlayer:
-        notes: List[str] = []
-
-        if not player.is_available:
-            notes.append(f"Baja/duda: {player.status}")
-
-        stats = player.stats or PlayerStats()
-        weights = self.POSITION_WEIGHTS.get(player.position, self.POSITION_WEIGHTS["MID"])
-
-        value_score = self._value_score(player)
-        form_score = self._form_score(stats)
-        season_score = self._season_score(stats)
-
-        composite = (
-            weights["value_weight"] * value_score
-            + weights["form_weight"] * form_score
-            + weights["season_weight"] * season_score
-        )
-
-        if not player.is_available:
-            composite *= 0.6
-
-        recommendation = self._recommend(composite, player, notes)
-
-        return ScoredPlayer(
-            player=player,
-            raw_score=season_score,
-            value_score=value_score,
-            form_score=form_score,
-            consistency=self._consistency(stats),
-            composite=round(composite, 4),
-            recommendation=recommendation,
-            notes=notes,
-        )
-
-    def rank_players(self, players: List[Player]) -> List[ScoredPlayer]:
-        scored = [self.score_player(p) for p in players]
-        return sorted(scored, key=lambda s: s.composite, reverse=True)
-
-    def rank_by_position(self, players: List[Player]) -> Dict[str, List[ScoredPlayer]]:
-        result: Dict[str, List[ScoredPlayer]] = {}
-        for pos in ("GK", "DEF", "MID", "FWD"):
-            pos_players = [p for p in players if p.position == pos]
-            result[pos] = self.rank_players(pos_players)
-        return result
-
-    def top_picks(self, players: List[Player], n: int = 5) -> Dict[str, List[ScoredPlayer]]:
-        by_pos = self.rank_by_position(players)
-        return {pos: scored[:n] for pos, scored in by_pos.items()}
-
-    # ------------------------------------------------------------------ #
-    # Sub-scores internos                                                  #
-    # ------------------------------------------------------------------ #
-
-    @staticmethod
-    def _value_score(player: Player) -> float:
-        """Puntos por millón de euros de valor de mercado (normalizado 0-1)."""
-        if player.market_value == 0:
-            return 0.0
-        raw = player.points / (player.market_value / 1_000_000)
-        # Normalización: ~10 pts/M es muy bueno
-        return min(raw / 15.0, 1.0)
-
-    @staticmethod
-    def _form_score(stats: PlayerStats) -> float:
-        """Media últimas 5 jornadas normalizada (0-1). ~15 pts es excelente."""
-        return min(stats.last_5_avg / 15.0, 1.0)
-
-    @staticmethod
-    def _season_score(stats: PlayerStats) -> float:
-        """Puntos totales normalizados (0-1). ~200 pts es top temporada."""
-        return min(stats.season_points / 200.0, 1.0)
-
-    @staticmethod
-    def _consistency(stats: PlayerStats) -> float:
-        """
-        Proxy de consistencia usando puntos por partido.
-        Retorna valor 0-1 donde 1 = muy consistente.
-        """
-        if stats.total_matches == 0:
-            return 0.5
-        avg = stats.points_per_match
-        # Si el jugador puntúa consistentemente ~10 pts/partido → alta consistencia
-        if avg == 0:
-            return 0.0
-        # Aproximamos que la consistencia es inversamente proporcional
-        # a la variación estimada (sin histórico de partidos individuales)
-        return min(avg / 12.0, 1.0)
-
-    def _recommend(self, composite: float, player: Player, notes: List[str]) -> str:
-        if not player.is_available:
-            return "SELL" if player.status in ("injured", "suspended") else "WATCH"
-        if composite >= self.BUY_THRESHOLD:
-            notes.append(f"Score alto ({composite:.2f}) → buen momento de compra")
-            return "BUY"
-        if composite <= self.SELL_THRESHOLD:
-            notes.append(f"Score bajo ({composite:.2f}) → considerar venta")
-            return "SELL"
-        return "HOLD"
+def _fmt(value: int) -> str:
+    return f"{value/1_000_000:.2f}M€"

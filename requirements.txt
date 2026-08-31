@@ -1,28 +1,4 @@
-# ============================================================
-# LaLiga Fantasy — Dependencias Python
-# ============================================================
-
-# HTTP
 requests>=2.31.0
-urllib3>=2.0.0
-
-# Configuración
-pyyaml>=6.0.1
-
-# Autenticación (browser automation)
-playwright>=1.40.0
-
-# Base de datos (stdlib sqlite3 incluida, aiosqlite opcional)
-# aiosqlite>=0.19.0   # descomenta si usas async
-
-# Notificaciones
-# python-telegram-bot>=21.0  # alternativa a requests directo
-
-# Tests
+pyyaml>=6.0
+python-telegram-bot>=20.0
 pytest>=7.4.0
-pytest-cov>=4.1.0
-
-# Desarrollo (opcional)
-# black>=23.0
-# ruff>=0.1.0
-# mypy>=1.5.0
