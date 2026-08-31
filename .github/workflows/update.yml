@@ -1,63 +1,38 @@
-name: Update Fantasy Data
+name: Actualización 12:00
 
 on:
   schedule:
-    # Cada hora en días de partido (lun-dom), entre las 8:00 y las 23:00 UTC
-    - cron: '0 8-23 * * *'
+    - cron: '0 10 * * *'   # 12:00 hora España
   workflow_dispatch:
-    inputs:
-      league_id:
-        description: 'ID de la liga (sobreescribe el de config.yaml)'
-        required: false
-
-env:
-  FANTASY_ACCESS_TOKEN:  ${{ secrets.FANTASY_ACCESS_TOKEN }}
-  FANTASY_REFRESH_TOKEN: ${{ secrets.FANTASY_REFRESH_TOKEN }}
-  TELEGRAM_TOKEN:        ${{ secrets.TELEGRAM_TOKEN }}
-  TELEGRAM_CHAT_ID:      ${{ secrets.TELEGRAM_CHAT_ID }}
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: pip install requests pyyaml
 
-      - name: Write tokens file
+      - name: Actualizar datos
+        env:
+          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
+        run: python scripts/generate_report.py
+
+      - name: Commit y push
         run: |
-          echo '{
-            "access_token": "${{ secrets.FANTASY_ACCESS_TOKEN }}",
-            "refresh_token": "${{ secrets.FANTASY_REFRESH_TOKEN }}",
-            "saved_at": '$( date +%s )'
-          }' > .tokens.json
-
-      - name: Refresh token
-        run: python scripts/refresh_token.py
-
-      - name: Update data
-        run: |
-          LEAGUE_ID="${{ github.event.inputs.league_id || '' }}"
-          if [ -n "$LEAGUE_ID" ]; then
-            python scripts/update.py --league "$LEAGUE_ID"
-          else
-            python scripts/update.py
-          fi
-
-      - name: Upload DB artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: fantasy-db-${{ github.run_id }}
-          path: data/fantasy.db
-          retention-days: 7
+          git config user.name "Fantasy Bot"
+          git config user.email "bot@liga-fantasy"
+          git add data/
+          git diff --staged --quiet || git commit -m "Actualización 12:00 - $(date '+%d/%m %H:%M')"
+          git push

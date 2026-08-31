@@ -1,0 +1,38 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'data/**'
+  workflow_run:
+    workflows: ["Informe diario 20:00", "Actualización 12:00", "Vigilancia mercado 20-21h"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar carpeta de deploy
+        run: |
+          mkdir -p _site/data
+          cp frontend/index.html _site/index.html
+          cp -r frontend/css _site/css 2>/dev/null || true
+          cp -r frontend/js _site/js 2>/dev/null || true
+          cp data/*.json _site/data/ 2>/dev/null || echo "Sin datos JSON aún"
+
+      - name: Deploy a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          commit_message: "Deploy - $(date '+%d/%m %H:%M')"

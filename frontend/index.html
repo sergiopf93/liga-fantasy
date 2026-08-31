@@ -1,234 +1,461 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LaLiga Fantasy — Dashboard</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d1117">
+<title>Fantasy R.H.</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2128;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --green: #3fb950;
+    --green-dim: #1a4a24;
+    --red: #f85149;
+    --red-dim: #4a1a1a;
+    --amber: #d29922;
+    --amber-dim: #3d2a00;
+    --blue: #58a6ff;
+    --blue-dim: #1a2d4a;
+    --purple: #bc8cff;
+    --radius: 10px;
+    --nav-h: 64px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; line-height: 1.5; }
+  body { display: flex; flex-direction: column; }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+  .logo span { color: var(--green); }
+  .updated { font-size: 12px; color: var(--muted); }
+
+  /* ── Main ── */
+  main { flex: 1; overflow-y: auto; padding: 0 0 calc(var(--nav-h) + 16px); }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; bottom: 0; left: 0; right: 0; height: var(--nav-h);
+    background: var(--surface); border-top: 1px solid var(--border);
+    display: flex; align-items: center; z-index: 100;
+  }
+  nav button {
+    flex: 1; background: none; border: none; color: var(--muted);
+    font-size: 10px; padding: 8px 4px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    transition: color .15s;
+  }
+  nav button.active { color: var(--green); }
+  nav button svg { width: 22px; height: 22px; }
+
+  /* ── Sections ── */
+  .section { display: none; padding: 16px; }
+  .section.active { display: block; }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px; margin-bottom: 12px;
+  }
+  .card-title { font-size: 13px; color: var(--muted); text-transform: none; margin-bottom: 8px; }
+
+  /* ── Summary grid ── */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+  .stat-value { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── Today actions ── */
+  .today-header { font-size: 20px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.4px; }
+  .action-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px; border-radius: var(--radius); margin-bottom: 8px;
+  }
+  .action-item.buy { background: var(--green-dim); border: 1px solid #2ea04326; }
+  .action-item.sell { background: var(--red-dim); border: 1px solid #f8514926; }
+  .action-item.warn { background: var(--amber-dim); border: 1px solid #d2992226; }
+  .action-item.info { background: var(--blue-dim); border: 1px solid #58a6ff26; }
+  .action-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .action-body { flex: 1; min-width: 0; }
+  .action-title { font-weight: 600; font-size: 14px; }
+  .action-detail { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .action-price { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 3px; }
+
+  /* ── Player list ── */
+  .player-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 0; border-bottom: 1px solid var(--border);
+  }
+  .player-row:last-child { border-bottom: none; }
+  .player-img { width: 40px; height: 40px; border-radius: 50%; background: var(--surface2); object-fit: cover; flex-shrink: 0; }
+  .player-img-placeholder { width: 40px; height: 40px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .player-info { flex: 1; min-width: 0; }
+  .player-name { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .player-meta { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .player-right { text-align: right; flex-shrink: 0; }
+  .player-value { font-size: 14px; font-weight: 600; }
+  .player-pts { font-size: 12px; color: var(--muted); }
+
+  /* ── Score badge ── */
+  .score-badge {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px; margin-left: 6px;
+  }
+  .score-high { background: var(--green-dim); color: var(--green); }
+  .score-mid { background: var(--amber-dim); color: var(--amber); }
+  .score-low { background: var(--red-dim); color: var(--red); }
+
+  /* ── Risk badge ── */
+  .risk { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+  .risk-BAJO { background: var(--green-dim); color: var(--green); }
+  .risk-MEDIO { background: var(--amber-dim); color: var(--amber); }
+  .risk-ALTO { background: var(--red-dim); color: var(--red); }
+  .risk-CRÍTICO { background: #5a0000; color: #ff6b6b; border: 1px solid #ff000044; }
+
+  /* ── Status ── */
+  .status-ok { color: var(--green); }
+  .status-injured { color: var(--red); }
+  .status-doubtful { color: var(--amber); }
+  .status-out_of_league { color: var(--muted); }
+
+  /* ── Section title ── */
+  .section-title { font-size: 18px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.3px; }
+
+  /* ── Reasons list ── */
+  .reasons { list-style: none; margin-top: 8px; }
+  .reasons li { font-size: 12px; color: var(--muted); padding: 2px 0; padding-left: 14px; position: relative; }
+  .reasons li::before { content: "·"; position: absolute; left: 4px; color: var(--muted); }
+
+  /* ── Loading ── */
+  .loading { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .error-box { background: var(--red-dim); border: 1px solid #f8514926; border-radius: var(--radius); padding: 14px; font-size: 13px; }
+
+  /* ── Rival row ── */
+  .rival-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .rival-row:last-child { border-bottom: none; }
+  .rival-pos { width: 24px; font-size: 13px; color: var(--muted); font-weight: 600; }
+  .rival-name { flex: 1; font-weight: 600; font-size: 14px; }
+  .rival-stats { text-align: right; font-size: 13px; }
+  .rival-pts { font-weight: 700; }
+  .rival-val { font-size: 12px; color: var(--muted); }
+
+  @media (min-width: 480px) {
+    main { max-width: 480px; margin: 0 auto; }
+    nav { max-width: 480px; left: 50%; transform: translateX(-50%); }
+  }
+</style>
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__logo">
-        <span class="logo-icon">⚽</span>
-        <span class="logo-text">Liga Fantasy</span>
-      </div>
-      <nav class="header__nav">
-        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
-        <button class="nav-btn" data-view="team">Mi Equipo</button>
-        <button class="nav-btn" data-view="market">Mercado</button>
-        <button class="nav-btn" data-view="rivals">Rivales</button>
-        <button class="nav-btn" data-view="players">Jugadores</button>
-      </nav>
-      <div class="header__actions">
-        <span id="last-update" class="last-update">—</span>
-        <button id="refresh-btn" class="btn btn--primary">↻ Actualizar</button>
-      </div>
+
+<header>
+  <div class="logo">Fantasy <span>R.H.</span></div>
+  <div class="updated" id="last-updated">Cargando...</div>
+</header>
+
+<main>
+  <!-- HOY -->
+  <div class="section active" id="sec-hoy">
+    <div style="padding:16px 0 8px">
+      <div class="today-header">¿Qué hacer hoy?</div>
+      <div id="today-actions"><div class="loading">Cargando recomendaciones...</div></div>
     </div>
-  </header>
-
-  <!-- ===== MAIN ===== -->
-  <main class="main">
-
-    <!-- ===== VIEW: DASHBOARD ===== -->
-    <section id="view-dashboard" class="view active">
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-card__label">Presupuesto</div>
-          <div class="stat-card__value" id="stat-budget">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card__label">Valor Plantilla</div>
-          <div class="stat-card__value" id="stat-value">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card__label">Puntos Totales</div>
-          <div class="stat-card__value" id="stat-points">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card__label">Posición Liga</div>
-          <div class="stat-card__value" id="stat-rank">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card__label">Jornada</div>
-          <div class="stat-card__value" id="stat-matchday">—</div>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <!-- Score de jugadores por posición -->
-        <div class="card">
-          <h3 class="card__title">Score por Posición</h3>
-          <canvas id="chart-position-scores" height="220"></canvas>
-        </div>
-
-        <!-- Oportunidades de mercado -->
-        <div class="card">
-          <h3 class="card__title">🔥 Oportunidades de Mercado</h3>
-          <div id="market-opportunities" class="opportunities-list">
-            <p class="empty-state">Cargando...</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <!-- Cláusulas en riesgo -->
-        <div class="card">
-          <h3 class="card__title">⚠️ Cláusulas en Riesgo</h3>
-          <div id="clause-risks" class="risk-list">
-            <p class="empty-state">Cargando...</p>
-          </div>
-        </div>
-
-        <!-- Evolución de valor del equipo -->
-        <div class="card">
-          <h3 class="card__title">Evolución Valor del Equipo</h3>
-          <canvas id="chart-team-value" height="220"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== VIEW: MY TEAM ===== -->
-    <section id="view-team" class="view">
-      <div class="card">
-        <h3 class="card__title">Mi Plantilla</h3>
-        <div class="position-filter">
-          <button class="filter-btn active" data-pos="ALL">Todos</button>
-          <button class="filter-btn" data-pos="GK">Porteros</button>
-          <button class="filter-btn" data-pos="DEF">Defensas</button>
-          <button class="filter-btn" data-pos="MID">Centrocampistas</button>
-          <button class="filter-btn" data-pos="FWD">Delanteros</button>
-        </div>
-        <div id="team-table-container">
-          <table class="data-table" id="team-table">
-            <thead>
-              <tr>
-                <th>Jugador</th>
-                <th>Pos</th>
-                <th>Equipo</th>
-                <th>Valor</th>
-                <th>Pts</th>
-                <th>Ult.5</th>
-                <th>Score</th>
-                <th>Estado</th>
-              </tr>
-            </thead>
-            <tbody id="team-tbody"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 class="card__title">Distribución de Valor por Posición</h3>
-        <canvas id="chart-team-composition" height="250"></canvas>
-      </div>
-    </section>
-
-    <!-- ===== VIEW: MARKET ===== -->
-    <section id="view-market" class="view">
-      <div class="market-controls">
-        <input id="market-search" type="text" placeholder="🔍 Buscar jugador..." class="search-input" />
-        <select id="market-pos-filter" class="select-filter">
-          <option value="">Todas las posiciones</option>
-          <option value="GK">Porteros</option>
-          <option value="DEF">Defensas</option>
-          <option value="MID">Centrocampistas</option>
-          <option value="FWD">Delanteros</option>
-        </select>
-        <select id="market-sort" class="select-filter">
-          <option value="urgency">Por urgencia</option>
-          <option value="price_asc">Precio ↑</option>
-          <option value="price_desc">Precio ↓</option>
-          <option value="score">Por score</option>
-        </select>
-      </div>
-
-      <div id="market-cards" class="market-grid">
-        <p class="empty-state">Cargando mercado...</p>
-      </div>
-    </section>
-
-    <!-- ===== VIEW: RIVALS ===== -->
-    <section id="view-rivals" class="view">
-      <div class="card">
-        <h3 class="card__title">Clasificación de la Liga</h3>
-        <table class="data-table" id="standings-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Equipo</th>
-              <th>Puntos</th>
-              <th>Valor Plantilla</th>
-              <th>Amenaza</th>
-            </tr>
-          </thead>
-          <tbody id="standings-tbody"></tbody>
-        </table>
-      </div>
-
-      <div id="rival-reports" class="rival-cards-grid"></div>
-    </section>
-
-    <!-- ===== VIEW: PLAYERS ===== -->
-    <section id="view-players" class="view">
-      <div class="market-controls">
-        <input id="players-search" type="text" placeholder="🔍 Buscar jugador..." class="search-input" />
-        <select id="players-pos-filter" class="select-filter">
-          <option value="">Todas las posiciones</option>
-          <option value="GK">Porteros</option>
-          <option value="DEF">Defensas</option>
-          <option value="MID">Centrocampistas</option>
-          <option value="FWD">Delanteros</option>
-        </select>
-        <select id="players-team-filter" class="select-filter">
-          <option value="">Todos los equipos</option>
-        </select>
-        <select id="players-sort" class="select-filter">
-          <option value="score">Por score</option>
-          <option value="points">Por puntos</option>
-          <option value="value">Por valor</option>
-          <option value="form">Por forma</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <table class="data-table" id="players-table">
-          <thead>
-            <tr>
-              <th>Jugador</th>
-              <th>Pos</th>
-              <th>Equipo LaLiga</th>
-              <th>Valor</th>
-              <th>Cláusula</th>
-              <th>Pts</th>
-              <th>Media 5j</th>
-              <th>Score</th>
-              <th>Rec.</th>
-            </tr>
-          </thead>
-          <tbody id="players-tbody"></tbody>
-        </table>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== TOAST NOTIFICATIONS ===== -->
-  <div id="toast-container" class="toast-container"></div>
-
-  <!-- ===== MODAL ===== -->
-  <div id="modal" class="modal hidden">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="modal-close">✕</button>
-      <div id="modal-body"></div>
-    </div>
+    <div class="summary-grid" id="summary-grid"></div>
+    <div id="gk-alert"></div>
   </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/app.js"></script>
+  <!-- MI EQUIPO -->
+  <div class="section" id="sec-equipo">
+    <div class="section-title">Mi equipo</div>
+    <div id="team-list"><div class="loading">Cargando plantilla...</div></div>
+  </div>
+
+  <!-- MERCADO -->
+  <div class="section" id="sec-mercado">
+    <div class="section-title">Mercado</div>
+    <div id="market-list"><div class="loading">Cargando mercado...</div></div>
+  </div>
+
+  <!-- RIVALES -->
+  <div class="section" id="sec-rivales">
+    <div class="section-title">Rivales</div>
+    <div id="rivals-list"><div class="loading">Cargando clasificación...</div></div>
+  </div>
+
+  <!-- OPORTUNIDADES -->
+  <div class="section" id="sec-opor">
+    <div class="section-title">Oportunidades</div>
+    <div id="opor-list"><div class="loading">Analizando oportunidades...</div></div>
+  </div>
+</main>
+
+<nav>
+  <button class="active" onclick="showTab('hoy',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Hoy
+  </button>
+  <button onclick="showTab('equipo',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Mi equipo
+  </button>
+  <button onclick="showTab('mercado',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6"/></svg>
+    Mercado
+  </button>
+  <button onclick="showTab('rivales',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    Rivales
+  </button>
+  <button onclick="showTab('opor',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    Opor.
+  </button>
+</nav>
+
+<script>
+const DATA = { team: null, market: null, report: null, rivals: null };
+
+function showTab(tab, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+async function loadJSON(file) {
+  try {
+    const r = await fetch('data/' + file + '?t=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+function fmt(n) {
+  if (!n) return 'N/D';
+  if (n >= 1000000) return (n/1000000).toFixed(2) + 'M€';
+  if (n >= 1000) return (n/1000).toFixed(0) + 'K€';
+  return n + '€';
+}
+
+function scoreClass(s) {
+  return s >= 65 ? 'score-high' : s >= 40 ? 'score-mid' : 'score-low';
+}
+
+function statusIcon(s) {
+  return s === 'ok' ? '' : s === 'injured' ? ' 🤕' : s === 'doubtful' ? ' ❓' : s === 'out_of_league' ? ' ⛔' : '';
+}
+
+function posIcon(pid) {
+  return ['', '🧤', '🛡️', '⚙️', '⚽'][pid] || '👤';
+}
+
+function renderSummary(report, team) {
+  const g = document.getElementById('summary-grid');
+  if (!report && !team) { g.innerHTML = '<div class="error-box">Sin datos disponibles</div>'; return; }
+  const s = report?.summary || {};
+  g.innerHTML = `
+    <div class="stat-box">
+      <div class="stat-value" style="color:var(--green)">${s.team_value_fmt || fmt(team?.team_value) || 'N/D'}</div>
+      <div class="stat-label">Valor plantilla</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" style="color:var(--blue)">${s.budget_fmt || 'N/D'}</div>
+      <div class="stat-label">Presupuesto</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">${s.points || team?.team_points || 0}</div>
+      <div class="stat-label">Puntos</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" style="color:${s.goalkeeper_risk==='CRÍTICO'?'var(--red)':s.goalkeeper_risk==='ALTO'?'var(--amber)':'var(--green)'}">
+        ${s.goalkeeper_count || '?'} POR
+      </div>
+      <div class="stat-label">Portero(s)</div>
+    </div>
+  `;
+}
+
+function renderTodayActions(report, market) {
+  const el = document.getElementById('today-actions');
+  const gkEl = document.getElementById('gk-alert');
+  let html = '';
+
+  // Alerta portero
+  if (report?.summary?.goalkeeper_risk === 'CRÍTICO' || report?.summary?.goalkeeper_risk === 'ALTO') {
+    gkEl.innerHTML = `<div class="action-item warn" style="margin-bottom:8px">
+      <div class="action-icon">🧤</div>
+      <div class="action-body">
+        <div class="action-title">Atención: porteros</div>
+        <div class="action-detail">${report.summary.goalkeeper_recommendation}</div>
+      </div>
+    </div>`;
+  }
+
+  // Compras
+  (report?.top_buys || []).forEach(b => {
+    html += `<div class="action-item buy">
+      <div class="action-icon">🟢</div>
+      <div class="action-body">
+        <div class="action-title">Comprar: ${b.nickname}</div>
+        <div class="action-detail">${b.position} · ${b.average_points} pts/j${statusIcon(b.status)}</div>
+        <div class="action-price">Puja recomendada: ${b.recommended_bid_fmt} · Máx: ${b.max_bid_fmt}</div>
+      </div>
+    </div>`;
+  });
+
+  // Ventas
+  (report?.sell_recommendations || []).forEach(s => {
+    html += `<div class="action-item sell">
+      <div class="action-icon">🔴</div>
+      <div class="action-body">
+        <div class="action-title">Vender: ${s.nickname}</div>
+        <div class="action-detail">${s.position} · ${s.reasons[0] || ''}</div>
+      </div>
+    </div>`;
+  });
+
+  // Clausulazos
+  (report?.clause_risks || []).filter(c => c.risk_level === 'ALTO' || c.risk_level === 'CRÍTICO').forEach(c => {
+    html += `<div class="action-item warn">
+      <div class="action-icon">🚨</div>
+      <div class="action-body">
+        <div class="action-title">Riesgo clausulazo: ${c.nickname}</div>
+        <div class="action-detail">${c.recommendation}</div>
+      </div>
+    </div>`;
+  });
+
+  if (!html) html = '<div class="action-item info"><div class="action-icon">✅</div><div class="action-body"><div class="action-title">Sin acciones urgentes hoy</div><div class="action-detail">Revisa el mercado para nuevas oportunidades</div></div></div>';
+  el.innerHTML = html;
+}
+
+function renderTeam(team) {
+  const el = document.getElementById('team-list');
+  if (!team || !team.players) { el.innerHTML = '<div class="error-box">Sin datos de plantilla. Configura el token en GitHub Secrets.</div>'; return; }
+
+  const positions = ['Portero','Defensa','Centrocampista','Delantero'];
+  let html = '';
+  positions.forEach(pos => {
+    const players = team.players.filter(p => p.position === pos);
+    if (!players.length) return;
+    html += `<div class="card"><div class="card-title">${pos}s</div>`;
+    players.forEach(p => {
+      html += `<div class="player-row">
+        <div class="player-img-placeholder">${posIcon(p.position_id)}</div>
+        <div class="player-info">
+          <div class="player-name">${p.nickname}${statusIcon(p.status)}</div>
+          <div class="player-meta">Cláusula: ${fmt(p.buyout_clause)}</div>
+        </div>
+        <div class="player-right">
+          <div class="player-value">${fmt(p.market_value)}</div>
+          <div class="player-pts">${p.week_points || 0} / ${p.average_points} pts</div>
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  el.innerHTML = html;
+}
+
+function renderMarket(market) {
+  const el = document.getElementById('market-list');
+  if (!market || !market.players) { el.innerHTML = '<div class="error-box">Sin datos de mercado.</div>'; return; }
+  let html = '<div class="card"><div class="card-title">Jugadores en venta (' + market.players.length + ')</div>';
+  market.players.forEach(p => {
+    const sc = p.score || 0;
+    html += `<div class="player-row">
+      <div class="player-img-placeholder">${posIcon(p.position_id)}</div>
+      <div class="player-info">
+        <div class="player-name">${p.nickname}${statusIcon(p.status)} <span class="score-badge ${scoreClass(sc)}">${sc}</span></div>
+        <div class="player-meta">${p.position} · Vendedor: ${p.seller}</div>
+        <div class="player-meta">Puja máx: <strong>${p.max_bid_fmt}</strong></div>
+      </div>
+      <div class="player-right">
+        <div class="player-value">${p.sale_price_fmt}</div>
+        <div class="player-pts">${p.average_points} pts/j</div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function renderRivals(rivals) {
+  const el = document.getElementById('rivals-list');
+  if (!rivals || !rivals.rivals) { el.innerHTML = '<div class="error-box">Sin datos de rivales.</div>'; return; }
+  let html = '<div class="card">';
+  rivals.rivals.forEach((r, i) => {
+    html += `<div class="rival-row">
+      <div class="rival-pos">${i+1}</div>
+      <div class="rival-name">${r.manager}</div>
+      <div class="rival-stats">
+        <div class="rival-pts">${r.points} pts</div>
+        <div class="rival-val">${r.team_value_fmt}</div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function renderOpportunities(market, report) {
+  const el = document.getElementById('opor-list');
+  const players = market?.players?.filter(p => p.score >= 55) || [];
+  if (!players.length) { el.innerHTML = '<div class="card"><div style="color:var(--muted);text-align:center;padding:20px">Sin oportunidades destacadas en este momento</div></div>'; return; }
+  let html = '';
+  players.slice(0, 10).forEach(p => {
+    const sc = p.score || 0;
+    html += `<div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div style="font-weight:700;font-size:15px">${p.name} <span class="score-badge ${scoreClass(sc)}">${sc}</span></div>
+        <div style="font-size:13px;color:var(--muted)">${p.position}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div><div style="font-size:11px;color:var(--muted)">Precio venta</div><div style="font-weight:600">${p.sale_price_fmt}</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">Valor mercado</div><div style="font-weight:600;color:var(--green)">${p.market_value_fmt}</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">Puja recomendada</div><div style="font-weight:600;color:var(--blue)">${p.recommended_bid_fmt}</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">Puja máxima</div><div style="font-weight:600">${p.max_bid_fmt}</div></div>
+      </div>
+      <ul class="reasons">${(p.reasons||[]).map(r=>'<li>'+r+'</li>').join('')}</ul>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+async function init() {
+  const [team, market, report, rivals] = await Promise.all([
+    loadJSON('team.json'), loadJSON('market.json'),
+    loadJSON('report.json'), loadJSON('rivals.json')
+  ]);
+  DATA.team = team; DATA.market = market; DATA.report = report; DATA.rivals = rivals;
+
+  const ts = report?.generated_at || team?.updated_at || '';
+  if (ts) {
+    const d = new Date(ts);
+    document.getElementById('last-updated').textContent = d.toLocaleTimeString('es', {hour:'2-digit',minute:'2-digit'});
+  }
+
+  renderSummary(report, team);
+  renderTodayActions(report, market);
+  renderTeam(team);
+  renderMarket(market);
+  renderRivals(rivals);
+  renderOpportunities(market, report);
+}
+
+init();
+setInterval(init, 5 * 60 * 1000); // Refrescar cada 5 min
+</script>
 </body>
 </html>
