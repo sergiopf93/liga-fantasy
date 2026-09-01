@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-01T14:27:47.283590",
+  "generated_at": "2026-09-01T20:22:16.411105",
   "summary": {
-    "team_value": 214135172,
-    "team_value_fmt": "214.14M€",
+    "team_value": 214112607,
+    "team_value_fmt": "214.11M€",
     "budget": 35756900,
     "budget_fmt": "35.76M€",
     "points": 109,
@@ -19,11 +19,11 @@
       "market_value_fmt": "3.26M€",
       "score": 81.5,
       "recommended_bid_fmt": "2.72M€",
-      "max_bid_fmt": "3.10M€",
+      "max_bid_fmt": "3.09M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 2.59M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio 2.59M€ muy por debajo del valor 3.26M€ (+26.0%)",
+        "Precio 2.59M€ muy por debajo del valor 3.26M€ (+25.9%)",
         "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 9.7 pts/jornada",
@@ -53,7 +53,7 @@
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 7.35M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor (6.4% margen)",
+        "Precio ligeramente inferior al valor (6.3% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 16.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 6.3 pts/jornada",
@@ -76,7 +76,7 @@
       "nickname": "Abel Bretones",
       "position": "Defensa",
       "sale_price_fmt": "5.58M€",
-      "market_value_fmt": "5.90M€",
+      "market_value_fmt": "5.89M€",
       "score": 72.8,
       "recommended_bid_fmt": "5.69M€",
       "max_bid_fmt": "5.31M€",
@@ -109,7 +109,7 @@
       "market_value_fmt": "7.86M€",
       "score": 67.8,
       "recommended_bid_fmt": "7.37M€",
-      "max_bid_fmt": "7.08M€",
+      "max_bid_fmt": "7.07M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 7.23M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
@@ -132,29 +132,29 @@
       }
     },
     {
-      "name": "Juan Foyth",
-      "nickname": "Foyth",
-      "position": "Defensa",
-      "sale_price_fmt": "17.56M€",
-      "market_value_fmt": "18.99M€",
+      "name": "Julen Agirrezabala",
+      "nickname": "Agirrezabala",
+      "position": "Portero",
+      "sale_price_fmt": "7.81M€",
+      "market_value_fmt": "8.40M€",
       "score": 67.8,
-      "recommended_bid_fmt": "17.92M€",
-      "max_bid_fmt": "17.09M€",
+      "recommended_bid_fmt": "7.97M€",
+      "max_bid_fmt": "7.56M€",
       "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 17.56M€. Puja inteligente: no superar el valor real del jugador.",
+      "strategy_note": "SUBASTA — Precio salida 7.81M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor (8.1% margen)",
-        "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
+        "Precio ligeramente inferior al valor (7.5% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 20.00M€",
         "Tendencia reciente: estable",
-        "Buen rendimiento: 5.3 pts/jornada",
+        "Buen rendimiento: 5.7 pts/jornada",
         "1 ofertas activas"
       ],
       "status": "ok",
-      "average_points": 5.33,
+      "average_points": 5.67,
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
+        "max_value": 20000000,
+        "max_value_fmt": "20.00M€",
+        "min_value": 20000000,
         "recent_trend": "estable",
         "trend_pct": 0.0,
         "recovery_potential": 0.0,
@@ -198,7 +198,7 @@
       "risk_score": 33.0,
       "buyout_clause_fmt": "54.87M€",
       "reasons": [
-        "Cláusula 54.87M€ muy cercana al valor de mercado 53.74M€ — fácil de ejecutar"
+        "Cláusula 54.87M€ muy cercana al valor de mercado 53.73M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -222,7 +222,7 @@
       "risk_score": 25.0,
       "buyout_clause_fmt": "26.41M€",
       "reasons": [
-        "Cláusula 26.41M€ muy cercana al valor de mercado 25.38M€ — fácil de ejecutar"
+        "Cláusula 26.41M€ muy cercana al valor de mercado 25.37M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
