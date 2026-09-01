@@ -1,67 +1,60 @@
 {
-  "updated_at": "2026-09-01T09:49:49.330364",
+  "updated_at": "2026-09-01T11:23:14.865141",
   "rivals": [
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "",
       "manager": "",
       "team_value": 0,
-      "team_value_fmt": "0.00M€",
+      "team_value_fmt": "N/D",
       "points": 0,
-      "budget": 0,
       "budget_fmt": "N/D"
     }
   ]
