@@ -1,17 +1,183 @@
 {
-  "generated_at": "2026-09-01T09:29:19.591800",
+  "generated_at": "2026-09-01T09:49:49.418685",
   "summary": {
-    "team_value": 0,
-    "team_value_fmt": "N/D",
-    "budget": 0,
-    "budget_fmt": "N/D",
-    "points": 0,
-    "goalkeeper_risk": "N/D",
-    "goalkeeper_count": 0,
-    "goalkeeper_recommendation": ""
+    "team_value": 214135172,
+    "team_value_fmt": "214.14M€",
+    "budget": 35756900,
+    "budget_fmt": "35.76M€",
+    "points": 109,
+    "goalkeeper_risk": "ALTO",
+    "goalkeeper_count": 1,
+    "goalkeeper_recommendation": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
-  "sell_recommendations": [],
-  "clause_risks": [],
-  "goalkeeper": ""
+  "top_buys": [
+    {
+      "name": "Xavi Espart",
+      "nickname": "Xavi Espart",
+      "position": "Defensa",
+      "sale_price_fmt": "2.59M€",
+      "market_value_fmt": "3.26M€",
+      "score": 74.0,
+      "recommended_bid_fmt": "2.72M€",
+      "max_bid_fmt": "3.10M€",
+      "reasons": [
+        "Precio 2.59M€ muy por debajo del valor de mercado 3.26M€ (+26.0%)",
+        "Rendimiento excelente: 9.7 pts/jornada de media",
+        "1 ofertas activas — hay competencia"
+      ],
+      "status": "ok",
+      "average_points": 9.67,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t178/p2843/256x256/p2843_t178_1_001_000 (1).png"
+    },
+    {
+      "name": "Aitor Paredes",
+      "nickname": "Paredes",
+      "position": "Defensa",
+      "sale_price_fmt": "7.35M€",
+      "market_value_fmt": "7.81M€",
+      "score": 65.2,
+      "recommended_bid_fmt": "7.49M€",
+      "max_bid_fmt": "7.03M€",
+      "reasons": [
+        "Precio ligeramente inferior al valor de mercado (6.4% de margen)",
+        "Rendimiento excelente: 6.3 pts/jornada de media",
+        "1 ofertas activas — hay competencia"
+      ],
+      "status": "ok",
+      "average_points": 6.33,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t174/p2315/256x256/p2315_t174_1_001_000 (1).png"
+    },
+    {
+      "name": "Abel Bretones",
+      "nickname": "Abel Bretones",
+      "position": "Defensa",
+      "sale_price_fmt": "5.58M€",
+      "market_value_fmt": "5.90M€",
+      "score": 65.2,
+      "recommended_bid_fmt": "5.69M€",
+      "max_bid_fmt": "5.31M€",
+      "reasons": [
+        "Precio ligeramente inferior al valor de mercado (5.7% de margen)",
+        "Rendimiento excelente: 7.0 pts/jornada de media",
+        "1 ofertas activas — hay competencia"
+      ],
+      "status": "ok",
+      "average_points": 7,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t450/p2005/256x256/p2005_t450_1_001_000.png"
+    },
+    {
+      "name": "Unai Núñez",
+      "nickname": "Nuñez",
+      "position": "Defensa",
+      "sale_price_fmt": "7.23M€",
+      "market_value_fmt": "7.86M€",
+      "score": 60.2,
+      "recommended_bid_fmt": "7.37M€",
+      "max_bid_fmt": "7.08M€",
+      "reasons": [
+        "Precio ligeramente inferior al valor de mercado (8.8% de margen)",
+        "Buen rendimiento: 5.7 pts/jornada de media",
+        "1 ofertas activas — hay competencia"
+      ],
+      "status": "ok",
+      "average_points": 5.67,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t191/p2930/256x256/p2930_t191_1_001_000.png"
+    },
+    {
+      "name": "Juan Foyth",
+      "nickname": "Foyth",
+      "position": "Defensa",
+      "sale_price_fmt": "17.56M€",
+      "market_value_fmt": "18.99M€",
+      "score": 60.2,
+      "recommended_bid_fmt": "17.92M€",
+      "max_bid_fmt": "17.09M€",
+      "reasons": [
+        "Precio ligeramente inferior al valor de mercado (8.1% de margen)",
+        "Buen rendimiento: 5.3 pts/jornada de media",
+        "1 ofertas activas — hay competencia"
+      ],
+      "status": "ok",
+      "average_points": 5.33,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t449/p2470/256x256/p2470_t449_1_001_000.png"
+    }
+  ],
+  "sell_recommendations": [
+    {
+      "name": "Wojciech Szczesny",
+      "nickname": "Szczesny",
+      "position": "Portero",
+      "market_value_fmt": "1.63M€",
+      "sell_score": 55,
+      "reasons": [
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin puntuar última jornada con media baja"
+      ]
+    }
+  ],
+  "clause_risks": [
+    {
+      "name": "Wojciech Szczesny",
+      "nickname": "Szczesny",
+      "position": "Portero",
+      "risk_level": "ALTO",
+      "risk_score": 50.0,
+      "buyout_clause_fmt": "4.57M€",
+      "reasons": [
+        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
+        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
+        "Cláusula 4.57M€ elevada respecto al valor 1.63M€ — protección moderada"
+      ],
+      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+    },
+    {
+      "name": "Marc Pubill",
+      "nickname": "Marc Pubill",
+      "position": "Defensa",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "54.87M€",
+      "reasons": [
+        "Cláusula 54.87M€ muy cercana al valor de mercado 53.74M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Einar Galilea",
+      "nickname": "Einar",
+      "position": "Defensa",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "4.44M€",
+      "reasons": [
+        "Cláusula 4.44M€ muy cercana al valor de mercado 4.44M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Ander Barrenetxea Muguruza",
+      "nickname": "Barrenetxea",
+      "position": "Centrocampista",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "26.41M€",
+      "reasons": [
+        "Cláusula 26.41M€ muy cercana al valor de mercado 25.38M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Iago Aspas",
+      "nickname": "Iago Aspas",
+      "position": "Delantero",
+      "risk_level": "BAJO",
+      "risk_score": 20.0,
+      "buyout_clause_fmt": "7.10M€",
+      "reasons": [
+        "Cláusula 7.10M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    }
+  ],
+  "goalkeeper": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
 }
