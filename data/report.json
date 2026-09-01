@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T09:49:49.418685",
+  "generated_at": "2026-09-01T11:23:14.955241",
   "summary": {
     "team_value": 214135172,
     "team_value_fmt": "214.14M€",
@@ -17,17 +17,29 @@
       "position": "Defensa",
       "sale_price_fmt": "2.59M€",
       "market_value_fmt": "3.26M€",
-      "score": 74.0,
+      "score": 81.5,
       "recommended_bid_fmt": "2.72M€",
       "max_bid_fmt": "3.10M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 2.59M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio 2.59M€ muy por debajo del valor de mercado 3.26M€ (+26.0%)",
-        "Rendimiento excelente: 9.7 pts/jornada de media",
-        "1 ofertas activas — hay competencia"
+        "Precio 2.59M€ muy por debajo del valor 3.26M€ (+26.0%)",
+        "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 9.7 pts/jornada",
+        "1 ofertas activas"
       ],
       "status": "ok",
       "average_points": 9.67,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t178/p2843/256x256/p2843_t178_1_001_000 (1).png"
+      "trend": {
+        "max_value": 12000000,
+        "max_value_fmt": "12.00M€",
+        "min_value": 12000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     },
     {
       "name": "Aitor Paredes",
@@ -35,17 +47,29 @@
       "position": "Defensa",
       "sale_price_fmt": "7.35M€",
       "market_value_fmt": "7.81M€",
-      "score": 65.2,
+      "score": 72.8,
       "recommended_bid_fmt": "7.49M€",
       "max_bid_fmt": "7.03M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 7.35M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor de mercado (6.4% de margen)",
-        "Rendimiento excelente: 6.3 pts/jornada de media",
-        "1 ofertas activas — hay competencia"
+        "Precio ligeramente inferior al valor (6.4% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 16.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 6.3 pts/jornada",
+        "1 ofertas activas"
       ],
       "status": "ok",
       "average_points": 6.33,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t174/p2315/256x256/p2315_t174_1_001_000 (1).png"
+      "trend": {
+        "max_value": 16000000,
+        "max_value_fmt": "16.00M€",
+        "min_value": 16000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     },
     {
       "name": "Abel Bretones",
@@ -53,17 +77,29 @@
       "position": "Defensa",
       "sale_price_fmt": "5.58M€",
       "market_value_fmt": "5.90M€",
-      "score": 65.2,
+      "score": 72.8,
       "recommended_bid_fmt": "5.69M€",
       "max_bid_fmt": "5.31M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 5.58M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor de mercado (5.7% de margen)",
-        "Rendimiento excelente: 7.0 pts/jornada de media",
-        "1 ofertas activas — hay competencia"
+        "Precio ligeramente inferior al valor (5.7% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 7.0 pts/jornada",
+        "1 ofertas activas"
       ],
       "status": "ok",
       "average_points": 7,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t450/p2005/256x256/p2005_t450_1_001_000.png"
+      "trend": {
+        "max_value": 10000000,
+        "max_value_fmt": "10.00M€",
+        "min_value": 10000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     },
     {
       "name": "Unai Núñez",
@@ -71,17 +107,29 @@
       "position": "Defensa",
       "sale_price_fmt": "7.23M€",
       "market_value_fmt": "7.86M€",
-      "score": 60.2,
+      "score": 67.8,
       "recommended_bid_fmt": "7.37M€",
       "max_bid_fmt": "7.08M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 7.23M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor de mercado (8.8% de margen)",
-        "Buen rendimiento: 5.7 pts/jornada de media",
-        "1 ofertas activas — hay competencia"
+        "Precio ligeramente inferior al valor (8.8% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 8.00M€",
+        "Tendencia reciente: estable",
+        "Buen rendimiento: 5.7 pts/jornada",
+        "1 ofertas activas"
       ],
       "status": "ok",
       "average_points": 5.67,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t191/p2930/256x256/p2930_t191_1_001_000.png"
+      "trend": {
+        "max_value": 8000000,
+        "max_value_fmt": "8.00M€",
+        "min_value": 8000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     },
     {
       "name": "Juan Foyth",
@@ -89,17 +137,29 @@
       "position": "Defensa",
       "sale_price_fmt": "17.56M€",
       "market_value_fmt": "18.99M€",
-      "score": 60.2,
+      "score": 67.8,
       "recommended_bid_fmt": "17.92M€",
       "max_bid_fmt": "17.09M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 17.56M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor de mercado (8.1% de margen)",
-        "Buen rendimiento: 5.3 pts/jornada de media",
-        "1 ofertas activas — hay competencia"
+        "Precio ligeramente inferior al valor (8.1% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
+        "Tendencia reciente: estable",
+        "Buen rendimiento: 5.3 pts/jornada",
+        "1 ofertas activas"
       ],
       "status": "ok",
       "average_points": 5.33,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t449/p2470/256x256/p2470_t449_1_001_000.png"
+      "trend": {
+        "max_value": 7000000,
+        "max_value_fmt": "7.00M€",
+        "min_value": 7000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     }
   ],
   "sell_recommendations": [
