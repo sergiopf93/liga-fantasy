@@ -161,3 +161,34 @@ class ClauseRisk:
     risk_score: float     # 0-100
     reasons: List[str] = field(default_factory=list)
     recommendation: str = ""
+
+
+@dataclass
+class MarketPlayerV2(MarketPlayer):
+    """Versión extendida con tipo de mercado"""
+    direct_offer: bool = False
+
+    @classmethod
+    def from_api(cls, entry: dict) -> "MarketPlayerV2":
+        base = super().from_api(entry)
+        pt = entry.get("playerTeam", {})
+        sale = entry.get("salePrice", 0)
+        clause = pt.get("buyoutClause", 0)
+        direct = entry.get("directOffer", False)
+        # Si salePrice == buyoutClause también es clausulazo
+        is_clause = direct or (clause > 0 and sale >= clause * 0.99)
+        obj = cls(
+            market_id=base.market_id,
+            player=base.player,
+            sale_price=base.sale_price,
+            buyout_clause=base.buyout_clause,
+            expiration_date=base.expiration_date,
+            seller_manager=base.seller_manager,
+            seller_team_id=base.seller_team_id,
+            seller_team_value=base.seller_team_value,
+            seller_team_points=base.seller_team_points,
+            is_shielded=base.is_shielded,
+            number_of_offers=base.number_of_offers,
+            direct_offer=is_clause,
+        )
+        return obj
