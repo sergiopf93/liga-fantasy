@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-02T12:14:35.406731",
+  "generated_at": "2026-09-02T14:00:54.801726",
   "summary": {
-    "team_value": 211527074,
-    "team_value_fmt": "211.53M€",
-    "budget": 36656900,
-    "budget_fmt": "36.66M€",
+    "team_value": 195082238,
+    "team_value_fmt": "195.08M€",
+    "budget": 59256129,
+    "budget_fmt": "59.26M€",
     "points": 118,
     "goalkeeper_risk": "ALTO",
     "goalkeeper_count": 1,
@@ -35,36 +35,6 @@
         "max_value": 12000000,
         "max_value_fmt": "12.00M€",
         "min_value": 12000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Aitor Paredes",
-      "nickname": "Paredes",
-      "position": "Defensa",
-      "sale_price_fmt": "7.35M€",
-      "market_value_fmt": "8.25M€",
-      "score": 72.8,
-      "recommended_bid_fmt": "7.71M€",
-      "max_bid_fmt": "7.84M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 7.35M€. Puja sin superar 7.84M€.",
-      "reasons": [
-        "Precio ligeramente inferior al valor (12.4% margen)",
-        "Potencial limitado: ya cerca de su máximo histórico 16.00M€",
-        "Tendencia reciente: estable",
-        "Rendimiento excelente: 6.3 pts/jornada",
-        "1 ofertas activas"
-      ],
-      "status": "ok",
-      "average_points": 6.33,
-      "trend": {
-        "max_value": 16000000,
-        "max_value_fmt": "16.00M€",
-        "min_value": 16000000,
         "recent_trend": "estable",
         "trend_pct": 0.0,
         "recovery_potential": 0.0,
@@ -159,6 +129,35 @@
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
+    },
+    {
+      "name": "Mario Soriano",
+      "nickname": "Mario Soriano",
+      "position": "Centrocampista",
+      "sale_price_fmt": "26.88M€",
+      "market_value_fmt": "27.22M€",
+      "score": 66.0,
+      "recommended_bid_fmt": "N/D",
+      "max_bid_fmt": "N/D",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 26.88M€. Puja sin superar N/D.",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 6.3 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 6.33,
+      "trend": {
+        "max_value": 7000000,
+        "max_value_fmt": "7.00M€",
+        "min_value": 7000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
     }
   ],
   "sell_recommendations": [
@@ -226,15 +225,14 @@
       "recommendation": "Riesgo bajo. Sin acción necesaria."
     },
     {
-      "name": "Ángel Pérez",
-      "nickname": "Ángel Pérez",
-      "position": "Delantero",
+      "name": "Sergio Canales",
+      "nickname": "Canales",
+      "position": "Centrocampista",
       "risk_level": "BAJO",
-      "risk_score": 15.0,
-      "buyout_clause_fmt": "12.22M€",
+      "risk_score": 12.0,
+      "buyout_clause_fmt": "30.86M€",
       "reasons": [
-        "Cláusula 12.22M€ elevada respecto al valor 9.56M€ — protección moderada",
-        "Alto rendimiento (8.0 pts/j) — jugador codiciado"
+        "Cláusula 30.86M€ razonablemente ejecutable"
       ],
       "recommendation": "Riesgo bajo. Sin acción necesaria."
     }
