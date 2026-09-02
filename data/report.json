@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T14:07:00.756577",
+  "generated_at": "2026-09-02T14:17:07.777272",
   "summary": {
     "team_value": 195082238,
     "team_value_fmt": "195.08M€",
@@ -20,8 +20,8 @@
       "score": 81.5,
       "recommended_bid_fmt": "2.72M€",
       "max_bid_fmt": "4.19M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 2.59M€. Puja sin superar 4.19M€.",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Precio fijo 2.59M€ al rival fruizmata7. Sin puja.",
       "reasons": [
         "Precio 2.59M€ muy por debajo del valor 4.42M€ (+70.6%)",
         "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
@@ -50,8 +50,8 @@
       "score": 72.8,
       "recommended_bid_fmt": "5.86M€",
       "max_bid_fmt": "6.00M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 5.58M€. Puja sin superar 6.00M€.",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Precio fijo 5.58M€ al rival JavierRH. Sin puja.",
       "reasons": [
         "Precio ligeramente inferior al valor (13.2% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
@@ -81,7 +81,7 @@
       "recommended_bid_fmt": "N/D",
       "max_bid_fmt": "N/D",
       "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 1.83M€. Puja sin superar N/D.",
+      "strategy_note": "SUBASTA — Precio salida 1.83M€ de . Puja máxima recomendada: N/D.",
       "reasons": [
         "Precio ligeramente inferior al valor (6.0% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 8.00M€",
@@ -109,8 +109,8 @@
       "score": 67.8,
       "recommended_bid_fmt": "8.20M€",
       "max_bid_fmt": "8.40M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 7.81M€. Puja sin superar 8.40M€.",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Precio fijo 7.81M€ al rival Doggy Sanxe. Sin puja.",
       "reasons": [
         "Precio ligeramente inferior al valor (13.2% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 20.00M€",
@@ -140,7 +140,7 @@
       "recommended_bid_fmt": "N/D",
       "max_bid_fmt": "N/D",
       "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 26.88M€. Puja sin superar N/D.",
+      "strategy_note": "SUBASTA — Precio salida 26.88M€ de . Puja máxima recomendada: N/D.",
       "reasons": [
         "Precio en línea con el valor de mercado",
         "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
@@ -166,6 +166,17 @@
       "nickname": "Szczesny",
       "position": "Portero",
       "market_value_fmt": "1.60M€",
+      "sell_score": 55,
+      "reasons": [
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin puntuar última jornada con media baja"
+      ]
+    },
+    {
+      "name": "Carlos Álvarez",
+      "nickname": "C. Alvarez",
+      "position": "Centrocampista",
+      "market_value_fmt": "13.44M€",
       "sell_score": 55,
       "reasons": [
         "Bajo rendimiento: 0.0 pts/jornada",
