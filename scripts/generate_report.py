@@ -191,17 +191,18 @@ def run():
             rows = standing if isinstance(standing, list) else standing.get("teams", standing.get("data", []))
             for entry in rows:
                 try:
-                    manager = entry.get("manager", {})
-                    manager_name = manager.get("managerName", "") if isinstance(manager, dict) else str(manager)
-                    tid = str(entry.get("id", ""))
+                    team = entry.get("team", entry)
+                    manager = team.get("manager", {})
+                    manager_name = manager.get("managerName", "") if isinstance(manager, dict) else ""
+                    tid = str(team.get("id", ""))
                     if tid == TEAM_ID:
                         continue
                     rivals_out.append({
                         "team_id": tid,
-                        "manager": manager_name or entry.get("managerName", ""),
-                        "team_value": entry.get("teamValue", 0),
-                        "team_value_fmt": fmt(entry.get("teamValue", 0)),
-                        "points": entry.get("teamPoints", 0),
+                        "manager": manager_name,
+                        "team_value": team.get("teamValue", 0),
+                        "team_value_fmt": fmt(team.get("teamValue", 0)),
+                        "points": team.get("teamPoints", entry.get("points", 0)),
                         "budget_fmt": "N/D",
                     })
                 except Exception as e:
