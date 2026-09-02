@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T12:06:17.849972",
+  "generated_at": "2026-09-02T12:14:35.406731",
   "summary": {
     "team_value": 211527074,
     "team_value_fmt": "211.53M€",
@@ -10,7 +10,157 @@
     "goalkeeper_count": 1,
     "goalkeeper_recommendation": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
+  "top_buys": [
+    {
+      "name": "Xavi Espart",
+      "nickname": "Xavi Espart",
+      "position": "Defensa",
+      "sale_price_fmt": "2.59M€",
+      "market_value_fmt": "4.42M€",
+      "score": 81.5,
+      "recommended_bid_fmt": "2.72M€",
+      "max_bid_fmt": "4.19M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 2.59M€. Puja sin superar 4.19M€.",
+      "reasons": [
+        "Precio 2.59M€ muy por debajo del valor 4.42M€ (+70.6%)",
+        "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 9.7 pts/jornada",
+        "1 ofertas activas"
+      ],
+      "status": "ok",
+      "average_points": 9.67,
+      "trend": {
+        "max_value": 12000000,
+        "max_value_fmt": "12.00M€",
+        "min_value": 12000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Aitor Paredes",
+      "nickname": "Paredes",
+      "position": "Defensa",
+      "sale_price_fmt": "7.35M€",
+      "market_value_fmt": "8.25M€",
+      "score": 72.8,
+      "recommended_bid_fmt": "7.71M€",
+      "max_bid_fmt": "7.84M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 7.35M€. Puja sin superar 7.84M€.",
+      "reasons": [
+        "Precio ligeramente inferior al valor (12.4% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 16.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 6.3 pts/jornada",
+        "1 ofertas activas"
+      ],
+      "status": "ok",
+      "average_points": 6.33,
+      "trend": {
+        "max_value": 16000000,
+        "max_value_fmt": "16.00M€",
+        "min_value": 16000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Abel Bretones",
+      "nickname": "Abel Bretones",
+      "position": "Defensa",
+      "sale_price_fmt": "5.58M€",
+      "market_value_fmt": "6.31M€",
+      "score": 72.8,
+      "recommended_bid_fmt": "5.86M€",
+      "max_bid_fmt": "6.00M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 5.58M€. Puja sin superar 6.00M€.",
+      "reasons": [
+        "Precio ligeramente inferior al valor (13.2% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 7.0 pts/jornada",
+        "1 ofertas activas"
+      ],
+      "status": "ok",
+      "average_points": 7,
+      "trend": {
+        "max_value": 10000000,
+        "max_value_fmt": "10.00M€",
+        "min_value": 10000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Robert Navarro",
+      "nickname": "Navarro",
+      "position": "Centrocampista",
+      "sale_price_fmt": "1.83M€",
+      "market_value_fmt": "1.93M€",
+      "score": 69.8,
+      "recommended_bid_fmt": "N/D",
+      "max_bid_fmt": "N/D",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 1.83M€. Puja sin superar N/D.",
+      "reasons": [
+        "Precio ligeramente inferior al valor (6.0% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 8.00M€",
+        "Tendencia reciente: estable",
+        "Buen rendimiento: 5.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5,
+      "trend": {
+        "max_value": 8000000,
+        "max_value_fmt": "8.00M€",
+        "min_value": 8000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Julen Agirrezabala",
+      "nickname": "Agirrezabala",
+      "position": "Portero",
+      "sale_price_fmt": "7.81M€",
+      "market_value_fmt": "8.84M€",
+      "score": 67.8,
+      "recommended_bid_fmt": "8.20M€",
+      "max_bid_fmt": "8.40M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 7.81M€. Puja sin superar 8.40M€.",
+      "reasons": [
+        "Precio ligeramente inferior al valor (13.2% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 20.00M€",
+        "Tendencia reciente: estable",
+        "Buen rendimiento: 5.7 pts/jornada",
+        "1 ofertas activas"
+      ],
+      "status": "ok",
+      "average_points": 5.67,
+      "trend": {
+        "max_value": 20000000,
+        "max_value_fmt": "20.00M€",
+        "min_value": 20000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    }
+  ],
   "sell_recommendations": [
     {
       "name": "Wojciech Szczesny",
