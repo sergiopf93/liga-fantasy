@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T21:29:46.135785",
+  "generated_at": "2026-09-02T06:47:09.340389",
   "summary": {
     "team_value": 214112607,
     "team_value_fmt": "214.11M€",
@@ -16,14 +16,14 @@
       "nickname": "Xavi Espart",
       "position": "Defensa",
       "sale_price_fmt": "2.59M€",
-      "market_value_fmt": "3.26M€",
+      "market_value_fmt": "4.47M€",
       "score": 81.5,
       "recommended_bid_fmt": "2.72M€",
-      "max_bid_fmt": "3.09M€",
+      "max_bid_fmt": "4.24M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 2.59M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio 2.59M€ muy por debajo del valor 3.26M€ (+25.9%)",
+        "Precio 2.59M€ muy por debajo del valor 4.47M€ (+72.6%)",
         "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 9.7 pts/jornada",
@@ -46,14 +46,14 @@
       "nickname": "Paredes",
       "position": "Defensa",
       "sale_price_fmt": "7.35M€",
-      "market_value_fmt": "7.81M€",
+      "market_value_fmt": "8.28M€",
       "score": 72.8,
-      "recommended_bid_fmt": "7.49M€",
-      "max_bid_fmt": "7.03M€",
+      "recommended_bid_fmt": "7.71M€",
+      "max_bid_fmt": "7.87M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 7.35M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor (6.3% margen)",
+        "Precio ligeramente inferior al valor (12.8% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 16.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 6.3 pts/jornada",
@@ -76,14 +76,14 @@
       "nickname": "Abel Bretones",
       "position": "Defensa",
       "sale_price_fmt": "5.58M€",
-      "market_value_fmt": "5.89M€",
+      "market_value_fmt": "6.34M€",
       "score": 72.8,
-      "recommended_bid_fmt": "5.69M€",
-      "max_bid_fmt": "5.31M€",
+      "recommended_bid_fmt": "5.86M€",
+      "max_bid_fmt": "6.02M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 5.58M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor (5.7% margen)",
+        "Precio ligeramente inferior al valor (13.7% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 7.0 pts/jornada",
@@ -102,18 +102,47 @@
       }
     },
     {
+      "name": "Robert Navarro",
+      "nickname": "Navarro",
+      "position": "Centrocampista",
+      "sale_price_fmt": "1.83M€",
+      "market_value_fmt": "1.94M€",
+      "score": 69.8,
+      "recommended_bid_fmt": "N/D",
+      "max_bid_fmt": "N/D",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Precio fijo 0.00M€. Solo comprar si el jugador vale claramente más. Sin negociación posible.",
+      "reasons": [
+        "Precio ligeramente inferior al valor (6.3% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 8.00M€",
+        "Tendencia reciente: estable",
+        "Buen rendimiento: 5.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5,
+      "trend": {
+        "max_value": 8000000,
+        "max_value_fmt": "8.00M€",
+        "min_value": 8000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
       "name": "Unai Núñez",
       "nickname": "Nuñez",
       "position": "Defensa",
       "sale_price_fmt": "7.23M€",
-      "market_value_fmt": "7.86M€",
+      "market_value_fmt": "8.25M€",
       "score": 67.8,
-      "recommended_bid_fmt": "7.37M€",
-      "max_bid_fmt": "7.07M€",
+      "recommended_bid_fmt": "7.59M€",
+      "max_bid_fmt": "7.83M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 7.23M€. Puja inteligente: no superar el valor real del jugador.",
       "reasons": [
-        "Precio ligeramente inferior al valor (8.8% margen)",
+        "Precio ligeramente inferior al valor (14.1% margen)",
         "Potencial limitado: ya cerca de su máximo histórico 8.00M€",
         "Tendencia reciente: estable",
         "Buen rendimiento: 5.7 pts/jornada",
@@ -130,36 +159,6 @@
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
-    },
-    {
-      "name": "Julen Agirrezabala",
-      "nickname": "Agirrezabala",
-      "position": "Portero",
-      "sale_price_fmt": "7.81M€",
-      "market_value_fmt": "8.40M€",
-      "score": 67.8,
-      "recommended_bid_fmt": "7.97M€",
-      "max_bid_fmt": "7.56M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 7.81M€. Puja inteligente: no superar el valor real del jugador.",
-      "reasons": [
-        "Precio ligeramente inferior al valor (7.5% margen)",
-        "Potencial limitado: ya cerca de su máximo histórico 20.00M€",
-        "Tendencia reciente: estable",
-        "Buen rendimiento: 5.7 pts/jornada",
-        "1 ofertas activas"
-      ],
-      "status": "ok",
-      "average_points": 5.67,
-      "trend": {
-        "max_value": 20000000,
-        "max_value_fmt": "20.00M€",
-        "min_value": 20000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
     }
   ],
   "sell_recommendations": [
@@ -167,7 +166,7 @@
       "name": "Wojciech Szczesny",
       "nickname": "Szczesny",
       "position": "Portero",
-      "market_value_fmt": "1.63M€",
+      "market_value_fmt": "1.60M€",
       "sell_score": 55,
       "reasons": [
         "Bajo rendimiento: 0.0 pts/jornada",
@@ -186,7 +185,7 @@
       "reasons": [
         "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
         "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 4.57M€ elevada respecto al valor 1.63M€ — protección moderada"
+        "Cláusula 4.57M€ elevada respecto al valor 1.60M€ — protección moderada"
       ],
       "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
     },
@@ -198,7 +197,7 @@
       "risk_score": 33.0,
       "buyout_clause_fmt": "54.87M€",
       "reasons": [
-        "Cláusula 54.87M€ muy cercana al valor de mercado 53.73M€ — fácil de ejecutar"
+        "Cláusula 54.87M€ muy cercana al valor de mercado 53.14M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -208,21 +207,9 @@
       "position": "Defensa",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "4.44M€",
+      "buyout_clause_fmt": "4.45M€",
       "reasons": [
-        "Cláusula 4.44M€ muy cercana al valor de mercado 4.44M€ — fácil de ejecutar"
-      ],
-      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
-      "name": "Ander Barrenetxea Muguruza",
-      "nickname": "Barrenetxea",
-      "position": "Centrocampista",
-      "risk_level": "MEDIO",
-      "risk_score": 25.0,
-      "buyout_clause_fmt": "26.41M€",
-      "reasons": [
-        "Cláusula 26.41M€ muy cercana al valor de mercado 25.38M€ — fácil de ejecutar"
+        "Cláusula 4.45M€ muy cercana al valor de mercado 4.45M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -235,6 +222,19 @@
       "buyout_clause_fmt": "7.10M€",
       "reasons": [
         "Cláusula 7.10M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    },
+    {
+      "name": "Ángel Pérez",
+      "nickname": "Ángel Pérez",
+      "position": "Delantero",
+      "risk_level": "BAJO",
+      "risk_score": 15.0,
+      "buyout_clause_fmt": "12.22M€",
+      "reasons": [
+        "Cláusula 12.22M€ elevada respecto al valor 9.59M€ — protección moderada",
+        "Alto rendimiento (8.0 pts/j) — jugador codiciado"
       ],
       "recommendation": "Riesgo bajo. Sin acción necesaria."
     }
