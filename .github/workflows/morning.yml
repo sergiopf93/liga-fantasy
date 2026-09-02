@@ -1,7 +1,7 @@
-name: Informe diario 20:00
+name: Actualización 7:00
 on:
   schedule:
-    - cron: '0 18 * * *'
+    - cron: '0 5 * * *'
   workflow_dispatch:
 jobs:
   run:
@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pyyaml
-      - name: Generar informe
+      - name: Actualización matutina
         env:
           LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
@@ -25,7 +25,7 @@ jobs:
           git config user.name "Fantasy Bot"
           git config user.email "bot@liga-fantasy"
           git add data/
-          git diff --staged --quiet || git commit -m "Informe 20:00 - $(date '+%d/%m %H:%M')"
+          git diff --staged --quiet || git commit -m "Actualización 7:00 - $(date '+%d/%m %H:%M')"
           git push
       - name: Preparar site
         run: |

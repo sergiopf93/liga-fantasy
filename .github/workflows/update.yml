@@ -1,38 +1,39 @@
 name: Actualización 12:00
-
 on:
   schedule:
-    - cron: '0 10 * * *'   # 12:00 hora España
+    - cron: '0 10 * * *'
   workflow_dispatch:
-
 jobs:
-  update:
+  run:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Configurar Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Instalar dependencias
-        run: pip install requests pyyaml
-
+      - run: pip install requests pyyaml
       - name: Actualizar datos
         env:
           LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
           LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
         run: python scripts/generate_report.py
-
-      - name: Commit y push
+      - name: Commit
         run: |
           git config user.name "Fantasy Bot"
           git config user.email "bot@liga-fantasy"
           git add data/
-          git diff --staged --quiet || git commit -m "Actualización 12:00 - $(date '+%d/%m %H:%M')"
+          git diff --staged --quiet || git commit -m "Update 12:00 - $(date '+%d/%m %H:%M')"
           git push
+      - name: Preparar site
+        run: |
+          mkdir -p _site/data
+          cp frontend/index.html _site/index.html
+          cp data/*.json _site/data/ 2>/dev/null || true
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
