@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-02T06:55:55.434201",
+  "generated_at": "2026-09-02T12:05:03.828979",
   "summary": {
-    "team_value": 214112607,
-    "team_value_fmt": "214.11M€",
-    "budget": 35756900,
-    "budget_fmt": "35.76M€",
-    "points": 109,
+    "team_value": 211527074,
+    "team_value_fmt": "211.53M€",
+    "budget": 36656900,
+    "budget_fmt": "36.66M€",
+    "points": 118,
     "goalkeeper_risk": "ALTO",
     "goalkeeper_count": 1,
     "goalkeeper_recommendation": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
@@ -47,7 +47,7 @@
       "risk_score": 33.0,
       "buyout_clause_fmt": "54.87M€",
       "reasons": [
-        "Cláusula 54.87M€ muy cercana al valor de mercado 53.14M€ — fácil de ejecutar"
+        "Cláusula 54.87M€ muy cercana al valor de mercado 53.08M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -83,7 +83,7 @@
       "risk_score": 15.0,
       "buyout_clause_fmt": "12.22M€",
       "reasons": [
-        "Cláusula 12.22M€ elevada respecto al valor 9.59M€ — protección moderada",
+        "Cláusula 12.22M€ elevada respecto al valor 9.56M€ — protección moderada",
         "Alto rendimiento (8.0 pts/j) — jugador codiciado"
       ],
       "recommendation": "Riesgo bajo. Sin acción necesaria."
