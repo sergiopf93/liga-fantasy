@@ -11,15 +11,15 @@ class Player:
     id: str
     name: str
     nickname: str
-    position: str          # "Portero", "Defensa", "Centrocampista", "Delantero"
-    position_id: int       # 1=POR, 2=DEF, 3=MID, 4=DEL
+    position: str
+    position_id: int
     team_id: int
-    market_value: int      # valor de mercado en €
-    points: int            # puntos totales temporada
-    week_points: int       # puntos última jornada
+    market_value: int
+    points: int
+    week_points: int
     average_points: float
     last_season_points: int
-    status: str            # "ok", "injured", "out_of_league", "doubtful"
+    status: str
     image_url: str = ""
     buyout_clause: int = 0
     player_team_id: str = ""
@@ -69,12 +69,12 @@ class MyTeam:
         if money_data:
             budget = money_data.get("teamMoney", 0) or money_data.get("money", 0)
         return cls(
-            team_id=team.get("id", ""),
+            team_id=str(team.get("id", "")),
             team_value=team.get("teamValue", 0),
             team_points=team.get("teamPoints", 0),
             budget=budget,
             players=players,
-            formation=data.get("formation", {}).get("tacticalFormation", []),
+            formation=formation_data.get("tacticalFormation", []),
             updated_at=data.get("updatedAt", ""),
         )
 
@@ -92,6 +92,7 @@ class MarketPlayer:
     seller_team_points: int
     is_shielded: bool
     number_of_offers: int
+    direct_offer: bool = False   # True si salePrice == buyoutClause (clausulazo)
 
     @classmethod
     def from_api(cls, entry: dict) -> "MarketPlayer":
@@ -100,6 +101,11 @@ class MarketPlayer:
         seller = entry.get("sellerTeam", {})
         manager = seller.get("manager", {})
         images = pm.get("images", {}).get("transparent", {})
+
+        sale   = entry.get("salePrice", 0)
+        clause = pt.get("buyoutClause", 0)
+        is_clause = clause > 0 and sale >= clause * 0.98
+
         player = Player(
             id=pm.get("id", ""),
             name=pm.get("name", ""),
@@ -114,14 +120,14 @@ class MarketPlayer:
             last_season_points=pm.get("lastSeasonPoints", 0),
             status=pm.get("playerStatus", "ok"),
             image_url=images.get("256x256", ""),
-            buyout_clause=pt.get("buyoutClause", 0),
+            buyout_clause=clause,
             player_team_id=pt.get("playerTeamId", ""),
         )
         return cls(
             market_id=str(entry.get("id", "")),
             player=player,
-            sale_price=entry.get("salePrice", 0),
-            buyout_clause=pt.get("buyoutClause", 0),
+            sale_price=sale,
+            buyout_clause=clause,
             expiration_date=entry.get("expirationDate", ""),
             seller_manager=manager.get("managerName", ""),
             seller_team_id=str(seller.get("id", "")),
@@ -129,6 +135,7 @@ class MarketPlayer:
             seller_team_points=seller.get("teamPoints", 0),
             is_shielded=pt.get("isShielded", False),
             number_of_offers=entry.get("numberOfOffers", 0),
+            direct_offer=is_clause,
         )
 
 
@@ -145,9 +152,12 @@ class RivalTeam:
     @classmethod
     def from_standing(cls, entry: dict) -> "RivalTeam":
         manager = entry.get("manager", {})
+        manager_name = ""
+        if isinstance(manager, dict):
+            manager_name = manager.get("managerName", "")
         return cls(
             team_id=str(entry.get("id", "")),
-            manager_name=manager.get("managerName", entry.get("managerName", "")),
+            manager_name=manager_name or entry.get("managerName", ""),
             manager_id=str(entry.get("managerId", "")),
             team_value=entry.get("teamValue", 0),
             team_points=entry.get("teamPoints", 0),
@@ -157,38 +167,7 @@ class RivalTeam:
 @dataclass
 class ClauseRisk:
     player: Player
-    risk_level: str       # "BAJO", "MEDIO", "ALTO", "CRÍTICO"
-    risk_score: float     # 0-100
+    risk_level: str
+    risk_score: float
     reasons: List[str] = field(default_factory=list)
     recommendation: str = ""
-
-
-@dataclass
-class MarketPlayerV2(MarketPlayer):
-    """Versión extendida con tipo de mercado"""
-    direct_offer: bool = False
-
-    @classmethod
-    def from_api(cls, entry: dict) -> "MarketPlayerV2":
-        base = super().from_api(entry)
-        pt = entry.get("playerTeam", {})
-        sale = entry.get("salePrice", 0)
-        clause = pt.get("buyoutClause", 0)
-        direct = entry.get("directOffer", False)
-        # Si salePrice == buyoutClause también es clausulazo
-        is_clause = direct or (clause > 0 and sale >= clause * 0.99)
-        obj = cls(
-            market_id=base.market_id,
-            player=base.player,
-            sale_price=base.sale_price,
-            buyout_clause=base.buyout_clause,
-            expiration_date=base.expiration_date,
-            seller_manager=base.seller_manager,
-            seller_team_id=base.seller_team_id,
-            seller_team_value=base.seller_team_value,
-            seller_team_points=base.seller_team_points,
-            is_shielded=base.is_shielded,
-            number_of_offers=base.number_of_offers,
-            direct_offer=is_clause,
-        )
-        return obj
