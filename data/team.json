@@ -10,7 +10,7 @@
     4,
     2
   ],
-  "updated_at": "2026-09-02T15:51:13+02:00",
+  "updated_at": "2026-09-02T16:10:49+02:00",
   "players": [
     {
       "id": "2783",
@@ -131,6 +131,31 @@
         "max_value": 11000000,
         "max_value_fmt": "11.00M€",
         "min_value": 11000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "id": "2616",
+      "name": "Carlos Álvarez",
+      "nickname": "C. Alvarez",
+      "position": "Centrocampista",
+      "position_id": 3,
+      "market_value": 13436516,
+      "market_value_fmt": "13.44M€",
+      "buyout_clause": 31126393,
+      "buyout_clause_fmt": "31.13M€",
+      "points": 0,
+      "week_points": 0,
+      "average_points": 0.0,
+      "status": "doubtful",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t855/p2616/256x256/p2616_t855_1_001_000.png",
+      "trend": {
+        "max_value": 6000000,
+        "max_value_fmt": "6.00M€",
+        "min_value": 6000000,
         "recent_trend": "estable",
         "trend_pct": 0.0,
         "recovery_potential": 0.0,
