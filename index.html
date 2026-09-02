@@ -119,8 +119,8 @@
   <div class="section" id="sec-mercado">
     <div class="section-title">Mercado</div>
     <div class="tab-bar">
-      <div class="tab-btn active" onclick="switchMarketTab('subastas',this)">🏷️ Subastas</div>
-      <div class="tab-btn" onclick="switchMarketTab('clausulazos',this)">🔒 Clausulazos</div>
+      <div class="tab-btn active" onclick="switchMarketTab('subastas',this)">🏷️ Mercado</div>
+      <div class="tab-btn" onclick="switchMarketTab('clausulazos',this)">🔒 Rivales</div>
     </div>
     <div id="market-subastas"></div>
     <div id="market-clausulazos" style="display:none"></div>
@@ -368,8 +368,8 @@ async function init() {
   renderSummary(report, team);
   renderTodayActions(report);
   renderTeam(team);
-  renderMarketList(market?.subastas, 'market-subastas', 'subastas');
-  renderMarketList(market?.clausulazos, 'market-clausulazos', 'clausulazos');
+  renderMarketList(market?.subastas, 'market-subastas', 'jugadores en el mercado');
+  renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderOpportunities(market);
 }
