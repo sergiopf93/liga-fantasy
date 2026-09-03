@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T21:26:12.853962",
+  "updated_at": "2026-09-03T07:51:17.591606",
   "rivals": [
     {
       "team_id": "37868413",
@@ -12,16 +12,16 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 177412640,
-      "team_value_fmt": "177.41M€",
+      "team_value": 172758620,
+      "team_value_fmt": "172.76M€",
       "points": 134,
       "budget_fmt": "N/D"
     },
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 251937298,
-      "team_value_fmt": "251.94M€",
+      "team_value": 253707756,
+      "team_value_fmt": "253.71M€",
       "points": 122,
       "budget_fmt": "N/D"
     },
