@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-03T13:20:19.562153",
-  "count": 66,
+  "updated_at": "2026-09-03T13:30:44.318581",
+  "count": 65,
   "subastas": [
     {
       "market_id": "139558944",
@@ -44,64 +44,10 @@
         "max_value": 1519179,
         "max_value_fmt": "1.52M€",
         "min_value": 564678,
-        "first_value": 600000,
-        "first_value_fmt": "0.60M€",
         "recent_trend": "subiendo",
         "trend_pct": 84.9,
         "recovery_potential": 0.0,
-        "growth_from_start": 153.2,
         "potential_label": "BAJO"
-      }
-    },
-    {
-      "market_id": "139558931",
-      "player_id": "2580",
-      "name": "Manuel Pellegrini",
-      "nickname": "Manuel Pellegrini",
-      "position": "Entrenador",
-      "position_id": 5,
-      "sale_price": 2429498,
-      "sale_price_fmt": "2.43M€",
-      "market_value": 2346493,
-      "market_value_fmt": "2.35M€",
-      "buyout_clause": 0,
-      "buyout_clause_fmt": "N/D",
-      "score": 63.8,
-      "reasons": [
-        "Precio superior al valor — sobrevalorado",
-        "Muy por debajo de su máximo de temporada 9.34M€ — potencial de recuperación 75%",
-        "Tendencia reciente a la baja: -12.8%",
-        "Ha bajado 66.5% desde inicio de temporada",
-        "Rendimiento moderado: 3.3 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
-      ],
-      "recommended_bid": 2478087,
-      "recommended_bid_fmt": "2.48M€",
-      "max_bid": 2111843,
-      "max_bid_fmt": "2.11M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 2.43M€. Puja máxima recomendada: 2.11M€.",
-      "season_gap": "Actualmente al 25% de su máximo de temporada (9.34M€)",
-      "seller": "",
-      "seller_team_id": "",
-      "expiration": "2026-09-03T20:48:00+02:00",
-      "status": "ok",
-      "average_points": 3.33,
-      "week_points": 0,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t185/man2580/256x256/man2580_t185_1_001_000 (1).png",
-      "is_shielded": false,
-      "offers": 0,
-      "trend": {
-        "max_value": 9344404,
-        "max_value_fmt": "9.34M€",
-        "min_value": 2346493,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
-        "recent_trend": "bajando",
-        "trend_pct": -12.8,
-        "recovery_potential": 74.9,
-        "growth_from_start": -66.5,
-        "potential_label": "ALTO"
       }
     },
     {
@@ -146,12 +92,9 @@
         "max_value": 18154869,
         "max_value_fmt": "18.15M€",
         "min_value": 12309825,
-        "first_value": 13045785,
-        "first_value_fmt": "13.05M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 39.2,
         "potential_label": "BAJO"
       }
     },
@@ -197,12 +140,9 @@
         "max_value": 16047629,
         "max_value_fmt": "16.05M€",
         "min_value": 11256692,
-        "first_value": 12398886,
-        "first_value_fmt": "12.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 4.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 29.4,
         "potential_label": "BAJO"
       }
     },
@@ -248,12 +188,9 @@
         "max_value": 1050795,
         "max_value_fmt": "1.05M€",
         "min_value": 712607,
-        "first_value": 750000,
-        "first_value_fmt": "0.75M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 40.1,
         "potential_label": "BAJO"
       }
     },
@@ -299,12 +236,9 @@
         "max_value": 4517384,
         "max_value_fmt": "4.52M€",
         "min_value": 1796418,
-        "first_value": 4500000,
-        "first_value_fmt": "4.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.0,
         "recovery_potential": 36.0,
-        "growth_from_start": -35.8,
         "potential_label": "MEDIO"
       }
     },
@@ -351,12 +285,9 @@
         "max_value": 29500000,
         "max_value_fmt": "29.50M€",
         "min_value": 15484757,
-        "first_value": 29500000,
-        "first_value_fmt": "29.50M€",
         "recent_trend": "bajando",
         "trend_pct": -11.6,
         "recovery_potential": 47.5,
-        "growth_from_start": -47.5,
         "potential_label": "ALTO"
       }
     },
@@ -403,12 +334,9 @@
         "max_value": 122469509,
         "max_value_fmt": "122.47M€",
         "min_value": 69641365,
-        "first_value": 100800000,
-        "first_value_fmt": "100.80M€",
         "recent_trend": "subiendo",
         "trend_pct": 10.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 21.5,
         "potential_label": "BAJO"
       }
     },
@@ -454,12 +382,9 @@
         "max_value": 1234875,
         "max_value_fmt": "1.23M€",
         "min_value": 954525,
-        "first_value": 1234875,
-        "first_value_fmt": "1.23M€",
         "recent_trend": "bajando",
         "trend_pct": -9.4,
         "recovery_potential": 22.7,
-        "growth_from_start": -22.7,
         "potential_label": "MEDIO"
       }
     },
@@ -505,12 +430,9 @@
         "max_value": 55394016,
         "max_value_fmt": "55.39M€",
         "min_value": 35000000,
-        "first_value": 35000000,
-        "first_value_fmt": "35.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.3,
         "recovery_potential": 8.4,
-        "growth_from_start": 44.9,
         "potential_label": "BAJO"
       }
     },
@@ -556,12 +478,9 @@
         "max_value": 66285191,
         "max_value_fmt": "66.29M€",
         "min_value": 40000000,
-        "first_value": 40000000,
-        "first_value_fmt": "40.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.6,
         "recovery_potential": 3.1,
-        "growth_from_start": 60.6,
         "potential_label": "BAJO"
       }
     },
@@ -607,12 +526,9 @@
         "max_value": 6448770,
         "max_value_fmt": "6.45M€",
         "min_value": 4459560,
-        "first_value": 5500000,
-        "first_value_fmt": "5.50M€",
         "recent_trend": "bajando",
         "trend_pct": -4.2,
         "recovery_potential": 4.2,
-        "growth_from_start": 12.3,
         "potential_label": "BAJO"
       }
     },
@@ -657,12 +573,9 @@
         "max_value": 6113248,
         "max_value_fmt": "6.11M€",
         "min_value": 5912046,
-        "first_value": 6113248,
-        "first_value_fmt": "6.11M€",
         "recent_trend": "bajando",
         "trend_pct": -3.3,
         "recovery_potential": 3.3,
-        "growth_from_start": -3.3,
         "potential_label": "BAJO"
       }
     }
@@ -709,12 +622,9 @@
         "max_value": 6806490,
         "max_value_fmt": "6.81M€",
         "min_value": 1850937,
-        "first_value": 2300000,
-        "first_value_fmt": "2.30M€",
         "recent_trend": "subiendo",
         "trend_pct": 28.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 195.9,
         "potential_label": "BAJO"
       }
     },
@@ -759,12 +669,9 @@
         "max_value": 5525486,
         "max_value_fmt": "5.53M€",
         "min_value": 677391,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "subiendo",
         "trend_pct": 157.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 689.4,
         "potential_label": "BAJO"
       }
     },
@@ -810,12 +717,9 @@
         "max_value": 10570572,
         "max_value_fmt": "10.57M€",
         "min_value": 3360860,
-        "first_value": 5500000,
-        "first_value_fmt": "5.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 36.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 92.2,
         "potential_label": "BAJO"
       }
     },
@@ -860,12 +764,9 @@
         "max_value": 9427622,
         "max_value_fmt": "9.43M€",
         "min_value": 2713464,
-        "first_value": 2900000,
-        "first_value_fmt": "2.90M€",
         "recent_trend": "subiendo",
         "trend_pct": 27.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 225.1,
         "potential_label": "BAJO"
       }
     },
@@ -911,12 +812,9 @@
         "max_value": 1487088,
         "max_value_fmt": "1.49M€",
         "min_value": 677391,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "subiendo",
         "trend_pct": 34.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 112.4,
         "potential_label": "BAJO"
       }
     },
@@ -961,12 +859,9 @@
         "max_value": 9015953,
         "max_value_fmt": "9.02M€",
         "min_value": 5756991,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 28.8,
         "potential_label": "BAJO"
       }
     },
@@ -1012,12 +907,9 @@
         "max_value": 28418628,
         "max_value_fmt": "28.42M€",
         "min_value": 14342822,
-        "first_value": 18000000,
-        "first_value_fmt": "18.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 18.9,
         "recovery_potential": 0.0,
-        "growth_from_start": 57.9,
         "potential_label": "BAJO"
       }
     },
@@ -1063,12 +955,9 @@
         "max_value": 19270812,
         "max_value_fmt": "19.27M€",
         "min_value": 5560211,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 26.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 175.3,
         "potential_label": "BAJO"
       }
     },
@@ -1113,12 +1002,9 @@
         "max_value": 6059467,
         "max_value_fmt": "6.06M€",
         "min_value": 3227143,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 21.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 1.0,
         "potential_label": "BAJO"
       }
     },
@@ -1164,12 +1050,9 @@
         "max_value": 7873663,
         "max_value_fmt": "7.87M€",
         "min_value": 4594956,
-        "first_value": 6400000,
-        "first_value_fmt": "6.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 20.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 23.0,
         "potential_label": "BAJO"
       }
     },
@@ -1215,12 +1098,9 @@
         "max_value": 11317232,
         "max_value_fmt": "11.32M€",
         "min_value": 5987379,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 88.6,
         "potential_label": "BAJO"
       }
     },
@@ -1265,12 +1145,9 @@
         "max_value": 12212021,
         "max_value_fmt": "12.21M€",
         "min_value": 9358437,
-        "first_value": 10567204,
-        "first_value_fmt": "10.57M€",
         "recent_trend": "subiendo",
         "trend_pct": 15.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 15.6,
         "potential_label": "BAJO"
       }
     },
@@ -1315,12 +1192,9 @@
         "max_value": 12762429,
         "max_value_fmt": "12.76M€",
         "min_value": 5992080,
-        "first_value": 8000000,
-        "first_value_fmt": "8.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 15.5,
         "recovery_potential": 0.0,
-        "growth_from_start": 59.5,
         "potential_label": "BAJO"
       }
     },
@@ -1367,12 +1241,9 @@
         "max_value": 41293851,
         "max_value_fmt": "41.29M€",
         "min_value": 14430356,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 6.1,
         "recovery_potential": 0.0,
-        "growth_from_start": 175.3,
         "potential_label": "BAJO"
       }
     },
@@ -1418,12 +1289,9 @@
         "max_value": 3312748,
         "max_value_fmt": "3.31M€",
         "min_value": 1729187,
-        "first_value": 3300000,
-        "first_value_fmt": "3.30M€",
         "recent_trend": "subiendo",
         "trend_pct": 18.0,
         "recovery_potential": 37.1,
-        "growth_from_start": -36.9,
         "potential_label": "MEDIO"
       }
     },
@@ -1468,12 +1336,9 @@
         "max_value": 8606173,
         "max_value_fmt": "8.61M€",
         "min_value": 3572209,
-        "first_value": 5000000,
-        "first_value_fmt": "5.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 19.1,
         "recovery_potential": 0.0,
-        "growth_from_start": 72.1,
         "potential_label": "BAJO"
       }
     },
@@ -1519,12 +1384,9 @@
         "max_value": 48206738,
         "max_value_fmt": "48.21M€",
         "min_value": 28486849,
-        "first_value": 30400000,
-        "first_value_fmt": "30.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 58.6,
         "potential_label": "BAJO"
       }
     },
@@ -1570,12 +1432,9 @@
         "max_value": 64957849,
         "max_value_fmt": "64.96M€",
         "min_value": 12201189,
-        "first_value": 12614852,
-        "first_value_fmt": "12.61M€",
         "recent_trend": "subiendo",
         "trend_pct": 16.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 414.9,
         "potential_label": "BAJO"
       }
     },
@@ -1621,12 +1480,9 @@
         "max_value": 30115902,
         "max_value_fmt": "30.12M€",
         "min_value": 7131965,
-        "first_value": 30000000,
-        "first_value_fmt": "30.00M€",
         "recent_trend": "bajando",
         "trend_pct": -10.6,
         "recovery_potential": 76.3,
-        "growth_from_start": -76.2,
         "potential_label": "ALTO"
       }
     },
@@ -1672,12 +1528,9 @@
         "max_value": 15057950,
         "max_value_fmt": "15.06M€",
         "min_value": 6395423,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 22.4,
         "recovery_potential": 33.1,
-        "growth_from_start": -32.8,
         "potential_label": "MEDIO"
       }
     },
@@ -1722,12 +1575,9 @@
         "max_value": 9034770,
         "max_value_fmt": "9.03M€",
         "min_value": 4756546,
-        "first_value": 9000000,
-        "first_value_fmt": "9.00M€",
         "recent_trend": "bajando",
         "trend_pct": -4.2,
         "recovery_potential": 47.4,
-        "growth_from_start": -47.1,
         "potential_label": "ALTO"
       }
     },
@@ -1772,12 +1622,9 @@
         "max_value": 21752217,
         "max_value_fmt": "21.75M€",
         "min_value": 14554549,
-        "first_value": 21752217,
-        "first_value_fmt": "21.75M€",
         "recent_trend": "subiendo",
         "trend_pct": 11.7,
         "recovery_potential": 21.9,
-        "growth_from_start": -21.9,
         "potential_label": "MEDIO"
       }
     },
@@ -1822,12 +1669,9 @@
         "max_value": 3011588,
         "max_value_fmt": "3.01M€",
         "min_value": 2078023,
-        "first_value": 3000000,
-        "first_value_fmt": "3.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.4,
         "recovery_potential": 31.0,
-        "growth_from_start": -30.7,
         "potential_label": "MEDIO"
       }
     },
@@ -1872,12 +1716,9 @@
         "max_value": 4015452,
         "max_value_fmt": "4.02M€",
         "min_value": 2554897,
-        "first_value": 4000000,
-        "first_value_fmt": "4.00M€",
         "recent_trend": "bajando",
         "trend_pct": -11.7,
         "recovery_potential": 36.4,
-        "growth_from_start": -36.1,
         "potential_label": "MEDIO"
       }
     },
@@ -1921,12 +1762,9 @@
         "max_value": 600285,
         "max_value_fmt": "0.60M€",
         "min_value": 427279,
-        "first_value": 600000,
-        "first_value_fmt": "0.60M€",
         "recent_trend": "estable",
         "trend_pct": -1.4,
         "recovery_potential": 28.8,
-        "growth_from_start": -28.8,
         "potential_label": "MEDIO"
       }
     },
@@ -1971,12 +1809,9 @@
         "max_value": 84142744,
         "max_value_fmt": "84.14M€",
         "min_value": 48691487,
-        "first_value": 50300781,
-        "first_value_fmt": "50.30M€",
         "recent_trend": "estable",
         "trend_pct": -1.8,
         "recovery_potential": 20.2,
-        "growth_from_start": 33.5,
         "potential_label": "MEDIO"
       }
     },
@@ -2021,12 +1856,9 @@
         "max_value": 28475506,
         "max_value_fmt": "28.48M€",
         "min_value": 14855298,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -9.8,
         "recovery_potential": 26.7,
-        "growth_from_start": 39.2,
         "potential_label": "MEDIO"
       }
     },
@@ -2072,12 +1904,9 @@
         "max_value": 667402,
         "max_value_fmt": "0.67M€",
         "min_value": 531716,
-        "first_value": 667402,
-        "first_value_fmt": "0.67M€",
         "recent_trend": "bajando",
         "trend_pct": -4.4,
         "recovery_potential": 20.3,
-        "growth_from_start": -20.3,
         "potential_label": "MEDIO"
       }
     },
@@ -2121,12 +1950,9 @@
         "max_value": 19859149,
         "max_value_fmt": "19.86M€",
         "min_value": 14490035,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -3.7,
         "recovery_potential": 27.0,
-        "growth_from_start": -3.4,
         "potential_label": "MEDIO"
       }
     },
@@ -2172,12 +1998,9 @@
         "max_value": 71395937,
         "max_value_fmt": "71.40M€",
         "min_value": 43363048,
-        "first_value": 45000000,
-        "first_value_fmt": "45.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 13.8,
         "recovery_potential": 12.9,
-        "growth_from_start": 38.3,
         "potential_label": "BAJO"
       }
     },
@@ -2222,12 +2045,9 @@
         "max_value": 25767339,
         "max_value_fmt": "25.77M€",
         "min_value": 9000000,
-        "first_value": 9000000,
-        "first_value_fmt": "9.00M€",
         "recent_trend": "bajando",
         "trend_pct": -5.4,
         "recovery_potential": 29.2,
-        "growth_from_start": 102.8,
         "potential_label": "MEDIO"
       }
     },
@@ -2273,12 +2093,9 @@
         "max_value": 13429415,
         "max_value_fmt": "13.43M€",
         "min_value": 7500000,
-        "first_value": 7500000,
-        "first_value_fmt": "7.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 2.6,
         "recovery_potential": 4.3,
-        "growth_from_start": 71.4,
         "potential_label": "BAJO"
       }
     },
@@ -2323,12 +2140,9 @@
         "max_value": 6023179,
         "max_value_fmt": "6.02M€",
         "min_value": 3475549,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "bajando",
         "trend_pct": -4.4,
         "recovery_potential": 13.7,
-        "growth_from_start": -13.4,
         "potential_label": "BAJO"
       }
     },
@@ -2373,12 +2187,9 @@
         "max_value": 34127706,
         "max_value_fmt": "34.13M€",
         "min_value": 22080902,
-        "first_value": 30100000,
-        "first_value_fmt": "30.10M€",
         "recent_trend": "bajando",
         "trend_pct": -6.6,
         "recovery_potential": 23.9,
-        "growth_from_start": -13.8,
         "potential_label": "MEDIO"
       }
     },
@@ -2424,12 +2235,9 @@
         "max_value": 7218179,
         "max_value_fmt": "7.22M€",
         "min_value": 5534022,
-        "first_value": 6500000,
-        "first_value_fmt": "6.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.7,
         "recovery_potential": 2.7,
-        "growth_from_start": 8.1,
         "potential_label": "BAJO"
       }
     },
@@ -2474,12 +2282,9 @@
         "max_value": 59154907,
         "max_value_fmt": "59.15M€",
         "min_value": 44515755,
-        "first_value": 59000000,
-        "first_value_fmt": "59.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.4,
         "recovery_potential": 5.2,
-        "growth_from_start": -4.9,
         "potential_label": "BAJO"
       }
     },
@@ -2524,12 +2329,9 @@
         "max_value": 142866249,
         "max_value_fmt": "142.87M€",
         "min_value": 128333746,
-        "first_value": 142866249,
-        "first_value_fmt": "142.87M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.6,
         "recovery_potential": 3.8,
-        "growth_from_start": -3.8,
         "potential_label": "BAJO"
       }
     },
@@ -2575,12 +2377,9 @@
         "max_value": 702702,
         "max_value_fmt": "0.70M€",
         "min_value": 445140,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "bajando",
         "trend_pct": -3.3,
         "recovery_potential": 36.7,
-        "growth_from_start": -36.4,
         "potential_label": "MEDIO"
       }
     },
@@ -2623,12 +2422,9 @@
         "max_value": 11042496,
         "max_value_fmt": "11.04M€",
         "min_value": 8334231,
-        "first_value": 11000000,
-        "first_value_fmt": "11.00M€",
         "recent_trend": "estable",
         "trend_pct": 1.1,
         "recovery_potential": 5.0,
-        "growth_from_start": -4.6,
         "potential_label": "BAJO"
       }
     },
@@ -2673,12 +2469,9 @@
         "max_value": 20077267,
         "max_value_fmt": "20.08M€",
         "min_value": 15847028,
-        "first_value": 20000000,
-        "first_value_fmt": "20.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.1,
         "recovery_potential": 19.9,
-        "growth_from_start": -19.6,
         "potential_label": "MEDIO"
       }
     },
@@ -2723,12 +2516,9 @@
         "max_value": 21162898,
         "max_value_fmt": "21.16M€",
         "min_value": 12000000,
-        "first_value": 12000000,
-        "first_value_fmt": "12.00M€",
         "recent_trend": "bajando",
         "trend_pct": -2.9,
         "recovery_potential": 6.9,
-        "growth_from_start": 64.3,
         "potential_label": "BAJO"
       }
     },
@@ -2772,12 +2562,9 @@
         "max_value": 4010501,
         "max_value_fmt": "4.01M€",
         "min_value": 3709671,
-        "first_value": 4000000,
-        "first_value_fmt": "4.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 2.6,
         "recovery_potential": 3.4,
-        "growth_from_start": -3.2,
         "potential_label": "BAJO"
       }
     },
@@ -2821,12 +2608,9 @@
         "max_value": 12548291,
         "max_value_fmt": "12.55M€",
         "min_value": 8872131,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "estable",
         "trend_pct": 1.6,
         "recovery_potential": 6.6,
-        "growth_from_start": -6.3,
         "potential_label": "BAJO"
       }
     },
@@ -2871,12 +2655,9 @@
         "max_value": 1271076,
         "max_value_fmt": "1.27M€",
         "min_value": 1087366,
-        "first_value": 1213912,
-        "first_value_fmt": "1.21M€",
         "recent_trend": "bajando",
         "trend_pct": -8.0,
         "recovery_potential": 14.5,
-        "growth_from_start": -10.4,
         "potential_label": "BAJO"
       }
     },
@@ -2920,12 +2701,9 @@
         "max_value": 11292452,
         "max_value_fmt": "11.29M€",
         "min_value": 9035969,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.4,
         "recovery_potential": 3.5,
-        "growth_from_start": 9.0,
         "potential_label": "BAJO"
       }
     },
@@ -2970,12 +2748,9 @@
         "max_value": 73754377,
         "max_value_fmt": "73.75M€",
         "min_value": 46868243,
-        "first_value": 50000000,
-        "first_value_fmt": "50.00M€",
         "recent_trend": "estable",
         "trend_pct": 1.4,
         "recovery_potential": 0.1,
-        "growth_from_start": 47.4,
         "potential_label": "BAJO"
       }
     },
@@ -3021,12 +2796,9 @@
         "max_value": 19111062,
         "max_value_fmt": "19.11M€",
         "min_value": 10636011,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.7,
         "recovery_potential": 1.0,
-        "growth_from_start": 51.4,
         "potential_label": "BAJO"
       }
     },
@@ -3070,12 +2842,9 @@
         "max_value": 12978370,
         "max_value_fmt": "12.98M€",
         "min_value": 11636499,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "bajando",
         "trend_pct": -4.9,
         "recovery_potential": 6.7,
-        "growth_from_start": -3.2,
         "potential_label": "BAJO"
       }
     },
@@ -3120,12 +2889,9 @@
         "max_value": 22433132,
         "max_value_fmt": "22.43M€",
         "min_value": 14324477,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -11.4,
         "recovery_potential": 36.1,
-        "growth_from_start": -4.5,
         "potential_label": "MEDIO"
       }
     },
@@ -3169,12 +2935,9 @@
         "max_value": 18362460,
         "max_value_fmt": "18.36M€",
         "min_value": 7000000,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.2,
         "recovery_potential": 9.5,
-        "growth_from_start": 137.4,
         "potential_label": "BAJO"
       }
     },
@@ -3219,12 +2982,9 @@
         "max_value": 820755,
         "max_value_fmt": "0.82M€",
         "min_value": 754802,
-        "first_value": 800000,
-        "first_value_fmt": "0.80M€",
         "recent_trend": "bajando",
         "trend_pct": -6.9,
         "recovery_potential": 8.0,
-        "growth_from_start": -5.6,
         "potential_label": "BAJO"
       }
     },
@@ -3269,12 +3029,9 @@
         "max_value": 16165931,
         "max_value_fmt": "16.17M€",
         "min_value": 10000000,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.8,
         "recovery_potential": 6.8,
-        "growth_from_start": 50.7,
         "potential_label": "BAJO"
       }
     },
@@ -3320,12 +3077,9 @@
         "max_value": 10603014,
         "max_value_fmt": "10.60M€",
         "min_value": 9388556,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "bajando",
         "trend_pct": -3.1,
         "recovery_potential": 4.6,
-        "growth_from_start": 1.2,
         "potential_label": "BAJO"
       }
     }
@@ -3373,12 +3127,9 @@
         "max_value": 1519179,
         "max_value_fmt": "1.52M€",
         "min_value": 564678,
-        "first_value": 600000,
-        "first_value_fmt": "0.60M€",
         "recent_trend": "subiendo",
         "trend_pct": 84.9,
         "recovery_potential": 0.0,
-        "growth_from_start": 153.2,
         "potential_label": "BAJO"
       }
     },
@@ -3423,12 +3174,9 @@
         "max_value": 6806490,
         "max_value_fmt": "6.81M€",
         "min_value": 1850937,
-        "first_value": 2300000,
-        "first_value_fmt": "2.30M€",
         "recent_trend": "subiendo",
         "trend_pct": 28.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 195.9,
         "potential_label": "BAJO"
       }
     },
@@ -3473,12 +3221,9 @@
         "max_value": 5525486,
         "max_value_fmt": "5.53M€",
         "min_value": 677391,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "subiendo",
         "trend_pct": 157.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 689.4,
         "potential_label": "BAJO"
       }
     },
@@ -3524,12 +3269,9 @@
         "max_value": 10570572,
         "max_value_fmt": "10.57M€",
         "min_value": 3360860,
-        "first_value": 5500000,
-        "first_value_fmt": "5.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 36.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 92.2,
         "potential_label": "BAJO"
       }
     },
@@ -3574,12 +3316,9 @@
         "max_value": 9427622,
         "max_value_fmt": "9.43M€",
         "min_value": 2713464,
-        "first_value": 2900000,
-        "first_value_fmt": "2.90M€",
         "recent_trend": "subiendo",
         "trend_pct": 27.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 225.1,
         "potential_label": "BAJO"
       }
     },
@@ -3625,12 +3364,9 @@
         "max_value": 1487088,
         "max_value_fmt": "1.49M€",
         "min_value": 677391,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "subiendo",
         "trend_pct": 34.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 112.4,
         "potential_label": "BAJO"
       }
     },
@@ -3675,12 +3411,9 @@
         "max_value": 9015953,
         "max_value_fmt": "9.02M€",
         "min_value": 5756991,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 28.8,
         "potential_label": "BAJO"
       }
     },
@@ -3726,12 +3459,9 @@
         "max_value": 28418628,
         "max_value_fmt": "28.42M€",
         "min_value": 14342822,
-        "first_value": 18000000,
-        "first_value_fmt": "18.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 18.9,
         "recovery_potential": 0.0,
-        "growth_from_start": 57.9,
         "potential_label": "BAJO"
       }
     },
@@ -3777,12 +3507,9 @@
         "max_value": 19270812,
         "max_value_fmt": "19.27M€",
         "min_value": 5560211,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 26.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 175.3,
         "potential_label": "BAJO"
       }
     },
@@ -3827,64 +3554,10 @@
         "max_value": 6059467,
         "max_value_fmt": "6.06M€",
         "min_value": 3227143,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 21.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 1.0,
         "potential_label": "BAJO"
-      }
-    },
-    {
-      "market_id": "139558931",
-      "player_id": "2580",
-      "name": "Manuel Pellegrini",
-      "nickname": "Manuel Pellegrini",
-      "position": "Entrenador",
-      "position_id": 5,
-      "sale_price": 2429498,
-      "sale_price_fmt": "2.43M€",
-      "market_value": 2346493,
-      "market_value_fmt": "2.35M€",
-      "buyout_clause": 0,
-      "buyout_clause_fmt": "N/D",
-      "score": 63.8,
-      "reasons": [
-        "Precio superior al valor — sobrevalorado",
-        "Muy por debajo de su máximo de temporada 9.34M€ — potencial de recuperación 75%",
-        "Tendencia reciente a la baja: -12.8%",
-        "Ha bajado 66.5% desde inicio de temporada",
-        "Rendimiento moderado: 3.3 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
-      ],
-      "recommended_bid": 2478087,
-      "recommended_bid_fmt": "2.48M€",
-      "max_bid": 2111843,
-      "max_bid_fmt": "2.11M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 2.43M€. Puja máxima recomendada: 2.11M€.",
-      "season_gap": "Actualmente al 25% de su máximo de temporada (9.34M€)",
-      "seller": "",
-      "seller_team_id": "",
-      "expiration": "2026-09-03T20:48:00+02:00",
-      "status": "ok",
-      "average_points": 3.33,
-      "week_points": 0,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t185/man2580/256x256/man2580_t185_1_001_000 (1).png",
-      "is_shielded": false,
-      "offers": 0,
-      "trend": {
-        "max_value": 9344404,
-        "max_value_fmt": "9.34M€",
-        "min_value": 2346493,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
-        "recent_trend": "bajando",
-        "trend_pct": -12.8,
-        "recovery_potential": 74.9,
-        "growth_from_start": -66.5,
-        "potential_label": "ALTO"
       }
     },
     {
@@ -3929,12 +3602,9 @@
         "max_value": 7873663,
         "max_value_fmt": "7.87M€",
         "min_value": 4594956,
-        "first_value": 6400000,
-        "first_value_fmt": "6.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 20.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 23.0,
         "potential_label": "BAJO"
       }
     },
@@ -3980,12 +3650,9 @@
         "max_value": 11317232,
         "max_value_fmt": "11.32M€",
         "min_value": 5987379,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 88.6,
         "potential_label": "BAJO"
       }
     },
@@ -4030,12 +3697,9 @@
         "max_value": 12212021,
         "max_value_fmt": "12.21M€",
         "min_value": 9358437,
-        "first_value": 10567204,
-        "first_value_fmt": "10.57M€",
         "recent_trend": "subiendo",
         "trend_pct": 15.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 15.6,
         "potential_label": "BAJO"
       }
     },
@@ -4080,12 +3744,9 @@
         "max_value": 12762429,
         "max_value_fmt": "12.76M€",
         "min_value": 5992080,
-        "first_value": 8000000,
-        "first_value_fmt": "8.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 15.5,
         "recovery_potential": 0.0,
-        "growth_from_start": 59.5,
         "potential_label": "BAJO"
       }
     },
@@ -4132,12 +3793,9 @@
         "max_value": 41293851,
         "max_value_fmt": "41.29M€",
         "min_value": 14430356,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 6.1,
         "recovery_potential": 0.0,
-        "growth_from_start": 175.3,
         "potential_label": "BAJO"
       }
     },
@@ -4183,12 +3841,9 @@
         "max_value": 3312748,
         "max_value_fmt": "3.31M€",
         "min_value": 1729187,
-        "first_value": 3300000,
-        "first_value_fmt": "3.30M€",
         "recent_trend": "subiendo",
         "trend_pct": 18.0,
         "recovery_potential": 37.1,
-        "growth_from_start": -36.9,
         "potential_label": "MEDIO"
       }
     },
@@ -4233,12 +3888,9 @@
         "max_value": 8606173,
         "max_value_fmt": "8.61M€",
         "min_value": 3572209,
-        "first_value": 5000000,
-        "first_value_fmt": "5.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 19.1,
         "recovery_potential": 0.0,
-        "growth_from_start": 72.1,
         "potential_label": "BAJO"
       }
     },
@@ -4284,12 +3936,9 @@
         "max_value": 18154869,
         "max_value_fmt": "18.15M€",
         "min_value": 12309825,
-        "first_value": 13045785,
-        "first_value_fmt": "13.05M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 39.2,
         "potential_label": "BAJO"
       }
     },
@@ -4335,12 +3984,9 @@
         "max_value": 16047629,
         "max_value_fmt": "16.05M€",
         "min_value": 11256692,
-        "first_value": 12398886,
-        "first_value_fmt": "12.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 4.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 29.4,
         "potential_label": "BAJO"
       }
     },
@@ -4386,12 +4032,9 @@
         "max_value": 48206738,
         "max_value_fmt": "48.21M€",
         "min_value": 28486849,
-        "first_value": 30400000,
-        "first_value_fmt": "30.40M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 58.6,
         "potential_label": "BAJO"
       }
     },
@@ -4437,12 +4080,9 @@
         "max_value": 64957849,
         "max_value_fmt": "64.96M€",
         "min_value": 12201189,
-        "first_value": 12614852,
-        "first_value_fmt": "12.61M€",
         "recent_trend": "subiendo",
         "trend_pct": 16.4,
         "recovery_potential": 0.0,
-        "growth_from_start": 414.9,
         "potential_label": "BAJO"
       }
     },
@@ -4488,12 +4128,9 @@
         "max_value": 1050795,
         "max_value_fmt": "1.05M€",
         "min_value": 712607,
-        "first_value": 750000,
-        "first_value_fmt": "0.75M€",
         "recent_trend": "subiendo",
         "trend_pct": 9.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 40.1,
         "potential_label": "BAJO"
       }
     },
@@ -4539,12 +4176,9 @@
         "max_value": 30115902,
         "max_value_fmt": "30.12M€",
         "min_value": 7131965,
-        "first_value": 30000000,
-        "first_value_fmt": "30.00M€",
         "recent_trend": "bajando",
         "trend_pct": -10.6,
         "recovery_potential": 76.3,
-        "growth_from_start": -76.2,
         "potential_label": "ALTO"
       }
     },
@@ -4590,12 +4224,9 @@
         "max_value": 4517384,
         "max_value_fmt": "4.52M€",
         "min_value": 1796418,
-        "first_value": 4500000,
-        "first_value_fmt": "4.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.0,
         "recovery_potential": 36.0,
-        "growth_from_start": -35.8,
         "potential_label": "MEDIO"
       }
     },
@@ -4642,12 +4273,9 @@
         "max_value": 29500000,
         "max_value_fmt": "29.50M€",
         "min_value": 15484757,
-        "first_value": 29500000,
-        "first_value_fmt": "29.50M€",
         "recent_trend": "bajando",
         "trend_pct": -11.6,
         "recovery_potential": 47.5,
-        "growth_from_start": -47.5,
         "potential_label": "ALTO"
       }
     },
@@ -4693,12 +4321,9 @@
         "max_value": 15057950,
         "max_value_fmt": "15.06M€",
         "min_value": 6395423,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 22.4,
         "recovery_potential": 33.1,
-        "growth_from_start": -32.8,
         "potential_label": "MEDIO"
       }
     },
@@ -4745,12 +4370,9 @@
         "max_value": 122469509,
         "max_value_fmt": "122.47M€",
         "min_value": 69641365,
-        "first_value": 100800000,
-        "first_value_fmt": "100.80M€",
         "recent_trend": "subiendo",
         "trend_pct": 10.3,
         "recovery_potential": 0.0,
-        "growth_from_start": 21.5,
         "potential_label": "BAJO"
       }
     },
@@ -4795,12 +4417,9 @@
         "max_value": 9034770,
         "max_value_fmt": "9.03M€",
         "min_value": 4756546,
-        "first_value": 9000000,
-        "first_value_fmt": "9.00M€",
         "recent_trend": "bajando",
         "trend_pct": -4.2,
         "recovery_potential": 47.4,
-        "growth_from_start": -47.1,
         "potential_label": "ALTO"
       }
     },
@@ -4845,12 +4464,9 @@
         "max_value": 21752217,
         "max_value_fmt": "21.75M€",
         "min_value": 14554549,
-        "first_value": 21752217,
-        "first_value_fmt": "21.75M€",
         "recent_trend": "subiendo",
         "trend_pct": 11.7,
         "recovery_potential": 21.9,
-        "growth_from_start": -21.9,
         "potential_label": "MEDIO"
       }
     },
@@ -4895,12 +4511,9 @@
         "max_value": 3011588,
         "max_value_fmt": "3.01M€",
         "min_value": 2078023,
-        "first_value": 3000000,
-        "first_value_fmt": "3.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.4,
         "recovery_potential": 31.0,
-        "growth_from_start": -30.7,
         "potential_label": "MEDIO"
       }
     },
@@ -4945,12 +4558,9 @@
         "max_value": 4015452,
         "max_value_fmt": "4.02M€",
         "min_value": 2554897,
-        "first_value": 4000000,
-        "first_value_fmt": "4.00M€",
         "recent_trend": "bajando",
         "trend_pct": -11.7,
         "recovery_potential": 36.4,
-        "growth_from_start": -36.1,
         "potential_label": "MEDIO"
       }
     },
@@ -4994,12 +4604,9 @@
         "max_value": 600285,
         "max_value_fmt": "0.60M€",
         "min_value": 427279,
-        "first_value": 600000,
-        "first_value_fmt": "0.60M€",
         "recent_trend": "estable",
         "trend_pct": -1.4,
         "recovery_potential": 28.8,
-        "growth_from_start": -28.8,
         "potential_label": "MEDIO"
       }
     },
@@ -5044,12 +4651,9 @@
         "max_value": 84142744,
         "max_value_fmt": "84.14M€",
         "min_value": 48691487,
-        "first_value": 50300781,
-        "first_value_fmt": "50.30M€",
         "recent_trend": "estable",
         "trend_pct": -1.8,
         "recovery_potential": 20.2,
-        "growth_from_start": 33.5,
         "potential_label": "MEDIO"
       }
     },
@@ -5095,12 +4699,9 @@
         "max_value": 1234875,
         "max_value_fmt": "1.23M€",
         "min_value": 954525,
-        "first_value": 1234875,
-        "first_value_fmt": "1.23M€",
         "recent_trend": "bajando",
         "trend_pct": -9.4,
         "recovery_potential": 22.7,
-        "growth_from_start": -22.7,
         "potential_label": "MEDIO"
       }
     },
@@ -5145,12 +4746,9 @@
         "max_value": 28475506,
         "max_value_fmt": "28.48M€",
         "min_value": 14855298,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -9.8,
         "recovery_potential": 26.7,
-        "growth_from_start": 39.2,
         "potential_label": "MEDIO"
       }
     },
@@ -5196,12 +4794,9 @@
         "max_value": 667402,
         "max_value_fmt": "0.67M€",
         "min_value": 531716,
-        "first_value": 667402,
-        "first_value_fmt": "0.67M€",
         "recent_trend": "bajando",
         "trend_pct": -4.4,
         "recovery_potential": 20.3,
-        "growth_from_start": -20.3,
         "potential_label": "MEDIO"
       }
     },
@@ -5245,12 +4840,9 @@
         "max_value": 19859149,
         "max_value_fmt": "19.86M€",
         "min_value": 14490035,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -3.7,
         "recovery_potential": 27.0,
-        "growth_from_start": -3.4,
         "potential_label": "MEDIO"
       }
     },
@@ -5296,12 +4888,9 @@
         "max_value": 71395937,
         "max_value_fmt": "71.40M€",
         "min_value": 43363048,
-        "first_value": 45000000,
-        "first_value_fmt": "45.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 13.8,
         "recovery_potential": 12.9,
-        "growth_from_start": 38.3,
         "potential_label": "BAJO"
       }
     },
@@ -5346,12 +4935,9 @@
         "max_value": 25767339,
         "max_value_fmt": "25.77M€",
         "min_value": 9000000,
-        "first_value": 9000000,
-        "first_value_fmt": "9.00M€",
         "recent_trend": "bajando",
         "trend_pct": -5.4,
         "recovery_potential": 29.2,
-        "growth_from_start": 102.8,
         "potential_label": "MEDIO"
       }
     },
@@ -5397,12 +4983,9 @@
         "max_value": 13429415,
         "max_value_fmt": "13.43M€",
         "min_value": 7500000,
-        "first_value": 7500000,
-        "first_value_fmt": "7.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 2.6,
         "recovery_potential": 4.3,
-        "growth_from_start": 71.4,
         "potential_label": "BAJO"
       }
     },
@@ -5448,12 +5031,9 @@
         "max_value": 55394016,
         "max_value_fmt": "55.39M€",
         "min_value": 35000000,
-        "first_value": 35000000,
-        "first_value_fmt": "35.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.3,
         "recovery_potential": 8.4,
-        "growth_from_start": 44.9,
         "potential_label": "BAJO"
       }
     },
@@ -5498,12 +5078,9 @@
         "max_value": 6023179,
         "max_value_fmt": "6.02M€",
         "min_value": 3475549,
-        "first_value": 6000000,
-        "first_value_fmt": "6.00M€",
         "recent_trend": "bajando",
         "trend_pct": -4.4,
         "recovery_potential": 13.7,
-        "growth_from_start": -13.4,
         "potential_label": "BAJO"
       }
     },
@@ -5548,12 +5125,9 @@
         "max_value": 34127706,
         "max_value_fmt": "34.13M€",
         "min_value": 22080902,
-        "first_value": 30100000,
-        "first_value_fmt": "30.10M€",
         "recent_trend": "bajando",
         "trend_pct": -6.6,
         "recovery_potential": 23.9,
-        "growth_from_start": -13.8,
         "potential_label": "MEDIO"
       }
     },
@@ -5599,12 +5173,9 @@
         "max_value": 7218179,
         "max_value_fmt": "7.22M€",
         "min_value": 5534022,
-        "first_value": 6500000,
-        "first_value_fmt": "6.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.7,
         "recovery_potential": 2.7,
-        "growth_from_start": 8.1,
         "potential_label": "BAJO"
       }
     },
@@ -5650,12 +5221,9 @@
         "max_value": 66285191,
         "max_value_fmt": "66.29M€",
         "min_value": 40000000,
-        "first_value": 40000000,
-        "first_value_fmt": "40.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.6,
         "recovery_potential": 3.1,
-        "growth_from_start": 60.6,
         "potential_label": "BAJO"
       }
     },
@@ -5700,12 +5268,9 @@
         "max_value": 59154907,
         "max_value_fmt": "59.15M€",
         "min_value": 44515755,
-        "first_value": 59000000,
-        "first_value_fmt": "59.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.4,
         "recovery_potential": 5.2,
-        "growth_from_start": -4.9,
         "potential_label": "BAJO"
       }
     },
@@ -5750,12 +5315,9 @@
         "max_value": 142866249,
         "max_value_fmt": "142.87M€",
         "min_value": 128333746,
-        "first_value": 142866249,
-        "first_value_fmt": "142.87M€",
         "recent_trend": "subiendo",
         "trend_pct": 3.6,
         "recovery_potential": 3.8,
-        "growth_from_start": -3.8,
         "potential_label": "BAJO"
       }
     },
@@ -5801,12 +5363,9 @@
         "max_value": 702702,
         "max_value_fmt": "0.70M€",
         "min_value": 445140,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "bajando",
         "trend_pct": -3.3,
         "recovery_potential": 36.7,
-        "growth_from_start": -36.4,
         "potential_label": "MEDIO"
       }
     },
@@ -5849,12 +5408,9 @@
         "max_value": 11042496,
         "max_value_fmt": "11.04M€",
         "min_value": 8334231,
-        "first_value": 11000000,
-        "first_value_fmt": "11.00M€",
         "recent_trend": "estable",
         "trend_pct": 1.1,
         "recovery_potential": 5.0,
-        "growth_from_start": -4.6,
         "potential_label": "BAJO"
       }
     },
@@ -5899,12 +5455,9 @@
         "max_value": 20077267,
         "max_value_fmt": "20.08M€",
         "min_value": 15847028,
-        "first_value": 20000000,
-        "first_value_fmt": "20.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.1,
         "recovery_potential": 19.9,
-        "growth_from_start": -19.6,
         "potential_label": "MEDIO"
       }
     },
@@ -5949,12 +5502,9 @@
         "max_value": 21162898,
         "max_value_fmt": "21.16M€",
         "min_value": 12000000,
-        "first_value": 12000000,
-        "first_value_fmt": "12.00M€",
         "recent_trend": "bajando",
         "trend_pct": -2.9,
         "recovery_potential": 6.9,
-        "growth_from_start": 64.3,
         "potential_label": "BAJO"
       }
     },
@@ -6000,12 +5550,9 @@
         "max_value": 6448770,
         "max_value_fmt": "6.45M€",
         "min_value": 4459560,
-        "first_value": 5500000,
-        "first_value_fmt": "5.50M€",
         "recent_trend": "bajando",
         "trend_pct": -4.2,
         "recovery_potential": 4.2,
-        "growth_from_start": 12.3,
         "potential_label": "BAJO"
       }
     },
@@ -6049,12 +5596,9 @@
         "max_value": 4010501,
         "max_value_fmt": "4.01M€",
         "min_value": 3709671,
-        "first_value": 4000000,
-        "first_value_fmt": "4.00M€",
         "recent_trend": "subiendo",
         "trend_pct": 2.6,
         "recovery_potential": 3.4,
-        "growth_from_start": -3.2,
         "potential_label": "BAJO"
       }
     },
@@ -6098,12 +5642,9 @@
         "max_value": 12548291,
         "max_value_fmt": "12.55M€",
         "min_value": 8872131,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "estable",
         "trend_pct": 1.6,
         "recovery_potential": 6.6,
-        "growth_from_start": -6.3,
         "potential_label": "BAJO"
       }
     },
@@ -6148,12 +5689,9 @@
         "max_value": 1271076,
         "max_value_fmt": "1.27M€",
         "min_value": 1087366,
-        "first_value": 1213912,
-        "first_value_fmt": "1.21M€",
         "recent_trend": "bajando",
         "trend_pct": -8.0,
         "recovery_potential": 14.5,
-        "growth_from_start": -10.4,
         "potential_label": "BAJO"
       }
     },
@@ -6197,12 +5735,9 @@
         "max_value": 11292452,
         "max_value_fmt": "11.29M€",
         "min_value": 9035969,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.4,
         "recovery_potential": 3.5,
-        "growth_from_start": 9.0,
         "potential_label": "BAJO"
       }
     },
@@ -6247,12 +5782,9 @@
         "max_value": 73754377,
         "max_value_fmt": "73.75M€",
         "min_value": 46868243,
-        "first_value": 50000000,
-        "first_value_fmt": "50.00M€",
         "recent_trend": "estable",
         "trend_pct": 1.4,
         "recovery_potential": 0.1,
-        "growth_from_start": 47.4,
         "potential_label": "BAJO"
       }
     },
@@ -6298,12 +5830,9 @@
         "max_value": 19111062,
         "max_value_fmt": "19.11M€",
         "min_value": 10636011,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 7.7,
         "recovery_potential": 1.0,
-        "growth_from_start": 51.4,
         "potential_label": "BAJO"
       }
     },
@@ -6347,12 +5876,9 @@
         "max_value": 12978370,
         "max_value_fmt": "12.98M€",
         "min_value": 11636499,
-        "first_value": 12500000,
-        "first_value_fmt": "12.50M€",
         "recent_trend": "bajando",
         "trend_pct": -4.9,
         "recovery_potential": 6.7,
-        "growth_from_start": -3.2,
         "potential_label": "BAJO"
       }
     },
@@ -6397,12 +5923,9 @@
         "max_value": 22433132,
         "max_value_fmt": "22.43M€",
         "min_value": 14324477,
-        "first_value": 15000000,
-        "first_value_fmt": "15.00M€",
         "recent_trend": "bajando",
         "trend_pct": -11.4,
         "recovery_potential": 36.1,
-        "growth_from_start": -4.5,
         "potential_label": "MEDIO"
       }
     },
@@ -6446,12 +5969,9 @@
         "max_value": 18362460,
         "max_value_fmt": "18.36M€",
         "min_value": 7000000,
-        "first_value": 7000000,
-        "first_value_fmt": "7.00M€",
         "recent_trend": "estable",
         "trend_pct": -1.2,
         "recovery_potential": 9.5,
-        "growth_from_start": 137.4,
         "potential_label": "BAJO"
       }
     },
@@ -6496,12 +6016,9 @@
         "max_value": 6113248,
         "max_value_fmt": "6.11M€",
         "min_value": 5912046,
-        "first_value": 6113248,
-        "first_value_fmt": "6.11M€",
         "recent_trend": "bajando",
         "trend_pct": -3.3,
         "recovery_potential": 3.3,
-        "growth_from_start": -3.3,
         "potential_label": "BAJO"
       }
     },
@@ -6546,12 +6063,9 @@
         "max_value": 820755,
         "max_value_fmt": "0.82M€",
         "min_value": 754802,
-        "first_value": 800000,
-        "first_value_fmt": "0.80M€",
         "recent_trend": "bajando",
         "trend_pct": -6.9,
         "recovery_potential": 8.0,
-        "growth_from_start": -5.6,
         "potential_label": "BAJO"
       }
     },
@@ -6596,12 +6110,9 @@
         "max_value": 16165931,
         "max_value_fmt": "16.17M€",
         "min_value": 10000000,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "bajando",
         "trend_pct": -6.8,
         "recovery_potential": 6.8,
-        "growth_from_start": 50.7,
         "potential_label": "BAJO"
       }
     },
@@ -6647,12 +6158,9 @@
         "max_value": 10603014,
         "max_value_fmt": "10.60M€",
         "min_value": 9388556,
-        "first_value": 10000000,
-        "first_value_fmt": "10.00M€",
         "recent_trend": "bajando",
         "trend_pct": -3.1,
         "recovery_potential": 4.6,
-        "growth_from_start": 1.2,
         "potential_label": "BAJO"
       }
     }
