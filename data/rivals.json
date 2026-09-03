@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-03T14:03:59.713299",
+  "updated_at": "2026-09-03T20:21:39.174093",
   "my_position": 4,
   "rivals": [
     {
       "team_id": "37868413",
       "manager": "JavierRH",
-      "team_value": 270609399,
-      "team_value_fmt": "270.61M€",
+      "team_value": 300095978,
+      "team_value_fmt": "300.10M€",
       "points": 173,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -15,8 +15,8 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 172758620,
-      "team_value_fmt": "172.76M€",
+      "team_value": 165626655,
+      "team_value_fmt": "165.63M€",
       "points": 134,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -25,8 +25,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 253707756,
-      "team_value_fmt": "253.71M€",
+      "team_value": 277448918,
+      "team_value_fmt": "277.45M€",
       "points": 122,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -35,8 +35,8 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 202814643,
-      "team_value_fmt": "202.81M€",
+      "team_value": 250874192,
+      "team_value_fmt": "250.87M€",
       "points": 118,
       "budget_fmt": "N/D",
       "is_me": true,
@@ -45,8 +45,8 @@
     {
       "team_id": "37859310",
       "manager": "Migu V",
-      "team_value": 278785535,
-      "team_value_fmt": "278.79M€",
+      "team_value": 285000344,
+      "team_value_fmt": "285.00M€",
       "points": 113,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,8 +55,8 @@
     {
       "team_id": "37951056",
       "manager": "Doggy Sanxe",
-      "team_value": 238538545,
-      "team_value_fmt": "238.54M€",
+      "team_value": 237829672,
+      "team_value_fmt": "237.83M€",
       "points": 111,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -65,8 +65,8 @@
     {
       "team_id": "37859264",
       "manager": "fruizmata7",
-      "team_value": 158900369,
-      "team_value_fmt": "158.90M€",
+      "team_value": 269653680,
+      "team_value_fmt": "269.65M€",
       "points": 73,
       "budget_fmt": "N/D",
       "is_me": false,
