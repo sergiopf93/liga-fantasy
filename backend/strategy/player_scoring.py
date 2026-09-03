@@ -31,17 +31,17 @@ def load_weights() -> dict:
 class PlayerTrend:
     player_id: str
     current_value: int
-    max_season_value: int       # máximo real desde inicio de temporada
-    min_season_value: int       # mínimo real desde inicio de temporada
-    first_season_value: int     # valor al inicio de temporada (29/06)
-    values_history: List[int]   # todos los valores ordenados por fecha
+    max_season_value: int
+    min_season_value: int
+    first_season_value: int
+    values_history: List[int]
+    recent_trend: str
+    trend_pct: float
+    recovery_potential: float
+    growth_from_start: float
+    potential_label: str
     max_value: int = 0          # alias de max_season_value para compatibilidad
     min_value: int = 0          # alias de min_season_value para compatibilidad
-    recent_trend: str           # "subiendo", "bajando", "estable"
-    trend_pct: float            # % cambio últimas entradas
-    recovery_potential: float   # (max_season - current) / max_season * 100
-    growth_from_start: float    # % crecimiento desde inicio temporada
-    potential_label: str        # "ALTO", "MEDIO", "BAJO"
 
 
 def build_trend_from_history(player_id: str, history: list, current_value: int) -> Optional[PlayerTrend]:
