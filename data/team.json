@@ -28,13 +28,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t178/p2783/256x256/p2783_t178_1_001_000 (1).png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 3208400,
+        "max_value_fmt": "3.21M€",
+        "min_value": 1561669,
+        "first_value": 3200000,
+        "first_value_fmt": "3.20M€",
+        "recent_trend": "bajando",
+        "trend_pct": -8.6,
+        "recovery_potential": 51.3,
+        "growth_from_start": -51.2,
+        "potential_label": "ALTO"
       }
     },
     {
@@ -53,13 +56,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t176/p2604/256x256/p2604_t176_1_001_000.png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 9200631,
+        "max_value_fmt": "9.20M€",
+        "min_value": 6142919,
+        "first_value": 8000000,
+        "first_value_fmt": "8.00M€",
+        "recent_trend": "bajando",
+        "trend_pct": -5.5,
+        "recovery_potential": 33.2,
+        "growth_from_start": -23.2,
+        "potential_label": "MEDIO"
       }
     },
     {
@@ -78,13 +84,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t174/p74/256x256/p74_t174_1_001_000 (1).png",
       "trend": {
-        "max_value": 11000000,
-        "max_value_fmt": "11.00M€",
-        "min_value": 11000000,
+        "max_value": 18047259,
+        "max_value_fmt": "18.05M€",
+        "min_value": 9983602,
+        "first_value": 18000000,
+        "first_value_fmt": "18.00M€",
         "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "trend_pct": 1.5,
+        "recovery_potential": 42.7,
+        "growth_from_start": -42.6,
+        "potential_label": "ALTO"
       }
     },
     {
@@ -103,12 +112,15 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t182/p3042/256x256/p3042_t182_1_001_000.png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
+        "max_value": 4496658,
+        "max_value_fmt": "4.50M€",
+        "min_value": 3692084,
+        "first_value": 4250000,
+        "first_value_fmt": "4.25M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 4.5,
         "recovery_potential": 0.0,
+        "growth_from_start": 5.8,
         "potential_label": "BAJO"
       }
     },
@@ -128,13 +140,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2562/256x256/p2562_t175_1_001_000 (1).png",
       "trend": {
-        "max_value": 11000000,
-        "max_value_fmt": "11.00M€",
-        "min_value": 11000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 73720685,
+        "max_value_fmt": "73.72M€",
+        "min_value": 40000000,
+        "first_value": 40000000,
+        "first_value_fmt": "40.00M€",
+        "recent_trend": "bajando",
+        "trend_pct": -4.6,
+        "recovery_potential": 29.1,
+        "growth_from_start": 30.8,
+        "potential_label": "MEDIO"
       }
     },
     {
@@ -153,12 +168,15 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/no-player/no-player-sq_256.png",
       "trend": {
-        "max_value": 6000000,
-        "max_value_fmt": "6.00M€",
-        "min_value": 6000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
+        "max_value": 28268910,
+        "max_value_fmt": "28.27M€",
+        "min_value": 18515784,
+        "first_value": 19148073,
+        "first_value_fmt": "19.15M€",
+        "recent_trend": "bajando",
+        "trend_pct": -5.8,
+        "recovery_potential": 6.1,
+        "growth_from_start": 38.6,
         "potential_label": "BAJO"
       }
     },
@@ -178,13 +196,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t177/p2622/256x256/p2622_t177_1_001_000.png",
       "trend": {
-        "max_value": 8000000,
-        "max_value_fmt": "8.00M€",
-        "min_value": 8000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 7037347,
+        "max_value_fmt": "7.04M€",
+        "min_value": 4718362,
+        "first_value": 7000000,
+        "first_value_fmt": "7.00M€",
+        "recent_trend": "bajando",
+        "trend_pct": -6.2,
+        "recovery_potential": 27.9,
+        "growth_from_start": -27.5,
+        "potential_label": "MEDIO"
       }
     },
     {
@@ -203,13 +224,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t188/p701/256x256/p701_t188_1_001_000.png",
       "trend": {
-        "max_value": 8000000,
-        "max_value_fmt": "8.00M€",
-        "min_value": 8000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 41529776,
+        "max_value_fmt": "41.53M€",
+        "min_value": 24600645,
+        "first_value": 32000000,
+        "first_value_fmt": "32.00M€",
+        "recent_trend": "bajando",
+        "trend_pct": -5.0,
+        "recovery_potential": 40.8,
+        "growth_from_start": -23.1,
+        "potential_label": "ALTO"
       }
     },
     {
@@ -228,13 +252,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t186/p1300/256x256/p1300_t186_1_001_000 (1).png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
+        "max_value": 24092721,
+        "max_value_fmt": "24.09M€",
+        "min_value": 7631400,
+        "first_value": 24000000,
+        "first_value_fmt": "24.00M€",
         "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "trend_pct": 1.2,
+        "recovery_potential": 67.4,
+        "growth_from_start": -67.2,
+        "potential_label": "ALTO"
       }
     },
     {
@@ -253,13 +280,16 @@
       "status": "injured",
       "image_url": "https://assets-fantasy.llt-services.com/players/t189/p3073/256x256/p3073_t189_1_001_000.png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "max_value": 29000000,
+        "max_value_fmt": "29.00M€",
+        "min_value": 18945482,
+        "first_value": 29000000,
+        "first_value_fmt": "29.00M€",
+        "recent_trend": "bajando",
+        "trend_pct": -11.4,
+        "recovery_potential": 34.6,
+        "growth_from_start": -34.6,
+        "potential_label": "MEDIO"
       }
     },
     {
@@ -278,13 +308,16 @@
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t176/p2492/256x256/p2492_t176_1_001_000.png",
       "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
+        "max_value": 11942858,
+        "max_value_fmt": "11.94M€",
+        "min_value": 6089556,
+        "first_value": 10700000,
+        "first_value_fmt": "10.70M€",
         "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
+        "trend_pct": 1.4,
+        "recovery_potential": 47.9,
+        "growth_from_start": -41.8,
+        "potential_label": "ALTO"
       }
     }
   ]
