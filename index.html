@@ -220,7 +220,7 @@ function renderTodayActions(report) {
     gkEl.innerHTML = `<div class="action-item warn" style="margin-bottom:8px"><div class="action-icon">🧤</div><div class="action-body"><div class="action-title">Atención porteros</div><div class="action-detail">${report.summary.goalkeeper_recommendation}</div></div></div>`;
   }
 
-  (report?.top_buys || []).forEach(b => {
+  (report?.top_buys || []).filter(b => b.position_id !== 5).forEach(b => {
     const typeLabel = b.market_type === 'clausulazo' ? '🔒 Clausulazo' : '🏷️ Subasta';
     const trendTxt = b.trend ? ` · Máx histórico: ${b.trend.max_value_fmt}` : '';
     html += `<div class="action-item buy"><div class="action-icon">🟢</div><div class="action-body">
@@ -280,27 +280,43 @@ function renderTeam(team) {
 
 function renderMarketList(players, containerId, type) {
   const el = document.getElementById(containerId);
-  if (!players?.length) {
+  // Filtrar entrenadores (position_id 5)
+  const filtered = (players || []).filter(p => p.position_id !== 5);
+  if (!filtered.length) {
     el.innerHTML = `<div class="card"><div style="color:var(--muted);text-align:center;padding:20px">Sin ${type} en este momento</div></div>`;
     return;
   }
-  let html = `<div class="card"><div class="card-title">${players.length} jugadores</div>`;
-  players.forEach(p => {
+  let html = `<div class="card"><div class="card-title">${filtered.length} jugadores</div>`;
+  filtered.forEach(p => {
     const sc = p.score || 0;
     const t = p.trend;
-    html += `<div class="player-row">
-      <div class="player-img-placeholder">${posIcon(p.position_id)}</div>
+    const isClause = p.market_type === 'clausulazo';
+    const maxSeason = t?.max_value_fmt || '—';
+    const compraLabel = isClause ? '🔒 Precio clausulazo' : '🏷️ Precio mercado';
+    const compraValue = p.sale_price_fmt;
+    const recLabel = isClause ? 'Precio fijo' : 'Puja recomendada';
+    const recValue = isClause ? p.sale_price_fmt : p.recommended_bid_fmt;
+
+    html += `<div class="player-row" style="align-items:flex-start;padding:14px 0">
+      <div class="player-img-placeholder" style="margin-top:2px">${posIcon(p.position_id)}</div>
       <div class="player-info">
         <div class="player-name">${p.nickname}${statusIcon(p.status)} <span class="score-badge ${scoreClass(sc)}">${sc}</span></div>
-        <div class="player-meta">${p.position} · ${p.seller}</div>
-        ${t ? `<div class="player-meta">${trendHTML(t)}</div>` : ''}
-        <div class="player-meta" style="color:var(--blue);font-size:11px">${p.strategy_note}</div>
-        ${p.season_gap ? `<div class="player-meta" style="color:var(--amber);font-size:11px">📈 ${p.season_gap}</div>` : ''}
-      </div>
-      <div class="player-right">
-        <div class="player-value">${p.sale_price_fmt}</div>
-        <div class="player-pts">${p.average_points} pts/j</div>
-        <div style="font-size:11px;color:var(--green)">Máx: ${p.max_bid_fmt}</div>
+        <div class="player-meta">${p.position}${p.seller ? ' · ' + p.seller : ''}</div>
+        ${t ? `<div class="player-meta" style="margin-top:4px">${trendHTML(t)}</div>` : ''}
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
+          <div style="background:var(--surface2);border-radius:6px;padding:6px 8px">
+            <div style="font-size:10px;color:var(--muted)">Máx temporada</div>
+            <div style="font-size:13px;font-weight:700;color:var(--amber)">${maxSeason}</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:6px;padding:6px 8px">
+            <div style="font-size:10px;color:var(--muted)">${compraLabel}</div>
+            <div style="font-size:13px;font-weight:700">${compraValue}</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:6px;padding:6px 8px">
+            <div style="font-size:10px;color:var(--muted)">${recLabel}</div>
+            <div style="font-size:13px;font-weight:700;color:var(--green)">${recValue}</div>
+          </div>
+        </div>
       </div>
     </div>`;
   });
@@ -325,7 +341,7 @@ function renderRivals(rivals) {
 
 function renderOpportunities(market) {
   const el = document.getElementById('opor-list');
-  const all = market?.players?.filter(p => p.score >= 55) || [];
+  const all = (market?.players || []).filter(p => p.score >= 55 && p.position_id !== 5);
   if (!all.length) { el.innerHTML = '<div class="card"><div style="color:var(--muted);text-align:center;padding:20px">Sin oportunidades destacadas</div></div>'; return; }
   let html = '';
   all.slice(0, 8).forEach(p => {
