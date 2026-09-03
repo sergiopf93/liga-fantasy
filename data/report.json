@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T20:21:39.174743",
+  "generated_at": "2026-09-03T21:01:20.104047",
   "summary": {
     "team_value": 250874192,
     "team_value_fmt": "250.87M€",
@@ -12,19 +12,7 @@
     "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
   "top_buys": [],
-  "sell_recommendations": [
-    {
-      "name": "Sergio Carreira",
-      "nickname": "Carreira",
-      "position": "Defensa",
-      "market_value_fmt": "6.14M€",
-      "sell_score": 55,
-      "reasons": [
-        "Bajo rendimiento: 1.5 pts/jornada",
-        "Sin puntuar última jornada con media baja"
-      ]
-    }
-  ],
+  "sell_recommendations": [],
   "clause_risks": [
     {
       "name": "Jan Oblak",
