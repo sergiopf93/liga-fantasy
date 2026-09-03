@@ -208,7 +208,7 @@ function renderSummary(report, team) {
     <div class="stat-box"><div class="stat-value" style="color:var(--green)">${s.team_value_fmt || fmt(team?.team_value) || 'N/D'}</div><div class="stat-label">Valor plantilla</div></div>
     <div class="stat-box"><div class="stat-value" style="color:var(--blue)">${s.budget_fmt || 'N/D'}</div><div class="stat-label">Presupuesto</div></div>
     <div class="stat-box"><div class="stat-value">${s.points || team?.team_points || 0}</div><div class="stat-label">Puntos</div></div>
-    <div class="stat-box"><div class="stat-value" style="color:${s.goalkeeper_risk==='CRÍTICO'?'var(--red)':s.goalkeeper_risk==='ALTO'?'var(--amber)':'var(--green)'}">${s.goalkeeper_count ?? '?'} 🧤</div><div class="stat-label">Portero(s)</div></div>`;
+    <div class="stat-box"><div class="stat-value" style="color:var(--blue)">${s.my_position ? s.my_position + 'º' : '?'}</div><div class="stat-label">Posición liga</div></div>`;
 }
 
 function renderTodayActions(report) {
@@ -295,6 +295,7 @@ function renderMarketList(players, containerId, type) {
         <div class="player-meta">${p.position} · ${p.seller}</div>
         ${t ? `<div class="player-meta">${trendHTML(t)}</div>` : ''}
         <div class="player-meta" style="color:var(--blue);font-size:11px">${p.strategy_note}</div>
+        ${p.season_gap ? `<div class="player-meta" style="color:var(--amber);font-size:11px">📈 ${p.season_gap}</div>` : ''}
       </div>
       <div class="player-right">
         <div class="player-value">${p.sale_price_fmt}</div>
