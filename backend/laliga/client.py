@@ -107,3 +107,11 @@ def get_league_formations(token: str) -> Optional[dict]:
 def get_favourite_players(token: str, team_id: str = "37889563") -> Optional[list]:
     """Jugadores favoritos del equipo"""
     return _get(f"/api/v1/competition/1/teams/{team_id}/favourite-players", token=token, params={"x-lang": "es"})
+
+def get_player_market_value_history(player_id: str) -> Optional[list]:
+    """
+    Historial completo de valor de mercado de un jugador desde inicio de temporada.
+    Endpoint verificado: /api/v1/competition/1/player/{id}/market-value
+    Respuesta: [{date, bids, marketValue, lfpId}, ...]
+    """
+    return _get(f"/api/v1/competition/1/player/{player_id}/market-value", params={"x-lang": "es"})
