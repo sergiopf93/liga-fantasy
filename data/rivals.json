@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T11:23:41.737043",
+  "updated_at": "2026-09-03T12:59:30.912013",
   "my_position": 4,
   "rivals": [
     {
@@ -65,8 +65,8 @@
     {
       "team_id": "37859264",
       "manager": "fruizmata7",
-      "team_value": 153071805,
-      "team_value_fmt": "153.07M€",
+      "team_value": 158900369,
+      "team_value_fmt": "158.90M€",
       "points": 73,
       "budget_fmt": "N/D",
       "is_me": false,
