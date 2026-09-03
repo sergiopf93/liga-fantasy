@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from backend.laliga import client
 from backend.laliga.models import MyTeam, MarketPlayer, RivalTeam
-from backend.strategy.player_scoring import score_market_player, score_my_player_for_sale, build_trends
+from backend.strategy.player_scoring import score_market_player, score_my_player_for_sale, build_trends, build_trend_from_history
 from backend.strategy.clause_risk import assess_clause_risk, analyze_goalkeeper_situation
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -64,20 +64,11 @@ def _trend_dict(t):
 def run():
     logger.info("Iniciando informe...")
 
-    # ── Historial de precios ───────────────────────────────────────────────
-    # fixture-player-values tiene el valor de cada jornada disputada
-    # Al inicio de temporada puede haber solo 1-2 jornadas, el máximo
-    # real será el valor más alto entre todas las jornadas disponibles
-    trends = {}
-    fixture_data = client.get_fixture_player_values()
-    if fixture_data and isinstance(fixture_data, list):
-        # Agrupar por jornada para ver cuántas tenemos
-        fixtures = set(e.get("fixtureId", "") for e in fixture_data)
-        logger.info(f"Historial: {len(fixture_data)} entradas, {len(fixtures)} jornadas: {sorted(fixtures)}")
-        trends = build_trends(fixture_data)
-        logger.info(f"Tendencias calculadas: {len(trends)} jugadores")
-    else:
-        logger.warning("Sin historial de precios")
+    # ── Historial de precios (precargado vacío, se rellena por jugador) ──────
+    # El historial real se obtiene por jugador con /api/v1/competition/1/player/{id}/market-value
+    # Esto da el historial desde inicio de temporada (29/06) con fechas reales
+    trends = {}  # Se rellena al procesar el mercado y la plantilla
+    logger.info("Historial de precios: se cargará por jugador desde el endpoint market-value")
 
     # ── Mi equipo ─────────────────────────────────────────────────────────
     my_team = None
@@ -111,7 +102,7 @@ def run():
                     "average_points": round(p.average_points, 2),
                     "status": p.status,
                     "image_url": p.image_url,
-                    "trend": _trend_dict(trends.get(p.id)),
+                    "trend": _trend_dict(build_trend_from_history(p.id, client.get_player_market_value_history(p.id) or [], p.market_value)),
                 } for p in my_team.players],
             })
         else:
@@ -129,7 +120,9 @@ def run():
             for entry in market_raw:
                 try:
                     mp   = MarketPlayer.from_api(entry)
-                    t    = trends.get(mp.player.id)
+                    # Obtener historial real de precios de este jugador
+                    history = client.get_player_market_value_history(mp.player.id)
+                    t = build_trend_from_history(mp.player.id, history or [], mp.player.market_value)
                     s    = score_market_player(mp, budget, t)
                     tipo = get_market_type(entry)
 
