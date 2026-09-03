@@ -1,9 +1,9 @@
 """
 Generador del informe diario
-Tres tipos de mercado:
-- subasta: rival pone precio < clausula, se puja
-- clausulazo: rival pone precio == clausula, precio fijo al rival
-- general: sin seller, mercado público de LaLiga
+- Sin seller = mercado general (subasta)
+- Con seller = jugador de rival (clausulazo, precio fijo)
+- Máximo de temporada calculado desde fixture-player-values (todas las jornadas)
+- Mi equipo incluido en clasificación de rivales
 """
 import os, sys, json, logging
 from datetime import datetime
@@ -39,31 +39,13 @@ def fmt(v):
 
 def get_market_type(entry: dict) -> str:
     """
-    - Sin seller: mercado general de LaLiga, se puja normalmente
-    - Con seller: jugador de un rival, es un clausulazo (precio fijo al rival)
+    Sin seller = mercado general de LaLiga → subasta (se puja)
+    Con seller = jugador de rival → clausulazo (precio fijo al rival)
     """
     seller_id = str(entry.get("sellerTeam", {}).get("id", ""))
     if not seller_id or seller_id == "0":
         return "subasta"
     return "clausulazo"
-
-def _old_get_market_type(entry):
-    """
-    Determina el tipo de mercado:
-    - general: sin seller (mercado público de LaLiga)
-    - clausulazo: seller existe y salePrice >= 98% del buyoutClause
-    - subasta: seller existe y salePrice < 98% del buyoutClause
-    """
-    seller_id = str(entry.get("sellerTeam", {}).get("id", ""))
-    if not seller_id or seller_id == "0":
-        return "general"
-    
-    sale   = entry.get("salePrice", 0)
-    clause = entry.get("playerTeam", {}).get("buyoutClause", 0)
-    
-    if clause > 0 and sale / clause >= 0.97:
-        return "clausulazo"
-    return "subasta"
 
 
 def _trend_dict(t):
@@ -82,15 +64,24 @@ def _trend_dict(t):
 def run():
     logger.info("Iniciando informe...")
 
-    # ── Historial de precios (público) ────────────────────────────────────
+    # ── Historial de precios ───────────────────────────────────────────────
+    # fixture-player-values tiene el valor de cada jornada disputada
+    # Al inicio de temporada puede haber solo 1-2 jornadas, el máximo
+    # real será el valor más alto entre todas las jornadas disponibles
     trends = {}
     fixture_data = client.get_fixture_player_values()
     if fixture_data and isinstance(fixture_data, list):
+        # Agrupar por jornada para ver cuántas tenemos
+        fixtures = set(e.get("fixtureId", "") for e in fixture_data)
+        logger.info(f"Historial: {len(fixture_data)} entradas, {len(fixtures)} jornadas: {sorted(fixtures)}")
         trends = build_trends(fixture_data)
-        logger.info(f"Historial: {len(trends)} jugadores")
+        logger.info(f"Tendencias calculadas: {len(trends)} jugadores")
+    else:
+        logger.warning("Sin historial de precios")
 
     # ── Mi equipo ─────────────────────────────────────────────────────────
     my_team = None
+    my_team_standing = None  # Para incluirme en la clasificación
     if TOKEN:
         team_data  = client.get_my_team(TOKEN, TEAM_ID)
         money_data = client.get_my_money(TOKEN, TEAM_ID)
@@ -129,7 +120,6 @@ def run():
     # ── Mercado ───────────────────────────────────────────────────────────
     subastas    = []
     clausulazos = []
-    general     = []
     all_market  = []
 
     if TOKEN:
@@ -144,10 +134,15 @@ def run():
                     tipo = get_market_type(entry)
 
                     strategy = {
-                        "clausulazo": f"CLAUSULAZO — Precio fijo {fmt(mp.sale_price)} al rival {mp.seller_manager}. Sin puja.",
-                        "subasta":    f"SUBASTA — Precio salida {fmt(mp.sale_price)} de {mp.seller_manager}. Puja máxima recomendada: {fmt(s.max_bid)}.",
-                        "general":    f"MERCADO GENERAL — Disponible directamente por {fmt(mp.sale_price)}. Sin rival involucrado.",
+                        "clausulazo": f"CLAUSULAZO — Pagas {fmt(mp.sale_price)} directamente a {mp.seller_manager}. Precio fijo.",
+                        "subasta":    f"SUBASTA — Precio salida {fmt(mp.sale_price)}. Puja máxima recomendada: {fmt(s.max_bid)}.",
                     }.get(tipo, "")
+
+                    # Calcular diferencia con máximo de temporada
+                    season_gap = ""
+                    if t and t.max_value > mp.player.market_value:
+                        diff_pct = (t.max_value - mp.player.market_value) / t.max_value * 100
+                        season_gap = f"Actualmente al {100-diff_pct:.0f}% de su máximo de temporada ({fmt(t.max_value)})"
 
                     item = {
                         "market_id": mp.market_id,
@@ -170,6 +165,7 @@ def run():
                         "max_bid_fmt": fmt(s.max_bid),
                         "market_type": tipo,
                         "strategy_note": strategy,
+                        "season_gap": season_gap,
                         "seller": mp.seller_manager,
                         "seller_team_id": mp.seller_team_id,
                         "expiration": mp.expiration_date,
@@ -184,54 +180,72 @@ def run():
                     all_market.append(item)
                     if tipo == "clausulazo":
                         clausulazos.append(item)
-                    elif tipo == "subasta":
-                        subastas.append(item)
                     else:
-                        general.append(item)
+                        subastas.append(item)
                 except Exception as e:
                     logger.warning(f"Error mercado: {e}")
 
-    for lst in [all_market, subastas, clausulazos, general]:
-        lst.sort(key=lambda x: x["score"], reverse=True)
+    # Ordenar por potencial de recuperación respecto al máximo de temporada
+    # (mayor diferencia con el máximo = mayor oportunidad)
+    def sort_key(p):
+        t = p.get("trend")
+        if t and t.get("recovery_potential", 0) > 0:
+            return (t["recovery_potential"] * 0.5 + p["score"] * 0.5)
+        return p["score"]
+
+    for lst in [all_market, subastas, clausulazos]:
+        lst.sort(key=sort_key, reverse=True)
 
     save_json("market.json", {
         "updated_at": datetime.now().isoformat(),
         "count": len(all_market),
         "subastas": subastas,
         "clausulazos": clausulazos,
-        "general": general,
         "players": all_market,
     })
 
-    # ── Rivales ───────────────────────────────────────────────────────────
+    # ── Clasificación (incluyendo mi equipo) ──────────────────────────────
     rivals_out = []
+    my_entry   = None
+
     if TOKEN:
         standing = client.get_league_standing(TOKEN, LEAGUE_ID)
-        logger.info(f"Standing raw type: {type(standing)}, value: {str(standing)[:300]}")
         if standing:
-            rows = standing if isinstance(standing, list) else standing.get("teams", standing.get("data", []))
+            rows = standing if isinstance(standing, list) else standing.get("teams", [])
             for entry in rows:
                 try:
                     team = entry.get("team", entry)
                     manager = team.get("manager", {})
                     manager_name = manager.get("managerName", "") if isinstance(manager, dict) else ""
                     tid = str(team.get("id", ""))
-                    if tid == TEAM_ID:
-                        continue
-                    rivals_out.append({
+                    points = team.get("teamPoints", entry.get("points", 0))
+                    team_value = team.get("teamValue", 0)
+
+                    row = {
                         "team_id": tid,
-                        "manager": manager_name or team.get("managerName", ""),
-                        "team_value": team.get("teamValue", 0),
-                        "team_value_fmt": fmt(team.get("teamValue", 0)),
-                        "points": team.get("teamPoints", entry.get("points", 0)),
+                        "manager": manager_name,
+                        "team_value": team_value,
+                        "team_value_fmt": fmt(team_value),
+                        "points": points,
                         "budget_fmt": "N/D",
-                    })
+                        "is_me": tid == TEAM_ID,
+                    }
+
+                    if tid == TEAM_ID:
+                        my_entry = row
+                    rivals_out.append(row)
                 except Exception as e:
                     logger.warning(f"Error rival: {e}")
+
             rivals_out.sort(key=lambda x: x["points"], reverse=True)
+
+            # Añadir posición
+            for i, r in enumerate(rivals_out):
+                r["position"] = i + 1
 
     save_json("rivals.json", {
         "updated_at": datetime.now().isoformat(),
+        "my_position": my_entry.get("position") if my_entry else None,
         "rivals": rivals_out,
     })
 
@@ -257,11 +271,9 @@ def run():
 
     # ── Top compras ────────────────────────────────────────────────────────
     budget = my_team.budget if my_team else 0
-    # Priorizar subastas sobre clausulazos en recomendaciones
     top_buys = [
         p for p in all_market
         if p["score"] >= 50 and (p["sale_price"] <= budget * 0.8 or budget == 0)
-        and p["market_type"] != "general"  # No recomendar mercado general en hoy
     ][:5]
 
     save_json("report.json", {
@@ -272,6 +284,7 @@ def run():
             "budget": my_team.budget if my_team else 0,
             "budget_fmt": fmt(my_team.budget) if my_team and my_team.budget else "N/D",
             "points": my_team.team_points if my_team else 0,
+            "my_position": my_entry.get("position") if my_entry else None,
             "goalkeeper_risk": gk_analysis.get("risk", "N/D"),
             "goalkeeper_count": gk_analysis.get("count", 0),
             "goalkeeper_recommendation": gk_analysis.get("recommendation", ""),
@@ -287,6 +300,7 @@ def run():
             "max_bid_fmt": p["max_bid_fmt"],
             "market_type": p["market_type"],
             "strategy_note": p["strategy_note"],
+            "season_gap": p.get("season_gap", ""),
             "reasons": p["reasons"],
             "status": p["status"],
             "average_points": p["average_points"],
