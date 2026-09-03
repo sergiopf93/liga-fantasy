@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T21:26:12.854527",
+  "generated_at": "2026-09-03T07:51:17.592055",
   "summary": {
     "team_value": 202814643,
     "team_value_fmt": "202.81M€",
@@ -12,29 +12,28 @@
   },
   "top_buys": [
     {
-      "name": "Xavi Espart",
-      "nickname": "Xavi Espart",
+      "name": "Iñigo Arguibide",
+      "nickname": "Arguibide",
       "position": "Defensa",
-      "sale_price_fmt": "2.59M€",
-      "market_value_fmt": "4.42M€",
-      "score": 81.5,
-      "recommended_bid_fmt": "2.72M€",
-      "max_bid_fmt": "4.19M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Precio fijo 2.59M€ al rival fruizmata7. Sin puja.",
+      "sale_price_fmt": "1.25M€",
+      "market_value_fmt": "1.52M€",
+      "score": 83.5,
+      "recommended_bid_fmt": "N/D",
+      "max_bid_fmt": "N/D",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 1.25M€ de . Puja máxima recomendada: N/D.",
       "reasons": [
-        "Precio 2.59M€ muy por debajo del valor 4.42M€ (+70.6%)",
-        "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
+        "Precio 1.25M€ muy por debajo del valor 1.52M€ (+21.6%)",
+        "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
         "Tendencia reciente: estable",
-        "Rendimiento excelente: 9.7 pts/jornada",
-        "1 ofertas activas"
+        "Rendimiento excelente: 6.0 pts/jornada"
       ],
       "status": "ok",
-      "average_points": 9.67,
+      "average_points": 6,
       "trend": {
-        "max_value": 12000000,
-        "max_value_fmt": "12.00M€",
-        "min_value": 12000000,
+        "max_value": 7000000,
+        "max_value_fmt": "7.00M€",
+        "min_value": 7000000,
         "recent_trend": "estable",
         "trend_pct": 0.0,
         "recovery_potential": 0.0,
@@ -46,14 +45,14 @@
       "nickname": "Abel Bretones",
       "position": "Defensa",
       "sale_price_fmt": "5.58M€",
-      "market_value_fmt": "6.31M€",
-      "score": 72.8,
+      "market_value_fmt": "6.81M€",
+      "score": 81.5,
       "recommended_bid_fmt": "5.86M€",
-      "max_bid_fmt": "6.00M€",
+      "max_bid_fmt": "6.47M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Precio fijo 5.58M€ al rival JavierRH. Sin puja.",
       "reasons": [
-        "Precio ligeramente inferior al valor (13.2% margen)",
+        "Precio 5.58M€ muy por debajo del valor 6.81M€ (+22.0%)",
         "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
         "Tendencia reciente: estable",
         "Rendimiento excelente: 7.0 pts/jornada",
@@ -72,18 +71,48 @@
       }
     },
     {
+      "name": "Xavi Espart",
+      "nickname": "Xavi Espart",
+      "position": "Defensa",
+      "sale_price_fmt": "2.59M€",
+      "market_value_fmt": "5.53M€",
+      "score": 81.5,
+      "recommended_bid_fmt": "2.72M€",
+      "max_bid_fmt": "5.25M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Precio fijo 2.59M€ al rival fruizmata7. Sin puja.",
+      "reasons": [
+        "Precio 2.59M€ muy por debajo del valor 5.53M€ (+113.5%)",
+        "Potencial limitado: ya cerca de su máximo histórico 12.00M€",
+        "Tendencia reciente: estable",
+        "Rendimiento excelente: 9.7 pts/jornada",
+        "1 ofertas activas"
+      ],
+      "status": "ok",
+      "average_points": 9.67,
+      "trend": {
+        "max_value": 12000000,
+        "max_value_fmt": "12.00M€",
+        "min_value": 12000000,
+        "recent_trend": "estable",
+        "trend_pct": 0.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
       "name": "Julen Agirrezabala",
       "nickname": "Agirrezabala",
       "position": "Portero",
       "sale_price_fmt": "7.81M€",
-      "market_value_fmt": "8.84M€",
-      "score": 67.8,
+      "market_value_fmt": "9.43M€",
+      "score": 76.5,
       "recommended_bid_fmt": "8.20M€",
-      "max_bid_fmt": "8.40M€",
+      "max_bid_fmt": "8.96M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Precio fijo 7.81M€ al rival Doggy Sanxe. Sin puja.",
       "reasons": [
-        "Precio ligeramente inferior al valor (13.2% margen)",
+        "Precio 7.81M€ muy por debajo del valor 9.43M€ (+20.7%)",
         "Potencial limitado: ya cerca de su máximo histórico 20.00M€",
         "Tendencia reciente: estable",
         "Buen rendimiento: 5.7 pts/jornada",
@@ -102,57 +131,29 @@
       }
     },
     {
-      "name": "Iñigo Arguibide",
-      "nickname": "Arguibide",
+      "name": "Yoel Lago",
+      "nickname": "Yoel Lago",
       "position": "Defensa",
-      "sale_price_fmt": "1.25M€",
-      "market_value_fmt": "1.25M€",
-      "score": 66.0,
-      "recommended_bid_fmt": "N/D",
-      "max_bid_fmt": "N/D",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 1.25M€ de . Puja máxima recomendada: N/D.",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Potencial limitado: ya cerca de su máximo histórico 7.00M€",
-        "Tendencia reciente: estable",
-        "Rendimiento excelente: 6.0 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 6,
-      "trend": {
-        "max_value": 7000000,
-        "max_value_fmt": "7.00M€",
-        "min_value": 7000000,
-        "recent_trend": "estable",
-        "trend_pct": 0.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Rodrigo Riquelme",
-      "nickname": "Riquelme",
-      "position": "Centrocampista",
-      "sale_price_fmt": "9.76M€",
-      "market_value_fmt": "9.76M€",
-      "score": 66.0,
-      "recommended_bid_fmt": "9.76M€",
-      "max_bid_fmt": "9.76M€",
+      "sale_price_fmt": "1.38M€",
+      "market_value_fmt": "1.49M€",
+      "score": 73.8,
+      "recommended_bid_fmt": "1.40M€",
+      "max_bid_fmt": "1.34M€",
       "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Precio fijo 9.76M€ al rival fruizmata7. Sin puja.",
+      "strategy_note": "CLAUSULAZO — Precio fijo 1.38M€ al rival JavierRH. Sin puja.",
       "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Potencial limitado: ya cerca de su máximo histórico 11.00M€",
+        "Precio ligeramente inferior al valor (8.1% margen)",
+        "Potencial limitado: ya cerca de su máximo histórico 10.00M€",
         "Tendencia reciente: estable",
-        "Rendimiento excelente: 8.7 pts/jornada"
+        "Buen rendimiento: 4.3 pts/jornada",
+        "Sin ofertas — oportunidad sin competencia"
       ],
       "status": "ok",
-      "average_points": 8.67,
+      "average_points": 4.33,
       "trend": {
-        "max_value": 11000000,
-        "max_value_fmt": "11.00M€",
-        "min_value": 11000000,
+        "max_value": 10000000,
+        "max_value_fmt": "10.00M€",
+        "min_value": 10000000,
         "recent_trend": "estable",
         "trend_pct": 0.0,
         "recovery_potential": 0.0,
@@ -165,7 +166,7 @@
       "name": "Wojciech Szczesny",
       "nickname": "Szczesny",
       "position": "Portero",
-      "market_value_fmt": "1.60M€",
+      "market_value_fmt": "1.56M€",
       "sell_score": 55,
       "reasons": [
         "Bajo rendimiento: 0.0 pts/jornada",
@@ -184,7 +185,7 @@
       "reasons": [
         "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
         "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 4.57M€ elevada respecto al valor 1.60M€ — protección moderada"
+        "Cláusula 4.57M€ elevada respecto al valor 1.56M€ — protección moderada"
       ],
       "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
     },
@@ -196,7 +197,7 @@
       "risk_score": 33.0,
       "buyout_clause_fmt": "54.87M€",
       "reasons": [
-        "Cláusula 54.87M€ muy cercana al valor de mercado 53.08M€ — fácil de ejecutar"
+        "Cláusula 54.87M€ muy cercana al valor de mercado 52.30M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -206,9 +207,9 @@
       "position": "Defensa",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "4.45M€",
+      "buyout_clause_fmt": "4.50M€",
       "reasons": [
-        "Cláusula 4.45M€ muy cercana al valor de mercado 4.45M€ — fácil de ejecutar"
+        "Cláusula 4.50M€ muy cercana al valor de mercado 4.50M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -218,9 +219,9 @@
       "position": "Centrocampista",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "7.75M€",
+      "buyout_clause_fmt": "7.86M€",
       "reasons": [
-        "Cláusula 7.75M€ muy cercana al valor de mercado 7.73M€ — fácil de ejecutar"
+        "Cláusula 7.86M€ muy cercana al valor de mercado 7.86M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
