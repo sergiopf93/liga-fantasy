@@ -51,15 +51,12 @@ def get_market_type(entry: dict) -> str:
 def _trend_dict(t):
     if not t: return None
     return {
-        "max_value": t.max_season_value,
-        "max_value_fmt": fmt(t.max_season_value),
-        "min_value": t.min_season_value,
-        "first_value": t.first_season_value,
-        "first_value_fmt": fmt(t.first_season_value),
+        "max_value": t.max_value,
+        "max_value_fmt": fmt(t.max_value),
+        "min_value": t.min_value,
         "recent_trend": t.recent_trend,
         "trend_pct": t.trend_pct,
         "recovery_potential": t.recovery_potential,
-        "growth_from_start": t.growth_from_start,
         "potential_label": t.potential_label,
     }
 
@@ -123,6 +120,9 @@ def run():
             for entry in market_raw:
                 try:
                     mp   = MarketPlayer.from_api(entry)
+                    # Saltar entrenadores (position_id 5)
+                    if mp.player.position_id == 5:
+                        continue
                     # Obtener historial real de precios de este jugador
                     history = client.get_player_market_value_history(mp.player.id)
                     t = build_trend_from_history(mp.player.id, history or [], mp.player.market_value)
