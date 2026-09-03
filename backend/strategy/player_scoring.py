@@ -34,9 +34,9 @@ class PlayerTrend:
     max_season_value: int       # máximo real desde inicio de temporada
     min_season_value: int       # mínimo real desde inicio de temporada
     first_season_value: int     # valor al inicio de temporada (29/06)
+    values_history: List[int]   # todos los valores ordenados por fecha
     max_value: int = 0          # alias de max_season_value para compatibilidad
     min_value: int = 0          # alias de min_season_value para compatibilidad
-    values_history: List[int]   # todos los valores ordenados por fecha
     recent_trend: str           # "subiendo", "bajando", "estable"
     trend_pct: float            # % cambio últimas entradas
     recovery_potential: float   # (max_season - current) / max_season * 100
