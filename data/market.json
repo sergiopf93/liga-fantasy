@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-03T21:10:06.366993",
-  "count": 53,
+  "updated_at": "2026-09-03T21:22:51.401773",
+  "count": 54,
   "subastas": [
     {
       "market_id": "145151337",
@@ -1981,6 +1981,56 @@
         "trend_pct": 3.4,
         "recovery_potential": 5.2,
         "potential_label": "BAJO"
+      }
+    },
+    {
+      "market_id": "27849955",
+      "player_id": "2883",
+      "name": "Aleksa Puric",
+      "nickname": "Purić",
+      "position": "Defensa",
+      "position_id": 2,
+      "sale_price": 434872,
+      "sale_price_fmt": "0.43M€",
+      "market_value": 434872,
+      "market_value_fmt": "0.43M€",
+      "buyout_clause": 1000000,
+      "buyout_clause_fmt": "1.00M€",
+      "score": 26.5,
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Por debajo de su máximo de temporada 0.70M€ — recuperación potencial 38%",
+        "Tendencia reciente a la baja: -3.0%",
+        "Ha bajado 37.9% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "FUERA DE LA LIGA",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "recommended_bid": 443569,
+      "recommended_bid_fmt": "0.44M€",
+      "max_bid": 391384,
+      "max_bid_fmt": "0.39M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 0.43M€ directamente a Serpa93. Precio fijo.",
+      "season_gap": "Actualmente al 62% de su máximo de temporada (0.70M€)",
+      "seller": "Serpa93",
+      "seller_team_id": "37889563",
+      "expiration": "2026-09-06T23:15:43+02:00",
+      "status": "out_of_league",
+      "average_points": 0,
+      "week_points": 0,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2883/256x256/p2883_t175_1_001_000.png",
+      "is_shielded": false,
+      "offers": 0,
+      "trend": {
+        "max_value": 702702,
+        "max_value_fmt": "0.70M€",
+        "min_value": 434872,
+        "recent_trend": "bajando",
+        "trend_pct": -3.0,
+        "recovery_potential": 38.1,
+        "potential_label": "MEDIO"
       }
     },
     {
@@ -4391,6 +4441,56 @@
         "trend_pct": 3.4,
         "recovery_potential": 5.2,
         "potential_label": "BAJO"
+      }
+    },
+    {
+      "market_id": "27849955",
+      "player_id": "2883",
+      "name": "Aleksa Puric",
+      "nickname": "Purić",
+      "position": "Defensa",
+      "position_id": 2,
+      "sale_price": 434872,
+      "sale_price_fmt": "0.43M€",
+      "market_value": 434872,
+      "market_value_fmt": "0.43M€",
+      "buyout_clause": 1000000,
+      "buyout_clause_fmt": "1.00M€",
+      "score": 26.5,
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Por debajo de su máximo de temporada 0.70M€ — recuperación potencial 38%",
+        "Tendencia reciente a la baja: -3.0%",
+        "Ha bajado 37.9% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "FUERA DE LA LIGA",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "recommended_bid": 443569,
+      "recommended_bid_fmt": "0.44M€",
+      "max_bid": 391384,
+      "max_bid_fmt": "0.39M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 0.43M€ directamente a Serpa93. Precio fijo.",
+      "season_gap": "Actualmente al 62% de su máximo de temporada (0.70M€)",
+      "seller": "Serpa93",
+      "seller_team_id": "37889563",
+      "expiration": "2026-09-06T23:15:43+02:00",
+      "status": "out_of_league",
+      "average_points": 0,
+      "week_points": 0,
+      "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2883/256x256/p2883_t175_1_001_000.png",
+      "is_shielded": false,
+      "offers": 0,
+      "trend": {
+        "max_value": 702702,
+        "max_value_fmt": "0.70M€",
+        "min_value": 434872,
+        "recent_trend": "bajando",
+        "trend_pct": -3.0,
+        "recovery_potential": 38.1,
+        "potential_label": "MEDIO"
       }
     },
     {
