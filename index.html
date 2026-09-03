@@ -192,8 +192,8 @@ function trendHTML(trend) {
   if (!trend) return '';
   const arrow = trend.recent_trend === 'subiendo' ? '↑' : trend.recent_trend === 'bajando' ? '↓' : '→';
   const cls = trend.recent_trend === 'subiendo' ? 'trend-up' : trend.recent_trend === 'bajando' ? 'trend-down' : 'trend-stable';
-  const pot = trend.potential_label ? `<span class="potential-${trend.potential_label}"> · Potencial ${trend.potential_label}</span>` : '';
-  return `<span class="${cls}">${arrow} ${trend.trend_pct > 0 ? '+' : ''}${trend.trend_pct}%</span> · Máx: ${trend.max_value_fmt}${pot}`;
+  const recovery = trend.recovery_potential > 0 ? ` · <span class="potential-${trend.potential_label}">↑${trend.recovery_potential.toFixed(0)}% hasta máx temporada (${trend.max_value_fmt})</span>` : '';
+  return `<span class="${cls}">${arrow} ${trend.trend_pct > 0 ? '+' : ''}${trend.trend_pct}% reciente</span>${recovery}`;
 }
 
 function typeBadge(type) {
