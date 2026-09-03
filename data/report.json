@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T13:20:19.822916",
+  "generated_at": "2026-09-03T13:30:44.926734",
   "summary": {
     "team_value": 202814643,
     "team_value_fmt": "202.81M€",
@@ -38,12 +38,9 @@
         "max_value": 1519179,
         "max_value_fmt": "1.52M€",
         "min_value": 564678,
-        "first_value": 600000,
-        "first_value_fmt": "0.60M€",
         "recent_trend": "subiendo",
         "trend_pct": 84.9,
         "recovery_potential": 0.0,
-        "growth_from_start": 153.2,
         "potential_label": "BAJO"
       }
     },
@@ -72,12 +69,9 @@
         "max_value": 6806490,
         "max_value_fmt": "6.81M€",
         "min_value": 1850937,
-        "first_value": 2300000,
-        "first_value_fmt": "2.30M€",
         "recent_trend": "subiendo",
         "trend_pct": 28.2,
         "recovery_potential": 0.0,
-        "growth_from_start": 195.9,
         "potential_label": "BAJO"
       }
     },
@@ -106,12 +100,9 @@
         "max_value": 5525486,
         "max_value_fmt": "5.53M€",
         "min_value": 677391,
-        "first_value": 700000,
-        "first_value_fmt": "0.70M€",
         "recent_trend": "subiendo",
         "trend_pct": 157.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 689.4,
         "potential_label": "BAJO"
       }
     },
@@ -141,12 +132,9 @@
         "max_value": 10570572,
         "max_value_fmt": "10.57M€",
         "min_value": 3360860,
-        "first_value": 5500000,
-        "first_value_fmt": "5.50M€",
         "recent_trend": "subiendo",
         "trend_pct": 36.8,
         "recovery_potential": 0.0,
-        "growth_from_start": 92.2,
         "potential_label": "BAJO"
       }
     },
@@ -175,12 +163,9 @@
         "max_value": 9427622,
         "max_value_fmt": "9.43M€",
         "min_value": 2713464,
-        "first_value": 2900000,
-        "first_value_fmt": "2.90M€",
         "recent_trend": "subiendo",
         "trend_pct": 27.7,
         "recovery_potential": 0.0,
-        "growth_from_start": 225.1,
         "potential_label": "BAJO"
       }
     }
