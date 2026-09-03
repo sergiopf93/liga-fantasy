@@ -1,0 +1,21 @@
+name: Test renovación automática token
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Ejecutar tests de renovación
+        env:
+          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
+          LALIGA_EMAIL: "sergio.pf93@gmail.com"
+          LALIGA_PASSWORD: ${{ secrets.LALIGA_PASSWORD }}
+          LALIGA_REFRESH_TOKEN: ${{ secrets.LALIGA_REFRESH_TOKEN }}
+        run: python scripts/auto_token.py
