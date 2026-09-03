@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T13:09:53.328098",
+  "generated_at": "2026-09-03T13:20:19.822916",
   "summary": {
     "team_value": 202814643,
     "team_value_fmt": "202.81M€",
@@ -11,7 +11,180 @@
     "goalkeeper_count": 1,
     "goalkeeper_recommendation": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
+  "top_buys": [
+    {
+      "name": "Iñigo Arguibide",
+      "nickname": "Arguibide",
+      "position": "Defensa",
+      "sale_price_fmt": "1.25M€",
+      "market_value_fmt": "1.52M€",
+      "score": 90.0,
+      "recommended_bid_fmt": "1.31M€",
+      "max_bid_fmt": "1.44M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 1.25M€. Puja máxima recomendada: 1.44M€.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 1.25M€ muy por debajo del valor 1.52M€ (+21.6%)",
+        "Cerca de su máximo de temporada 1.52M€ — poco margen de subida",
+        "Tendencia reciente al alza: +84.9%",
+        "Ha subido 153.2% desde inicio de temporada",
+        "Rendimiento excelente: 6.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 6,
+      "trend": {
+        "max_value": 1519179,
+        "max_value_fmt": "1.52M€",
+        "min_value": 564678,
+        "first_value": 600000,
+        "first_value_fmt": "0.60M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 84.9,
+        "recovery_potential": 0.0,
+        "growth_from_start": 153.2,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Abel Bretones",
+      "nickname": "Abel Bretones",
+      "position": "Defensa",
+      "sale_price_fmt": "5.58M€",
+      "market_value_fmt": "6.81M€",
+      "score": 84.0,
+      "recommended_bid_fmt": "5.86M€",
+      "max_bid_fmt": "6.47M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 5.58M€ directamente a JavierRH. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 5.58M€ muy por debajo del valor 6.81M€ (+22.0%)",
+        "Cerca de su máximo de temporada 6.81M€ — poco margen de subida",
+        "Tendencia reciente al alza: +28.2%",
+        "Ha subido 195.9% desde inicio de temporada",
+        "Rendimiento excelente: 7.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 7,
+      "trend": {
+        "max_value": 6806490,
+        "max_value_fmt": "6.81M€",
+        "min_value": 1850937,
+        "first_value": 2300000,
+        "first_value_fmt": "2.30M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 28.2,
+        "recovery_potential": 0.0,
+        "growth_from_start": 195.9,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Xavi Espart",
+      "nickname": "Xavi Espart",
+      "position": "Defensa",
+      "sale_price_fmt": "2.59M€",
+      "market_value_fmt": "5.53M€",
+      "score": 84.0,
+      "recommended_bid_fmt": "2.72M€",
+      "max_bid_fmt": "5.25M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 2.59M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 2.59M€ muy por debajo del valor 5.53M€ (+113.5%)",
+        "Cerca de su máximo de temporada 5.53M€ — poco margen de subida",
+        "Tendencia reciente al alza: +157.7%",
+        "Ha subido 689.4% desde inicio de temporada",
+        "Rendimiento excelente: 9.7 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 9.67,
+      "trend": {
+        "max_value": 5525486,
+        "max_value_fmt": "5.53M€",
+        "min_value": 677391,
+        "first_value": 700000,
+        "first_value_fmt": "0.70M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 157.7,
+        "recovery_potential": 0.0,
+        "growth_from_start": 689.4,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Rodrigo Riquelme",
+      "nickname": "Riquelme",
+      "position": "Centrocampista",
+      "sale_price_fmt": "9.76M€",
+      "market_value_fmt": "10.57M€",
+      "score": 81.2,
+      "recommended_bid_fmt": "9.96M€",
+      "max_bid_fmt": "9.51M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 9.76M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio inferior al valor de mercado (8.3% de margen)",
+        "Cerca de su máximo de temporada 10.57M€ — poco margen de subida",
+        "Tendencia reciente al alza: +36.8%",
+        "Ha subido 92.2% desde inicio de temporada",
+        "Rendimiento excelente: 8.7 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 8.67,
+      "trend": {
+        "max_value": 10570572,
+        "max_value_fmt": "10.57M€",
+        "min_value": 3360860,
+        "first_value": 5500000,
+        "first_value_fmt": "5.50M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 36.8,
+        "recovery_potential": 0.0,
+        "growth_from_start": 92.2,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Julen Agirrezabala",
+      "nickname": "Agirrezabala",
+      "position": "Portero",
+      "sale_price_fmt": "7.81M€",
+      "market_value_fmt": "9.43M€",
+      "score": 79.0,
+      "recommended_bid_fmt": "8.20M€",
+      "max_bid_fmt": "8.96M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 7.81M€ directamente a Doggy Sanxe. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 7.81M€ muy por debajo del valor 9.43M€ (+20.7%)",
+        "Cerca de su máximo de temporada 9.43M€ — poco margen de subida",
+        "Tendencia reciente al alza: +27.7%",
+        "Ha subido 225.1% desde inicio de temporada",
+        "Buen rendimiento: 5.7 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5.67,
+      "trend": {
+        "max_value": 9427622,
+        "max_value_fmt": "9.43M€",
+        "min_value": 2713464,
+        "first_value": 2900000,
+        "first_value_fmt": "2.90M€",
+        "recent_trend": "subiendo",
+        "trend_pct": 27.7,
+        "recovery_potential": 0.0,
+        "growth_from_start": 225.1,
+        "potential_label": "BAJO"
+      }
+    }
+  ],
   "sell_recommendations": [
     {
       "name": "Wojciech Szczesny",
