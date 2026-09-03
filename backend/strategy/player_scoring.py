@@ -34,6 +34,8 @@ class PlayerTrend:
     max_season_value: int       # máximo real desde inicio de temporada
     min_season_value: int       # mínimo real desde inicio de temporada
     first_season_value: int     # valor al inicio de temporada (29/06)
+    max_value: int = 0          # alias de max_season_value para compatibilidad
+    min_value: int = 0          # alias de min_season_value para compatibilidad
     values_history: List[int]   # todos los valores ordenados por fecha
     recent_trend: str           # "subiendo", "bajando", "estable"
     trend_pct: float            # % cambio últimas entradas
@@ -96,6 +98,8 @@ def build_trend_from_history(player_id: str, history: list, current_value: int) 
         max_season_value=max_val,
         min_season_value=min_val,
         first_season_value=first_val,
+        max_value=max_val,
+        min_value=min_val,
         values_history=values,
         recent_trend=recent_trend,
         trend_pct=round(trend_pct, 1),
@@ -139,6 +143,8 @@ def build_trends(fixture_values: List[dict]) -> Dict[str, "PlayerTrend"]:
             max_season_value=max_val,
             min_season_value=min_val,
             first_season_value=values[0],
+            max_value=max_val,
+            min_value=min_val,
             values_history=values,
             recent_trend=recent_trend,
             trend_pct=round(trend_pct, 1),
