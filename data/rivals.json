@@ -1,5 +1,76 @@
 {
-  "updated_at": "2026-09-04T18:04:55.620170",
-  "my_position": null,
-  "rivals": []
+  "updated_at": "2026-09-04T19:57:28.831709",
+  "my_position": 4,
+  "rivals": [
+    {
+      "team_id": "37868413",
+      "manager": "JavierRH",
+      "team_value": 301080950,
+      "team_value_fmt": "301.08M€",
+      "points": 173,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 1
+    },
+    {
+      "team_id": "37861648",
+      "manager": "MAP Cardinals",
+      "team_value": 193653976,
+      "team_value_fmt": "193.65M€",
+      "points": 134,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 2
+    },
+    {
+      "team_id": "37865104",
+      "manager": "Juan Hornillos",
+      "team_value": 276147875,
+      "team_value_fmt": "276.15M€",
+      "points": 122,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 3
+    },
+    {
+      "team_id": "37889563",
+      "manager": "Serpa93",
+      "team_value": 248343469,
+      "team_value_fmt": "248.34M€",
+      "points": 118,
+      "budget_fmt": "N/D",
+      "is_me": true,
+      "position": 4
+    },
+    {
+      "team_id": "37859310",
+      "manager": "Migu V",
+      "team_value": 288345687,
+      "team_value_fmt": "288.35M€",
+      "points": 113,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 5
+    },
+    {
+      "team_id": "37951056",
+      "manager": "Doggy Sanxe",
+      "team_value": 223299877,
+      "team_value_fmt": "223.30M€",
+      "points": 111,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 6
+    },
+    {
+      "team_id": "37859264",
+      "manager": "fruizmata7",
+      "team_value": 267804090,
+      "team_value_fmt": "267.80M€",
+      "points": 73,
+      "budget_fmt": "N/D",
+      "is_me": false,
+      "position": 7
+    }
+  ]
 }
