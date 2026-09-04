@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T21:30:36.173301",
+  "updated_at": "2026-09-04T08:44:23.566670",
   "my_position": 4,
   "rivals": [
     {
@@ -15,8 +15,8 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 165626655,
-      "team_value_fmt": "165.63M€",
+      "team_value": 167229918,
+      "team_value_fmt": "167.23M€",
       "points": 134,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,8 +55,8 @@
     {
       "team_id": "37951056",
       "manager": "Doggy Sanxe",
-      "team_value": 237829672,
-      "team_value_fmt": "237.83M€",
+      "team_value": 237350079,
+      "team_value_fmt": "237.35M€",
       "points": 111,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -65,8 +65,8 @@
     {
       "team_id": "37859264",
       "manager": "fruizmata7",
-      "team_value": 269653680,
-      "team_value_fmt": "269.65M€",
+      "team_value": 276838065,
+      "team_value_fmt": "276.84M€",
       "points": 73,
       "budget_fmt": "N/D",
       "is_me": false,
