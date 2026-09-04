@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T19:57:28.831709",
+  "updated_at": "2026-09-04T20:07:41.668985",
   "my_position": 4,
   "rivals": [
     {
@@ -25,8 +25,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 276147875,
-      "team_value_fmt": "276.15M€",
+      "team_value": 275999172,
+      "team_value_fmt": "276.00M€",
       "points": 122,
       "budget_fmt": "N/D",
       "is_me": false,
