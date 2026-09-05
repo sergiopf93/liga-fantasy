@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T08:41:58.264638",
+  "generated_at": "2026-09-05T13:11:54.580821",
   "summary": {
     "team_value": 247013430,
     "team_value_fmt": "247.01M€",
@@ -12,36 +12,6 @@
     "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
   "top_buys": [
-    {
-      "name": "Julio Díaz",
-      "nickname": "Julio Díaz",
-      "position": "Defensa",
-      "sale_price_fmt": "0.43M€",
-      "market_value_fmt": "0.42M€",
-      "score": 54.0,
-      "recommended_bid_fmt": "0.44M€",
-      "max_bid_fmt": "0.38M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 0.43M€ directamente a Juan Hornillos. Precio fijo.",
-      "season_gap": "Actualmente al 71% de su máximo de temporada (0.60M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.60M€ (29% de recuperación posible)",
-        "Ha bajado 29.3% desde inicio de temporada",
-        "Bajo rendimiento: 0.7 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 0.67,
-      "trend": {
-        "max_value": 600285,
-        "max_value_fmt": "0.60M€",
-        "min_value": 424021,
-        "recent_trend": "estable",
-        "trend_pct": -2.0,
-        "recovery_potential": 29.4,
-        "potential_label": "MEDIO"
-      }
-    },
     {
       "name": "Diego Ferrer",
       "nickname": "Ferrer",
