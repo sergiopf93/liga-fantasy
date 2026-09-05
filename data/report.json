@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T21:09:59.936821",
+  "generated_at": "2026-09-05T06:37:31.763372",
   "summary": {
     "team_value": 248343469,
     "team_value_fmt": "248.34M€",
@@ -23,12 +23,12 @@
       "max_bid_fmt": "0.41M€",
       "market_type": "subasta",
       "strategy_note": "SUBASTA — Precio salida 0.46M€. Puja máxima recomendada: 0.41M€.",
-      "season_gap": "Actualmente al 77% de su máximo de temporada (0.60M€)",
+      "season_gap": "Actualmente al 76% de su máximo de temporada (0.60M€)",
       "reasons": [
         "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.60M€ (23% de recuperación posible)",
-        "Tendencia reciente a la baja: -3.3%",
-        "Ha bajado 23.4% desde inicio de temporada",
+        "Moderadamente por debajo de su máximo 0.60M€ (24% de recuperación posible)",
+        "Tendencia reciente a la baja: -3.0%",
+        "Ha bajado 23.8% desde inicio de temporada",
         "Bajo rendimiento: 1.0 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
@@ -38,10 +38,10 @@
       "trend": {
         "max_value": 600000,
         "max_value_fmt": "0.60M€",
-        "min_value": 459814,
+        "min_value": 457412,
         "recent_trend": "bajando",
-        "trend_pct": -3.3,
-        "recovery_potential": 23.4,
+        "trend_pct": -3.0,
+        "recovery_potential": 23.8,
         "potential_label": "MEDIO"
       }
     }
@@ -58,7 +58,7 @@
       "reasons": [
         "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
         "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 51.09M€ muy cercana al valor de mercado 50.38M€ — fácil de ejecutar",
+        "Cláusula 51.09M€ muy cercana al valor de mercado 50.01M€ — fácil de ejecutar",
         "Alto rendimiento (7.0 pts/j) — jugador codiciado"
       ],
       "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
@@ -69,9 +69,9 @@
       "position": "Defensa",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "4.56M€",
+      "buyout_clause_fmt": "4.62M€",
       "reasons": [
-        "Cláusula 4.56M€ muy cercana al valor de mercado 4.56M€ — fácil de ejecutar"
+        "Cláusula 4.62M€ muy cercana al valor de mercado 4.62M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -81,9 +81,9 @@
       "position": "Centrocampista",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "7.99M€",
+      "buyout_clause_fmt": "8.12M€",
       "reasons": [
-        "Cláusula 7.99M€ muy cercana al valor de mercado 7.99M€ — fácil de ejecutar"
+        "Cláusula 8.12M€ muy cercana al valor de mercado 8.12M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },

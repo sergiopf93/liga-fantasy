@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-04T21:09:59.936127",
+  "updated_at": "2026-09-05T06:37:31.762614",
   "my_position": 4,
   "rivals": [
     {
       "team_id": "37868413",
       "manager": "JavierRH",
-      "team_value": 301080950,
-      "team_value_fmt": "301.08M€",
+      "team_value": 302062764,
+      "team_value_fmt": "302.06M€",
       "points": 173,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -25,8 +25,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 275999172,
-      "team_value_fmt": "276.00M€",
+      "team_value": 277671478,
+      "team_value_fmt": "277.67M€",
       "points": 122,
       "budget_fmt": "N/D",
       "is_me": false,
