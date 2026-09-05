@@ -1,115 +1,18 @@
 {
-  "generated_at": "2026-09-05T19:46:55.546958",
+  "generated_at": "2026-09-05T20:19:28.856543",
   "summary": {
-    "team_value": 247013430,
-    "team_value_fmt": "247.01M€",
-    "budget": 719837,
-    "budget_fmt": "0.72M€",
-    "points": 118,
-    "my_position": 4,
-    "goalkeeper_risk": "ALTO",
-    "goalkeeper_count": 1,
-    "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
+    "team_value": 0,
+    "team_value_fmt": "N/D",
+    "budget": 0,
+    "budget_fmt": "N/D",
+    "points": 0,
+    "my_position": null,
+    "goalkeeper_risk": "N/D",
+    "goalkeeper_count": 0,
+    "goalkeeper_recommendation": ""
   },
-  "top_buys": [
-    {
-      "name": "Eduardo Altozano Agudo",
-      "nickname": "Edu Altozano",
-      "position": "Centrocampista",
-      "sale_price_fmt": "0.49M€",
-      "market_value_fmt": "0.49M€",
-      "score": 51.5,
-      "recommended_bid_fmt": "0.50M€",
-      "max_bid_fmt": "0.44M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.49M€. Puja máxima recomendada: 0.44M€.",
-      "season_gap": "Actualmente al 81% de su máximo de temporada (0.60M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.60M€ (19% de recuperación posible)",
-        "Tendencia reciente a la baja: -3.8%",
-        "Ha bajado 19.0% desde inicio de temporada",
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "status": "ok",
-      "average_points": 0,
-      "trend": {
-        "max_value": 601574,
-        "max_value_fmt": "0.60M€",
-        "min_value": 485895,
-        "recent_trend": "bajando",
-        "trend_pct": -3.8,
-        "recovery_potential": 19.2,
-        "potential_label": "MEDIO"
-      }
-    }
-  ],
+  "top_buys": [],
   "sell_recommendations": [],
-  "clause_risks": [
-    {
-      "name": "Jan Oblak",
-      "nickname": "Oblak",
-      "position": "Portero",
-      "risk_level": "CRÍTICO",
-      "risk_score": 83.0,
-      "buyout_clause_fmt": "51.09M€",
-      "reasons": [
-        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
-        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 51.09M€ muy cercana al valor de mercado 50.01M€ — fácil de ejecutar"
-      ],
-      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
-    },
-    {
-      "name": "Einar Galilea",
-      "nickname": "Einar",
-      "position": "Defensa",
-      "risk_level": "MEDIO",
-      "risk_score": 25.0,
-      "buyout_clause_fmt": "4.62M€",
-      "reasons": [
-        "Cláusula 4.62M€ muy cercana al valor de mercado 4.62M€ — fácil de ejecutar"
-      ],
-      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
-      "name": "Eduardo Celmi Camavinga",
-      "nickname": "Camavinga",
-      "position": "Centrocampista",
-      "risk_level": "MEDIO",
-      "risk_score": 25.0,
-      "buyout_clause_fmt": "8.12M€",
-      "reasons": [
-        "Cláusula 8.12M€ muy cercana al valor de mercado 8.12M€ — fácil de ejecutar"
-      ],
-      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
-      "name": "Sergio Canales",
-      "nickname": "Canales",
-      "position": "Centrocampista",
-      "risk_level": "BAJO",
-      "risk_score": 20.0,
-      "buyout_clause_fmt": "30.86M€",
-      "reasons": [
-        "Cláusula 30.86M€ razonablemente ejecutable"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
-    },
-    {
-      "name": "Marc Pubill",
-      "nickname": "Marc Pubill",
-      "position": "Defensa",
-      "risk_level": "BAJO",
-      "risk_score": 12.0,
-      "buyout_clause_fmt": "54.87M€",
-      "reasons": [
-        "Cláusula 54.87M€ razonablemente ejecutable"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
-    }
-  ],
-  "goalkeeper": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
+  "clause_risks": [],
+  "goalkeeper": ""
 }
