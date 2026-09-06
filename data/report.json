@@ -1,18 +1,211 @@
 {
-  "generated_at": "2026-09-06T13:24:04.010441",
+  "generated_at": "2026-09-06T19:50:48.883010",
   "summary": {
-    "team_value": 0,
-    "team_value_fmt": "N/D",
-    "budget": 0,
-    "budget_fmt": "N/D",
-    "points": 0,
-    "my_position": null,
-    "goalkeeper_risk": "N/D",
-    "goalkeeper_count": 0,
-    "goalkeeper_recommendation": ""
+    "team_value": 247013430,
+    "team_value_fmt": "247.01M€",
+    "budget": 719837,
+    "budget_fmt": "0.72M€",
+    "points": 118,
+    "my_position": 4,
+    "goalkeeper_risk": "ALTO",
+    "goalkeeper_count": 1,
+    "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
+  "top_buys": [
+    {
+      "name": "Juan Carlos Arana Gómez",
+      "nickname": "Arana",
+      "position": "Delantero",
+      "sale_price_fmt": "0.56M€",
+      "market_value_fmt": "0.56M€",
+      "score": 60.2,
+      "recommended_bid_fmt": "0.57M€",
+      "max_bid_fmt": "0.51M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.56M€. Puja máxima recomendada: 0.51M€.",
+      "season_gap": "Actualmente al 37% de su máximo de temporada (1.51M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 1.51M€ — potencial de recuperación 63%",
+        "Tendencia reciente a la baja: -4.9%",
+        "Ha bajado 62.5% desde inicio de temporada",
+        "Bajo rendimiento: 0.8 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "status": "ok",
+      "average_points": 0.75,
+      "trend": {
+        "max_value": 1505793,
+        "max_value_fmt": "1.51M€",
+        "min_value": 563092,
+        "recent_trend": "bajando",
+        "trend_pct": -4.9,
+        "recovery_potential": 62.6,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Julio Díaz",
+      "nickname": "Julio Díaz",
+      "position": "Defensa",
+      "sale_price_fmt": "0.42M€",
+      "market_value_fmt": "0.43M€",
+      "score": 54.0,
+      "recommended_bid_fmt": "0.43M€",
+      "max_bid_fmt": "0.38M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 0.42M€ directamente a Juan Hornillos. Precio fijo.",
+      "season_gap": "Actualmente al 71% de su máximo de temporada (0.60M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Moderadamente por debajo de su máximo 0.60M€ (29% de recuperación posible)",
+        "Ha bajado 29.1% desde inicio de temporada",
+        "Bajo rendimiento: 0.5 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 0.5,
+      "trend": {
+        "max_value": 600285,
+        "max_value_fmt": "0.60M€",
+        "min_value": 424021,
+        "recent_trend": "estable",
+        "trend_pct": -1.1,
+        "recovery_potential": 29.1,
+        "potential_label": "MEDIO"
+      }
+    },
+    {
+      "name": "Sergio Lozano",
+      "nickname": "Lozano",
+      "position": "Defensa",
+      "sale_price_fmt": "0.52M€",
+      "market_value_fmt": "0.52M€",
+      "score": 51.5,
+      "recommended_bid_fmt": "0.53M€",
+      "max_bid_fmt": "0.47M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.52M€. Puja máxima recomendada: 0.47M€.",
+      "season_gap": "Actualmente al 78% de su máximo de temporada (0.67M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Moderadamente por debajo de su máximo 0.67M€ (22% de recuperación posible)",
+        "Tendencia reciente a la baja: -3.9%",
+        "Ha bajado 22.4% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 667402,
+        "max_value_fmt": "0.67M€",
+        "min_value": 517993,
+        "recent_trend": "bajando",
+        "trend_pct": -3.9,
+        "recovery_potential": 22.4,
+        "potential_label": "MEDIO"
+      }
+    },
+    {
+      "name": "Diego Díaz",
+      "nickname": "Diego Diaz",
+      "position": "Delantero",
+      "sale_price_fmt": "0.48M€",
+      "market_value_fmt": "0.48M€",
+      "score": 51.5,
+      "recommended_bid_fmt": "0.49M€",
+      "max_bid_fmt": "0.44M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.48M€. Puja máxima recomendada: 0.44M€.",
+      "season_gap": "Actualmente al 81% de su máximo de temporada (0.60M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Moderadamente por debajo de su máximo 0.60M€ (19% de recuperación posible)",
+        "Tendencia reciente a la baja: -3.1%",
+        "Ha bajado 19.2% desde inicio de temporada",
+        "Bajo rendimiento: 0.3 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "status": "ok",
+      "average_points": 0.33,
+      "trend": {
+        "max_value": 601574,
+        "max_value_fmt": "0.60M€",
+        "min_value": 484993,
+        "recent_trend": "bajando",
+        "trend_pct": -3.1,
+        "recovery_potential": 19.4,
+        "potential_label": "MEDIO"
+      }
+    }
+  ],
   "sell_recommendations": [],
-  "clause_risks": [],
-  "goalkeeper": ""
+  "clause_risks": [
+    {
+      "name": "Jan Oblak",
+      "nickname": "Oblak",
+      "position": "Portero",
+      "risk_level": "CRÍTICO",
+      "risk_score": 83.0,
+      "buyout_clause_fmt": "51.09M€",
+      "reasons": [
+        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
+        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
+        "Cláusula 51.09M€ muy cercana al valor de mercado 49.65M€ — fácil de ejecutar"
+      ],
+      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+    },
+    {
+      "name": "Einar Galilea",
+      "nickname": "Einar",
+      "position": "Defensa",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "4.58M€",
+      "reasons": [
+        "Cláusula 4.58M€ muy cercana al valor de mercado 4.58M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Eduardo Celmi Camavinga",
+      "nickname": "Camavinga",
+      "position": "Centrocampista",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "8.25M€",
+      "reasons": [
+        "Cláusula 8.25M€ muy cercana al valor de mercado 8.25M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Sergio Canales",
+      "nickname": "Canales",
+      "position": "Centrocampista",
+      "risk_level": "BAJO",
+      "risk_score": 20.0,
+      "buyout_clause_fmt": "30.86M€",
+      "reasons": [
+        "Cláusula 30.86M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    },
+    {
+      "name": "Marc Pubill",
+      "nickname": "Marc Pubill",
+      "position": "Defensa",
+      "risk_level": "BAJO",
+      "risk_score": 12.0,
+      "buyout_clause_fmt": "54.87M€",
+      "reasons": [
+        "Cláusula 54.87M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    }
+  ],
+  "goalkeeper": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
 }
