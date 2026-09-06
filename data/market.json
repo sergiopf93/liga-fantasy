@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T20:23:13.453135",
+  "updated_at": "2026-09-06T20:32:57.495032",
   "count": 48,
   "subastas": [
     {
@@ -1235,7 +1235,7 @@
         "Cerca de su máximo de temporada 12.79M€ — poco margen de subida",
         "Tendencia reciente al alza: +3.8%",
         "Ha subido 132.6% desde inicio de temporada",
-        "Rendimiento moderado: 3.0 pts/jornada",
+        "Rendimiento moderado: 2.8 pts/jornada",
         "Precio alto respecto al presupuesto disponible"
       ],
       "recommended_bid": 13049532,
@@ -1249,7 +1249,7 @@
       "seller_team_id": "37868413",
       "expiration": "2026-09-09T17:57:10+02:00",
       "status": "ok",
-      "average_points": 3,
+      "average_points": 2.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t177/p1930/256x256/p1930_t177_1_001_000.png",
       "is_shielded": false,
@@ -2287,7 +2287,7 @@
         "Cerca de su máximo de temporada 12.98M€ — poco margen de subida",
         "Tendencia reciente a la baja: -4.6%",
         "Ha bajado 6.6% desde inicio de temporada",
-        "Bajo rendimiento: 2.0 pts/jornada",
+        "Bajo rendimiento: 1.8 pts/jornada",
         "Precio alto respecto al presupuesto disponible"
       ],
       "recommended_bid": 12133672,
@@ -2301,7 +2301,7 @@
       "seller_team_id": "37865104",
       "expiration": "2026-09-08T23:14:20+02:00",
       "status": "ok",
-      "average_points": 2,
+      "average_points": 1.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t1450/p1147/256x256/p1147_t1450_1_001_000.png",
       "is_shielded": false,
@@ -3304,7 +3304,7 @@
         "Cerca de su máximo de temporada 12.79M€ — poco margen de subida",
         "Tendencia reciente al alza: +3.8%",
         "Ha subido 132.6% desde inicio de temporada",
-        "Rendimiento moderado: 3.0 pts/jornada",
+        "Rendimiento moderado: 2.8 pts/jornada",
         "Precio alto respecto al presupuesto disponible"
       ],
       "recommended_bid": 13049532,
@@ -3318,7 +3318,7 @@
       "seller_team_id": "37868413",
       "expiration": "2026-09-09T17:57:10+02:00",
       "status": "ok",
-      "average_points": 3,
+      "average_points": 2.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t177/p1930/256x256/p1930_t177_1_001_000.png",
       "is_shielded": false,
@@ -4601,7 +4601,7 @@
         "Cerca de su máximo de temporada 12.98M€ — poco margen de subida",
         "Tendencia reciente a la baja: -4.6%",
         "Ha bajado 6.6% desde inicio de temporada",
-        "Bajo rendimiento: 2.0 pts/jornada",
+        "Bajo rendimiento: 1.8 pts/jornada",
         "Precio alto respecto al presupuesto disponible"
       ],
       "recommended_bid": 12133672,
@@ -4615,7 +4615,7 @@
       "seller_team_id": "37865104",
       "expiration": "2026-09-08T23:14:20+02:00",
       "status": "ok",
-      "average_points": 2,
+      "average_points": 1.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t1450/p1147/256x256/p1147_t1450_1_001_000.png",
       "is_shielded": false,
