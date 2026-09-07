@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-07T08:57:05.549707",
+  "generated_at": "2026-09-07T09:49:02.069367",
   "summary": {
     "team_value": 245080685,
     "team_value_fmt": "245.08M€",
-    "budget": 719837,
-    "budget_fmt": "0.72M€",
+    "budget": 819837,
+    "budget_fmt": "0.82M€",
     "points": 118,
     "my_position": 4,
     "goalkeeper_risk": "ALTO",
@@ -76,6 +76,71 @@
       }
     },
     {
+      "name": "Alejandro Iturbe",
+      "nickname": "A. Iturbe",
+      "position": "Portero",
+      "sale_price_fmt": "0.58M€",
+      "market_value_fmt": "0.58M€",
+      "score": 51.5,
+      "recommended_bid_fmt": "0.60M€",
+      "max_bid_fmt": "0.52M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.58M€. Puja máxima recomendada: 0.52M€.",
+      "season_gap": "Actualmente al 72% de su máximo de temporada (0.80M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Moderadamente por debajo de su máximo 0.80M€ (28% de recuperación posible)",
+        "Tendencia reciente a la baja: -4.5%",
+        "Ha bajado 27.6% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "Precio alto respecto al presupuesto disponible"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 802099,
+        "max_value_fmt": "0.80M€",
+        "min_value": 578889,
+        "recent_trend": "bajando",
+        "trend_pct": -4.5,
+        "recovery_potential": 27.8,
+        "potential_label": "MEDIO"
+      }
+    },
+    {
+      "name": "Diego Díaz",
+      "nickname": "Diego Diaz",
+      "position": "Delantero",
+      "sale_price_fmt": "0.48M€",
+      "market_value_fmt": "0.48M€",
+      "score": 57.5,
+      "recommended_bid_fmt": "0.49M€",
+      "max_bid_fmt": "0.44M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.48M€. Puja máxima recomendada: 0.44M€.",
+      "season_gap": "Actualmente al 80% de su máximo de temporada (0.60M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Moderadamente por debajo de su máximo 0.60M€ (20% de recuperación posible)",
+        "Tendencia reciente a la baja: -2.1%",
+        "Ha bajado 19.4% desde inicio de temporada",
+        "Bajo rendimiento: 0.3 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0.33,
+      "trend": {
+        "max_value": 601574,
+        "max_value_fmt": "0.60M€",
+        "min_value": 483847,
+        "recent_trend": "bajando",
+        "trend_pct": -2.1,
+        "recovery_potential": 19.6,
+        "potential_label": "MEDIO"
+      }
+    },
+    {
       "name": "Sergio Lozano",
       "nickname": "Lozano",
       "position": "Defensa",
@@ -105,39 +170,6 @@
         "recent_trend": "bajando",
         "trend_pct": -3.0,
         "recovery_potential": 22.8,
-        "potential_label": "MEDIO"
-      }
-    },
-    {
-      "name": "Diego Díaz",
-      "nickname": "Diego Diaz",
-      "position": "Delantero",
-      "sale_price_fmt": "0.48M€",
-      "market_value_fmt": "0.48M€",
-      "score": 51.5,
-      "recommended_bid_fmt": "0.49M€",
-      "max_bid_fmt": "0.44M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.48M€. Puja máxima recomendada: 0.44M€.",
-      "season_gap": "Actualmente al 80% de su máximo de temporada (0.60M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.60M€ (20% de recuperación posible)",
-        "Tendencia reciente a la baja: -2.1%",
-        "Ha bajado 19.4% desde inicio de temporada",
-        "Bajo rendimiento: 0.3 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "status": "ok",
-      "average_points": 0.33,
-      "trend": {
-        "max_value": 601574,
-        "max_value_fmt": "0.60M€",
-        "min_value": 483847,
-        "recent_trend": "bajando",
-        "trend_pct": -2.1,
-        "recovery_potential": 19.6,
         "potential_label": "MEDIO"
       }
     }
