@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T20:58:01.649791",
+  "updated_at": "2026-09-07T21:30:12.197892",
   "count": 43,
   "subastas": [
     {
@@ -363,7 +363,7 @@
         "Precio en línea con el valor de mercado",
         "Moderadamente por debajo de su máximo 5.69M€ (15% de recuperación posible)",
         "Tendencia reciente a la baja: -6.4%",
-        "Bajo rendimiento: 1.0 pts/jornada",
+        "Bajo rendimiento: 1.8 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -378,7 +378,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 1,
+      "average_points": 1.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2596/256x256/p2596_t954_1_001_000.png",
       "is_shielded": false,
@@ -3545,7 +3545,7 @@
         "Precio en línea con el valor de mercado",
         "Moderadamente por debajo de su máximo 5.69M€ (15% de recuperación posible)",
         "Tendencia reciente a la baja: -6.4%",
-        "Bajo rendimiento: 1.0 pts/jornada",
+        "Bajo rendimiento: 1.8 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -3560,7 +3560,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 1,
+      "average_points": 1.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2596/256x256/p2596_t954_1_001_000.png",
       "is_shielded": false,
