@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T21:30:12.197892",
+  "updated_at": "2026-09-07T21:37:04.655429",
   "count": 43,
   "subastas": [
     {
@@ -358,12 +358,12 @@
       "market_value_fmt": "4.82M€",
       "buyout_clause": 0,
       "buyout_clause_fmt": "N/D",
-      "score": 51.5,
+      "score": 57.8,
       "reasons": [
         "Precio en línea con el valor de mercado",
         "Moderadamente por debajo de su máximo 5.69M€ (15% de recuperación posible)",
         "Tendencia reciente a la baja: -6.4%",
-        "Bajo rendimiento: 1.8 pts/jornada",
+        "Rendimiento moderado: 2.8 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -378,7 +378,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 1.75,
+      "average_points": 2.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2596/256x256/p2596_t954_1_001_000.png",
       "is_shielded": false,
@@ -412,7 +412,7 @@
         "Cerca de su máximo de temporada 5.50M€ — poco margen de subida",
         "Tendencia reciente a la baja: -11.0%",
         "Ha bajado 13.9% desde inicio de temporada",
-        "Bajo rendimiento: 0.0 pts/jornada",
+        "Bajo rendimiento: 1.0 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -427,7 +427,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 0,
+      "average_points": 1,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/no-player/no-player-sq_256.png",
       "is_shielded": false,
@@ -3540,12 +3540,12 @@
       "market_value_fmt": "4.82M€",
       "buyout_clause": 0,
       "buyout_clause_fmt": "N/D",
-      "score": 51.5,
+      "score": 57.8,
       "reasons": [
         "Precio en línea con el valor de mercado",
         "Moderadamente por debajo de su máximo 5.69M€ (15% de recuperación posible)",
         "Tendencia reciente a la baja: -6.4%",
-        "Bajo rendimiento: 1.8 pts/jornada",
+        "Rendimiento moderado: 2.8 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -3560,7 +3560,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 1.75,
+      "average_points": 2.75,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2596/256x256/p2596_t954_1_001_000.png",
       "is_shielded": false,
@@ -3737,7 +3737,7 @@
         "Cerca de su máximo de temporada 5.50M€ — poco margen de subida",
         "Tendencia reciente a la baja: -11.0%",
         "Ha bajado 13.9% desde inicio de temporada",
-        "Bajo rendimiento: 0.0 pts/jornada",
+        "Bajo rendimiento: 1.0 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -3752,7 +3752,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-08T20:48:00+02:00",
       "status": "ok",
-      "average_points": 0,
+      "average_points": 1,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/no-player/no-player-sq_256.png",
       "is_shielded": false,
