@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T15:27:06.002022",
+  "generated_at": "2026-09-07T20:58:01.883814",
   "summary": {
-    "team_value": 245080685,
-    "team_value_fmt": "245.08M€",
+    "team_value": 243269915,
+    "team_value_fmt": "243.27M€",
     "budget": 819837,
     "budget_fmt": "0.82M€",
     "points": 118,
@@ -12,39 +12,6 @@
     "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
   "top_buys": [
-    {
-      "name": "Juan Carlos Arana Gómez",
-      "nickname": "Arana",
-      "position": "Delantero",
-      "sale_price_fmt": "0.56M€",
-      "market_value_fmt": "0.56M€",
-      "score": 60.2,
-      "recommended_bid_fmt": "0.57M€",
-      "max_bid_fmt": "0.50M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.56M€. Puja máxima recomendada: 0.50M€.",
-      "season_gap": "Actualmente al 37% de su máximo de temporada (1.51M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Muy por debajo de su máximo de temporada 1.51M€ — potencial de recuperación 63%",
-        "Tendencia reciente a la baja: -4.1%",
-        "Ha bajado 62.8% desde inicio de temporada",
-        "Bajo rendimiento: 0.8 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "status": "ok",
-      "average_points": 0.75,
-      "trend": {
-        "max_value": 1505793,
-        "max_value_fmt": "1.51M€",
-        "min_value": 558512,
-        "recent_trend": "bajando",
-        "trend_pct": -4.1,
-        "recovery_potential": 62.9,
-        "potential_label": "ALTO"
-      }
-    },
     {
       "name": "Julio Díaz",
       "nickname": "Julio Díaz",
@@ -72,104 +39,6 @@
         "recent_trend": "estable",
         "trend_pct": -0.2,
         "recovery_potential": 28.9,
-        "potential_label": "MEDIO"
-      }
-    },
-    {
-      "name": "Alejandro Iturbe",
-      "nickname": "A. Iturbe",
-      "position": "Portero",
-      "sale_price_fmt": "0.58M€",
-      "market_value_fmt": "0.58M€",
-      "score": 51.5,
-      "recommended_bid_fmt": "0.60M€",
-      "max_bid_fmt": "0.52M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.58M€. Puja máxima recomendada: 0.52M€.",
-      "season_gap": "Actualmente al 72% de su máximo de temporada (0.80M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.80M€ (28% de recuperación posible)",
-        "Tendencia reciente a la baja: -4.6%",
-        "Ha bajado 27.7% desde inicio de temporada",
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "status": "ok",
-      "average_points": 0,
-      "trend": {
-        "max_value": 802099,
-        "max_value_fmt": "0.80M€",
-        "min_value": 578580,
-        "recent_trend": "bajando",
-        "trend_pct": -4.6,
-        "recovery_potential": 27.9,
-        "potential_label": "MEDIO"
-      }
-    },
-    {
-      "name": "Diego Díaz",
-      "nickname": "Diego Diaz",
-      "position": "Delantero",
-      "sale_price_fmt": "0.48M€",
-      "market_value_fmt": "0.48M€",
-      "score": 57.5,
-      "recommended_bid_fmt": "0.49M€",
-      "max_bid_fmt": "0.44M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.48M€. Puja máxima recomendada: 0.44M€.",
-      "season_gap": "Actualmente al 80% de su máximo de temporada (0.60M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.60M€ (20% de recuperación posible)",
-        "Tendencia reciente a la baja: -2.2%",
-        "Ha bajado 19.4% desde inicio de temporada",
-        "Bajo rendimiento: 0.3 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
-      ],
-      "status": "ok",
-      "average_points": 0.33,
-      "trend": {
-        "max_value": 601574,
-        "max_value_fmt": "0.60M€",
-        "min_value": 483537,
-        "recent_trend": "bajando",
-        "trend_pct": -2.2,
-        "recovery_potential": 19.6,
-        "potential_label": "MEDIO"
-      }
-    },
-    {
-      "name": "Sergio Lozano",
-      "nickname": "Lozano",
-      "position": "Defensa",
-      "sale_price_fmt": "0.52M€",
-      "market_value_fmt": "0.52M€",
-      "score": 51.5,
-      "recommended_bid_fmt": "0.53M€",
-      "max_bid_fmt": "0.46M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 0.52M€. Puja máxima recomendada: 0.46M€.",
-      "season_gap": "Actualmente al 77% de su máximo de temporada (0.67M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Moderadamente por debajo de su máximo 0.67M€ (23% de recuperación posible)",
-        "Tendencia reciente a la baja: -3.1%",
-        "Ha bajado 22.8% desde inicio de temporada",
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "status": "ok",
-      "average_points": 0,
-      "trend": {
-        "max_value": 667402,
-        "max_value_fmt": "0.67M€",
-        "min_value": 515217,
-        "recent_trend": "bajando",
-        "trend_pct": -3.1,
-        "recovery_potential": 22.8,
         "potential_label": "MEDIO"
       }
     }
