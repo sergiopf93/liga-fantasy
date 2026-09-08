@@ -130,6 +130,12 @@
     <div class="section-title">Rivales</div>
     <div id="rivals-list"><div class="loading">Cargando...</div></div>
   </div>
+  <!-- AGENTE -->
+  <div class="section" id="sec-agente">
+    <div class="section-title">Agente <span style="font-size:12px;color:var(--amber);font-weight:normal">modo DRY RUN — solo recomendaciones</span></div>
+    <div id="agente-content"><div class="loading">Cargando decisiones...</div></div>
+  </div>
+
   <!-- OPORTUNIDADES -->
   <div class="section" id="sec-opor">
     <div class="section-title">Mejores oportunidades</div>
@@ -151,6 +157,9 @@
   </button>
   <button onclick="showTab('opor',this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Opor.
+  </button>
+  <button onclick="showTab('agente',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Agente
   </button>
 </nav>
 <script>
@@ -371,9 +380,10 @@ function renderOpportunities(market) {
 }
 
 async function init() {
-  const [team, market, report, rivals] = await Promise.all([
+  const [team, market, report, rivals, decisions] = await Promise.all([
     loadJSON('team.json'), loadJSON('market.json'),
-    loadJSON('report.json'), loadJSON('rivals.json')
+    loadJSON('report.json'), loadJSON('rivals.json'),
+    loadJSON('decisions.json')
   ]);
 
   const ts = report?.generated_at || team?.updated_at || '';
@@ -389,6 +399,111 @@ async function init() {
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderOpportunities(market);
+}
+
+function actionIcon(action) {
+  return {sell:'🔴', bid:'🟢', offer:'🔒', lineup:'📋', hold:'⏸️'}[action] || '❓';
+}
+function actionLabel(action) {
+  return {sell:'VENDER', bid:'PUJAR', offer:'CLAUSULAZO', lineup:'ALINEACIÓN', hold:'ESPERAR'}[action] || action.toUpperCase();
+}
+function actionColor(action) {
+  return {sell:'var(--red)', bid:'var(--green)', offer:'var(--purple)', lineup:'var(--blue)', hold:'var(--muted)'}[action] || 'var(--text)';
+}
+
+function renderAgente(decisions) {
+  const el = document.getElementById('agente-content');
+  if (!decisions) { el.innerHTML = '<div class="error-box">Sin datos del agente. Ejecuta el workflow de informe.</div>'; return; }
+
+  let html = '';
+
+  // Avisos
+  if (decisions.warnings?.length) {
+    decisions.warnings.forEach(w => {
+      html += `<div class="action-item warn" style="margin-bottom:8px">
+        <div class="action-icon">⚠️</div>
+        <div class="action-body"><div class="action-title">${w}</div></div>
+      </div>`;
+    });
+  }
+
+  // Mejor alineación
+  if (decisions.best_lineup) {
+    const bl = decisions.best_lineup;
+    html += `<div class="card" style="margin-bottom:12px">
+      <div class="card-title">⚽ Mejor 11 posible · Formación ${bl.formation.join('-')} · ${bl.total_avg_points} pts/j media</div>
+      <div style="display:grid;gap:6px;margin-top:8px">
+        <div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">🧤 Portero</span> ${bl.goalkeeper.name} <span style="color:var(--muted)">(${bl.goalkeeper.avg_pts} pts/j)</span></div>
+        ${bl.defenders.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">🛡️ Defensa</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
+        ${bl.midfielders.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">⚙️ Medio</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
+        ${bl.strikers.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">⚽ Delantero</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
+      </div>
+      ${bl.bench?.length ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">Suplentes: ${bl.bench.map(p=>p.name).join(', ')}</div>` : ''}
+    </div>`;
+  }
+
+  // Decisiones del agente
+  if (!decisions.decisions?.length) {
+    html += `<div class="card"><div style="color:var(--muted);text-align:center;padding:20px">Sin acciones recomendadas ahora mismo</div></div>`;
+  } else {
+    html += `<div class="card-title" style="margin-bottom:8px">📋 Acciones recomendadas (${decisions.decisions.length})</div>`;
+    decisions.decisions.forEach((d, i) => {
+      html += `<div class="card" style="border-left:3px solid ${actionColor(d.action)}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <div style="font-weight:700">${actionIcon(d.action)} ${actionLabel(d.action)}: ${d.player_name}</div>
+          <span class="score-badge ${d.priority <= 3 ? 'score-high' : 'score-mid'}">P${d.priority}</span>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px">${d.reason}</div>
+        ${d.amount ? `<div style="font-size:13px;font-weight:600;color:${actionColor(d.action)}">${d.action === 'sell' ? 'Precio sugerido' : 'Cantidad'}: ${d.amount_fmt}</div>` : ''}
+        <div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:8px;font-size:12px">
+          <div style="color:var(--amber);font-weight:600;margin-bottom:4px">⚡ Cómo ejecutar esta acción:</div>
+          ${getExecutionInstructions(d)}
+        </div>
+      </div>`;
+    });
+  }
+
+  // Bloqueadas
+  if (decisions.blocked?.length) {
+    html += `<div class="card-title" style="margin:12px 0 8px">🚫 Acciones bloqueadas por seguridad (${decisions.blocked.length})</div>`;
+    decisions.blocked.forEach(b => {
+      html += `<div class="card" style="border-left:3px solid var(--muted);opacity:0.7">
+        <div style="font-weight:600;font-size:13px">⏸️ ${b.player}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">${b.reason}</div>
+      </div>`;
+    });
+  }
+
+  el.innerHTML = html;
+}
+
+function getExecutionInstructions(d) {
+  if (d.action === 'sell') {
+    return `1. Abre LaLiga Fantasy → Mi equipo<br>
+            2. Pulsa sobre <strong>${d.player_name}</strong><br>
+            3. Selecciona "Poner en venta"<br>
+            4. Precio sugerido: <strong>${d.amount_fmt}</strong><br>
+            5. Confirma la venta`;
+  }
+  if (d.action === 'bid') {
+    return `1. Abre LaLiga Fantasy → Mercado<br>
+            2. Busca <strong>${d.player_name}</strong><br>
+            3. Pulsa "Pujar"<br>
+            4. Introduce: <strong>${d.amount_fmt}</strong><br>
+            5. Confirma la puja`;
+  }
+  if (d.action === 'offer') {
+    return `1. Abre LaLiga Fantasy → Mercado → Rivales<br>
+            2. Busca <strong>${d.player_name}</strong><br>
+            3. Pulsa "Ejecutar clausulazo"<br>
+            4. Precio fijo: <strong>${d.amount_fmt}</strong><br>
+            5. Confirma la operación`;
+  }
+  if (d.action === 'lineup') {
+    return `El ajuste de alineación se ejecuta automáticamente cada jueves a las 22:00.<br>
+            También puedes ejecutarlo manualmente desde GitHub → Actions → "Ajuste alineación jueves"`;
+  }
+  return 'Consulta el dashboard para más detalles.';
 }
 
 init();
