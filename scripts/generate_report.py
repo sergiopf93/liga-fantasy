@@ -14,6 +14,8 @@ from backend.laliga import client
 from backend.laliga.models import MyTeam, MarketPlayer, RivalTeam
 from backend.strategy.player_scoring import score_market_player, score_my_player_for_sale, build_trends, build_trend_from_history
 from backend.strategy.clause_risk import assess_clause_risk, analyze_goalkeeper_situation
+from backend.strategy.decision_engine import run_decision_engine, evaluate_best_lineup
+from backend.laliga.models import MarketPlayer as MP
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -323,6 +325,49 @@ def run():
         "goalkeeper": gk_analysis.get("recommendation", ""),
     })
 
+    # ── Motor de decisiones (DRY RUN) ────────────────────────────────────────
+    decisions_json = {"updated_at": datetime.now().isoformat(), "dry_run": True, "decisions": [], "blocked": [], "warnings": [], "best_lineup": None}
+
+    if my_team and market_players:
+        try:
+            from backend.strategy.decision_engine import run_decision_engine, evaluate_best_lineup
+            report_engine = run_decision_engine(my_team, market_players)
+            best_11 = evaluate_best_lineup(my_team.players)
+
+            decisions_json = {
+                "updated_at": datetime.now().isoformat(),
+                "dry_run": True,
+                "summary": report_engine.summary,
+                "warnings": report_engine.warnings,
+                "decisions": [
+                    {
+                        "action": d.action,
+                        "player_id": d.player_id,
+                        "player_name": d.player_name,
+                        "reason": d.reason,
+                        "amount": d.amount,
+                        "amount_fmt": fmt(d.amount) if d.amount else "N/D",
+                        "market_id": d.market_id,
+                        "priority": d.priority,
+                    }
+                    for d in report_engine.decisions
+                ],
+                "blocked": report_engine.blocked,
+                "best_lineup": {
+                    "formation": best_11["formation"],
+                    "total_avg_points": best_11["total_avg_points"],
+                    "goalkeeper": {"name": best_11["goalkeeper"].nickname, "avg_pts": best_11["goalkeeper"].average_points},
+                    "defenders": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["defenders"]],
+                    "midfielders": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["midfielders"]],
+                    "strikers": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["strikers"]],
+                    "bench": [{"name": p.nickname, "position": p.position} for p in best_11["bench"]],
+                } if best_11 else None,
+            }
+            logger.info(f"Motor de decisiones: {len(report_engine.decisions)} decisiones generadas")
+        except Exception as e:
+            logger.warning(f"Error en motor de decisiones: {e}")
+
+    save_json("decisions.json", decisions_json)
     logger.info("Informe completado")
 
 
