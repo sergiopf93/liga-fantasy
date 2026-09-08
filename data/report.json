@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-08T10:50:54.490682",
+  "generated_at": "2026-09-08T14:09:46.095952",
   "summary": {
-    "team_value": 241932842,
+    "team_value": 241931387,
     "team_value_fmt": "241.93M€",
     "budget": 4919837,
     "budget_fmt": "4.92M€",
@@ -34,7 +34,7 @@
       "status": "ok",
       "average_points": 5,
       "trend": {
-        "max_value": 2442992,
+        "max_value": 2443054,
         "max_value_fmt": "2.44M€",
         "min_value": 677391,
         "recent_trend": "subiendo",
@@ -132,7 +132,7 @@
       "trend": {
         "max_value": 2317469,
         "max_value_fmt": "2.32M€",
-        "min_value": 1297008,
+        "min_value": 1297007,
         "recent_trend": "bajando",
         "trend_pct": -10.5,
         "recovery_potential": 44.0,
