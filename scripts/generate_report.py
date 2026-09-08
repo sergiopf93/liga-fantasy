@@ -114,6 +114,7 @@ def run():
     subastas    = []
     clausulazos = []
     all_market  = []
+    mp_objects  = []  # objetos MarketPlayer para el motor de decisiones
 
     if TOKEN:
         market_raw = client.get_league_market(TOKEN, LEAGUE_ID)
@@ -176,6 +177,7 @@ def run():
                         "trend": _trend_dict(t),
                     }
                     all_market.append(item)
+                    mp_objects.append(mp)
                     if tipo == "clausulazo":
                         clausulazos.append(item)
                     else:
@@ -328,10 +330,9 @@ def run():
     # ── Motor de decisiones (DRY RUN) ────────────────────────────────────────
     decisions_json = {"updated_at": datetime.now().isoformat(), "dry_run": True, "decisions": [], "blocked": [], "warnings": [], "best_lineup": None}
 
-    if my_team and market_players:
+    if my_team and mp_objects:
         try:
-            from backend.strategy.decision_engine import run_decision_engine, evaluate_best_lineup
-            report_engine = run_decision_engine(my_team, market_players)
+            report_engine = run_decision_engine(my_team, mp_objects)
             best_11 = evaluate_best_lineup(my_team.players)
 
             decisions_json = {
