@@ -38,7 +38,38 @@ def run():
         return
 
     my_team = MyTeam.from_api(team_data, money_data)
-    best = evaluate_best_lineup(my_team.players)
+
+    # Cargar plantilla completa incluyendo suplentes
+    from backend.laliga.models import Player
+    squad_raw = client.get_my_squad(TOKEN, TEAM_ID) or []
+    squad_players = []
+    for entry in squad_raw:
+        try:
+            pm = entry.get("playerMaster", {})
+            p = Player(
+                id=pm.get("id", ""),
+                name=pm.get("name", ""),
+                nickname=pm.get("nickname", ""),
+                position=pm.get("position", ""),
+                position_id=pm.get("positionId", 0),
+                team_id=int(pm.get("team", {}).get("id", 0) or 0),
+                market_value=pm.get("marketValue", 0),
+                points=pm.get("points", 0),
+                week_points=0,
+                average_points=pm.get("averagePoints", 0.0) or 0.0,
+                last_season_points=pm.get("lastSeasonPoints", 0) or 0,
+                status=pm.get("playerStatus", "ok"),
+                image_url=pm.get("images", {}).get("transparent", {}).get("256x256", ""),
+                buyout_clause=entry.get("buyoutClause", 0),
+                player_team_id=entry.get("playerTeamId", ""),
+            )
+            squad_players.append(p)
+        except Exception as e:
+            logger.warning(f"Error parseando jugador: {e}")
+
+    all_players = squad_players if squad_players else my_team.players
+    logger.info(f"Plantilla completa: {len(all_players)} jugadores")
+    best = evaluate_best_lineup(all_players)
 
     if not best:
         logger.error("No se pudo calcular alineación óptima")

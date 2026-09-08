@@ -80,6 +80,41 @@ def run():
         money_data = client.get_my_money(TOKEN, TEAM_ID)
         if team_data:
             my_team = MyTeam.from_api(team_data, money_data)
+
+            # Cargar plantilla completa (incluye suplentes) para análisis
+            squad_raw = client.get_my_squad(TOKEN, TEAM_ID) or []
+            squad_players = []
+            for entry in squad_raw:
+                try:
+                    pm = entry.get("playerMaster", {})
+                    from backend.laliga.models import Player
+                    p = Player(
+                        id=pm.get("id", ""),
+                        name=pm.get("name", ""),
+                        nickname=pm.get("nickname", ""),
+                        position=pm.get("position", ""),
+                        position_id=pm.get("positionId", 0),
+                        team_id=pm.get("teamId", 0) if "teamId" in pm else int(pm.get("team", {}).get("id", 0) or 0),
+                        market_value=pm.get("marketValue", 0),
+                        points=pm.get("points", 0),
+                        week_points=0,
+                        average_points=pm.get("averagePoints", 0.0),
+                        last_season_points=pm.get("lastSeasonPoints", 0) or 0,
+                        status=pm.get("playerStatus", "ok"),
+                        image_url=pm.get("images", {}).get("transparent", {}).get("256x256", ""),
+                        buyout_clause=entry.get("buyoutClause", 0),
+                        player_team_id=entry.get("playerTeamId", ""),
+                    )
+                    squad_players.append(p)
+                except Exception as e:
+                    logger.warning(f"Error parseando jugador plantilla: {e}")
+
+            # Usar plantilla completa si está disponible, si no usar lineup
+            all_my_players = squad_players if squad_players else my_team.players
+            logger.info(f"Plantilla completa: {len(all_my_players)} jugadores")
+            gks_total = [p for p in all_my_players if p.position_id == 1]
+            logger.info(f"Porteros en plantilla: {[p.nickname for p in gks_total]}")
+
             save_json("team.json", {
                 "team_id": my_team.team_id,
                 "team_value": my_team.team_value,
@@ -105,7 +140,7 @@ def run():
                     "status": p.status,
                     "image_url": p.image_url,
                     "trend": _trend_dict(build_trend_from_history(p.id, client.get_player_market_value_history(p.id) or [], p.market_value)),
-                } for p in my_team.players],
+                } for p in all_my_players],
             })
         else:
             logger.warning("No se pudo obtener mi equipo")
@@ -252,10 +287,11 @@ def run():
     # ── Clausulazos en mi plantilla ───────────────────────────────────────
     clause_risks = []
     gk_analysis  = {}
+    all_my_players = locals().get("all_my_players", my_team.players if my_team else [])
     if my_team:
-        my_gks = [p for p in my_team.players if p.position_id == 1]
-        gk_analysis = analyze_goalkeeper_situation(my_team.players)
-        for p in my_team.players:
+        my_gks = [p for p in all_my_players if p.position_id == 1]
+        gk_analysis = analyze_goalkeeper_situation(all_my_players)
+        for p in all_my_players:
             cr = assess_clause_risk(p, [], my_gks)
             clause_risks.append(cr)
         clause_risks.sort(key=lambda x: x.risk_score, reverse=True)
@@ -263,7 +299,7 @@ def run():
     # ── Ventas ────────────────────────────────────────────────────────────
     sell_recs = []
     if my_team:
-        for p in my_team.players:
+        for p in all_my_players:
             r = score_my_player_for_sale(p)
             if r["should_sell"]:
                 sell_recs.append(r)
@@ -332,8 +368,11 @@ def run():
 
     if my_team and mp_objects:
         try:
+            # Usar plantilla completa para decisiones y alineación
+            _squad = all_my_players if all_my_players else my_team.players
+            my_team.players = _squad  # actualizar con plantilla completa
             report_engine = run_decision_engine(my_team, mp_objects)
-            best_11 = evaluate_best_lineup(my_team.players)
+            best_11 = evaluate_best_lineup(_squad)
 
             decisions_json = {
                 "updated_at": datetime.now().isoformat(),
