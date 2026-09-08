@@ -1,18 +1,241 @@
 {
-  "generated_at": "2026-09-08T09:12:46.941406",
+  "generated_at": "2026-09-08T10:50:54.490682",
   "summary": {
-    "team_value": 0,
-    "team_value_fmt": "N/D",
-    "budget": 0,
-    "budget_fmt": "N/D",
-    "points": 0,
-    "my_position": null,
-    "goalkeeper_risk": "N/D",
-    "goalkeeper_count": 0,
-    "goalkeeper_recommendation": ""
+    "team_value": 241932842,
+    "team_value_fmt": "241.93M€",
+    "budget": 4919837,
+    "budget_fmt": "4.92M€",
+    "points": 158,
+    "my_position": 6,
+    "goalkeeper_risk": "ALTO",
+    "goalkeeper_count": 1,
+    "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
+  "top_buys": [
+    {
+      "name": "Yoel Lago",
+      "nickname": "Yoel Lago",
+      "position": "Defensa",
+      "sale_price_fmt": "2.01M€",
+      "market_value_fmt": "2.44M€",
+      "score": 79.0,
+      "recommended_bid_fmt": "2.11M€",
+      "max_bid_fmt": "2.32M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 2.01M€ directamente a JavierRH. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 2.01M€ muy por debajo del valor 2.44M€ (+21.6%)",
+        "Cerca de su máximo de temporada 2.44M€ — poco margen de subida",
+        "Tendencia reciente al alza: +52.1%",
+        "Ha subido 249.0% desde inicio de temporada",
+        "Buen rendimiento: 5.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5,
+      "trend": {
+        "max_value": 2442992,
+        "max_value_fmt": "2.44M€",
+        "min_value": 677391,
+        "recent_trend": "subiendo",
+        "trend_pct": 52.1,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Pol Lozano",
+      "nickname": "Pol Lozano",
+      "position": "Centrocampista",
+      "sale_price_fmt": "1.35M€",
+      "market_value_fmt": "1.31M€",
+      "score": 66.2,
+      "recommended_bid_fmt": "1.38M€",
+      "max_bid_fmt": "1.18M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 1.35M€. Puja máxima recomendada: 1.18M€.",
+      "season_gap": "Actualmente al 26% de su máximo de temporada (5.02M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 5.02M€ — potencial de recuperación 74%",
+        "Tendencia reciente a la baja: -10.0%",
+        "Ha bajado 73.7% desde inicio de temporada",
+        "Bajo rendimiento: 0.5 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0.5,
+      "trend": {
+        "max_value": 5019315,
+        "max_value_fmt": "5.02M€",
+        "min_value": 1314631,
+        "recent_trend": "bajando",
+        "trend_pct": -10.0,
+        "recovery_potential": 73.8,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Álvaro Fernández",
+      "nickname": "A. Ferllo",
+      "position": "Portero",
+      "sale_price_fmt": "2.58M€",
+      "market_value_fmt": "2.51M€",
+      "score": 66.2,
+      "recommended_bid_fmt": "2.63M€",
+      "max_bid_fmt": "2.26M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 2.58M€. Puja máxima recomendada: 2.26M€.",
+      "season_gap": "Actualmente al 26% de su máximo de temporada (9.54M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 9.54M€ — potencial de recuperación 74%",
+        "Tendencia reciente a la baja: -10.7%",
+        "Ha bajado 73.6% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 9536700,
+        "max_value_fmt": "9.54M€",
+        "min_value": 2505889,
+        "recent_trend": "bajando",
+        "trend_pct": -10.7,
+        "recovery_potential": 73.7,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Ali Houary",
+      "nickname": "Ali Houary",
+      "position": "Delantero",
+      "sale_price_fmt": "1.33M€",
+      "market_value_fmt": "1.30M€",
+      "score": 62.5,
+      "recommended_bid_fmt": "1.36M€",
+      "max_bid_fmt": "1.17M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 1.33M€. Puja máxima recomendada: 1.17M€.",
+      "season_gap": "Actualmente al 56% de su máximo de temporada (2.32M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Por debajo de su máximo de temporada 2.32M€ — recuperación potencial 44%",
+        "Tendencia reciente a la baja: -10.5%",
+        "Ha bajado 44.0% desde inicio de temporada",
+        "Bajo rendimiento: -0.7 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": -0.67,
+      "trend": {
+        "max_value": 2317469,
+        "max_value_fmt": "2.32M€",
+        "min_value": 1297008,
+        "recent_trend": "bajando",
+        "trend_pct": -10.5,
+        "recovery_potential": 44.0,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Adrián Rodríguez",
+      "nickname": "A. Rodriguez",
+      "position": "Portero",
+      "sale_price_fmt": "0.66M€",
+      "market_value_fmt": "0.65M€",
+      "score": 62.5,
+      "recommended_bid_fmt": "0.67M€",
+      "max_bid_fmt": "0.59M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.66M€. Puja máxima recomendada: 0.59M€.",
+      "season_gap": "Actualmente al 60% de su máximo de temporada (1.08M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Por debajo de su máximo de temporada 1.08M€ — recuperación potencial 40%",
+        "Tendencia reciente a la baja: -5.3%",
+        "Ha bajado 39.7% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 1078164,
+        "max_value_fmt": "1.08M€",
+        "min_value": 650640,
+        "recent_trend": "bajando",
+        "trend_pct": -5.3,
+        "recovery_potential": 39.7,
+        "potential_label": "MEDIO"
+      }
+    }
+  ],
   "sell_recommendations": [],
-  "clause_risks": [],
-  "goalkeeper": ""
+  "clause_risks": [
+    {
+      "name": "Jan Oblak",
+      "nickname": "Oblak",
+      "position": "Portero",
+      "risk_level": "ALTO",
+      "risk_score": 70.0,
+      "buyout_clause_fmt": "51.09M€",
+      "reasons": [
+        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
+        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
+        "Cláusula 51.09M€ razonablemente ejecutable"
+      ],
+      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+    },
+    {
+      "name": "Einar Galilea",
+      "nickname": "Einar",
+      "position": "Defensa",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "4.70M€",
+      "reasons": [
+        "Cláusula 4.70M€ muy cercana al valor de mercado 4.70M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Eduardo Celmi Camavinga",
+      "nickname": "Camavinga",
+      "position": "Centrocampista",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "8.46M€",
+      "reasons": [
+        "Cláusula 8.46M€ muy cercana al valor de mercado 8.46M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Sergio Canales",
+      "nickname": "Canales",
+      "position": "Centrocampista",
+      "risk_level": "BAJO",
+      "risk_score": 20.0,
+      "buyout_clause_fmt": "30.86M€",
+      "reasons": [
+        "Cláusula 30.86M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    },
+    {
+      "name": "Marc Pubill",
+      "nickname": "Marc Pubill",
+      "position": "Defensa",
+      "risk_level": "BAJO",
+      "risk_score": 12.0,
+      "buyout_clause_fmt": "54.87M€",
+      "reasons": [
+        "Cláusula 54.87M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    }
+  ],
+  "goalkeeper": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
 }
