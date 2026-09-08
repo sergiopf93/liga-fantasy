@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:27:58.302333",
+  "generated_at": "2026-09-08T14:43:34.368476",
   "summary": {
     "team_value": 241931387,
     "team_value_fmt": "241.93M€",
@@ -7,9 +7,9 @@
     "budget_fmt": "4.92M€",
     "points": 158,
     "my_position": 6,
-    "goalkeeper_risk": "ALTO",
-    "goalkeeper_count": 1,
-    "goalkeeper_recommendation": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
+    "goalkeeper_risk": "BAJO",
+    "goalkeeper_count": 2,
+    "goalkeeper_recommendation": "Tienes 2 porteros. Situación segura."
   },
   "top_buys": [
     {
@@ -172,26 +172,61 @@
       }
     }
   ],
-  "sell_recommendations": [],
+  "sell_recommendations": [
+    {
+      "name": "Aleksa Puric",
+      "nickname": "Purić",
+      "position": "",
+      "market_value_fmt": "0.43M€",
+      "sell_score": 100,
+      "reasons": [
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Fuera de la liga",
+        "Sin puntuar última jornada con media baja"
+      ]
+    },
+    {
+      "name": "Carlos Álvarez",
+      "nickname": "C. Alvarez",
+      "position": "",
+      "market_value_fmt": "13.01M€",
+      "sell_score": 100,
+      "reasons": [
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Fuera de la liga",
+        "Sin puntuar última jornada con media baja"
+      ]
+    },
+    {
+      "name": "Wojciech Szczesny",
+      "nickname": "Szczesny",
+      "position": "",
+      "market_value_fmt": "1.40M€",
+      "sell_score": 55,
+      "reasons": [
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin puntuar última jornada con media baja"
+      ]
+    }
+  ],
   "clause_risks": [
     {
       "name": "Jan Oblak",
       "nickname": "Oblak",
-      "position": "Portero",
-      "risk_level": "ALTO",
-      "risk_score": 70.0,
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 35.0,
       "buyout_clause_fmt": "51.09M€",
       "reasons": [
-        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
         "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
         "Cláusula 51.09M€ razonablemente ejecutable"
       ],
-      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
     {
       "name": "Einar Galilea",
       "nickname": "Einar",
-      "position": "Defensa",
+      "position": "",
       "risk_level": "MEDIO",
       "risk_score": 33.0,
       "buyout_clause_fmt": "4.70M€",
@@ -201,9 +236,21 @@
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
     {
+      "name": "Sergio Gómez",
+      "nickname": "Sergio Gómez",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "15.66M€",
+      "reasons": [
+        "Cláusula 15.66M€ muy cercana al valor de mercado 15.24M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
       "name": "Eduardo Celmi Camavinga",
       "nickname": "Camavinga",
-      "position": "Centrocampista",
+      "position": "",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
       "buyout_clause_fmt": "8.46M€",
@@ -215,7 +262,7 @@
     {
       "name": "Sergio Canales",
       "nickname": "Canales",
-      "position": "Centrocampista",
+      "position": "",
       "risk_level": "BAJO",
       "risk_score": 20.0,
       "buyout_clause_fmt": "30.86M€",
@@ -223,19 +270,7 @@
         "Cláusula 30.86M€ razonablemente ejecutable"
       ],
       "recommendation": "Riesgo bajo. Sin acción necesaria."
-    },
-    {
-      "name": "Marc Pubill",
-      "nickname": "Marc Pubill",
-      "position": "Defensa",
-      "risk_level": "BAJO",
-      "risk_score": 12.0,
-      "buyout_clause_fmt": "54.87M€",
-      "reasons": [
-        "Cláusula 54.87M€ razonablemente ejecutable"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
     }
   ],
-  "goalkeeper": "Solo tienes a Oblak (cláusula 51.09M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
+  "goalkeeper": "Tienes 2 porteros. Situación segura."
 }

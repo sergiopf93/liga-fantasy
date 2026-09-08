@@ -1,19 +1,58 @@
 {
-  "updated_at": "2026-09-08T14:27:58.303181",
+  "updated_at": "2026-09-08T14:43:34.369624",
   "dry_run": true,
-  "summary": "Mejor formación posible: [4, 4, 2] con 45.0 pts/j de media",
-  "warnings": [
-    "⚠️ Solo tienes 1 portero(s). Recomendado: 2 mínimo."
+  "summary": "Mejor formación posible: [5, 3, 2] con 46.0 pts/j de media",
+  "warnings": [],
+  "decisions": [
+    {
+      "action": "sell",
+      "player_id": "2883",
+      "player_name": "Purić",
+      "reason": "VENTA RECOMENDADA: Fuera de la liga — no puntúa, Bajo rendimiento: 0.0 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 0.41M€",
+      "amount": 413128,
+      "amount_fmt": "0.41M€",
+      "market_id": "",
+      "priority": 3
+    },
+    {
+      "action": "sell",
+      "player_id": "2294",
+      "player_name": "R.P. Bigas",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.8 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.65M€",
+      "amount": 2648586,
+      "amount_fmt": "2.65M€",
+      "market_id": "",
+      "priority": 5
+    },
+    {
+      "action": "sell",
+      "player_id": "2616",
+      "player_name": "C. Alvarez",
+      "reason": "VENTA RECOMENDADA: Fuera de la liga — no puntúa, Bajo rendimiento: 0.0 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 12.36M€",
+      "amount": 12360372,
+      "amount_fmt": "12.36M€",
+      "market_id": "",
+      "priority": 3
+    },
+    {
+      "action": "sell",
+      "player_id": "3112",
+      "player_name": "Endrick",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.0 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 4.00M€",
+      "amount": 3996655,
+      "amount_fmt": "4.00M€",
+      "market_id": "",
+      "priority": 5
+    }
   ],
-  "decisions": [],
   "blocked": [],
   "best_lineup": {
     "formation": [
-      4,
-      4,
+      5,
+      3,
       2
     ],
-    "total_avg_points": 45.05,
+    "total_avg_points": 45.95,
     "goalkeeper": {
       "name": "Oblak",
       "avg_pts": 5.5
@@ -21,7 +60,7 @@
     "defenders": [
       {
         "name": "Yuri",
-        "avg_pts": 5.0
+        "avg_pts": 5
       },
       {
         "name": "Einar",
@@ -30,6 +69,10 @@
       {
         "name": "Marc Pubill",
         "avg_pts": 3.75
+      },
+      {
+        "name": "Sergio Gómez",
+        "avg_pts": 3.4
       },
       {
         "name": "Carreira",
@@ -43,27 +86,48 @@
       },
       {
         "name": "Camavinga",
-        "avg_pts": 3.0
+        "avg_pts": 3
       },
       {
         "name": "Barrenetxea",
         "avg_pts": 2.8
-      },
-      {
-        "name": "Urko",
-        "avg_pts": 2.5
       }
     ],
     "strikers": [
       {
         "name": "Andrés Martín",
-        "avg_pts": 6.0
+        "avg_pts": 6
       },
       {
         "name": "Iago Aspas",
         "avg_pts": 3.6
       }
     ],
-    "bench": []
+    "bench": [
+      {
+        "name": "Szczesny",
+        "position": ""
+      },
+      {
+        "name": "Purić",
+        "position": ""
+      },
+      {
+        "name": "R.P. Bigas",
+        "position": ""
+      },
+      {
+        "name": "Urko",
+        "position": ""
+      },
+      {
+        "name": "C. Alvarez",
+        "position": ""
+      },
+      {
+        "name": "Endrick",
+        "position": ""
+      }
+    ]
   }
 }
