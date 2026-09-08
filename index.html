@@ -261,30 +261,34 @@ function renderTodayActions(report) {
 function renderTeam(team) {
   const el = document.getElementById('team-list');
   if (!team?.players?.length) { el.innerHTML = '<div class="error-box">Sin datos de plantilla.</div>'; return; }
-  const positions = ['Portero','Defensa','Centrocampista','Delantero'];
+  const posMap = {1:'Portero', 2:'Defensa', 3:'Centrocampista', 4:'Delantero'};
+  const posIds = [1, 2, 3, 4];
   let html = '';
-  positions.forEach(pos => {
-    const players = team.players.filter(p => p.position === pos);
+  posIds.forEach(pid => {
+    const players = team.players.filter(p =>
+      p.position_id === pid || p.position === posMap[pid]
+    );
     if (!players.length) return;
-    html += `<div class="card"><div class="card-title">${pos}s</div>`;
+    html += `<div class="card"><div class="card-title">${posMap[pid]}s</div>`;
     players.forEach(p => {
       const t = p.trend;
       html += `<div class="player-row">
         <div class="player-img-placeholder">${posIcon(p.position_id)}</div>
         <div class="player-info">
           <div class="player-name">${p.nickname}${statusIcon(p.status)}</div>
-          <div class="player-meta">Cláusula: ${p.buyout_clause_fmt}</div>
+          <div class="player-meta">Cláusula: ${p.buyout_clause_fmt || p.buyout_clause_fmt || '—'}</div>
           ${t ? `<div class="player-meta">${trendHTML(t)}</div>` : ''}
         </div>
         <div class="player-right">
-          <div class="player-value">${p.market_value_fmt}</div>
+          <div class="player-value">${p.market_value_fmt || '—'}</div>
           <div class="player-pts">${p.week_points ?? 0} / ${p.average_points} pts</div>
         </div>
       </div>`;
     });
     html += '</div>';
   });
-  el.innerHTML = html;
+  if (!html) el.innerHTML = '<div class="error-box">Sin datos de plantilla.</div>';
+  else el.innerHTML = html;
 }
 
 function renderMarketList(players, containerId, type) {
@@ -399,6 +403,7 @@ async function init() {
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderOpportunities(market);
+  renderAgente(decisions);
 }
 
 function actionIcon(action) {
