@@ -1,0 +1,49 @@
+name: Ejecutar acciones aprobadas
+
+on:
+  push:
+    paths:
+      - 'data/pending_actions.json'
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests pyyaml
+
+      - name: Ejecutar acciones pendientes
+        env:
+          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
+        run: python scripts/execute_actions.py
+
+      - name: Commit resultados
+        run: |
+          git config user.name "Fantasy Bot"
+          git config user.email "bot@liga-fantasy"
+          git add data/pending_actions.json data/action_results.json
+          git diff --staged --quiet || git commit -m "Acciones ejecutadas - $(date '+%d/%m %H:%M')"
+          git push
+
+      - name: Preparar site
+        run: |
+          mkdir -p _site/data
+          cp frontend/index.html _site/index.html
+          for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json data/action_results.json; do
+            [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
+          done
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
