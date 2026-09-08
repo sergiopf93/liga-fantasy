@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Actualizar LALIGA_TOKEN en GitHub Secrets
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh secret set LALIGA_TOKEN \
             --repo sergiopf93/liga-fantasy \
@@ -49,6 +49,7 @@ jobs:
           mkdir -p _site/data
           cp frontend/index.html _site/index.html
           cp data/*.json _site/data/ 2>/dev/null || true
+          cp data/decisions.json _site/data/ 2>/dev/null || true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

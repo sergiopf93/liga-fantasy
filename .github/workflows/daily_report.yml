@@ -31,7 +31,9 @@ jobs:
         run: |
           mkdir -p _site/data
           cp frontend/index.html _site/index.html
-          cp data/*.json _site/data/ 2>/dev/null || true
+          for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json; do
+            [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
+          done
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
