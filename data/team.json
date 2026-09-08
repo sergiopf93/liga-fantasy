@@ -1,10 +1,10 @@
 {
   "team_id": "37889563",
-  "team_value": 241931387,
-  "team_value_fmt": "241.93M€",
+  "team_value": 224278591,
+  "team_value_fmt": "224.28M€",
   "team_points": 158,
-  "budget": 4919837,
-  "budget_fmt": "4.92M€",
+  "budget": 21904426,
+  "budget_fmt": "21.90M€",
   "formation": [
     5,
     3,
@@ -110,31 +110,6 @@
         "trend_pct": 3.0,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
-      }
-    },
-    {
-      "id": "2883",
-      "name": "Aleksa Puric",
-      "nickname": "Purić",
-      "position": "",
-      "position_id": 2,
-      "market_value": 434872,
-      "market_value_fmt": "0.43M€",
-      "buyout_clause": 1000000,
-      "buyout_clause_fmt": "1.00M€",
-      "points": 0,
-      "week_points": 0,
-      "average_points": 0,
-      "status": "out_of_league",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2883/256x256/p2883_t175_1_001_000.png",
-      "trend": {
-        "max_value": 702702,
-        "max_value_fmt": "0.70M€",
-        "min_value": 434872,
-        "recent_trend": "bajando",
-        "trend_pct": -3.0,
-        "recovery_potential": 38.1,
-        "potential_label": "MEDIO"
       }
     },
     {
@@ -288,31 +263,6 @@
       }
     },
     {
-      "id": "2616",
-      "name": "Carlos Álvarez",
-      "nickname": "C. Alvarez",
-      "position": "",
-      "position_id": 3,
-      "market_value": 13010918,
-      "market_value_fmt": "13.01M€",
-      "buyout_clause": 31126393,
-      "buyout_clause_fmt": "31.13M€",
-      "points": 0,
-      "week_points": 0,
-      "average_points": 0,
-      "status": "out_of_league",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t855/p2616/256x256/p2616_t855_1_001_000.png",
-      "trend": {
-        "max_value": 19742709,
-        "max_value_fmt": "19.74M€",
-        "min_value": 8000000,
-        "recent_trend": "bajando",
-        "trend_pct": -11.4,
-        "recovery_potential": 34.1,
-        "potential_label": "MEDIO"
-      }
-    },
-    {
       "id": "1300",
       "name": "Eduardo Celmi Camavinga",
       "nickname": "Camavinga",
@@ -409,31 +359,6 @@
         "recent_trend": "bajando",
         "trend_pct": -11.3,
         "recovery_potential": 43.7,
-        "potential_label": "ALTO"
-      }
-    },
-    {
-      "id": "3112",
-      "name": "Endrick Felipe Moreira de Sousa",
-      "nickname": "Endrick",
-      "position": "",
-      "position_id": 4,
-      "market_value": 4207006,
-      "market_value_fmt": "4.21M€",
-      "buyout_clause": 12233618,
-      "buyout_clause_fmt": "12.23M€",
-      "points": 0,
-      "week_points": 0,
-      "average_points": 0,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t186/p3112/256x256/p3112_t186_1_001_000 (1).png",
-      "trend": {
-        "max_value": 8336772,
-        "max_value_fmt": "8.34M€",
-        "min_value": 4207006,
-        "recent_trend": "bajando",
-        "trend_pct": -9.4,
-        "recovery_potential": 49.5,
         "potential_label": "ALTO"
       }
     }
