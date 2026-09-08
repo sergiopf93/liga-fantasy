@@ -202,7 +202,7 @@ def evaluate_buy_decisions(market_players: List[MarketPlayer],
             buy_score += 15
             buy_signals.append(f"Buen rendimiento: {p.average_points:.1f} pts/j")
 
-        if mp.number_of_offers == 0 and mp.market_type == "subasta":
+        if mp.number_of_offers == 0 and not (mp.direct_offer or bool(mp.seller_team_id and mp.seller_team_id != "0")):
             buy_score += 10
             buy_signals.append("Sin competencia en la puja")
 
@@ -225,7 +225,7 @@ def evaluate_buy_decisions(market_players: List[MarketPlayer],
                     action=action,
                     player_id=p.id,
                     player_name=p.nickname,
-                    reason=f"COMPRA RECOMENDADA ({mp.market_type.upper()}): {', '.join(buy_signals)}",
+                    reason=f"COMPRA RECOMENDADA ({'CLAUSULAZO' if is_clause else 'SUBASTA'}): {', '.join(buy_signals)}",
                     amount=bid_amount,
                     market_id=mp.market_id,
                     priority=3 if buy_score >= 60 else 5,
