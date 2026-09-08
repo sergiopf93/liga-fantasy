@@ -115,3 +115,18 @@ def get_player_market_value_history(player_id: str) -> Optional[list]:
     Respuesta: [{date, bids, marketValue, lfpId}, ...]
     """
     return _get(f"/api/v1/competition/1/player/{player_id}/market-value", params={"x-lang": "es"})
+
+def get_my_squad(token: str, team_id: str = "37889563", league_id: str = "017948446") -> Optional[list]:
+    """
+    Plantilla completa incluyendo suplentes.
+    URL verificada: /api/v1/competition/1/leagues/{leagueId}/teams/{teamId}
+    Devuelve todos los jugadores, no solo los 11 titulares del lineup.
+    """
+    data = _get(
+        f"/api/v1/competition/1/leagues/{league_id}/teams/{team_id}",
+        token=token,
+        params={"x-lang": "es"}
+    )
+    if isinstance(data, dict):
+        return data.get("players", [])
+    return data if isinstance(data, list) else []
