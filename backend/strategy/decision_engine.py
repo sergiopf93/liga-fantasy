@@ -30,7 +30,7 @@ VALID_FORMATIONS = [
 
 # Umbrales configurables
 SELL_DROP_THRESHOLD_PCT = 15.0    # % caída máxima aceptable para vender
-MIN_CASH_RESERVE       = 5_000_000  # reserva mínima de dinero
+MIN_CASH_RESERVE       = 3_000_000  # reserva mínima de dinero
 MIN_SALE_RATIO         = 0.85     # vender si mercado ofrece >= 85% del valor
 
 
