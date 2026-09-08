@@ -30,7 +30,7 @@ VALID_FORMATIONS = [
 
 # Umbrales configurables
 SELL_DROP_THRESHOLD_PCT = 15.0    # % caída máxima aceptable para vender
-MIN_CASH_RESERVE       = 3_000_000  # reserva mínima de dinero
+MIN_CASH_RESERVE       = 5_000_000  # reserva mínima de dinero
 MIN_SALE_RATIO         = 0.85     # vender si mercado ofrece >= 85% del valor
 
 
@@ -207,7 +207,8 @@ def evaluate_buy_decisions(market_players: List[MarketPlayer],
             buy_signals.append("Sin competencia en la puja")
 
         if buy_score >= 40:
-            is_clause = mp.market_type == "clausulazo"
+            # Determinar tipo: si tiene seller es clausulazo, si no es subasta
+            is_clause = mp.direct_offer or bool(mp.seller_team_id and mp.seller_team_id != "0")
 
             # Reglas de precio
             if is_clause:
