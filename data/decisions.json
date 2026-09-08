@@ -1,8 +1,69 @@
 {
-  "updated_at": "2026-09-08T14:20:31.742079",
+  "updated_at": "2026-09-08T14:27:58.303181",
   "dry_run": true,
+  "summary": "Mejor formación posible: [4, 4, 2] con 45.0 pts/j de media",
+  "warnings": [
+    "⚠️ Solo tienes 1 portero(s). Recomendado: 2 mínimo."
+  ],
   "decisions": [],
   "blocked": [],
-  "warnings": [],
-  "best_lineup": null
+  "best_lineup": {
+    "formation": [
+      4,
+      4,
+      2
+    ],
+    "total_avg_points": 45.05,
+    "goalkeeper": {
+      "name": "Oblak",
+      "avg_pts": 5.5
+    },
+    "defenders": [
+      {
+        "name": "Yuri",
+        "avg_pts": 5.0
+      },
+      {
+        "name": "Einar",
+        "avg_pts": 4.75
+      },
+      {
+        "name": "Marc Pubill",
+        "avg_pts": 3.75
+      },
+      {
+        "name": "Carreira",
+        "avg_pts": 3.4
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Canales",
+        "avg_pts": 4.75
+      },
+      {
+        "name": "Camavinga",
+        "avg_pts": 3.0
+      },
+      {
+        "name": "Barrenetxea",
+        "avg_pts": 2.8
+      },
+      {
+        "name": "Urko",
+        "avg_pts": 2.5
+      }
+    ],
+    "strikers": [
+      {
+        "name": "Andrés Martín",
+        "avg_pts": 6.0
+      },
+      {
+        "name": "Iago Aspas",
+        "avg_pts": 3.6
+      }
+    ],
+    "bench": []
+  }
 }
