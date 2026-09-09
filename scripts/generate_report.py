@@ -14,7 +14,7 @@ from backend.laliga import client
 from backend.laliga.models import MyTeam, MarketPlayer, RivalTeam
 from backend.strategy.player_scoring import score_market_player, score_my_player_for_sale, build_trends, build_trend_from_history
 from backend.strategy.clause_risk import assess_clause_risk, analyze_goalkeeper_situation
-from backend.strategy.decision_engine import run_decision_engine, evaluate_best_lineup
+from backend.strategy.decision_engine import run_decision_engine, evaluate_best_lineup, evaluate_best_lineups
 from backend.laliga.models import MarketPlayer as MP
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -377,6 +377,7 @@ def run():
             my_team.players = _squad  # actualizar con plantilla completa
             report_engine = run_decision_engine(my_team, mp_objects)
             best_11 = evaluate_best_lineup(_squad)
+            top_lineups = evaluate_best_lineups(_squad, top_n=3)
 
             decisions_json = {
                 "updated_at": datetime.now().isoformat(),
@@ -397,15 +398,8 @@ def run():
                     for d in report_engine.decisions
                 ],
                 "blocked": report_engine.blocked,
-                "best_lineup": {
-                    "formation": best_11["formation"],
-                    "total_avg_points": best_11["total_avg_points"],
-                    "goalkeeper": {"name": best_11["goalkeeper"].nickname, "avg_pts": best_11["goalkeeper"].average_points},
-                    "defenders": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["defenders"]],
-                    "midfielders": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["midfielders"]],
-                    "strikers": [{"name": p.nickname, "avg_pts": p.average_points} for p in best_11["strikers"]],
-                    "bench": [{"name": p.nickname, "position": p.position} for p in best_11["bench"]],
-                } if best_11 else None,
+                "best_lineup": best_11 if best_11 else None,
+                "top_lineups": top_lineups if top_lineups else [],
             }
             logger.info(f"Motor de decisiones: {len(report_engine.decisions)} decisiones generadas")
         except Exception as e:
