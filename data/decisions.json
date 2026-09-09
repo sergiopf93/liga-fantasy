@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T14:06:12.103956",
+  "updated_at": "2026-09-09T20:16:04.968801",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 4, 1] con 42.5 pts/j de media",
   "warnings": [],
@@ -15,32 +15,6 @@
       "priority": 5,
       "position": "",
       "position_id": 2,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2843",
-      "player_name": "Xavi Espart",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 9.08M€ muy por debajo del valor 14.02M€, Rendimiento excelente: 9.0 pts/j",
-      "amount": 9079943,
-      "amount_fmt": "9.08M€",
-      "market_id": "24755740",
-      "priority": 3,
-      "position": "Defensa",
-      "position_id": 2,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2932",
-      "player_name": "Ángel Pérez",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 11.35M€ muy por debajo del valor 13.73M€, Rendimiento excelente: 10.0 pts/j",
-      "amount": 11351598,
-      "amount_fmt": "11.35M€",
-      "market_id": "27378094",
-      "priority": 3,
-      "position": "Delantero",
-      "position_id": 4,
       "status": "ok"
     },
     {
@@ -67,32 +41,6 @@
       "priority": 5,
       "position": "Centrocampista",
       "position_id": 3,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2418",
-      "player_name": "Marc Roca",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 8.89M€ muy por debajo del valor 10.36M€, Buen rendimiento: 5.8 pts/j",
-      "amount": 8892057,
-      "amount_fmt": "8.89M€",
-      "market_id": "26875480",
-      "priority": 5,
-      "position": "Centrocampista",
-      "position_id": 3,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2206",
-      "player_name": "Yoel Lago",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 2.01M€ muy por debajo del valor 2.71M€, Buen rendimiento: 5.0 pts/j",
-      "amount": 2009399,
-      "amount_fmt": "2.01M€",
-      "market_id": "27034193",
-      "priority": 5,
-      "position": "Defensa",
-      "position_id": 2,
       "status": "ok"
     },
     {

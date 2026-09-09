@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T14:06:12.102873",
+  "generated_at": "2026-09-09T20:16:04.967380",
   "summary": {
     "team_value": 223092614,
     "team_value_fmt": "223.09M€",
@@ -12,99 +12,6 @@
     "goalkeeper_recommendation": "Tienes 2 porteros. Situación segura."
   },
   "top_buys": [
-    {
-      "name": "Xavi Espart",
-      "nickname": "Xavi Espart",
-      "position": "Defensa",
-      "sale_price_fmt": "9.08M€",
-      "market_value_fmt": "14.02M€",
-      "score": 84.0,
-      "recommended_bid_fmt": "9.53M€",
-      "max_bid_fmt": "13.32M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 9.08M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio 9.08M€ muy por debajo del valor 14.02M€ (+54.4%)",
-        "Cerca de su máximo de temporada 14.02M€ — poco margen de subida",
-        "Tendencia reciente al alza: +80.7%",
-        "Ha subido 1902.9% desde inicio de temporada",
-        "Rendimiento excelente: 9.0 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 9,
-      "trend": {
-        "max_value": 14020013,
-        "max_value_fmt": "14.02M€",
-        "min_value": 677391,
-        "recent_trend": "subiendo",
-        "trend_pct": 80.7,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Marc Roca",
-      "nickname": "Marc Roca",
-      "position": "Centrocampista",
-      "sale_price_fmt": "8.89M€",
-      "market_value_fmt": "10.36M€",
-      "score": 79.0,
-      "recommended_bid_fmt": "9.34M€",
-      "max_bid_fmt": "9.84M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 8.89M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio 8.89M€ muy por debajo del valor 10.36M€ (+16.5%)",
-        "Cerca de su máximo de temporada 10.36M€ — poco margen de subida",
-        "Tendencia reciente al alza: +22.6%",
-        "Ha subido 61.8% desde inicio de temporada",
-        "Buen rendimiento: 5.8 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 5.75,
-      "trend": {
-        "max_value": 10355104,
-        "max_value_fmt": "10.36M€",
-        "min_value": 4594956,
-        "recent_trend": "subiendo",
-        "trend_pct": 22.6,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Yoel Lago",
-      "nickname": "Yoel Lago",
-      "position": "Defensa",
-      "sale_price_fmt": "2.01M€",
-      "market_value_fmt": "2.71M€",
-      "score": 79.0,
-      "recommended_bid_fmt": "2.11M€",
-      "max_bid_fmt": "2.58M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 2.01M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio 2.01M€ muy por debajo del valor 2.71M€ (+35.1%)",
-        "Cerca de su máximo de temporada 2.71M€ — poco margen de subida",
-        "Tendencia reciente al alza: +51.4%",
-        "Ha subido 287.7% desde inicio de temporada",
-        "Buen rendimiento: 5.0 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 5,
-      "trend": {
-        "max_value": 2713830,
-        "max_value_fmt": "2.71M€",
-        "min_value": 677391,
-        "recent_trend": "subiendo",
-        "trend_pct": 51.4,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
     {
       "name": "Julen Agirrezabala",
       "nickname": "Agirrezabala",
@@ -165,6 +72,101 @@
         "trend_pct": 20.8,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Robert Navarro",
+      "nickname": "Navarro",
+      "position": "Centrocampista",
+      "sale_price_fmt": "3.48M€",
+      "market_value_fmt": "3.97M€",
+      "score": 75.2,
+      "recommended_bid_fmt": "3.65M€",
+      "max_bid_fmt": "3.77M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 3.48M€ directamente a Doggy Sanxe. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio inferior al valor de mercado (14.0% de margen)",
+        "Cerca de su máximo de temporada 3.97M€ — poco margen de subida",
+        "Tendencia reciente al alza: +67.0%",
+        "Ha subido 20.2% desde inicio de temporada",
+        "Rendimiento excelente: 7.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 7,
+      "trend": {
+        "max_value": 3965903,
+        "max_value_fmt": "3.97M€",
+        "min_value": 1729187,
+        "recent_trend": "subiendo",
+        "trend_pct": 67.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Álvaro Carreras",
+      "nickname": "Á. Carreras",
+      "position": "Defensa",
+      "sale_price_fmt": "8.57M€",
+      "market_value_fmt": "8.57M€",
+      "score": 66.2,
+      "recommended_bid_fmt": "8.74M€",
+      "max_bid_fmt": "7.71M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 8.57M€. Puja máxima recomendada: 7.71M€.",
+      "season_gap": "Actualmente al 29% de su máximo de temporada (29.81M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 29.81M€ — potencial de recuperación 71%",
+        "Tendencia reciente a la baja: -7.1%",
+        "Ha bajado 71.2% desde inicio de temporada",
+        "Bajo rendimiento: 2.2 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 2.25,
+      "trend": {
+        "max_value": 29814744,
+        "max_value_fmt": "29.81M€",
+        "min_value": 8565109,
+        "recent_trend": "bajando",
+        "trend_pct": -7.1,
+        "recovery_potential": 71.3,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Pau Navarro",
+      "nickname": "Pau Navarro",
+      "position": "Defensa",
+      "sale_price_fmt": "4.79M€",
+      "market_value_fmt": "4.79M€",
+      "score": 66.2,
+      "recommended_bid_fmt": "4.89M€",
+      "max_bid_fmt": "4.31M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 4.79M€. Puja máxima recomendada: 4.31M€.",
+      "season_gap": "Actualmente al 30% de su máximo de temporada (16.06M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 16.06M€ — potencial de recuperación 70%",
+        "Tendencia reciente a la baja: -10.8%",
+        "Ha bajado 70.1% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 16061814,
+        "max_value_fmt": "16.06M€",
+        "min_value": 4789523,
+        "recent_trend": "bajando",
+        "trend_pct": -10.8,
+        "recovery_potential": 70.2,
+        "potential_label": "ALTO"
       }
     }
   ],
