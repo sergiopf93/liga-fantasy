@@ -488,6 +488,19 @@ function renderAgente(decisions) {
     html += `</div>`;
   }
 
+  // Necesidades de posición por lesionados
+  if (decisions.position_needs?.length) {
+    decisions.position_needs.forEach(need => {
+      html += `<div class="action-item ${need.urgency === 'URGENTE' ? 'warn' : 'info'}" style="margin-bottom:8px">
+        <div class="action-icon">${need.urgency === 'URGENTE' ? '🚨' : '⚠️'}</div>
+        <div class="action-body">
+          <div class="action-title">${need.urgency}: buscar ${need.position}</div>
+          <div class="action-detail">${need.message}</div>
+        </div>
+      </div>`;
+    });
+  }
+
   // Decisiones del agente
   if (!decisions.decisions?.length) {
     html += `<div class="card"><div style="color:var(--muted);text-align:center;padding:20px">Sin acciones recomendadas ahora mismo</div></div>`;
