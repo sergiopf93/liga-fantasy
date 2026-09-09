@@ -14,6 +14,13 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pyyaml
+      - name: Reclamar recompensa diaria
+        env:
+          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
+        run: python scripts/daily_reward.py || echo "Recompensa no disponible o ya reclamada"
+
       - name: Actualizar datos
         env:
           LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
@@ -31,7 +38,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp frontend/index.html _site/index.html
-          for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json; do
+          for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json data/reward.json; do
             [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
           done
       - name: Deploy
