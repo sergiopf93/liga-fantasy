@@ -130,3 +130,51 @@ def get_my_squad(token: str, team_id: str = "37889563", league_id: str = "017948
     if isinstance(data, dict):
         return data.get("players", [])
     return data if isinstance(data, list) else []
+
+
+def check_daily_reward(token: str, team_id: str = "37889563", league_id: str = "017948446") -> Optional[dict]:
+    """
+    Comprueba si hay recompensa diaria disponible.
+    Devuelve dict con campo que indica si está disponible.
+    """
+    return _get(
+        f"/api/v1/competition/1/league/{league_id}/team/{team_id}/check-daily-reward",
+        token=token,
+        params={"x-lang": "es"}
+    )
+
+
+def claim_daily_reward(token: str, team_id: str = "37889563", league_id: str = "017948446") -> Optional[dict]:
+    """
+    Reclama la recompensa diaria.
+    Simula haber visto el anuncio con rewardedAd=1.
+    """
+    import requests as _requests
+    url = f"{BASE_URL}/api/v1/competition/1/league/{league_id}/team/daily-reward"
+    body = {"rewardedAd": 1, "rewardedAdType": "dailyreward", "teamId": team_id}
+    try:
+        r = _requests.post(url, headers=_headers(token), json=body, timeout=15)
+        logger.info(f"POST daily-reward → {r.status_code}")
+        if r.status_code in (200, 201):
+            return r.json() if r.content else {"ok": True}
+        else:
+            logger.error(f"Error {r.status_code}: {r.text[:200]}")
+            return None
+    except Exception as e:
+        logger.error(f"Error reclamando recompensa: {e}")
+        return None
+
+
+def get_daily_reward_status(token: str) -> Optional[dict]:
+    """
+    Estado actual de la recompensa diaria tras reclamarla.
+    """
+    return _get("/api/v1/competition/1/daily-reward", token=token, params={"x-lang": "es"})
+
+
+def get_activity_types(token: str) -> Optional[list]:
+    """
+    Historial de actividad del equipo.
+    Útil para evaluar decisiones pasadas del agente.
+    """
+    return _get("/api/v5/activity-types", token=token, params={"x-lang": "es"})
