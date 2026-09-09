@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T11:27:41.678507",
+  "generated_at": "2026-09-09T12:48:18.417062",
   "summary": {
     "team_value": 223093907,
     "team_value_fmt": "223.09M€",
@@ -28,13 +28,13 @@
         "Precio 9.08M€ muy por debajo del valor 14.02M€ (+54.4%)",
         "Cerca de su máximo de temporada 14.02M€ — poco margen de subida",
         "Tendencia reciente al alza: +80.7%",
-        "Ha subido 1903.0% desde inicio de temporada",
+        "Ha subido 1902.9% desde inicio de temporada",
         "Rendimiento excelente: 9.0 pts/jornada"
       ],
       "status": "ok",
       "average_points": 9,
       "trend": {
-        "max_value": 14020821,
+        "max_value": 14020013,
         "max_value_fmt": "14.02M€",
         "min_value": 677391,
         "recent_trend": "subiendo",
@@ -65,7 +65,7 @@
       "status": "ok",
       "average_points": 5.75,
       "trend": {
-        "max_value": 10355159,
+        "max_value": 10355104,
         "max_value_fmt": "10.36M€",
         "min_value": 4594956,
         "recent_trend": "subiendo",
@@ -96,7 +96,7 @@
       "status": "ok",
       "average_points": 5,
       "trend": {
-        "max_value": 2713821,
+        "max_value": 2713830,
         "max_value_fmt": "2.71M€",
         "min_value": 677391,
         "recent_trend": "subiendo",
@@ -127,7 +127,7 @@
       "status": "ok",
       "average_points": 6.75,
       "trend": {
-        "max_value": 13339135,
+        "max_value": 13339054,
         "max_value_fmt": "13.34M€",
         "min_value": 2713464,
         "recent_trend": "subiendo",
@@ -158,7 +158,7 @@
       "status": "ok",
       "average_points": 7.5,
       "trend": {
-        "max_value": 11513791,
+        "max_value": 11514581,
         "max_value_fmt": "11.51M€",
         "min_value": 5756991,
         "recent_trend": "subiendo",
