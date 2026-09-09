@@ -110,6 +110,11 @@ def evaluate_sell_decisions(my_team: MyTeam, market_players: List[MarketPlayer])
         sell_signals = []
         sell_score = 0
 
+        # Nunca recomendar vender porteros si solo hay 2
+        total_gks = sum(1 for p in my_team.players if p.position_id == 1)
+        if player.position_id == 1 and total_gks <= 2:
+            continue  # Proteger porteros — mínimo 2 siempre
+
         if player.status == "out_of_league":
             sell_score += 50
             sell_signals.append("Fuera de la liga — no puntúa")
