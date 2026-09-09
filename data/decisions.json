@@ -1,8 +1,161 @@
 {
-  "updated_at": "2026-09-09T09:32:15.755427",
+  "updated_at": "2026-09-09T09:49:59.538160",
   "dry_run": true,
-  "decisions": [],
-  "blocked": [],
+  "summary": "Mejor formación posible: [5, 3, 2] con 46.0 pts/j de media",
   "warnings": [],
-  "best_lineup": null
+  "decisions": [
+    {
+      "action": "sell",
+      "player_id": "2294",
+      "player_name": "R.P. Bigas",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.8 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.58M€",
+      "amount": 2578777,
+      "amount_fmt": "2.58M€",
+      "market_id": "",
+      "priority": 5
+    },
+    {
+      "action": "offer",
+      "player_id": "2843",
+      "player_name": "Xavi Espart",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 9.08M€ muy por debajo del valor 14.02M€, Rendimiento excelente: 9.0 pts/j",
+      "amount": 9079943,
+      "amount_fmt": "9.08M€",
+      "market_id": "24755740",
+      "priority": 3
+    },
+    {
+      "action": "offer",
+      "player_id": "2932",
+      "player_name": "Ángel Pérez",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 11.35M€ muy por debajo del valor 13.73M€, Rendimiento excelente: 10.0 pts/j",
+      "amount": 11351598,
+      "amount_fmt": "11.35M€",
+      "market_id": "27378094",
+      "priority": 3
+    },
+    {
+      "action": "offer",
+      "player_id": "1219",
+      "player_name": "Agirrezabala",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (6.1% margen), Rendimiento excelente: 6.8 pts/j",
+      "amount": 12575248,
+      "amount_fmt": "12.58M€",
+      "market_id": "24726601",
+      "priority": 5
+    },
+    {
+      "action": "offer",
+      "player_id": "2384",
+      "player_name": "Unai Lopez",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (5.2% margen), Rendimiento excelente: 7.5 pts/j",
+      "amount": 10946220,
+      "amount_fmt": "10.95M€",
+      "market_id": "24727032",
+      "priority": 5
+    },
+    {
+      "action": "offer",
+      "player_id": "2418",
+      "player_name": "Marc Roca",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 8.89M€ muy por debajo del valor 10.36M€, Buen rendimiento: 5.8 pts/j",
+      "amount": 8892057,
+      "amount_fmt": "8.89M€",
+      "market_id": "26875480",
+      "priority": 5
+    },
+    {
+      "action": "offer",
+      "player_id": "2206",
+      "player_name": "Yoel Lago",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 2.01M€ muy por debajo del valor 2.71M€, Buen rendimiento: 5.0 pts/j",
+      "amount": 2009399,
+      "amount_fmt": "2.01M€",
+      "market_id": "27034193",
+      "priority": 5
+    },
+    {
+      "action": "offer",
+      "player_id": "2549",
+      "player_name": "Navarro",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (14.0% margen), Rendimiento excelente: 7.0 pts/j",
+      "amount": 3478012,
+      "amount_fmt": "3.48M€",
+      "market_id": "32278175",
+      "priority": 5
+    }
+  ],
+  "blocked": [],
+  "best_lineup": {
+    "formation": [
+      5,
+      3,
+      2
+    ],
+    "total_avg_points": 45.95,
+    "goalkeeper": {
+      "name": "Oblak",
+      "avg_pts": 5.5
+    },
+    "defenders": [
+      {
+        "name": "Yuri",
+        "avg_pts": 5
+      },
+      {
+        "name": "Einar",
+        "avg_pts": 4.75
+      },
+      {
+        "name": "Marc Pubill",
+        "avg_pts": 3.75
+      },
+      {
+        "name": "Sergio Gómez",
+        "avg_pts": 3.4
+      },
+      {
+        "name": "Carreira",
+        "avg_pts": 3.4
+      }
+    ],
+    "midfielders": [
+      {
+        "name": "Canales",
+        "avg_pts": 4.75
+      },
+      {
+        "name": "Camavinga",
+        "avg_pts": 3
+      },
+      {
+        "name": "Barrenetxea",
+        "avg_pts": 2.8
+      }
+    ],
+    "strikers": [
+      {
+        "name": "Andrés Martín",
+        "avg_pts": 6
+      },
+      {
+        "name": "Iago Aspas",
+        "avg_pts": 3.6
+      }
+    ],
+    "bench": [
+      {
+        "name": "Szczesny",
+        "position": ""
+      },
+      {
+        "name": "R.P. Bigas",
+        "position": ""
+      },
+      {
+        "name": "Urko",
+        "position": ""
+      }
+    ]
+  }
 }
