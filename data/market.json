@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-09T20:16:04.438099",
-  "count": 46,
+  "updated_at": "2026-09-09T20:54:52.596112",
+  "count": 45,
   "subastas": [
     {
       "market_id": "180439095",
@@ -1294,54 +1294,6 @@
         "trend_pct": 14.5,
         "recovery_potential": 42.8,
         "potential_label": "ALTO"
-      }
-    },
-    {
-      "market_id": "7138481",
-      "player_id": "3119",
-      "name": "Lorenzo Amatucci",
-      "nickname": "Amatucci",
-      "position": "Centrocampista",
-      "position_id": 3,
-      "sale_price": 16990482,
-      "sale_price_fmt": "16.99M€",
-      "market_value": 17366885,
-      "market_value_fmt": "17.37M€",
-      "buyout_clause": 20255728,
-      "buyout_clause_fmt": "20.26M€",
-      "score": 55.5,
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 17.37M€ — poco margen de subida",
-        "Tendencia reciente al alza: +5.5%",
-        "Ha subido 38.1% desde inicio de temporada",
-        "Buen rendimiento: 4.8 pts/jornada",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "recommended_bid": 17330291,
-      "recommended_bid_fmt": "17.33M€",
-      "max_bid": 15630196,
-      "max_bid_fmt": "15.63M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 16.99M€ directamente a Migu V. Precio fijo.",
-      "season_gap": "",
-      "seller": "Migu V",
-      "seller_team_id": "37859310",
-      "expiration": "2026-09-10T20:53:33+02:00",
-      "status": "ok",
-      "average_points": 4.75,
-      "week_points": 0,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t180/p3119/256x256/p3119_t180_1_001_000.png",
-      "is_shielded": false,
-      "offers": 1,
-      "trend": {
-        "max_value": 17366885,
-        "max_value_fmt": "17.37M€",
-        "min_value": 11985557,
-        "recent_trend": "subiendo",
-        "trend_pct": 5.5,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
       }
     },
     {
@@ -3146,54 +3098,6 @@
         "trend_pct": -3.0,
         "recovery_potential": 73.7,
         "potential_label": "ALTO"
-      }
-    },
-    {
-      "market_id": "7138481",
-      "player_id": "3119",
-      "name": "Lorenzo Amatucci",
-      "nickname": "Amatucci",
-      "position": "Centrocampista",
-      "position_id": 3,
-      "sale_price": 16990482,
-      "sale_price_fmt": "16.99M€",
-      "market_value": 17366885,
-      "market_value_fmt": "17.37M€",
-      "buyout_clause": 20255728,
-      "buyout_clause_fmt": "20.26M€",
-      "score": 55.5,
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 17.37M€ — poco margen de subida",
-        "Tendencia reciente al alza: +5.5%",
-        "Ha subido 38.1% desde inicio de temporada",
-        "Buen rendimiento: 4.8 pts/jornada",
-        "Precio alto respecto al presupuesto disponible"
-      ],
-      "recommended_bid": 17330291,
-      "recommended_bid_fmt": "17.33M€",
-      "max_bid": 15630196,
-      "max_bid_fmt": "15.63M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 16.99M€ directamente a Migu V. Precio fijo.",
-      "season_gap": "",
-      "seller": "Migu V",
-      "seller_team_id": "37859310",
-      "expiration": "2026-09-10T20:53:33+02:00",
-      "status": "ok",
-      "average_points": 4.75,
-      "week_points": 0,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t180/p3119/256x256/p3119_t180_1_001_000.png",
-      "is_shielded": false,
-      "offers": 1,
-      "trend": {
-        "max_value": 17366885,
-        "max_value_fmt": "17.37M€",
-        "min_value": 11985557,
-        "recent_trend": "subiendo",
-        "trend_pct": 5.5,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
       }
     },
     {
