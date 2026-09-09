@@ -93,6 +93,17 @@
   .rival-name { flex: 1; font-weight: 600; font-size: 14px; }
   .rival-stats { text-align: right; font-size: 13px; }
 
+  /* Estado jugador */
+  .status-pill { display:inline-block; font-size:10px; font-weight:700; padding:1px 6px; border-radius:10px; margin-left:4px; vertical-align:middle; }
+  .status-ok { background:var(--green-dim); color:var(--green); }
+  .status-injured { background:var(--red-dim); color:var(--red); }
+  .status-doubtful { background:var(--amber-dim); color:var(--amber); }
+  .status-out_of_league { background:var(--surface2); color:var(--muted); }
+  /* Carrusel alineaciones */
+  .lineup-carousel { display:flex; overflow-x:auto; gap:12px; padding-bottom:8px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+  .lineup-carousel::-webkit-scrollbar { display:none; }
+  .lineup-card { min-width:85%; scroll-snap-align:start; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:14px; flex-shrink:0; }
+  .lineup-card.has-alert { border-color:var(--amber); }
   @media (min-width: 480px) { main { max-width: 480px; margin: 0 auto; } nav { max-width: 480px; left: 50%; transform: translateX(-50%); } }
 </style>
 </head>
@@ -203,6 +214,11 @@ function fmt(n) {
 
 function scoreClass(s) { return s >= 65 ? 'score-high' : s >= 40 ? 'score-mid' : 'score-low'; }
 function statusIcon(s) { return s === 'injured' ? ' 🤕' : s === 'doubtful' ? ' ❓' : s === 'out_of_league' ? ' ⛔' : ''; }
+function statusPill(s) {
+  if (!s || s === 'ok') return '';
+  const labels = {injured:'LESIONADO', doubtful:'DUDOSO', out_of_league:'BAJA'};
+  return `<span class="status-pill status-${s}">${labels[s]||s.toUpperCase()}</span>`;
+}
 function posIcon(pid) { return ['','🧤','🛡️','⚙️','⚽'][pid] || '👤'; }
 
 function trendHTML(trend) {
@@ -283,7 +299,7 @@ function renderTeam(team) {
       html += `<div class="player-row">
         <div class="player-img-placeholder">${posIcon(p.position_id)}</div>
         <div class="player-info">
-          <div class="player-name">${p.nickname}${statusIcon(p.status)}</div>
+          <div class="player-name">${p.nickname} ${statusPill(p.status)}</div>
           <div class="player-meta">Cláusula: ${p.buyout_clause_fmt || p.buyout_clause_fmt || '—'}</div>
           ${t ? `<div class="player-meta">${trendHTML(t)}</div>` : ''}
         </div>
@@ -321,7 +337,7 @@ function renderMarketList(players, containerId, type) {
     html += `<div class="player-row" style="align-items:flex-start;padding:14px 0">
       <div class="player-img-placeholder" style="margin-top:2px">${posIcon(p.position_id)}</div>
       <div class="player-info">
-        <div class="player-name">${p.nickname}${statusIcon(p.status)} <span class="score-badge ${scoreClass(sc)}">${sc}</span></div>
+        <div class="player-name">${p.nickname} ${statusPill(p.status)}<span class="score-badge ${scoreClass(sc)}">${sc}</span></div>
         <div class="player-meta">${p.position}${p.seller ? ' · ' + p.seller : ''}</div>
         ${t ? `<div class="player-meta" style="margin-top:4px">${trendHTML(t)}</div>` : ''}
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
@@ -416,6 +432,13 @@ async function init() {
 
 
 
+function playerLineupRow(icon, pos, p) {
+  if (!p) return '';
+  const pill = statusPill(p.status);
+  const color = p.is_available === false ? 'color:var(--amber)' : '';
+  return `<div style="font-size:12px;${color}"><span style="color:var(--muted);width:80px;display:inline-block">${icon} ${pos}</span> ${p.name}${pill} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`;
+}
+
 function actionIcon(action) {
   return {sell:'🔴', bid:'🟢', offer:'🔒', lineup:'📋', hold:'⏸️'}[action] || '❓';
 }
@@ -442,19 +465,27 @@ function renderAgente(decisions) {
     });
   }
 
-  // Mejor alineación
-  if (decisions.best_lineup) {
-    const bl = decisions.best_lineup;
-    html += `<div class="card" style="margin-bottom:12px">
-      <div class="card-title">⚽ Mejor 11 posible · Formación ${bl.formation.join('-')} · ${bl.total_avg_points} pts/j media</div>
-      <div style="display:grid;gap:6px;margin-top:8px">
-        <div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">🧤 Portero</span> ${bl.goalkeeper.name} <span style="color:var(--muted)">(${bl.goalkeeper.avg_pts} pts/j)</span></div>
-        ${bl.defenders.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">🛡️ Defensa</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
-        ${bl.midfielders.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">⚙️ Medio</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
-        ${bl.strikers.map(p => `<div style="font-size:12px"><span style="color:var(--muted);width:90px;display:inline-block">⚽ Delantero</span> ${p.name} <span style="color:var(--muted)">(${p.avg_pts} pts/j)</span></div>`).join('')}
-      </div>
-      ${bl.bench?.length ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">Suplentes: ${bl.bench.map(p=>p.name).join(', ')}</div>` : ''}
-    </div>`;
+  // Top 3 alineaciones en carrusel
+  const lineups = decisions.top_lineups?.length ? decisions.top_lineups : (decisions.best_lineup ? [decisions.best_lineup] : []);
+  if (lineups.length) {
+    const labels = ['🥇 Mejor 11', '🥈 2ª opción', '🥉 3ª opción'];
+    html += `<div class="card-title" style="margin-bottom:8px">⚽ Alineaciones recomendadas</div>
+    <div class="lineup-carousel">`;
+    lineups.forEach((bl, idx) => {
+      const hasAlert = bl.has_unavailable || bl.alerts?.length;
+      html += `<div class="lineup-card ${hasAlert ? 'has-alert' : ''}">
+        <div style="font-weight:700;margin-bottom:6px">${labels[idx]||'Opción '+(idx+1)} · ${bl.formation.join('-')} · <span style="color:var(--green)">${bl.total_avg_points} pts/j</span></div>
+        ${(bl.alerts||[]).map(a=>`<div style="font-size:11px;color:var(--amber);margin-bottom:4px">⚠️ ${a}</div>`).join('')}
+        <div style="display:grid;gap:5px;margin-top:6px">
+          ${playerLineupRow('🧤','Portero', bl.goalkeeper)}
+          ${(bl.defenders||[]).map(p=>playerLineupRow('🛡️','Defensa',p)).join('')}
+          ${(bl.midfielders||[]).map(p=>playerLineupRow('⚙️','Medio',p)).join('')}
+          ${(bl.strikers||[]).map(p=>playerLineupRow('⚽','Delantero',p)).join('')}
+        </div>
+        ${bl.bench?.length ? `<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)">Suplentes: ${bl.bench.map(p=>p.name+(p.status&&p.status!=='ok'?' '+statusIcon(p.status):'')).join(', ')}</div>` : ''}
+      </div>`;
+    });
+    html += `</div>`;
   }
 
   // Decisiones del agente
