@@ -139,6 +139,13 @@
     <div id="agente-content"><div class="loading">Cargando decisiones...</div></div>
   </div>
 
+  <!-- AGENTE -->
+  <div class="section" id="sec-agente">
+    <div class="section-title">Agente <span style="font-size:12px;color:var(--amber);font-weight:normal">modo DRY RUN — solo recomendaciones</span></div>
+
+    <div id="agente-content"><div class="loading">Cargando decisiones...</div></div>
+  </div>
+
   <!-- OPORTUNIDADES -->
   <div class="section" id="sec-opor">
     <div class="section-title">Mejores oportunidades</div>
@@ -158,9 +165,7 @@
   <button onclick="showTab('rivales',this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Rivales
   </button>
-  <button onclick="showTab('opor',this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Opor.
-  </button>
+
   <button onclick="showTab('agente',this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Agente
   </button>
@@ -406,7 +411,6 @@ async function init() {
   renderMarketList(market?.subastas, 'market-subastas', 'jugadores en el mercado');
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
-  renderOpportunities(market);
   renderAgente(decisions);
 }
 
@@ -533,27 +537,22 @@ function renderReward(reward) {
 
   let icon, text, color, bg, border;
 
-  if (status === 'claimed' && claimedToday) {
-    icon = '✅';
-    text = `Recompensa reclamada hoy`;
-    if (reward.reward_amount_fmt && reward.reward_amount) {
-      text += ` · ${reward.reward_amount_fmt}`;
+  if (status === 'not_available' || status === 'claimed') {
+    const lastDate = reward.last_claimed_date || '';
+    if (lastDate === today) {
+      icon = '✅';
+      text = 'Recompensa reclamada hoy';
+      if (reward.reward_amount_fmt && reward.reward_amount > 0) text += ` · ${reward.reward_amount_fmt}`;
+      color = 'var(--green)';
+      bg = 'var(--green-dim)';
+      border = '#2ea04326';
+    } else {
+      icon = '⏳';
+      text = 'Recompensa aún no disponible hoy';
+      color = 'var(--muted)';
+      bg = 'var(--surface)';
+      border = 'var(--border)';
     }
-    color = 'var(--green)';
-    bg = 'var(--green-dim)';
-    border = '#2ea04326';
-  } else if (status === 'claimed' && !claimedToday) {
-    icon = '⏳';
-    text = `Pendiente de reclamar hoy · Última: ${reward.last_claimed_date || 'nunca'}`;
-    color = 'var(--amber)';
-    bg = 'var(--amber-dim)';
-    border = '#d2992226';
-  } else if (status === 'not_available') {
-    icon = '⏳';
-    text = 'Recompensa aún no disponible hoy';
-    color = 'var(--muted)';
-    bg = 'var(--surface)';
-    border = 'var(--border)';
   } else if (status === 'check_failed' || status === 'claim_failed') {
     icon = '❌';
     text = 'Error al reclamar la recompensa — se reintentará a las 20:00';
