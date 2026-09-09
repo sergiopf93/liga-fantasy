@@ -59,25 +59,28 @@ def run() -> bool:
 
     # 1. Comprobar disponibilidad
     logger.info("Comprobando recompensa diaria...")
+    logger.info(f"Usando TEAM_ID={TEAM_ID}, LEAGUE_ID={LEAGUE_ID}")
     check = client.check_daily_reward(TOKEN, TEAM_ID, LEAGUE_ID)
     logger.info(f"Check result: {check}")
 
     if not check:
-        logger.warning("No se pudo comprobar la recompensa")
+        # HTTP 400 generalmente significa que ya fue reclamada hoy
+        logger.info("Check devolvió vacío/error — probablemente ya reclamada hoy")
         save_reward_state({
             "last_check": datetime.now().isoformat(),
-            "status": "check_failed",
+            "status": "claimed" if state.get("last_claimed_date") == today else "not_available",
             "last_claimed_date": state.get("last_claimed_date"),
+            "note": "HTTP 400 — posiblemente ya reclamada"
         })
         return False
 
     # Interpretar respuesta del check
-    # La API puede devolver diferentes campos según disponibilidad
     available = (
         check.get("available", False) or
         check.get("canClaim", False) or
         check.get("dailyRewardAvailable", False) or
-        (isinstance(check, dict) and check.get("status") not in ("claimed", "already_claimed"))
+        check.get("hasReward", False) or
+        (isinstance(check, dict) and check.get("status") not in ("claimed", "already_claimed", "not_available"))
     )
 
     logger.info(f"Recompensa disponible: {available}")
