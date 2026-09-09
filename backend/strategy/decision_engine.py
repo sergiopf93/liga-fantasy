@@ -16,6 +16,7 @@ import os
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
 from backend.laliga.models import Player, MarketPlayer, MyTeam
+from typing import List, Optional, Tuple  # ya importado
 
 logger = logging.getLogger(__name__)
 
@@ -242,50 +243,95 @@ def evaluate_buy_decisions(market_players: List[MarketPlayer],
     return decisions
 
 
-def evaluate_best_lineup(players: List[Player]) -> Optional[dict]:
-    """
-    Calcula el mejor 11 posible con la plantilla actual.
-    Criterio: maximizar la suma de puntos de los titulares.
-    Siempre 1 portero. Busca la formación que maximiza puntos totales.
-    """
-    gks  = sorted([p for p in players if p.position_id == 1], key=lambda x: x.average_points, reverse=True)
-    defs = sorted([p for p in players if p.position_id == 2], key=lambda x: x.average_points, reverse=True)
-    mids = sorted([p for p in players if p.position_id == 3], key=lambda x: x.average_points, reverse=True)
-    strs = sorted([p for p in players if p.position_id == 4], key=lambda x: x.average_points, reverse=True)
+UNAVAILABLE = ("injured", "doubtful", "out_of_league")
 
-    if not gks:
-        logger.error("Sin portero — no se puede calcular alineación")
-        return None
 
-    best_score = -1
-    best_lineup = None
+def _player_dict(p: Player) -> dict:
+    return {
+        "id": p.id,
+        "name": p.nickname,
+        "avg_pts": p.average_points,
+        "status": p.status,
+        "position": p.position,
+        "position_id": p.position_id,
+        "is_available": p.status == "ok",
+    }
+
+
+def evaluate_best_lineups(players: List[Player], top_n: int = 3) -> List[dict]:
+    """
+    Calcula las top_n mejores alineaciones posibles.
+    - Solo usa jugadores con status "ok" como titulares preferidos
+    - Si no hay suficientes jugadores ok en una posición, usa doubtful/injured
+    - Devuelve lista ordenada de mejor a peor
+    """
+    ok     = lambda p: p.status == "ok"
+    not_ok = lambda p: p.status in UNAVAILABLE and p.status != "out_of_league"
+
+    gks_ok  = sorted([p for p in players if p.position_id == 1 and ok(p)],  key=lambda x: x.average_points, reverse=True)
+    defs_ok = sorted([p for p in players if p.position_id == 2 and ok(p)],  key=lambda x: x.average_points, reverse=True)
+    mids_ok = sorted([p for p in players if p.position_id == 3 and ok(p)],  key=lambda x: x.average_points, reverse=True)
+    strs_ok = sorted([p for p in players if p.position_id == 4 and ok(p)],  key=lambda x: x.average_points, reverse=True)
+
+    # Fallback con lesionados/dudosos si no hay suficientes ok
+    gks_fb  = sorted([p for p in players if p.position_id == 1 and not_ok(p)], key=lambda x: x.average_points, reverse=True)
+    defs_fb = sorted([p for p in players if p.position_id == 2 and not_ok(p)], key=lambda x: x.average_points, reverse=True)
+    mids_fb = sorted([p for p in players if p.position_id == 3 and not_ok(p)], key=lambda x: x.average_points, reverse=True)
+    strs_fb = sorted([p for p in players if p.position_id == 4 and not_ok(p)], key=lambda x: x.average_points, reverse=True)
+
+    def get_n(ok_list, fb_list, n):
+        combined = ok_list + fb_list
+        return combined[:n]
+
+    if not (gks_ok or gks_fb):
+        logger.error("Sin portero disponible")
+        return []
+
+    scored_lineups = []
 
     for formation in VALID_FORMATIONS:
         n_def, n_mid, n_str = formation
-        if len(defs) < n_def or len(mids) < n_mid or len(strs) < n_str:
+
+        gk_pool  = get_n(gks_ok, gks_fb, 1)
+        def_pool = get_n(defs_ok, defs_fb, n_def)
+        mid_pool = get_n(mids_ok, mids_fb, n_mid)
+        str_pool = get_n(strs_ok, strs_fb, n_str)
+
+        if len(gk_pool) < 1 or len(def_pool) < n_def or len(mid_pool) < n_mid or len(str_pool) < n_str:
             continue
 
-        lineup_players = (
-            [gks[0]] +
-            defs[:n_def] +
-            mids[:n_mid] +
-            strs[:n_str]
-        )
-        total_score = sum(p.average_points for p in lineup_players)
+        lineup_players = [gk_pool[0]] + def_pool[:n_def] + mid_pool[:n_mid] + str_pool[:n_str]
+        total_score = sum(p.average_points for p in lineup_players if p.status == "ok")
+        unavailable_in_lineup = [p for p in lineup_players if p.status in UNAVAILABLE]
+        bench = [p for p in players if p not in lineup_players]
 
-        if total_score > best_score:
-            best_score = total_score
-            best_lineup = {
-                "formation": formation,
-                "goalkeeper": gks[0],
-                "defenders": defs[:n_def],
-                "midfielders": mids[:n_mid],
-                "strikers": strs[:n_str],
-                "total_avg_points": round(total_score, 2),
-                "bench": [p for p in players if p not in lineup_players],
-            }
+        # Alertas por posiciones sin jugadores ok
+        alerts = []
+        for p in unavailable_in_lineup:
+            status_txt = {"injured": "LESIONADO", "doubtful": "DUDOSO", "out_of_league": "FUERA"}.get(p.status, p.status.upper())
+            alerts.append(f"{p.nickname} ({p.position}) — {status_txt}: buscar sustituto en el mercado")
 
-    return best_lineup
+        scored_lineups.append({
+            "formation": formation,
+            "total_avg_points": round(total_score, 2),
+            "has_unavailable": len(unavailable_in_lineup) > 0,
+            "alerts": alerts,
+            "goalkeeper": _player_dict(gk_pool[0]),
+            "defenders": [_player_dict(p) for p in def_pool[:n_def]],
+            "midfielders": [_player_dict(p) for p in mid_pool[:n_mid]],
+            "strikers": [_player_dict(p) for p in str_pool[:n_str]],
+            "bench": [_player_dict(p) for p in bench],
+        })
+
+    # Ordenar: primero los sin lesionados, luego por puntos
+    scored_lineups.sort(key=lambda x: (-int(not x["has_unavailable"]) * 1000 + x["total_avg_points"]), reverse=True)
+    return scored_lineups[:top_n]
+
+
+def evaluate_best_lineup(players: List[Player]) -> Optional[dict]:
+    """Compatibilidad: devuelve el mejor 11 (primero de la lista)"""
+    lineups = evaluate_best_lineups(players, top_n=1)
+    return lineups[0] if lineups else None
 
 
 def run_decision_engine(my_team: MyTeam, market_players: List[MarketPlayer]) -> DecisionReport:
@@ -309,6 +355,9 @@ def run_decision_engine(my_team: MyTeam, market_players: List[MarketPlayer]) -> 
             f"Mejor formación posible: {best_11['formation']} "
             f"con {best_11['total_avg_points']:.1f} pts/j de media"
         )
+        if best_11.get("alerts"):
+            for alert in best_11["alerts"]:
+                report.warnings.append(f"🏥 {alert}")
 
     # 3. Evaluar ventas
     sell_decisions = evaluate_sell_decisions(my_team, market_players)
