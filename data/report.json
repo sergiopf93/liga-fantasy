@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T10:00:32.215770",
+  "generated_at": "2026-09-09T10:23:17.120492",
   "summary": {
     "team_value": 223095717,
     "team_value_fmt": "223.10M€",
@@ -27,18 +27,18 @@
       "reasons": [
         "Precio 9.08M€ muy por debajo del valor 14.02M€ (+54.4%)",
         "Cerca de su máximo de temporada 14.02M€ — poco margen de subida",
-        "Tendencia reciente al alza: +80.8%",
-        "Ha subido 1903.1% desde inicio de temporada",
+        "Tendencia reciente al alza: +80.7%",
+        "Ha subido 1903.0% desde inicio de temporada",
         "Rendimiento excelente: 9.0 pts/jornada"
       ],
       "status": "ok",
       "average_points": 9,
       "trend": {
-        "max_value": 14022029,
+        "max_value": 14020821,
         "max_value_fmt": "14.02M€",
         "min_value": 677391,
         "recent_trend": "subiendo",
-        "trend_pct": 80.8,
+        "trend_pct": 80.7,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
@@ -65,7 +65,7 @@
       "status": "ok",
       "average_points": 5.75,
       "trend": {
-        "max_value": 10355367,
+        "max_value": 10355159,
         "max_value_fmt": "10.36M€",
         "min_value": 4594956,
         "recent_trend": "subiendo",
@@ -96,7 +96,7 @@
       "status": "ok",
       "average_points": 5,
       "trend": {
-        "max_value": 2713959,
+        "max_value": 2713821,
         "max_value_fmt": "2.71M€",
         "min_value": 677391,
         "recent_trend": "subiendo",
@@ -127,7 +127,7 @@
       "status": "ok",
       "average_points": 6.75,
       "trend": {
-        "max_value": 13339772,
+        "max_value": 13339135,
         "max_value_fmt": "13.34M€",
         "min_value": 2713464,
         "recent_trend": "subiendo",
@@ -158,7 +158,7 @@
       "status": "ok",
       "average_points": 7.5,
       "trend": {
-        "max_value": 11514034,
+        "max_value": 11513791,
         "max_value_fmt": "11.51M€",
         "min_value": 5756991,
         "recent_trend": "subiendo",
@@ -169,17 +169,6 @@
     }
   ],
   "sell_recommendations": [
-    {
-      "name": "Wojciech Szczesny",
-      "nickname": "Szczesny",
-      "position": "",
-      "market_value_fmt": "1.38M€",
-      "sell_score": 55,
-      "reasons": [
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin puntuar última jornada con media baja"
-      ]
-    },
     {
       "name": "Pedro Bigas",
       "nickname": "R.P. Bigas",
