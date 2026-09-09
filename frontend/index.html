@@ -109,6 +109,7 @@
       <div id="gk-alert"></div>
       <div id="today-actions"><div class="loading">Cargando...</div></div>
     </div>
+    <div id="reward-status" style="margin-bottom:10px"></div>
     <div class="summary-grid" id="summary-grid"></div>
   </div>
   <!-- MI EQUIPO -->
@@ -386,10 +387,10 @@ function renderOpportunities(market) {
 }
 
 async function init() {
-  const [team, market, report, rivals, decisions] = await Promise.all([
+  const [team, market, report, rivals, decisions, reward] = await Promise.all([
     loadJSON('team.json'), loadJSON('market.json'),
     loadJSON('report.json'), loadJSON('rivals.json'),
-    loadJSON('decisions.json')
+    loadJSON('decisions.json'), loadJSON('reward.json')
   ]);
 
   const ts = report?.generated_at || team?.updated_at || '';
@@ -398,6 +399,7 @@ async function init() {
     document.getElementById('last-updated').textContent = d.toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'});
   }
 
+  renderReward(reward);
   renderSummary(report, team);
   renderTodayActions(report);
   renderTeam(team);
@@ -511,6 +513,65 @@ function getExecutionInstructions(d) {
             También puedes ejecutarlo manualmente desde GitHub → Actions → "Ajuste alineación jueves"`;
   }
   return 'Consulta el dashboard para más detalles.';
+}
+
+function renderReward(reward) {
+  const el = document.getElementById('reward-status');
+  if (!el) return;
+
+  if (!reward) {
+    el.innerHTML = `<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);font-size:13px">
+      <span>🎁</span>
+      <span style="color:var(--muted)">Recompensa diaria: sin datos</span>
+    </div>`;
+    return;
+  }
+
+  const status = reward.status;
+  const today = new Date().toISOString().slice(0, 10);
+  const claimedToday = reward.last_claimed_date === today;
+
+  let icon, text, color, bg, border;
+
+  if (status === 'claimed' && claimedToday) {
+    icon = '✅';
+    text = `Recompensa reclamada hoy`;
+    if (reward.reward_amount_fmt && reward.reward_amount) {
+      text += ` · ${reward.reward_amount_fmt}`;
+    }
+    color = 'var(--green)';
+    bg = 'var(--green-dim)';
+    border = '#2ea04326';
+  } else if (status === 'claimed' && !claimedToday) {
+    icon = '⏳';
+    text = `Pendiente de reclamar hoy · Última: ${reward.last_claimed_date || 'nunca'}`;
+    color = 'var(--amber)';
+    bg = 'var(--amber-dim)';
+    border = '#d2992226';
+  } else if (status === 'not_available') {
+    icon = '⏳';
+    text = 'Recompensa aún no disponible hoy';
+    color = 'var(--muted)';
+    bg = 'var(--surface)';
+    border = 'var(--border)';
+  } else if (status === 'check_failed' || status === 'claim_failed') {
+    icon = '❌';
+    text = 'Error al reclamar la recompensa — se reintentará a las 20:00';
+    color = 'var(--red)';
+    bg = 'var(--red-dim)';
+    border = '#f8514926';
+  } else {
+    icon = '🎁';
+    text = 'Recompensa diaria: estado desconocido';
+    color = 'var(--muted)';
+    bg = 'var(--surface)';
+    border = 'var(--border)';
+  }
+
+  el.innerHTML = `<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:${bg};border:1px solid ${border};border-radius:var(--radius);font-size:13px">
+    <span>${icon}</span>
+    <span style="color:${color};font-weight:500">${text}</span>
+  </div>`;
 }
 
 init();
