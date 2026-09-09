@@ -1,16 +1,16 @@
 {
   "team_id": "37889563",
-  "team_value": 223093907,
+  "team_value": 223092614,
   "team_value_fmt": "223.09M€",
   "team_points": 158,
   "budget": 22004426,
   "budget_fmt": "22.00M€",
   "formation": [
     5,
-    3,
-    2
+    4,
+    1
   ],
-  "updated_at": "2026-09-08T18:18:29+02:00",
+  "updated_at": "2026-09-09T15:35:22+02:00",
   "players": [
     {
       "id": "2322",
