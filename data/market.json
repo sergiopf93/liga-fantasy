@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T12:48:17.800613",
+  "updated_at": "2026-09-09T14:06:11.786817",
   "count": 46,
   "subastas": [
     {
@@ -891,7 +891,7 @@
       "max_bid_fmt": "11.74M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Pagas 11.96M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "Actualmente al 100% de su máximo de temporada (13.04M€)",
+      "season_gap": "",
       "seller": "JavierRH",
       "seller_team_id": "37868413",
       "expiration": "2026-09-09T17:56:15+02:00",
@@ -902,7 +902,7 @@
       "is_shielded": false,
       "offers": 1,
       "trend": {
-        "max_value": 13040251,
+        "max_value": 13039660,
         "max_value_fmt": "13.04M€",
         "min_value": 5987379,
         "recent_trend": "subiendo",
@@ -939,7 +939,7 @@
       "max_bid_fmt": "23.23M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Pagas 22.19M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "Actualmente al 100% de su máximo de temporada (24.45M€)",
+      "season_gap": "",
       "seller": "fruizmata7",
       "seller_team_id": "37859264",
       "expiration": "2026-09-09T20:45:26+02:00",
@@ -950,7 +950,7 @@
       "is_shielded": false,
       "offers": 1,
       "trend": {
-        "max_value": 24453763,
+        "max_value": 24453188,
         "max_value_fmt": "24.45M€",
         "min_value": 5560211,
         "recent_trend": "subiendo",
@@ -2548,7 +2548,7 @@
       "max_bid_fmt": "11.74M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Pagas 11.96M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "Actualmente al 100% de su máximo de temporada (13.04M€)",
+      "season_gap": "",
       "seller": "JavierRH",
       "seller_team_id": "37868413",
       "expiration": "2026-09-09T17:56:15+02:00",
@@ -2559,7 +2559,7 @@
       "is_shielded": false,
       "offers": 1,
       "trend": {
-        "max_value": 13040251,
+        "max_value": 13039660,
         "max_value_fmt": "13.04M€",
         "min_value": 5987379,
         "recent_trend": "subiendo",
@@ -2596,7 +2596,7 @@
       "max_bid_fmt": "23.23M€",
       "market_type": "clausulazo",
       "strategy_note": "CLAUSULAZO — Pagas 22.19M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "Actualmente al 100% de su máximo de temporada (24.45M€)",
+      "season_gap": "",
       "seller": "fruizmata7",
       "seller_team_id": "37859264",
       "expiration": "2026-09-09T20:45:26+02:00",
@@ -2607,7 +2607,7 @@
       "is_shielded": false,
       "offers": 1,
       "trend": {
-        "max_value": 24453763,
+        "max_value": 24453188,
         "max_value_fmt": "24.45M€",
         "min_value": 5560211,
         "recent_trend": "subiendo",
