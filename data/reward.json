@@ -1,5 +1,6 @@
 {
-  "last_check": "2026-09-09T09:49:51.922403",
-  "status": "check_failed",
-  "last_claimed_date": null
+  "last_check": "2026-09-09T10:00:24.046866",
+  "status": "not_available",
+  "last_claimed_date": null,
+  "note": "HTTP 400 — posiblemente ya reclamada"
 }
