@@ -299,7 +299,11 @@ def run():
     # ── Ventas ────────────────────────────────────────────────────────────
     sell_recs = []
     if my_team:
+        total_gks = sum(1 for p in all_my_players if p.position_id == 1)
         for p in all_my_players:
+            # Nunca recomendar vender porteros si solo hay 2
+            if p.position_id == 1 and total_gks <= 2:
+                continue
             r = score_my_player_for_sale(p)
             if r["should_sell"]:
                 sell_recs.append(r)
