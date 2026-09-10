@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T11:58:45.691664",
+  "updated_at": "2026-09-10T12:01:37.009731",
   "count": 41,
   "subastas": [
     {
@@ -671,7 +671,7 @@
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t189/p1219/256x256/p1219_t189_1_001_000.png",
       "is_shielded": false,
-      "offers": 1,
+      "offers": 2,
       "trend": {
         "max_value": 14110775,
         "max_value_fmt": "14.11M€",
@@ -2044,7 +2044,7 @@
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t189/p1219/256x256/p1219_t189_1_001_000.png",
       "is_shielded": false,
-      "offers": 1,
+      "offers": 2,
       "trend": {
         "max_value": 14110775,
         "max_value_fmt": "14.11M€",
