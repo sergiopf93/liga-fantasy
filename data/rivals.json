@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-10T14:00:41.525675",
+  "updated_at": "2026-09-10T20:17:39.014968",
   "my_position": 6,
   "rivals": [
     {
       "team_id": "37868413",
       "manager": "JavierRH",
-      "team_value": 292714065,
-      "team_value_fmt": "292.71M€",
+      "team_value": 291827373,
+      "team_value_fmt": "291.83M€",
       "points": 220,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -15,8 +15,8 @@
     {
       "team_id": "37859310",
       "manager": "Migu V",
-      "team_value": 221312556,
-      "team_value_fmt": "221.31M€",
+      "team_value": 282878397,
+      "team_value_fmt": "282.88M€",
       "points": 168,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -25,8 +25,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 188884650,
-      "team_value_fmt": "188.88M€",
+      "team_value": 181577664,
+      "team_value_fmt": "181.58M€",
       "points": 162,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -35,8 +35,8 @@
     {
       "team_id": "37951056",
       "manager": "Doggy Sanxe",
-      "team_value": 164066129,
-      "team_value_fmt": "164.07M€",
+      "team_value": 152051929,
+      "team_value_fmt": "152.05M€",
       "points": 160,
       "budget_fmt": "N/D",
       "is_me": false,
