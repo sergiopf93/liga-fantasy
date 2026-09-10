@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T14:00:41.526638",
+  "generated_at": "2026-09-10T20:17:39.015637",
   "summary": {
     "team_value": 221980965,
     "team_value_fmt": "221.98M€",
@@ -75,37 +75,6 @@
       }
     },
     {
-      "name": "Unai López",
-      "nickname": "Unai Lopez",
-      "position": "Centrocampista",
-      "sale_price_fmt": "10.95M€",
-      "market_value_fmt": "12.01M€",
-      "score": 75.2,
-      "recommended_bid_fmt": "11.17M€",
-      "max_bid_fmt": "10.81M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 10.95M€ directamente a Doggy Sanxe. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio inferior al valor de mercado (9.8% de margen)",
-        "Cerca de su máximo de temporada 12.01M€ — poco margen de subida",
-        "Tendencia reciente al alza: +23.1%",
-        "Ha subido 71.6% desde inicio de temporada",
-        "Rendimiento excelente: 7.5 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 7.5,
-      "trend": {
-        "max_value": 12014200,
-        "max_value_fmt": "12.01M€",
-        "min_value": 5756991,
-        "recent_trend": "subiendo",
-        "trend_pct": 23.1,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
       "name": "Yoel Lago",
       "nickname": "Yoel Lago",
       "position": "Defensa",
@@ -166,6 +135,37 @@
         "trend_pct": 72.6,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Denis Suárez",
+      "nickname": "Denis Suárez",
+      "position": "Centrocampista",
+      "sale_price_fmt": "2.55M€",
+      "market_value_fmt": "2.54M€",
+      "score": 66.5,
+      "recommended_bid_fmt": "2.55M€",
+      "max_bid_fmt": "2.55M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 2.55M€ directamente a JavierRH. Precio fijo.",
+      "season_gap": "Actualmente al 42% de su máximo de temporada (6.02M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 6.02M€ — potencial de recuperación 58%",
+        "Tendencia reciente a la baja: -2.4%",
+        "Ha bajado 57.7% desde inicio de temporada",
+        "Rendimiento moderado: 3.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 3,
+      "trend": {
+        "max_value": 6023179,
+        "max_value_fmt": "6.02M€",
+        "min_value": 2345839,
+        "recent_trend": "bajando",
+        "trend_pct": -2.4,
+        "recovery_potential": 57.9,
+        "potential_label": "ALTO"
       }
     }
   ],

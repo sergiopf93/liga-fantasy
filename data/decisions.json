@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T14:00:41.528056",
+  "updated_at": "2026-09-10T20:17:39.017124",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 4, 1] con 42.5 pts/j de media",
   "warnings": [],
@@ -41,19 +41,6 @@
       "priority": 5,
       "position": "Portero",
       "position_id": 1,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2384",
-      "player_name": "Unai Lopez",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (9.8% margen), Rendimiento excelente: 7.5 pts/j",
-      "amount": 10946220,
-      "amount_fmt": "10.95M€",
-      "market_id": "24727032",
-      "priority": 5,
-      "position": "Centrocampista",
-      "position_id": 3,
       "status": "ok"
     },
     {
