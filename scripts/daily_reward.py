@@ -61,37 +61,14 @@ def run() -> bool:
     logger.info("Comprobando recompensa diaria...")
     logger.info(f"Usando TEAM_ID={TEAM_ID}, LEAGUE_ID={LEAGUE_ID}")
     check = client.check_daily_reward(TOKEN, TEAM_ID, LEAGUE_ID)
-    logger.info(f"Check result: {check}")
+    logger.info(f"Check result: HTTP {check.get('status_code')} — disponible: {check.get('available')}")
 
-    if not check:
-        # HTTP 400 generalmente significa que ya fue reclamada hoy
-        logger.info("Check devolvió vacío/error — probablemente ya reclamada hoy")
-        save_reward_state({
-            "last_check": datetime.now().isoformat(),
-            "status": "claimed" if state.get("last_claimed_date") == today else "not_available",
-            "last_claimed_date": state.get("last_claimed_date"),
-            "note": "HTTP 400 — posiblemente ya reclamada"
-        })
-        return False
-
-    # Interpretar respuesta del check
-    available = (
-        check.get("available", False) or
-        check.get("canClaim", False) or
-        check.get("dailyRewardAvailable", False) or
-        check.get("hasReward", False) or
-        (isinstance(check, dict) and check.get("status") not in ("claimed", "already_claimed", "not_available"))
-    )
-
-    logger.info(f"Recompensa disponible: {available}")
-
-    if not available:
-        logger.info("Recompensa no disponible o ya reclamada hoy")
+    if not check.get("available"):
+        logger.info("Recompensa ya reclamada hoy (HTTP 400) o no disponible")
         save_reward_state({
             "last_check": datetime.now().isoformat(),
             "status": "not_available",
             "last_claimed_date": state.get("last_claimed_date"),
-            "check_response": check,
         })
         return False
 
