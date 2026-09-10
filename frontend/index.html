@@ -162,6 +162,14 @@
     <div class="section-title">Mejores oportunidades</div>
     <div id="opor-list"><div class="loading">Cargando...</div></div>
   </div>
+  <!-- ANALISTA -->
+  <div class="section" id="sec-analista">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div class="section-title" style="margin-bottom:0">Analista</div>
+      <button onclick="downloadPDF()" style="background:var(--blue-dim);border:1px solid var(--blue);color:var(--blue);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer">📄 PDF</button>
+    </div>
+    <div id="analista-content"><div class="loading">Cargando análisis...</div></div>
+  </div>
 </main>
 <nav>
   <button class="active" onclick="showTab('hoy',this)">
@@ -179,6 +187,9 @@
 
   <button onclick="showTab('agente',this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Agente
+  </button>
+  <button onclick="showTab('analista',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analista
   </button>
 </nav>
 <script>
@@ -408,10 +419,11 @@ function renderOpportunities(market) {
 }
 
 async function init() {
-  const [team, market, report, rivals, decisions, reward] = await Promise.all([
+  const [team, market, report, rivals, decisions, reward, analyst] = await Promise.all([
     loadJSON('team.json'), loadJSON('market.json'),
     loadJSON('report.json'), loadJSON('rivals.json'),
-    loadJSON('decisions.json'), loadJSON('reward.json')
+    loadJSON('decisions.json'), loadJSON('reward.json'),
+    loadJSON('analyst_latest.json')
   ]);
 
   const ts = report?.generated_at || team?.updated_at || '';
@@ -428,6 +440,7 @@ async function init() {
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderAgente(decisions);
+  renderAnalista(analyst);
 }
 
 
@@ -615,6 +628,184 @@ function renderReward(reward) {
     <span>${icon}</span>
     <span style="color:${color};font-weight:500">${text}</span>
   </div>`;
+}
+
+// ── ANALISTA ─────────────────────────────────────────────────────────────────
+
+function renderAnalista(analyst) {
+  const el = document.getElementById('analista-content');
+  if (!analyst) {
+    el.innerHTML = `<div class="card" style="text-align:center;padding:30px;color:var(--muted)">
+      <div style="font-size:24px;margin-bottom:8px">📊</div>
+      <div style="font-weight:600;margin-bottom:4px">Sin datos del analista</div>
+      <div style="font-size:12px">El primer informe se generará el primer lunes del próximo mes.<br>Puedes ejecutarlo manualmente desde GitHub Actions → "Analista mensual".</div>
+    </div>`;
+    return;
+  }
+
+  const s = analyst.summary || {};
+  const pat = analyst.patrimony || {};
+  const pts = analyst.points || {};
+  const dec = analyst.decisions || {};
+
+  let html = '';
+
+  // Resumen general
+  html += `<div class="card" style="margin-bottom:12px">
+    <div class="card-title">📊 Resumen del período · ${analyst.period_days || 0} días</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+      <div style="background:var(--surface2);border-radius:8px;padding:10px">
+        <div style="font-size:11px;color:var(--muted)">Crecimiento patrimonio</div>
+        <div style="font-size:18px;font-weight:700;color:${s.patrimony_growth_pct>=0?'var(--green)':'var(--red)'}">${s.patrimony_growth_pct>=0?'+':''}${s.patrimony_growth_pct||0}%</div>
+      </div>
+      <div style="background:var(--surface2);border-radius:8px;padding:10px">
+        <div style="font-size:11px;color:var(--muted)">Puntos ganados</div>
+        <div style="font-size:18px;font-weight:700;color:var(--blue)">+${s.points_gained||0}</div>
+      </div>
+      <div style="background:var(--surface2);border-radius:8px;padding:10px">
+        <div style="font-size:11px;color:var(--muted)">Posición (inicio → fin)</div>
+        <div style="font-size:18px;font-weight:700">${s.position_start||'?'}º → ${s.position_end||'?'}º</div>
+      </div>
+      <div style="background:var(--surface2);border-radius:8px;padding:10px">
+        <div style="font-size:11px;color:var(--muted)">Tasa de éxito</div>
+        <div style="font-size:18px;font-weight:700;color:var(--green)">${s.success_rate||0}%</div>
+      </div>
+    </div>
+  </div>`;
+
+  // Patrimonio
+  if (pat.rivals?.length) {
+    html += `<div class="card" style="margin-bottom:12px">
+      <div class="card-title">💰 Evolución patrimonial</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;font-weight:600;color:var(--muted);padding:8px 0 4px">
+        <div>Manager</div><div style="text-align:right">Inicio</div><div style="text-align:right">Crecimiento</div>
+      </div>`;
+    pat.rivals.forEach(r => {
+      const isMe = r.manager === 'Serpa93';
+      const color = r.growth_pct >= 0 ? 'var(--green)' : 'var(--red)';
+      html += `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:13px;padding:6px 0;border-top:1px solid var(--border);${isMe?'font-weight:700':''}">
+        <div>${isMe?'⭐ ':''} ${r.manager}</div>
+        <div style="text-align:right;color:var(--muted)">${r.first_fmt}</div>
+        <div style="text-align:right;color:${color}">${r.growth_pct>=0?'+':''}${r.growth_pct}%</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Puntos
+  if (pts.rivals?.length) {
+    html += `<div class="card" style="margin-bottom:12px">
+      <div class="card-title">🏆 Evolución de puntos</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;font-weight:600;color:var(--muted);padding:8px 0 4px">
+        <div>Manager</div><div style="text-align:right">Total</div><div style="text-align:right">Ganados</div>
+      </div>`;
+    pts.rivals.forEach(r => {
+      const isMe = r.manager === 'Serpa93';
+      html += `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:13px;padding:6px 0;border-top:1px solid var(--border);${isMe?'font-weight:700':''}">
+        <div>${isMe?'⭐ ':''} ${r.manager}</div>
+        <div style="text-align:right">${r.last_points}</div>
+        <div style="text-align:right;color:var(--blue)">+${r.points_gained}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Decisiones ejecutadas
+  if (dec.actions?.length) {
+    html += `<div class="card" style="margin-bottom:12px">
+      <div class="card-title">📋 Decisiones ejecutadas (${dec.total})</div>
+      <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap">
+        ${Object.entries(dec.by_result||{}).map(([k,v])=>v>0?`<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:var(--surface2)">${k}: ${v}</span>`:'').join('')}
+      </div>`;
+    dec.actions.slice(0,10).forEach(a => {
+      const resultColor = {won:'var(--green)',sold:'var(--green)',executed:'var(--green)',lost:'var(--red)',unknown:'var(--muted)',pending:'var(--amber)'}[a.result||'unknown']||'var(--muted)';
+      html += `<div style="padding:8px 0;border-top:1px solid var(--border);font-size:12px">
+        <div style="font-weight:600">${actionIcon(a.action)} ${a.player_name} <span style="color:${resultColor}">${a.result||'pendiente'}</span></div>
+        <div style="color:var(--muted)">${a.executed_at?.slice(0,10)||''} · ${a.result_detail||''}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  el.innerHTML = html;
+}
+
+// ── BOTÓN EJECUTADA EN AGENTE ─────────────────────────────────────────────────
+
+// Acciones ocultas localmente (sessionStorage)
+function getHiddenActions() {
+  try { return JSON.parse(sessionStorage.getItem('hidden_actions') || '[]'); } catch { return []; }
+}
+function hideAction(actionId) {
+  const hidden = getHiddenActions();
+  if (!hidden.includes(actionId)) hidden.push(actionId);
+  sessionStorage.setItem('hidden_actions', JSON.stringify(hidden));
+}
+
+async function markExecuted(d, btnId) {
+  const btn = document.getElementById('btn-executed-' + btnId);
+  btn.disabled = true;
+  btn.textContent = '⏳';
+
+  // 1. Ocultar visualmente
+  hideAction(d.player_id + '_' + d.action);
+  document.getElementById('action-card-' + btnId).style.display = 'none';
+
+  // 2. Disparar workflow via Scriptable
+  const actionData = JSON.stringify({
+    action: d.action,
+    player_id: d.player_id,
+    player_name: d.player_name,
+    amount: d.amount,
+    market_id: d.market_id,
+    position: d.position || '',
+    position_id: d.position_id || 0,
+  });
+
+  const encoded = encodeURIComponent(actionData);
+  const scriptableURL = `scriptable:///run?scriptName=Registrar%20Acci%C3%B3n%20Fantasy&action=${encoded}`;
+  window.location.href = scriptableURL;
+}
+
+// ── PDF ───────────────────────────────────────────────────────────────────────
+
+function downloadPDF() {
+  const analyst = DATA.analyst;
+  if (!analyst) { alert('Sin datos del analista'); return; }
+
+  // Crear ventana de impresión con el contenido del analista
+  const el = document.getElementById('analista-content');
+  const html = `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe Analista Fantasy RH - ${analyst.month || ''}</title>
+<style>
+  body { font-family: -apple-system, sans-serif; font-size: 13px; color: #1a1a1a; padding: 20px; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  h2 { font-size: 15px; margin: 16px 0 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+  th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; font-size: 12px; }
+  th { font-weight: 600; color: #666; }
+  .green { color: #2ea043; } .red { color: #f85149; } .blue { color: #1a73e8; }
+  .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .stat { background: #f6f8fa; padding: 10px; border-radius: 6px; }
+  .stat-val { font-size: 20px; font-weight: 700; }
+  .stat-label { font-size: 11px; color: #666; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+  <h1>📊 Informe Analista Fantasy R.H.</h1>
+  <p style="color:#666">Período: ${analyst.patrimony?.period_start||''} → ${analyst.patrimony?.period_end||''} · ${analyst.period_days||0} días</p>
+  ${el.innerHTML}
+</body></html>`;
+
+  const win = window.open('', '_blank');
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(() => win.print(), 500);
 }
 
 init();
