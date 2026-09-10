@@ -43,33 +43,87 @@ def fmt(v):
 
 
 def save_daily_snapshot():
-    """Guarda snapshot diario de patrimonio y puntos de todos los equipos."""
+    """
+    Guarda snapshot diario completo:
+    - Mi equipo: valor, puntos, presupuesto, plantilla completa, decisiones del agente
+    - Mercado: jugadores en venta con precios
+    - Rivales: clasificación, valor, plantillas
+    - Precios de todos los jugadores de la liga
+    """
     if not TOKEN:
         logger.warning("Sin token — no se puede guardar snapshot")
         return
 
     snapshot_file = os.path.join(HIST_DIR, f"{TODAY}.json")
 
-    # Leer datos actuales
-    team_data  = load_json(os.path.join(DATA_DIR, "team.json"))
-    rivals_data = load_json(os.path.join(DATA_DIR, "rivals.json"))
+    # No sobreescribir si ya existe (solo guardar una vez al día el snapshot principal)
+    # Pero sí actualizar el de mercado que cambia continuamente
+    market_file = os.path.join(HIST_DIR, f"{TODAY}_market.json")
 
-    snapshot = {
-        "date": TODAY,
-        "timestamp": NOW,
-        "my_team": {
-            "team_value": team_data.get("team_value", 0) if team_data else 0,
-            "team_value_fmt": team_data.get("team_value_fmt", "N/D") if team_data else "N/D",
-            "points": team_data.get("team_points", 0) if team_data else 0,
-            "budget": team_data.get("budget", 0) if team_data else 0,
-        },
-        "rivals": rivals_data.get("rivals", []) if rivals_data else [],
-        "my_position": rivals_data.get("my_position") if rivals_data else None,
-    }
+    # Leer datos actuales ya generados
+    team_data    = load_json(os.path.join(DATA_DIR, "team.json"))
+    rivals_data  = load_json(os.path.join(DATA_DIR, "rivals.json"))
+    market_data  = load_json(os.path.join(DATA_DIR, "market.json"))
+    decisions_data = load_json(os.path.join(DATA_DIR, "decisions.json"))
 
-    save_json(snapshot_file, snapshot)
-    logger.info(f"Snapshot guardado: {snapshot_file}")
-    return snapshot
+    # ── Snapshot principal (una vez al día) ──────────────────────────────
+    if not os.path.exists(snapshot_file):
+        snapshot = {
+            "date": TODAY,
+            "timestamp": NOW,
+            "my_team": {
+                "team_value": team_data.get("team_value", 0) if team_data else 0,
+                "team_value_fmt": team_data.get("team_value_fmt", "N/D") if team_data else "N/D",
+                "points": team_data.get("team_points", 0) if team_data else 0,
+                "budget": team_data.get("budget", 0) if team_data else 0,
+                "budget_fmt": team_data.get("budget_fmt", "N/D") if team_data else "N/D",
+                "players": team_data.get("players", []) if team_data else [],
+            },
+            "rivals": rivals_data.get("rivals", []) if rivals_data else [],
+            "my_position": rivals_data.get("my_position") if rivals_data else None,
+            "agent_decisions": {
+                "summary": decisions_data.get("summary", "") if decisions_data else "",
+                "decisions": decisions_data.get("decisions", []) if decisions_data else [],
+                "warnings": decisions_data.get("warnings", []) if decisions_data else [],
+                "position_needs": decisions_data.get("position_needs", []) if decisions_data else [],
+            },
+        }
+
+        # Obtener plantillas de rivales
+        rival_squads = {}
+        if rivals_data:
+            for rival in rivals_data.get("rivals", []):
+                tid = rival.get("team_id", "")
+                if tid and tid != TEAM_ID:
+                    try:
+                        from backend.laliga import client as laliga_client
+                        squad = laliga_client.get_my_squad(TOKEN, tid, LEAGUE_ID)
+                        if squad:
+                            rival_squads[tid] = {
+                                "manager": rival.get("manager", ""),
+                                "players": squad[:20],  # Limitar para no hacer el archivo enorme
+                            }
+                    except Exception as e:
+                        logger.warning(f"Error obteniendo plantilla rival {tid}: {e}")
+
+        snapshot["rival_squads"] = rival_squads
+
+        save_json(snapshot_file, snapshot)
+        logger.info(f"Snapshot principal guardado: {snapshot_file}")
+
+    # ── Snapshot de mercado (se actualiza en cada ejecución) ─────────────
+    if market_data:
+        market_snapshot = {
+            "date": TODAY,
+            "timestamp": NOW,
+            "subastas": market_data.get("subastas", []),
+            "clausulazos": market_data.get("clausulazos", []),
+            "count": market_data.get("count", 0),
+        }
+        save_json(market_file, market_snapshot)
+        logger.info(f"Snapshot mercado guardado: {market_file}")
+
+    return True
 
 
 def save_activity():
