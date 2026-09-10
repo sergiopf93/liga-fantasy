@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Actualizar LALIGA_TOKEN en GitHub Secrets
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh secret set LALIGA_TOKEN \
             --repo sergiopf93/liga-fantasy \
@@ -35,6 +35,13 @@ jobs:
           TEAM_ID: ${{ secrets.TEAM_ID }}
           LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
         run: python scripts/generate_report.py
+
+      - name: Guardar histórico diario
+        env:
+          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
+        run: python scripts/save_history.py || echo "Error guardando histórico"
 
       - name: Commit datos
         run: |

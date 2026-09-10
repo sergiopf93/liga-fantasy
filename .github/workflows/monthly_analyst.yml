@@ -1,53 +1,49 @@
-name: Actualización 12:00
+name: Analista mensual
+
 on:
   schedule:
-    - cron: '0 10 * * *'
+    # Primer lunes del mes a las 20:00 España (18:00 UTC)
+    # Cron no puede hacer "primer lunes" directamente, lo manejamos con check en el script
+    - cron: '0 18 1-7 * 1'   # Los lunes del 1 al 7 de cada mes a las 20:00
   workflow_dispatch:
+
 jobs:
-  run:
+  analyst:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install requests pyyaml
-      - name: Reclamar recompensa diaria
-        env:
-          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
-          TEAM_ID: ${{ secrets.TEAM_ID }}
-          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
-        run: python scripts/daily_reward.py || echo "Recompensa no disponible o ya reclamada"
 
-      - name: Actualizar datos
+      - name: Generar informe del analista
         env:
           LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
           LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
-        run: python scripts/generate_report.py
-      - name: Guardar histórico diario
-        env:
-          LALIGA_TOKEN: ${{ secrets.LALIGA_TOKEN }}
-          TEAM_ID: ${{ secrets.TEAM_ID }}
-          LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
-        run: python scripts/save_history.py || echo "Error guardando histórico"
+        run: python scripts/monthly_analyst.py
 
-      - name: Commit
+      - name: Commit informe
         run: |
           git config user.name "Fantasy Bot"
           git config user.email "bot@liga-fantasy"
-          git add data/
-          git diff --staged --quiet || git commit -m "Update 12:00 - $(date '+%d/%m %H:%M')"
+          git add data/reports/ data/analyst_latest.json
+          git diff --staged --quiet || git commit -m "Informe analista $(date '+%B %Y')"
           git push
+
       - name: Preparar site
         run: |
-          mkdir -p _site/data
+          mkdir -p _site/data/reports
           cp frontend/index.html _site/index.html
           for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json data/reward.json data/analyst_latest.json; do
             [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
           done
+          cp data/reports/*.json _site/data/reports/ 2>/dev/null || true
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
