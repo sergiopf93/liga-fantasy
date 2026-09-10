@@ -15,8 +15,14 @@ jobs:
       contents: write
 
     steps:
-      - name: Verificar token recibido
-        run: echo "Token recibido correctamente"
+      - name: Actualizar LALIGA_TOKEN en GitHub Secrets
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh secret set LALIGA_TOKEN \
+            --repo sergiopf93/liga-fantasy \
+            --body "${{ github.event.inputs.token }}"
+          echo "Token actualizado correctamente"
 
       - uses: actions/checkout@v4
 
