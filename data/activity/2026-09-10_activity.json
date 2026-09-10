@@ -1,798 +1,1977 @@
 {
   "date": "2026-09-10",
-  "timestamp": "2026-09-10T10:16:40.733971",
+  "timestamp": "2026-09-10T11:51:35.949529",
+  "my_user_id": 1715449,
+  "total_operations": 61,
+  "my_operations": 5,
   "activity": [
     {
-      "id": 1,
-      "internalDescription": "Operación de mercado - Compra",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Operación de mercado",
-          "bodyPattern": "#user1Id# ha comprado al jugador #playerMasterId# de #user2Id# por #amount#€"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Market operation",
-          "bodyPattern": "#user1Id# has purchased #playerMasterId# from #user2Id# for #amount#€"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "صفقات السوق",
-          "bodyPattern": "اشترى #user1Id# اللاعب #playerMasterId# من #user2Id# مقابل #amount# يورو"
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "49695097",
+      "user1Id": 1715449,
+      "playerMasterId": 2354,
+      "amount": 54132575,
+      "createdAt": "2026-09-10T11:13:52+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": true,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 2,
-      "internalDescription": "Operación de mercado - Cesión",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Operación de mercado",
-          "bodyPattern": "#user1Id# ha cedido al jugador #playerMasterId# a #user2Id# por #amount#€"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Market operation",
-          "bodyPattern": "#user1Id# has transferred #playerMasterId# to #user2Id# for #amount#€"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "صفقات السوق",
-          "bodyPattern": "أعار #user1Id# اللاعب #playerMasterId# إلى #user2Id# مقابل #amount# يورو"
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "49413114",
+      "user1Id": 6337312,
+      "user2Id": 2564552,
+      "playerMasterId": 2985,
+      "amount": 17540173,
+      "createdAt": "2026-09-09T23:29:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 3,
-      "internalDescription": "Operación de mercado - Fin cesión",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Operación de mercado",
-          "bodyPattern": "#playerMasterId# ha vuelto a la plantilla de #user1Id#."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Market operation",
-          "bodyPattern": "#playerMasterId# has returned to #user1Id#'s squad."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "صفقات السوق",
-          "bodyPattern": "عاد #playerMasterId# إلى تشكيلة فريق #user1Id#."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "49412872",
+      "user1Id": 6337312,
+      "playerMasterId": 2624,
+      "amount": 5349071,
+      "createdAt": "2026-09-09T23:28:56+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 4,
-      "internalDescription": "Operación de mercado - Blindaje",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Blindaje",
-          "bodyPattern": "#user1Id# ha blindado a #playerMasterId#"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Shield",
-          "bodyPattern": "#user1Id# has shielded #playerMasterId#"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "حماية",
-          "bodyPattern": "قام #user1Id# بحماية عقد #playerMasterId#"
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "49406703",
+      "user1Id": 2564552,
+      "user2Id": 6337312,
+      "playerMasterId": 2623,
+      "amount": 14468552,
+      "createdAt": "2026-09-09T23:24:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 5,
-      "internalDescription": "Resolución de denuncia",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Denuncia",
-          "bodyPattern": "Después de una denuncia, el administrador de la liga ha decidido expulsar a un mánager."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Complaint",
-          "bodyPattern": "After a complaint, the league administrator has decided to expel a manager."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "شكوى",
-          "bodyPattern": "بعد تقديم شكوى، قرر مدير الدوري طرد أحد المديرين."
-        }
-      ]
+      "activityTypeId": 4,
+      "id": "49402217",
+      "user1Id": 2564552,
+      "playerMasterId": 1930,
+      "createdAt": "2026-09-09T23:20:27+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 6,
-      "internalDescription": "Recompensa",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "En la jornada #weekNumber#, #user1Id# ha ganado #amount#€"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "On matchday #weekNumber#, #user1Id# has earned #amount#€"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "في الجولة #weekNumber#، فاز #user1Id# بمبلغ #amount# يورو"
-        }
-      ]
+      "activityTypeId": 4,
+      "id": "49400478",
+      "user1Id": 2564552,
+      "playerMasterId": 2746,
+      "createdAt": "2026-09-09T23:19:11+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 7,
-      "internalDescription": "No puntuación - alineación incompleta",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "No puntuación",
-          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a alineación incompleta."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "No score",
-          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to incomplete alignment."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "لم تُسجّل نقاطا",
-          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نقاطا بسبب التشكيلة غير الكاملة."
-        }
-      ]
+      "activityTypeId": 4,
+      "id": "49342488",
+      "user1Id": 6337312,
+      "playerMasterId": 3119,
+      "createdAt": "2026-09-09T22:40:24+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 8,
-      "internalDescription": "No puntuación - salgo negativo",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "No puntuación",
-          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a saldo negativo."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "No score",
-          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to negative balance."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "لم تُسجّل نقاطا",
-          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نقاطا بسبب الرصيد السالب."
-        }
-      ]
+      "activityTypeId": 4,
+      "id": "49340309",
+      "user1Id": 6337312,
+      "playerMasterId": 2634,
+      "createdAt": "2026-09-09T22:39:02+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 9,
-      "internalDescription": "Nuevo mánager en la liga",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Nuevo miembro",
-          "bodyPattern": "#user1Id# se ha unido a la liga."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "New member",
-          "bodyPattern": "#user1Id# has joined the league."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "عضو جديد",
-          "bodyPattern": "انضم #user1Id# إلى الدوري."
-        }
-      ]
+      "activityTypeId": 31,
+      "id": "49126800",
+      "user1Id": 6337312,
+      "playerMasterId": 3147,
+      "amount": 11500000,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 10,
-      "internalDescription": "Abandono de una liga",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Abandono",
-          "bodyPattern": "Un mánager ha dejado la liga"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Abandoned",
-          "bodyPattern": "A manager has left the league"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مغادرة",
-          "bodyPattern": "أحد المديرين غادر الدوري"
-        }
-      ]
+      "activityTypeId": 31,
+      "id": "49126799",
+      "user1Id": 6337312,
+      "playerMasterId": 1070,
+      "amount": 15878761,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 11,
-      "internalDescription": "Nuevo administrador",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Nuevo administrador",
-          "bodyPattern": "El nuevo administrador de la liga es #user1Id#."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "New admin",
-          "bodyPattern": "The new administrator of the league is #user1Id#."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مسؤول جديد",
-          "bodyPattern": "مدير الدوري الجديد هو #user1Id#."
-        }
-      ]
+      "activityTypeId": 31,
+      "id": "49126795",
+      "user1Id": 6337312,
+      "playerMasterId": 3041,
+      "amount": 8500000,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 12,
-      "internalDescription": "Recompensa 11 ideal",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "11 ideal",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por tener jugadores en el 11 ideal de la jornada #weekNumber#."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Ideal XI",
-          "bodyPattern": "#user1Id# has won #amount#€ for having players in the matchday #weekNumber# dream team."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "التشكيلة المثالية",
-          "bodyPattern": "حصل #user1Id# على #amount# يورو مقابل توفره على لاعبين في التشكيلة المثالية للجولة #weekNumber#."
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "48121072",
+      "user1Id": 2292638,
+      "user2Id": 6337312,
+      "playerMasterId": 2315,
+      "amount": 10878761,
+      "createdAt": "2026-09-08T23:42:20+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 13,
-      "internalDescription": "Funcionalidad premium activada - Capitán",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Capitán."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Captain feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة الكابتن."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "48120878",
+      "user1Id": 2292638,
+      "playerMasterId": 2868,
+      "amount": 740283,
+      "createdAt": "2026-09-08T23:42:12+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 14,
-      "internalDescription": "Funcionalidad premium activada - Banquillo",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Banquillo."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Bench feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة دكة البدلاء."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "48120504",
+      "user1Id": 2292638,
+      "playerMasterId": 3209,
+      "amount": 51305006,
+      "createdAt": "2026-09-08T23:41:52+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 15,
-      "internalDescription": "Funcionalidad premium activada - Formaciones",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Formaciones."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Formations feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة تشكيلات الفرق."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "48069229",
+      "user1Id": 2621832,
+      "playerMasterId": 3112,
+      "amount": 4212750,
+      "createdAt": "2026-09-08T23:03:56+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 16,
-      "internalDescription": "Funcionalidad premium activada - Entrenador",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Entrenador."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Coach feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة المدرب."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "48068990",
+      "user1Id": 2621832,
+      "playerMasterId": 2616,
+      "amount": 12347803,
+      "createdAt": "2026-09-08T23:03:47+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 17,
-      "internalDescription": "Funcionalidad premium activada - 11 ideal",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad 11 ideal."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Ideal XI feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة التشكيلة المثالية."
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "48068155",
+      "user1Id": 2621832,
+      "playerMasterId": 2883,
+      "amount": 424036,
+      "createdAt": "2026-09-08T23:03:19+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 18,
-      "internalDescription": "Funcionalidad premium activada - Cesiones",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Cesiones."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has activated the Loans feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة الإعارات."
-        }
-      ]
+      "activityTypeId": 31,
+      "id": "47854284",
+      "user1Id": 2564552,
+      "playerMasterId": 2383,
+      "amount": 22035466,
+      "createdAt": "2026-09-08T20:48:24+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 19,
-      "internalDescription": "Premium activado",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Premium activado",
-          "bodyPattern": "La liga ha sido convertida en una liga premium."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium activated",
-          "bodyPattern": "The league has been converted into a premium league."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "تم تفعيل العضوية المميزة Premium",
-          "bodyPattern": "تم تحويل الدوري إلى دوري مميز premium."
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "47073044",
+      "user1Id": 6337312,
+      "user2Id": 2607835,
+      "playerMasterId": 2453,
+      "amount": 9519920,
+      "createdAt": "2026-09-08T11:38:41+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 20,
-      "internalDescription": "Otras recompensas - Recompensa 11 ideal",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por Recompensa 11 ideal"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "#user1Id# has earned #amount#€ due to Ideal XI reward"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب جائزة التشكيلة المثالية"
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "47072674",
+      "user1Id": 2607835,
+      "user2Id": 6337312,
+      "playerMasterId": 2639,
+      "amount": 9125539,
+      "createdAt": "2026-09-08T11:38:17+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 21,
-      "internalDescription": "Otras recompensas - Ajuste de venta",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por Ajuste de venta"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "#user1Id# has earned #amount#€ due to Sales adjustment"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تعديل المبيعات"
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "47072390",
+      "user1Id": 2607835,
+      "user2Id": 6337312,
+      "playerMasterId": 2930,
+      "amount": 9865950,
+      "createdAt": "2026-09-08T11:37:54+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 22,
-      "internalDescription": "Otras recompensas - Actualización de puntos",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por Actualización de puntos"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "#user1Id# has earned #amount#€ due to Point update"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تحديث النقاط"
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "47069742",
+      "user1Id": 2607835,
+      "playerMasterId": 2348,
+      "amount": 5392473,
+      "createdAt": "2026-09-08T11:34:27+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 23,
-      "internalDescription": "Otras recompensas - Rectificación en el cálculo",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por Rectificación en el cálculo"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "#user1Id# has earned #amount#€ due to Rectification in the calculation"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تصحيح الحساب"
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "46948063",
+      "user1Id": 2564552,
+      "user2Id": 2607835,
+      "playerMasterId": 3161,
+      "amount": 14032719,
+      "createdAt": "2026-09-08T07:27:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 24,
-      "internalDescription": "Otras recompensas - Otro ajuste",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Recompensa",
-          "bodyPattern": "#user1Id# ha ganado #amount#€ por Otro ajuste"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Reward",
-          "bodyPattern": "#user1Id# has earned #amount#€ due to Another adjustment"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "مكافأة",
-          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تعديل آخر"
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46248814",
+      "user1Id": 2564552,
+      "amount": 4700000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 25,
-      "internalDescription": "Funcionalidad premium desactivada - Capitán",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Capitán."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Captain feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة الكابتن."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46249061",
+      "user1Id": 2292638,
+      "amount": 5700000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 26,
-      "internalDescription": "Funcionalidad premium desactivada - Banquillo",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Banquillo."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Bench feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة دكة البدلاء."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46249020",
+      "user1Id": 2621832,
+      "amount": 4000000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 27,
-      "internalDescription": "Funcionalidad premium desactivada - Formaciones",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Formaciones."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Formations feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة تشكيلات الفرق."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46248975",
+      "user1Id": 1234410,
+      "amount": 2500000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 28,
-      "internalDescription": "Funcionalidad premium desactivada - Entrenador",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Entrenador."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Coach feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة المدرب."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46248930",
+      "user1Id": 1715449,
+      "amount": 4900000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": true
     },
     {
-      "id": 29,
-      "internalDescription": "Funcionalidad premium desactivada - 11 ideal",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad 11 ideal."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Ideal XI feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة التشكيلة المثالية."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46248891",
+      "user1Id": 2607835,
+      "amount": 4000000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 30,
-      "internalDescription": "Funcionalidad premium desactivada - Cesiones",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Configuración premium",
-          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Cesiones."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Premium configuration",
-          "bodyPattern": "The administrator of the league has deactivated the Loans feature."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "الإعدادات المميزة premium",
-          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة الإعارات."
-        }
-      ]
+      "activityTypeId": 6,
+      "id": "46248851",
+      "user1Id": 6337312,
+      "amount": 5500000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 31,
-      "internalDescription": "Operación de mercado - Compra a LALIGA",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Operación de mercado",
-          "bodyPattern": "#user1Id# ha comprado al jugador #playerMasterId# de LALIGA por #amount#€"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Market operation",
-          "bodyPattern": "#user1Id# has purchased #playerMasterId# from LALIGA for #amount#€"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "صفقات السوق",
-          "bodyPattern": "اشترى #user1Id# اللاعب #playerMasterId# من LALIGA مقابل #amount# يورو (يشمل المشتريات والمبيعات)"
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "44498580",
+      "user1Id": 2607835,
+      "playerMasterId": 3150,
+      "amount": 17577988,
+      "createdAt": "2026-09-07T21:22:05+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 32,
-      "internalDescription": "No puntuación - alineación incorrecta",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "No puntuación",
-          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a alineación incorrecta."
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "No score",
-          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to invalid alignment."
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "لم تُسجّل نقاط",
-          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نتيجة بسبب التشكيلة غير الصحيحة."
-        }
-      ]
+      "activityTypeId": 1,
+      "id": "44446507",
+      "user1Id": 6337312,
+      "user2Id": 2564552,
+      "playerMasterId": 2757,
+      "amount": 54298685,
+      "createdAt": "2026-09-07T20:51:40+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     },
     {
-      "id": 33,
-      "internalDescription": "Operación de mercado - Vendido a LALIGA",
-      "activityTypeTexts": [
-        {
-          "language": "es",
-          "languageId": 1,
-          "titlePattern": "Operación de mercado",
-          "bodyPattern": "#user1Id# ha vendido al jugador #playerMasterId# a LALIGA por #amount#€"
-        },
-        {
-          "language": "en",
-          "languageId": 2,
-          "titlePattern": "Market operation",
-          "bodyPattern": "#user1Id# has sold player #playerMasterId# to LALIGA for #amount#€"
-        },
-        {
-          "language": "ar",
-          "languageId": 3,
-          "titlePattern": "صفقات السوق",
-          "bodyPattern": "اشترى LALIGA اللاعب #playerMasterId# من #user1Id# مقابل #amount# يورو "
-        }
-      ]
+      "activityTypeId": 33,
+      "id": "44445042",
+      "user1Id": 6337312,
+      "playerMasterId": 2534,
+      "amount": 72839365,
+      "createdAt": "2026-09-07T20:50:49+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "44441092",
+      "user1Id": 2607835,
+      "playerMasterId": 2445,
+      "amount": 7108522,
+      "createdAt": "2026-09-07T20:48:16+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "43660253",
+      "user1Id": 2607835,
+      "playerMasterId": 1890,
+      "amount": 19887557,
+      "createdAt": "2026-09-07T09:31:26+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "43659908",
+      "user1Id": 2607835,
+      "playerMasterId": 2999,
+      "amount": 2026716,
+      "createdAt": "2026-09-07T09:30:34+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "43197861",
+      "user1Id": 2292638,
+      "playerMasterId": 3209,
+      "amount": 51764844,
+      "createdAt": "2026-09-06T21:22:39+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41105772",
+      "user1Id": 2292638,
+      "user2Id": 1234410,
+      "playerMasterId": 1215,
+      "amount": 11697906,
+      "createdAt": "2026-09-04T21:01:15+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "41105187",
+      "user1Id": 2292638,
+      "playerMasterId": 2548,
+      "amount": 11952286,
+      "createdAt": "2026-09-04T21:01:06+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "41084011",
+      "user1Id": 1234410,
+      "playerMasterId": 356,
+      "amount": 32236158,
+      "createdAt": "2026-09-04T20:52:05+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41068957",
+      "user1Id": 1715449,
+      "user2Id": 2292638,
+      "playerMasterId": 2549,
+      "amount": 4000000,
+      "createdAt": "2026-09-04T20:44:33+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": true,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41068327",
+      "user1Id": 1715449,
+      "user2Id": 2292638,
+      "playerMasterId": 2882,
+      "amount": 500000,
+      "createdAt": "2026-09-04T20:44:11+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": true,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41066528",
+      "user1Id": 6337312,
+      "user2Id": 1715449,
+      "playerMasterId": 2443,
+      "amount": 17816716,
+      "createdAt": "2026-09-04T20:43:20+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": true,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "41063258",
+      "user1Id": 6337312,
+      "playerMasterId": 2470,
+      "amount": 20672193,
+      "createdAt": "2026-09-04T20:42:00+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40206362",
+      "user1Id": 2607835,
+      "playerMasterId": 2439,
+      "amount": 2392006,
+      "createdAt": "2026-09-03T22:39:07+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40205496",
+      "user1Id": 2607835,
+      "playerMasterId": 3170,
+      "amount": 538741,
+      "createdAt": "2026-09-03T22:38:14+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40127711",
+      "user1Id": 1234410,
+      "playerMasterId": 2426,
+      "amount": 6713740,
+      "createdAt": "2026-09-03T21:37:17+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40063646",
+      "user1Id": 2564552,
+      "playerMasterId": 3144,
+      "amount": 2638714,
+      "createdAt": "2026-09-03T20:52:59+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40063293",
+      "user1Id": 2564552,
+      "playerMasterId": 2074,
+      "amount": 11867820,
+      "createdAt": "2026-09-03T20:52:46+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40057875",
+      "user1Id": 2292638,
+      "playerMasterId": 1991,
+      "amount": 12153866,
+      "createdAt": "2026-09-03T20:50:18+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053772",
+      "user1Id": 2564552,
+      "playerMasterId": 230,
+      "amount": 64448319,
+      "createdAt": "2026-09-03T20:48:17+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053612",
+      "user1Id": 2607835,
+      "playerMasterId": 3150,
+      "amount": 15929487,
+      "createdAt": "2026-09-03T20:48:14+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053595",
+      "user1Id": 2564552,
+      "playerMasterId": 2455,
+      "amount": 2889725,
+      "createdAt": "2026-09-03T20:48:14+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053563",
+      "user1Id": 2292638,
+      "playerMasterId": 2522,
+      "amount": 119631900,
+      "createdAt": "2026-09-03T20:48:13+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053559",
+      "user1Id": 2621832,
+      "playerMasterId": 2322,
+      "amount": 51089574,
+      "createdAt": "2026-09-03T20:48:13+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053400",
+      "user1Id": 2607835,
+      "playerMasterId": 2846,
+      "amount": 2500001,
+      "createdAt": "2026-09-03T20:48:10+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053209",
+      "user1Id": 2607835,
+      "playerMasterId": 2785,
+      "amount": 6265704,
+      "createdAt": "2026-09-03T20:48:06+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "39786878",
+      "user1Id": 2564552,
+      "playerMasterId": 1029,
+      "createdAt": "2026-09-03T18:28:43+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "39783635",
+      "user1Id": 2564552,
+      "playerMasterId": 2757,
+      "createdAt": "2026-09-03T18:26:54+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "39551132",
+      "user1Id": 2564552,
+      "playerMasterId": 3023,
+      "amount": 10109405,
+      "createdAt": "2026-09-03T16:15:10+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "39550720",
+      "user1Id": 2564552,
+      "playerMasterId": 2414,
+      "amount": 15889915,
+      "createdAt": "2026-09-03T16:14:50+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    }
+  ],
+  "my_activity": [
+    {
+      "activityTypeId": 33,
+      "id": "49695097",
+      "user1Id": 1715449,
+      "playerMasterId": 2354,
+      "amount": 54132575,
+      "createdAt": "2026-09-10T11:13:52+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": true,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46248930",
+      "user1Id": 1715449,
+      "amount": 4900000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": true
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41068957",
+      "user1Id": 1715449,
+      "user2Id": 2292638,
+      "playerMasterId": 2549,
+      "amount": 4000000,
+      "createdAt": "2026-09-04T20:44:33+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": true,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41068327",
+      "user1Id": 1715449,
+      "user2Id": 2292638,
+      "playerMasterId": 2882,
+      "amount": 500000,
+      "createdAt": "2026-09-04T20:44:11+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": true,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41066528",
+      "user1Id": 6337312,
+      "user2Id": 1715449,
+      "playerMasterId": 2443,
+      "amount": 17816716,
+      "createdAt": "2026-09-04T20:43:20+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": true,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": true,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    }
+  ],
+  "rival_activity": [
+    {
+      "activityTypeId": 1,
+      "id": "49413114",
+      "user1Id": 6337312,
+      "user2Id": 2564552,
+      "playerMasterId": 2985,
+      "amount": 17540173,
+      "createdAt": "2026-09-09T23:29:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "49412872",
+      "user1Id": 6337312,
+      "playerMasterId": 2624,
+      "amount": 5349071,
+      "createdAt": "2026-09-09T23:28:56+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "49406703",
+      "user1Id": 2564552,
+      "user2Id": 6337312,
+      "playerMasterId": 2623,
+      "amount": 14468552,
+      "createdAt": "2026-09-09T23:24:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "49402217",
+      "user1Id": 2564552,
+      "playerMasterId": 1930,
+      "createdAt": "2026-09-09T23:20:27+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "49400478",
+      "user1Id": 2564552,
+      "playerMasterId": 2746,
+      "createdAt": "2026-09-09T23:19:11+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "49342488",
+      "user1Id": 6337312,
+      "playerMasterId": 3119,
+      "createdAt": "2026-09-09T22:40:24+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "49340309",
+      "user1Id": 6337312,
+      "playerMasterId": 2634,
+      "createdAt": "2026-09-09T22:39:02+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "49126800",
+      "user1Id": 6337312,
+      "playerMasterId": 3147,
+      "amount": 11500000,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "49126799",
+      "user1Id": 6337312,
+      "playerMasterId": 1070,
+      "amount": 15878761,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "49126795",
+      "user1Id": 6337312,
+      "playerMasterId": 3041,
+      "amount": 8500000,
+      "createdAt": "2026-09-09T20:48:15+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "48121072",
+      "user1Id": 2292638,
+      "user2Id": 6337312,
+      "playerMasterId": 2315,
+      "amount": 10878761,
+      "createdAt": "2026-09-08T23:42:20+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "48120878",
+      "user1Id": 2292638,
+      "playerMasterId": 2868,
+      "amount": 740283,
+      "createdAt": "2026-09-08T23:42:12+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "48120504",
+      "user1Id": 2292638,
+      "playerMasterId": 3209,
+      "amount": 51305006,
+      "createdAt": "2026-09-08T23:41:52+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "48069229",
+      "user1Id": 2621832,
+      "playerMasterId": 3112,
+      "amount": 4212750,
+      "createdAt": "2026-09-08T23:03:56+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "48068990",
+      "user1Id": 2621832,
+      "playerMasterId": 2616,
+      "amount": 12347803,
+      "createdAt": "2026-09-08T23:03:47+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "48068155",
+      "user1Id": 2621832,
+      "playerMasterId": 2883,
+      "amount": 424036,
+      "createdAt": "2026-09-08T23:03:19+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "47854284",
+      "user1Id": 2564552,
+      "playerMasterId": 2383,
+      "amount": 22035466,
+      "createdAt": "2026-09-08T20:48:24+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "47073044",
+      "user1Id": 6337312,
+      "user2Id": 2607835,
+      "playerMasterId": 2453,
+      "amount": 9519920,
+      "createdAt": "2026-09-08T11:38:41+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "47072674",
+      "user1Id": 2607835,
+      "user2Id": 6337312,
+      "playerMasterId": 2639,
+      "amount": 9125539,
+      "createdAt": "2026-09-08T11:38:17+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "47072390",
+      "user1Id": 2607835,
+      "user2Id": 6337312,
+      "playerMasterId": 2930,
+      "amount": 9865950,
+      "createdAt": "2026-09-08T11:37:54+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "47069742",
+      "user1Id": 2607835,
+      "playerMasterId": 2348,
+      "amount": 5392473,
+      "createdAt": "2026-09-08T11:34:27+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "46948063",
+      "user1Id": 2564552,
+      "user2Id": 2607835,
+      "playerMasterId": 3161,
+      "amount": 14032719,
+      "createdAt": "2026-09-08T07:27:08+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46248814",
+      "user1Id": 2564552,
+      "amount": 4700000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46249061",
+      "user1Id": 2292638,
+      "amount": 5700000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46249020",
+      "user1Id": 2621832,
+      "amount": 4000000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46248975",
+      "user1Id": 1234410,
+      "amount": 2500000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46248891",
+      "user1Id": 2607835,
+      "amount": 4000000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 6,
+      "id": "46248851",
+      "user1Id": 6337312,
+      "amount": 5500000,
+      "weekNumber": 4,
+      "createdAt": "2026-09-08T04:30:40+02:00",
+      "type_label": "recompensa_jornada",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "44498580",
+      "user1Id": 2607835,
+      "playerMasterId": 3150,
+      "amount": 17577988,
+      "createdAt": "2026-09-07T21:22:05+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "44446507",
+      "user1Id": 6337312,
+      "user2Id": 2564552,
+      "playerMasterId": 2757,
+      "amount": 54298685,
+      "createdAt": "2026-09-07T20:51:40+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "44445042",
+      "user1Id": 6337312,
+      "playerMasterId": 2534,
+      "amount": 72839365,
+      "createdAt": "2026-09-07T20:50:49+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "44441092",
+      "user1Id": 2607835,
+      "playerMasterId": 2445,
+      "amount": 7108522,
+      "createdAt": "2026-09-07T20:48:16+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "43660253",
+      "user1Id": 2607835,
+      "playerMasterId": 1890,
+      "amount": 19887557,
+      "createdAt": "2026-09-07T09:31:26+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "43659908",
+      "user1Id": 2607835,
+      "playerMasterId": 2999,
+      "amount": 2026716,
+      "createdAt": "2026-09-07T09:30:34+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "43197861",
+      "user1Id": 2292638,
+      "playerMasterId": 3209,
+      "amount": 51764844,
+      "createdAt": "2026-09-06T21:22:39+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 1,
+      "id": "41105772",
+      "user1Id": 2292638,
+      "user2Id": 1234410,
+      "playerMasterId": 1215,
+      "amount": 11697906,
+      "createdAt": "2026-09-04T21:01:15+02:00",
+      "type_label": "compra_entre_managers",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "41105187",
+      "user1Id": 2292638,
+      "playerMasterId": 2548,
+      "amount": 11952286,
+      "createdAt": "2026-09-04T21:01:06+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "41084011",
+      "user1Id": 1234410,
+      "playerMasterId": 356,
+      "amount": 32236158,
+      "createdAt": "2026-09-04T20:52:05+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "41063258",
+      "user1Id": 6337312,
+      "playerMasterId": 2470,
+      "amount": 20672193,
+      "createdAt": "2026-09-04T20:42:00+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40206362",
+      "user1Id": 2607835,
+      "playerMasterId": 2439,
+      "amount": 2392006,
+      "createdAt": "2026-09-03T22:39:07+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40205496",
+      "user1Id": 2607835,
+      "playerMasterId": 3170,
+      "amount": 538741,
+      "createdAt": "2026-09-03T22:38:14+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40127711",
+      "user1Id": 1234410,
+      "playerMasterId": 2426,
+      "amount": 6713740,
+      "createdAt": "2026-09-03T21:37:17+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40063646",
+      "user1Id": 2564552,
+      "playerMasterId": 3144,
+      "amount": 2638714,
+      "createdAt": "2026-09-03T20:52:59+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40063293",
+      "user1Id": 2564552,
+      "playerMasterId": 2074,
+      "amount": 11867820,
+      "createdAt": "2026-09-03T20:52:46+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "40057875",
+      "user1Id": 2292638,
+      "playerMasterId": 1991,
+      "amount": 12153866,
+      "createdAt": "2026-09-03T20:50:18+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053772",
+      "user1Id": 2564552,
+      "playerMasterId": 230,
+      "amount": 64448319,
+      "createdAt": "2026-09-03T20:48:17+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053612",
+      "user1Id": 2607835,
+      "playerMasterId": 3150,
+      "amount": 15929487,
+      "createdAt": "2026-09-03T20:48:14+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053595",
+      "user1Id": 2564552,
+      "playerMasterId": 2455,
+      "amount": 2889725,
+      "createdAt": "2026-09-03T20:48:14+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053563",
+      "user1Id": 2292638,
+      "playerMasterId": 2522,
+      "amount": 119631900,
+      "createdAt": "2026-09-03T20:48:13+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053559",
+      "user1Id": 2621832,
+      "playerMasterId": 2322,
+      "amount": 51089574,
+      "createdAt": "2026-09-03T20:48:13+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053400",
+      "user1Id": 2607835,
+      "playerMasterId": 2846,
+      "amount": 2500001,
+      "createdAt": "2026-09-03T20:48:10+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 31,
+      "id": "40053209",
+      "user1Id": 2607835,
+      "playerMasterId": 2785,
+      "amount": 6265704,
+      "createdAt": "2026-09-03T20:48:06+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "39786878",
+      "user1Id": 2564552,
+      "playerMasterId": 1029,
+      "createdAt": "2026-09-03T18:28:43+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 4,
+      "id": "39783635",
+      "user1Id": 2564552,
+      "playerMasterId": 2757,
+      "createdAt": "2026-09-03T18:26:54+02:00",
+      "type_label": "blindaje",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "39551132",
+      "user1Id": 2564552,
+      "playerMasterId": 3023,
+      "amount": 10109405,
+      "createdAt": "2026-09-03T16:15:10+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
+    {
+      "activityTypeId": 33,
+      "id": "39550720",
+      "user1Id": 2564552,
+      "playerMasterId": 2414,
+      "amount": 15889915,
+      "createdAt": "2026-09-03T16:14:50+02:00",
+      "type_label": "venta_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
     }
   ]
 }
