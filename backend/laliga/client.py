@@ -182,9 +182,21 @@ def get_daily_reward_status(token: str) -> Optional[dict]:
     return _get("/api/v1/competition/1/daily-reward", token=token, params={"x-lang": "es"})
 
 
+def get_league_activity(token: str, league_id: str = "017948446", page: int = 0) -> Optional[list]:
+    """
+    Historial real de actividad de la liga.
+    Verificado: /api/v1/competition/1/leagues/{leagueId}/activity/{page}
+    Devuelve operaciones reales: compras, ventas, clausulazos de todos los managers.
+    activityTypeId: 1=compra/venta entre managers, 4=venta al mercado, 33=clausulazo
+    Mi user1Id: 1715449
+    """
+    return _get(
+        f"/api/v1/competition/1/leagues/{league_id}/activity/{page}",
+        token=token,
+        params={"x-lang": "es"}
+    )
+
+
 def get_activity_types(token: str) -> Optional[list]:
-    """
-    Historial de actividad del equipo.
-    Útil para evaluar decisiones pasadas del agente.
-    """
-    return _get("/api/v5/activity-types", token=token, params={"x-lang": "es"})
+    """Obsoleto — usar get_league_activity en su lugar."""
+    return get_league_activity(token)
