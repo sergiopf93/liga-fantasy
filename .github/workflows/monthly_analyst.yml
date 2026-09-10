@@ -43,6 +43,8 @@ jobs:
             [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
           done
           cp data/reports/*.json _site/data/reports/ 2>/dev/null || true
+          cp data/reports/*.html _site/data/reports/ 2>/dev/null || true
+          cp data/reports/*.txt _site/data/reports/ 2>/dev/null || true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
