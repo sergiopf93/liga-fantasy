@@ -771,41 +771,14 @@ async function markExecuted(d, btnId) {
 
 function downloadPDF() {
   const analyst = DATA.analyst;
-  if (!analyst) { alert('Sin datos del analista'); return; }
-
-  // Crear ventana de impresión con el contenido del analista
-  const el = document.getElementById('analista-content');
-  const html = `<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Informe Analista Fantasy RH - ${analyst.month || ''}</title>
-<style>
-  body { font-family: -apple-system, sans-serif; font-size: 13px; color: #1a1a1a; padding: 20px; }
-  h1 { font-size: 20px; margin-bottom: 4px; }
-  h2 { font-size: 15px; margin: 16px 0 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
-  th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; font-size: 12px; }
-  th { font-weight: 600; color: #666; }
-  .green { color: #2ea043; } .red { color: #f85149; } .blue { color: #1a73e8; }
-  .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-  .stat { background: #f6f8fa; padding: 10px; border-radius: 6px; }
-  .stat-val { font-size: 20px; font-weight: 700; }
-  .stat-label { font-size: 11px; color: #666; }
-  @media print { body { padding: 0; } }
-</style>
-</head>
-<body>
-  <h1>📊 Informe Analista Fantasy R.H.</h1>
-  <p style="color:#666">Período: ${analyst.patrimony?.period_start||''} → ${analyst.patrimony?.period_end||''} · ${analyst.period_days||0} días</p>
-  ${el.innerHTML}
-</body></html>`;
-
-  const win = window.open('', '_blank');
-  win.document.write(html);
-  win.document.close();
-  win.focus();
-  setTimeout(() => win.print(), 500);
+  if (!analyst) { alert('Sin datos del analista aún. Ejecuta el workflow "Analista mensual" primero.'); return; }
+  const month = analyst.month || '';
+  // Abrir el HTML pre-generado que ya incluye el prompt de ChatGPT
+  const url = `data/reports/analyst_${month}.html`;
+  const win = window.open(url, '_blank');
+  if (!win) {
+    alert('Activa las ventanas emergentes para abrir el informe. Luego usa Ctrl+P para imprimir como PDF.');
+  }
 }
 
 init();
