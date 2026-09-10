@@ -126,29 +126,70 @@ def save_daily_snapshot():
     return True
 
 
+MY_USER_ID = 1715449  # user1Id de Sergio en la liga
+
 def save_activity():
-    """Guarda actividad del día desde el endpoint activity-types."""
+    """
+    Guarda historial real de actividad de la liga.
+    Endpoint verificado: /api/v1/competition/1/leagues/{leagueId}/activity/0
+    Incluye compras, ventas, clausulazos de todos los managers.
+    """
     if not TOKEN:
         return
 
     activity_file = os.path.join(ACT_DIR, f"{TODAY}_activity.json")
 
-    # No sobreescribir si ya existe del día
-    if os.path.exists(activity_file):
-        logger.info("Actividad del día ya guardada")
+    activity = client.get_league_activity(TOKEN, LEAGUE_ID, page=0)
+    if not activity:
+        logger.warning("Sin datos de actividad de liga")
         return
 
-    activity = client.get_activity_types(TOKEN)
-    if not activity:
-        logger.warning("Sin datos de actividad")
-        return
+    # Identificar mis operaciones vs las de rivales
+    my_activity = [a for a in activity if a.get("user1Id") == MY_USER_ID or a.get("user2Id") == MY_USER_ID]
+
+    # Catálogo completo verificado el 10/09/2026
+    type_labels = {
+        1:  "compra_entre_managers",      # user1 compra jugador de user2
+        2:  "cesion_entre_managers",      # user1 cede jugador a user2
+        3:  "jugador_devuelto",           # jugador vuelve a plantilla
+        4:  "blindaje",                   # user1 blinda jugador
+        6:  "recompensa_jornada",         # prize por jornada
+        12: "premio_11_ideal",            # bonus por jugadores en 11 ideal
+        20: "recompensa_11_ideal",
+        21: "ajuste_venta",
+        22: "actualizacion_puntos",
+        31: "compra_mercado_laliga",      # compra sin seller (mercado general)
+        33: "venta_mercado_laliga",       # venta al mercado general
+    }
+
+    enriched = []
+    for a in activity:
+        type_id = a.get("activityTypeId", 0)
+        u1 = a.get("user1Id")
+        u2 = a.get("user2Id")
+        enriched.append({
+            **a,
+            "type_label": type_labels.get(type_id, f"tipo_{type_id}"),
+            "is_mine": u1 == MY_USER_ID or u2 == MY_USER_ID,
+            "i_bought_from_rival": u1 == MY_USER_ID and type_id == 1,
+            "rival_bought_from_me": u2 == MY_USER_ID and type_id == 1,
+            "i_bought_from_market": u1 == MY_USER_ID and type_id == 31,
+            "i_sold_to_market": u1 == MY_USER_ID and type_id == 33,
+            "i_shielded": u1 == MY_USER_ID and type_id == 4,
+            "i_received_reward": u1 == MY_USER_ID and type_id in (6, 12, 20, 21, 22),
+        })
 
     save_json(activity_file, {
         "date": TODAY,
         "timestamp": NOW,
-        "activity": activity if isinstance(activity, list) else [activity]
+        "my_user_id": MY_USER_ID,
+        "total_operations": len(enriched),
+        "my_operations": len(my_activity),
+        "activity": enriched,
+        "my_activity": [a for a in enriched if a["is_mine"]],
+        "rival_activity": [a for a in enriched if not a["is_mine"]],
     })
-    logger.info(f"Actividad guardada: {activity_file}")
+    logger.info(f"Actividad guardada: {activity_file} ({len(enriched)} ops, {len(my_activity)} mías)")
 
 
 def enrich_executed_actions():
