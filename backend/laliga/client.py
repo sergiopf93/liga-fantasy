@@ -132,16 +132,26 @@ def get_my_squad(token: str, team_id: str = "37889563", league_id: str = "017948
     return data if isinstance(data, list) else []
 
 
-def check_daily_reward(token: str, team_id: str = "37889563", league_id: str = "017948446") -> Optional[dict]:
+def check_daily_reward(token: str, team_id: str = "37889563", league_id: str = "017948446") -> dict:
     """
     Comprueba si hay recompensa diaria disponible.
-    Devuelve dict con campo que indica si está disponible.
+    HTTP 200 = HAY recompensa disponible (pendiente de reclamar)
+    HTTP 400 = Ya reclamada hoy
+    Devuelve {"available": True/False, "status_code": int}
     """
-    return _get(
-        f"/api/v1/competition/1/league/{league_id}/team/{team_id}/check-daily-reward",
-        token=token,
-        params={"x-lang": "es"}
-    )
+    import requests as _req
+    url = f"{BASE_URL}/api/v1/competition/1/league/{league_id}/team/{team_id}/check-daily-reward"
+    try:
+        r = _req.get(url, headers=_headers(token), params={"x-lang": "es"}, timeout=15)
+        logger.info(f"check-daily-reward → HTTP {r.status_code}")
+        return {
+            "available": r.status_code == 200,
+            "status_code": r.status_code,
+            "body": r.json() if r.content else {}
+        }
+    except Exception as e:
+        logger.error(f"Error en check_daily_reward: {e}")
+        return {"available": False, "status_code": 0, "body": {}}
 
 
 def claim_daily_reward(token: str, team_id: str = "37889563", league_id: str = "017948446") -> Optional[dict]:
