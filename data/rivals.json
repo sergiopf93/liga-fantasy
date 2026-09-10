@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-10T10:16:40.593194",
+  "updated_at": "2026-09-10T10:23:59.948411",
   "my_position": 6,
   "rivals": [
     {
       "team_id": "37868413",
       "manager": "JavierRH",
-      "team_value": 291667208,
-      "team_value_fmt": "291.67M€",
+      "team_value": 292714065,
+      "team_value_fmt": "292.71M€",
       "points": 220,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -45,8 +45,8 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 204338716,
-      "team_value_fmt": "204.34M€",
+      "team_value": 205728263,
+      "team_value_fmt": "205.73M€",
       "points": 159,
       "budget_fmt": "N/D",
       "is_me": false,
