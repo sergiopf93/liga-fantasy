@@ -194,6 +194,7 @@
 </nav>
 <script>
 const DATA = {};
+const PENDING_ACTIONS = {};
 
 function showTab(tab, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -423,7 +424,7 @@ async function init() {
     loadJSON('team.json'), loadJSON('market.json'),
     loadJSON('report.json'), loadJSON('rivals.json'),
     loadJSON('decisions.json'), loadJSON('reward.json'),
-    loadJSON('analyst_latest.json')
+    loadJSON('analyst_latest.json').catch(()=>null)
   ]);
 
   const ts = report?.generated_at || team?.updated_at || '';
@@ -440,7 +441,7 @@ async function init() {
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderAgente(decisions);
-  renderAnalista(analyst);
+  if (typeof renderAnalista === 'function') renderAnalista(analyst);
 }
 
 
