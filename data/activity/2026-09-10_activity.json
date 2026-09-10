@@ -1,0 +1,798 @@
+{
+  "date": "2026-09-10",
+  "timestamp": "2026-09-10T10:16:40.733971",
+  "activity": [
+    {
+      "id": 1,
+      "internalDescription": "Operación de mercado - Compra",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Operación de mercado",
+          "bodyPattern": "#user1Id# ha comprado al jugador #playerMasterId# de #user2Id# por #amount#€"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Market operation",
+          "bodyPattern": "#user1Id# has purchased #playerMasterId# from #user2Id# for #amount#€"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "صفقات السوق",
+          "bodyPattern": "اشترى #user1Id# اللاعب #playerMasterId# من #user2Id# مقابل #amount# يورو"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "internalDescription": "Operación de mercado - Cesión",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Operación de mercado",
+          "bodyPattern": "#user1Id# ha cedido al jugador #playerMasterId# a #user2Id# por #amount#€"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Market operation",
+          "bodyPattern": "#user1Id# has transferred #playerMasterId# to #user2Id# for #amount#€"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "صفقات السوق",
+          "bodyPattern": "أعار #user1Id# اللاعب #playerMasterId# إلى #user2Id# مقابل #amount# يورو"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "internalDescription": "Operación de mercado - Fin cesión",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Operación de mercado",
+          "bodyPattern": "#playerMasterId# ha vuelto a la plantilla de #user1Id#."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Market operation",
+          "bodyPattern": "#playerMasterId# has returned to #user1Id#'s squad."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "صفقات السوق",
+          "bodyPattern": "عاد #playerMasterId# إلى تشكيلة فريق #user1Id#."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "internalDescription": "Operación de mercado - Blindaje",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Blindaje",
+          "bodyPattern": "#user1Id# ha blindado a #playerMasterId#"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Shield",
+          "bodyPattern": "#user1Id# has shielded #playerMasterId#"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "حماية",
+          "bodyPattern": "قام #user1Id# بحماية عقد #playerMasterId#"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "internalDescription": "Resolución de denuncia",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Denuncia",
+          "bodyPattern": "Después de una denuncia, el administrador de la liga ha decidido expulsar a un mánager."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Complaint",
+          "bodyPattern": "After a complaint, the league administrator has decided to expel a manager."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "شكوى",
+          "bodyPattern": "بعد تقديم شكوى، قرر مدير الدوري طرد أحد المديرين."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "internalDescription": "Recompensa",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "En la jornada #weekNumber#, #user1Id# ha ganado #amount#€"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "On matchday #weekNumber#, #user1Id# has earned #amount#€"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "في الجولة #weekNumber#، فاز #user1Id# بمبلغ #amount# يورو"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "internalDescription": "No puntuación - alineación incompleta",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "No puntuación",
+          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a alineación incompleta."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "No score",
+          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to incomplete alignment."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "لم تُسجّل نقاطا",
+          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نقاطا بسبب التشكيلة غير الكاملة."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "internalDescription": "No puntuación - salgo negativo",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "No puntuación",
+          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a saldo negativo."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "No score",
+          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to negative balance."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "لم تُسجّل نقاطا",
+          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نقاطا بسبب الرصيد السالب."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "internalDescription": "Nuevo mánager en la liga",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Nuevo miembro",
+          "bodyPattern": "#user1Id# se ha unido a la liga."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "New member",
+          "bodyPattern": "#user1Id# has joined the league."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "عضو جديد",
+          "bodyPattern": "انضم #user1Id# إلى الدوري."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "internalDescription": "Abandono de una liga",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Abandono",
+          "bodyPattern": "Un mánager ha dejado la liga"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Abandoned",
+          "bodyPattern": "A manager has left the league"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مغادرة",
+          "bodyPattern": "أحد المديرين غادر الدوري"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "internalDescription": "Nuevo administrador",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Nuevo administrador",
+          "bodyPattern": "El nuevo administrador de la liga es #user1Id#."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "New admin",
+          "bodyPattern": "The new administrator of the league is #user1Id#."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مسؤول جديد",
+          "bodyPattern": "مدير الدوري الجديد هو #user1Id#."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "internalDescription": "Recompensa 11 ideal",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "11 ideal",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por tener jugadores en el 11 ideal de la jornada #weekNumber#."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Ideal XI",
+          "bodyPattern": "#user1Id# has won #amount#€ for having players in the matchday #weekNumber# dream team."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "التشكيلة المثالية",
+          "bodyPattern": "حصل #user1Id# على #amount# يورو مقابل توفره على لاعبين في التشكيلة المثالية للجولة #weekNumber#."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "internalDescription": "Funcionalidad premium activada - Capitán",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Capitán."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Captain feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة الكابتن."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "internalDescription": "Funcionalidad premium activada - Banquillo",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Banquillo."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Bench feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة دكة البدلاء."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "internalDescription": "Funcionalidad premium activada - Formaciones",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Formaciones."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Formations feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة تشكيلات الفرق."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "internalDescription": "Funcionalidad premium activada - Entrenador",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Entrenador."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Coach feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة المدرب."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "internalDescription": "Funcionalidad premium activada - 11 ideal",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad 11 ideal."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Ideal XI feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة التشكيلة المثالية."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "internalDescription": "Funcionalidad premium activada - Cesiones",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha activado la funcionalidad Cesiones."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has activated the Loans feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بتفعيل وظيفة الإعارات."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "internalDescription": "Premium activado",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Premium activado",
+          "bodyPattern": "La liga ha sido convertida en una liga premium."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium activated",
+          "bodyPattern": "The league has been converted into a premium league."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "تم تفعيل العضوية المميزة Premium",
+          "bodyPattern": "تم تحويل الدوري إلى دوري مميز premium."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "internalDescription": "Otras recompensas - Recompensa 11 ideal",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por Recompensa 11 ideal"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "#user1Id# has earned #amount#€ due to Ideal XI reward"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب جائزة التشكيلة المثالية"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "internalDescription": "Otras recompensas - Ajuste de venta",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por Ajuste de venta"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "#user1Id# has earned #amount#€ due to Sales adjustment"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تعديل المبيعات"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "internalDescription": "Otras recompensas - Actualización de puntos",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por Actualización de puntos"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "#user1Id# has earned #amount#€ due to Point update"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تحديث النقاط"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "internalDescription": "Otras recompensas - Rectificación en el cálculo",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por Rectificación en el cálculo"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "#user1Id# has earned #amount#€ due to Rectification in the calculation"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تصحيح الحساب"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "internalDescription": "Otras recompensas - Otro ajuste",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Recompensa",
+          "bodyPattern": "#user1Id# ha ganado #amount#€ por Otro ajuste"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Reward",
+          "bodyPattern": "#user1Id# has earned #amount#€ due to Another adjustment"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "مكافأة",
+          "bodyPattern": "فاز #user1Id# بمبلغ #amount# يورو بسبب تعديل آخر"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "internalDescription": "Funcionalidad premium desactivada - Capitán",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Capitán."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Captain feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة الكابتن."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "internalDescription": "Funcionalidad premium desactivada - Banquillo",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Banquillo."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Bench feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة دكة البدلاء."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "internalDescription": "Funcionalidad premium desactivada - Formaciones",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Formaciones."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Formations feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة تشكيلات الفرق."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "internalDescription": "Funcionalidad premium desactivada - Entrenador",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Entrenador."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Coach feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة المدرب."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "internalDescription": "Funcionalidad premium desactivada - 11 ideal",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad 11 ideal."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Ideal XI feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة التشكيلة المثالية."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "internalDescription": "Funcionalidad premium desactivada - Cesiones",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Configuración premium",
+          "bodyPattern": "El administrador de la liga ha desactivado la funcionalidad Cesiones."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Premium configuration",
+          "bodyPattern": "The administrator of the league has deactivated the Loans feature."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "الإعدادات المميزة premium",
+          "bodyPattern": "قام مسؤول الدوري بإلغاء تفعيل وظيفة الإعارات."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "internalDescription": "Operación de mercado - Compra a LALIGA",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Operación de mercado",
+          "bodyPattern": "#user1Id# ha comprado al jugador #playerMasterId# de LALIGA por #amount#€"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Market operation",
+          "bodyPattern": "#user1Id# has purchased #playerMasterId# from LALIGA for #amount#€"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "صفقات السوق",
+          "bodyPattern": "اشترى #user1Id# اللاعب #playerMasterId# من LALIGA مقابل #amount# يورو (يشمل المشتريات والمبيعات)"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "internalDescription": "No puntuación - alineación incorrecta",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "No puntuación",
+          "bodyPattern": "En la jornada #weekNumber#, #user1Id# no ha puntuado debido a alineación incorrecta."
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "No score",
+          "bodyPattern": "On matchday #weekNumber#, #user1Id# did not score due to invalid alignment."
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "لم تُسجّل نقاط",
+          "bodyPattern": "في الجولة #weekNumber#، لم يسجل #user1Id# نتيجة بسبب التشكيلة غير الصحيحة."
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "internalDescription": "Operación de mercado - Vendido a LALIGA",
+      "activityTypeTexts": [
+        {
+          "language": "es",
+          "languageId": 1,
+          "titlePattern": "Operación de mercado",
+          "bodyPattern": "#user1Id# ha vendido al jugador #playerMasterId# a LALIGA por #amount#€"
+        },
+        {
+          "language": "en",
+          "languageId": 2,
+          "titlePattern": "Market operation",
+          "bodyPattern": "#user1Id# has sold player #playerMasterId# to LALIGA for #amount#€"
+        },
+        {
+          "language": "ar",
+          "languageId": 3,
+          "titlePattern": "صفقات السوق",
+          "bodyPattern": "اشترى LALIGA اللاعب #playerMasterId# من #user1Id# مقابل #amount# يورو "
+        }
+      ]
+    }
+  ]
+}
