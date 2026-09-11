@@ -1,0 +1,167 @@
+# INSTRUCCIONES PARA CHATGPT — ANÁLISIS FANTASY LALIGA
+
+Eres un experto analista de Fantasy LaLiga. Analiza el informe mensual del período 2026-09-10 al 2026-09-11 y proporciona:
+
+## 1. ANÁLISIS GENERAL
+- Rendimiento global: patrimonio y puntos vs rivales
+- ¿La estrategia general fue correcta?
+
+## 2. ANÁLISIS DE DECISIONES
+- Evalúa cada decisión ejecutada y su resultado
+- ¿Las pujas fueron demasiado bajas? ¿Se vendió en el momento correcto?
+
+## 3. ANÁLISIS DE RIVALES
+- ¿Qué estrategias siguieron los más exitosos?
+- ¿Qué podemos aprender?
+
+## 4. RECOMENDACIONES PARA MEJORAR EL AGENTE
+- Cambios concretos en los pesos del motor de puntuación
+- ¿El umbral de venta del 15% es correcto?
+- Tabla resumen con las 3 principales mejoras recomendadas
+
+Responde en español. Sé específico con nombres y cifras.
+
+---
+## DATOS DEL INFORME:
+
+
+---
+## DATOS JSON:
+{
+  "generated_at": "2026-09-11T08:19:34.693829",
+  "month": "2026-09",
+  "period_days": 2,
+  "summary": {
+    "patrimony_growth_pct": -0.39,
+    "points_gained": 0,
+    "position_start": 6,
+    "position_end": 6,
+    "decisions_executed": 0,
+    "success_rate": 0
+  },
+  "patrimony": {
+    "my_first_value": 221980965,
+    "my_last_value": 221122960,
+    "my_growth_pct": -0.39,
+    "my_first_fmt": "221.98MM€",
+    "my_last_fmt": "221.12MM€",
+    "rivals": [
+      {
+        "manager": "MAP Cardinals",
+        "first_value": 204338716,
+        "last_value": 207582233,
+        "growth_pct": 1.59,
+        "first_fmt": "204.34MM€",
+        "last_fmt": "207.58MM€"
+      },
+      {
+        "manager": "JavierRH",
+        "first_value": 291667208,
+        "last_value": 292561686,
+        "growth_pct": 0.31,
+        "first_fmt": "291.67MM€",
+        "last_fmt": "292.56MM€"
+      },
+      {
+        "manager": "fruizmata7",
+        "first_value": 316542833,
+        "last_value": 316542833,
+        "growth_pct": 0.0,
+        "first_fmt": "316.54MM€",
+        "last_fmt": "316.54MM€"
+      },
+      {
+        "manager": "Serpa93",
+        "first_value": 221980965,
+        "last_value": 221122960,
+        "growth_pct": -0.39,
+        "first_fmt": "221.98MM€",
+        "last_fmt": "221.12MM€"
+      },
+      {
+        "manager": "Migu V",
+        "first_value": 305787610,
+        "last_value": 282878397,
+        "growth_pct": -7.49,
+        "first_fmt": "305.79MM€",
+        "last_fmt": "282.88MM€"
+      },
+      {
+        "manager": "Doggy Sanxe",
+        "first_value": 164066129,
+        "last_value": 151308916,
+        "growth_pct": -7.78,
+        "first_fmt": "164.07MM€",
+        "last_fmt": "151.31MM€"
+      },
+      {
+        "manager": "Juan Hornillos",
+        "first_value": 244595742,
+        "last_value": 185093306,
+        "growth_pct": -24.33,
+        "first_fmt": "244.60MM€",
+        "last_fmt": "185.09MM€"
+      }
+    ],
+    "period_start": "2026-09-10",
+    "period_end": "2026-09-11",
+    "period_days": 2
+  },
+  "points": {
+    "my_first_points": 158,
+    "my_last_points": 158,
+    "my_points_gained": 0,
+    "my_position_start": 6,
+    "my_position_end": 6,
+    "rivals": [
+      {
+        "manager": "JavierRH",
+        "first_points": 220,
+        "last_points": 220,
+        "points_gained": 0
+      },
+      {
+        "manager": "Migu V",
+        "first_points": 168,
+        "last_points": 168,
+        "points_gained": 0
+      },
+      {
+        "manager": "Juan Hornillos",
+        "first_points": 162,
+        "last_points": 162,
+        "points_gained": 0
+      },
+      {
+        "manager": "Doggy Sanxe",
+        "first_points": 160,
+        "last_points": 160,
+        "points_gained": 0
+      },
+      {
+        "manager": "MAP Cardinals",
+        "first_points": 159,
+        "last_points": 159,
+        "points_gained": 0
+      },
+      {
+        "manager": "Serpa93",
+        "first_points": 158,
+        "last_points": 158,
+        "points_gained": 0
+      },
+      {
+        "manager": "fruizmata7",
+        "first_points": 130,
+        "last_points": 130,
+        "points_gained": 0
+      }
+    ]
+  },
+  "decisions": {
+    "total": 0,
+    "by_result": {},
+    "success_rate_pct": 0,
+    "actions": []
+  }
+}
