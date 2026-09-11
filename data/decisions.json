@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T13:59:38.981459",
+  "updated_at": "2026-09-11T20:17:26.076154",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 3, 2] con 46.0 pts/j de media",
   "warnings": [],
@@ -15,32 +15,6 @@
       "priority": 5,
       "position": "",
       "position_id": 2,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "1219",
-      "player_name": "Agirrezabala",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 12.58M€ muy por debajo del valor 14.83M€, Rendimiento excelente: 6.8 pts/j",
-      "amount": 12575248,
-      "amount_fmt": "12.58M€",
-      "market_id": "24726601",
-      "priority": 3,
-      "position": "Portero",
-      "position_id": 1,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2549",
-      "player_name": "Navarro",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 3.48M€ muy por debajo del valor 4.97M€, Rendimiento excelente: 7.0 pts/j",
-      "amount": 3478012,
-      "amount_fmt": "3.48M€",
-      "market_id": "32278175",
-      "priority": 3,
-      "position": "Centrocampista",
-      "position_id": 3,
       "status": "ok"
     },
     {
