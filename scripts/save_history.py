@@ -7,6 +7,8 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from backend.laliga import client
+from backend.laliga.models import MyTeam
+from backend.strategy.data_sanity import validate_api_data
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -107,6 +109,29 @@ def save_daily_snapshot():
                         logger.warning(f"Error obteniendo plantilla rival {tid}: {e}")
 
         snapshot["rival_squads"] = rival_squads
+
+        # ── Validación de calidad de datos ───────────────────────────────
+        # Construir un MyTeam temporal solo para la validación
+        try:
+            from backend.laliga.models import MyTeam
+            players_raw = team_data.get("players", []) if team_data else []
+            # Necesitamos objetos Player — si no los tenemos usamos validación básica
+            sanity_ok, sanity_report = validate_api_data(
+                my_team=None,  # validación básica sin historial contra snapshot
+                market_players=None,
+                players_raw=players_raw,   # lista de dicts del JSON
+            )
+            snapshot["data_quality"] = {
+                "valid":   sanity_ok,
+                "issues":  sanity_report.issues,
+                "warnings": sanity_report.warnings,
+                "checked_at": NOW,
+            }
+            if not sanity_ok:
+                logger.warning(f"Snapshot {TODAY} marcado como CONTAMINADO: {sanity_report.issues}")
+        except Exception as e:
+            logger.warning(f"No se pudo validar snapshot: {e}")
+            snapshot["data_quality"] = {"valid": True, "issues": [], "warnings": ["Validación no ejecutada"]}
 
         save_json(snapshot_file, snapshot)
         logger.info(f"Snapshot principal guardado: {snapshot_file}")

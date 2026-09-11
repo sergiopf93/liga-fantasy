@@ -345,6 +345,27 @@ def analyze_rival_strategies(snapshots, activities):
     }
 
 
+
+def filter_clean_snapshots(snapshots: list) -> tuple:
+    """
+    Separa snapshots limpios de contaminados usando el flag data_quality
+    guardado por save_history.py en el momento de captura.
+    Devuelve (clean, contaminated_list).
+    """
+    clean, contaminated = [], []
+    for snap in snapshots:
+        dq = snap.get("data_quality", {})
+        # Sin flag = snapshot antiguo antes de la validación → asumir limpio
+        if not dq or dq.get("valid", True):
+            clean.append(snap)
+        else:
+            contaminated.append({
+                "date":   snap.get("date", ""),
+                "issues": dq.get("issues", []),
+            })
+            logger.warning(f"Snapshot {snap.get('date')} excluido del análisis: {dq.get('issues')}")
+    return clean, contaminated
+
 def generate_chatgpt_prompt(report):
     pat  = report.get("patrimony", {})
     dec  = report.get("decisions", {})
@@ -418,6 +439,13 @@ def generate_chatgpt_prompt(report):
         "**10. REGLAS ACTUALES DEL AGENTE** (`agent_rules`)\n"
         "Todos los pesos, umbrales y lógicas implementadas en el motor de decisiones. "
         "Son los parámetros que puedes sugerir modificar para mejorar el rendimiento.\n\n"
+        "**11. UNIVERSO COMPLETO DE JUGADORES DE LA LIGA** (`league_universe`)\n"
+        "Historial de TODOS los jugadores que han tenido relevancia en la liga durante el período: "
+        "los de mi plantilla, los de plantillas rivales, los que estuvieron en el mercado "
+        "(subastas o clausulazos) y los que aparecieron en operaciones. "
+        "Para cada jugador: valor de mercado, media de puntos y propietario día a día. "
+        "Con esto puedes identificar qué jugadores subieron más, cuáles ignoramos que habrían "
+        "sido buenas compras, y comparar estrategias entre managers con datos reales.\n\n"
         "---\n\n"
 
         "## TU ANÁLISIS (basado exclusivamente en los datos anteriores)\n\n"
@@ -604,30 +632,10 @@ def generate_html(report):
     parts.append("<title>Informe Analista Fantasy RH - " + month + "</title>")
     parts.append("<style>" + css + "</style></head><body>")
     parts.append("<div class='prompt-box'>")
-    parts.append("<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:8px'>")
-    parts.append("<h2 style='margin:0'>🤖 Prompt para ChatGPT</h2>")
-    parts.append("<button id='copy-btn' onclick='copyPrompt()' style='background:#1a73e8;color:#fff;border:none;border-radius:6px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer'>📋 Copiar todo</button>")
+    parts.append("<h2>🤖 Prompt para ChatGPT</h2>")
+    parts.append("<p style='font-size:12px;color:#666;margin-bottom:8px'>Copia todo y pégalo en ChatGPT:</p>")
+    parts.append("<div class='prompt-content'>" + prompt + json.dumps(report, ensure_ascii=False, indent=2, default=str) + "</div>")
     parts.append("</div>")
-    parts.append("<p style='font-size:12px;color:#666;margin-bottom:8px'>Copia el prompt + datos y pégalo en ChatGPT:</p>")
-    parts.append("<div id='prompt-text' class='prompt-content'>" + prompt + json.dumps(report, ensure_ascii=False, indent=2, default=str) + "</div>")
-    parts.append("</div>")
-    parts.append("<script>"
-        "function copyPrompt(){"
-        "  const text=document.getElementById('prompt-text').innerText;"
-        "  navigator.clipboard.writeText(text).then(function(){"
-        "    const btn=document.getElementById('copy-btn');"
-        "    btn.textContent='\u2705 Copiado!';btn.style.background='#2ea043';"
-        "    setTimeout(function(){btn.textContent='\U0001f4cb Copiar todo';btn.style.background='#1a73e8';},2500);"
-        "  }).catch(function(){"
-        "    const ta=document.createElement('textarea');"
-        "    ta.value=text;ta.style.position='fixed';ta.style.opacity='0';"
-        "    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);"
-        "    const btn=document.getElementById('copy-btn');"
-        "    btn.textContent='\u2705 Copiado!';btn.style.background='#2ea043';"
-        "    setTimeout(function(){btn.textContent='\U0001f4cb Copiar todo';btn.style.background='#1a73e8';},2500);"
-        "  });"
-        "}"
-        "</script>")
     parts.append("<h1>📊 Informe Analista Fantasy R.H. — " + month + "</h1>")
     parts.append("<p style='color:#666'>Período: " + pat.get("period_start","") + " → " + pat.get("period_end","") + " · " + str(report.get("period_days",0)) + " días</p>")
     parts.append("<h2>Resumen ejecutivo</h2><div class='grid'>")
@@ -722,6 +730,73 @@ def generate_html(report):
             " <strong style='color:" + color + "'>" + sign + str(change) + "%</strong></span>"
             "</div>"
         )
+
+    # ── Universo completo de jugadores de la liga ────────────────────────────
+    lu = report.get("league_universe", {})
+    lu_players = lu.get("players", [])
+
+    # Top movers del período (mayor cambio de valor)
+    top_movers = sorted(lu_players, key=lambda x: abs(x.get("value_change_pct", 0)), reverse=True)[:15]
+    # Mejor media de puntos
+    top_scorers = sorted([p for p in lu_players if p.get("avg_points", 0) > 0],
+                         key=lambda x: x.get("avg_points", 0), reverse=True)[:15]
+
+    source_icons = {"my_team": "⭐", "rival_squad": "👥", "market": "🏪", "activity": "📋"}
+
+    movers_rows = ""
+    for p in top_movers:
+        chg = p.get("value_change_pct", 0)
+        color = "#2ea043" if chg >= 0 else "#f85149"
+        sign  = "+" if chg >= 0 else ""
+        sources = " ".join(source_icons.get(s, s) for s in p.get("sources", []))
+        movers_rows += (
+            "<tr>"
+            "<td>" + p.get("nickname", "") + "</td>"
+            "<td>" + p.get("position", "") + "</td>"
+            "<td>" + sources + "</td>"
+            "<td>" + fmt(p.get("value_start", 0)) + "</td>"
+            "<td>" + fmt(p.get("value_end", 0)) + "</td>"
+            "<td style='color:" + color + ";font-weight:600'>" + sign + str(chg) + "%</td>"
+            "<td>" + str(p.get("avg_points", 0)) + "</td>"
+            "</tr>"
+        )
+    if not movers_rows:
+        movers_rows = "<tr><td colspan='7' style='color:#666;text-align:center'>Sin datos suficientes</td></tr>"
+
+    scorers_rows = ""
+    for p in top_scorers:
+        sources = " ".join(source_icons.get(s, s) for s in p.get("sources", []))
+        scorers_rows += (
+            "<tr>"
+            "<td>" + p.get("nickname", "") + "</td>"
+            "<td>" + p.get("position", "") + "</td>"
+            "<td>" + sources + "</td>"
+            "<td style='font-weight:600'>" + str(p.get("avg_points", 0)) + " pts/j</td>"
+            "<td>" + fmt(p.get("value_end", 0)) + "</td>"
+            "</tr>"
+        )
+    if not scorers_rows:
+        scorers_rows = "<tr><td colspan='5' style='color:#666;text-align:center'>Sin datos</td></tr>"
+
+    parts.append("<h2>🌍 Universo de jugadores de la liga (" + str(lu.get("total_players", 0)) + " jugadores rastreados)</h2>")
+    parts.append(
+        "<p style='font-size:12px;color:#666'>"
+        "⭐ Mi plantilla &nbsp;|&nbsp; 👥 Plantilla rival &nbsp;|&nbsp; "
+        "🏪 En mercado &nbsp;|&nbsp; 📋 Solo en actividad"
+        "</p>"
+    )
+    parts.append("<h3>Mayores movimientos de valor en el período</h3>")
+    parts.append(
+        "<table><tr><th>Jugador</th><th>Pos</th><th>Fuente</th>"
+        "<th>Valor inicial</th><th>Valor final</th><th>Cambio</th><th>Media pts</th></tr>"
+        + movers_rows + "</table>"
+    )
+    parts.append("<h3>Mejores medias de puntos en la liga</h3>")
+    parts.append(
+        "<table><tr><th>Jugador</th><th>Pos</th><th>Fuente</th>"
+        "<th>Media puntos</th><th>Valor actual</th></tr>"
+        + scorers_rows + "</table>"
+    )
 
     parts.append("</body></html>")
     html = "".join(parts)
@@ -861,6 +936,213 @@ def collect_raw_data(snapshots, markets, activities, executed):
     }
 
 
+
+
+def collect_all_league_players(snapshots: list, markets: list, activities: list) -> dict:
+    """
+    Construye el historial completo de TODOS los jugadores que han tenido
+    relevancia en la liga durante el período:
+      - Los que tengo en mi plantilla
+      - Los que tienen mis rivales
+      - Los que estuvieron en el mercado (subastas + clausulazos)
+      - Los que aparecen en la actividad de la liga (compras/ventas)
+
+    Para cada jugador: historial diario de market_value y average_points
+    con la fuente de cada dato (my_team / rival_squad / market / activity).
+    """
+
+    # Mapa maestro: player_id → {meta, history: [{date, ...}]}
+    universe: dict = {}
+
+    def upsert(pid: str, meta: dict, day_entry: dict):
+        """Añade o actualiza un jugador en el universo."""
+        pid = str(pid)
+        if not pid:
+            return
+        if pid not in universe:
+            universe[pid] = {
+                "player_id":   pid,
+                "name":        meta.get("name", ""),
+                "nickname":    meta.get("nickname", ""),
+                "position":    meta.get("position", ""),
+                "position_id": meta.get("position_id", 0),
+                "sources":     set(),   # qué fuentes lo han visto
+                "history":     {},      # date → mejor entry disponible
+            }
+        u = universe[pid]
+        # Actualizar meta si viene más completa
+        if meta.get("name") and not u["name"]:
+            u["name"] = meta["name"]
+        if meta.get("nickname") and not u["nickname"]:
+            u["nickname"] = meta["nickname"]
+        if meta.get("position") and not u["position"]:
+            u["position"] = meta["position"]
+        if meta.get("position_id") and not u["position_id"]:
+            u["position_id"] = meta["position_id"]
+
+        date = day_entry.get("date", "")
+        source = day_entry.get("source", "")
+        if source:
+            u["sources"].add(source)
+
+        # Combinar con entrada existente del mismo día (priorizar my_team > market > rival > activity)
+        source_priority = {"my_team": 4, "market": 3, "rival_squad": 2, "activity": 1}
+        existing = u["history"].get(date)
+        if existing is None or source_priority.get(source, 0) > source_priority.get(existing.get("source", ""), 0):
+            u["history"][date] = {**day_entry}
+
+    # ── 1. Mi plantilla (fuente más rica) ────────────────────────────────────
+    for snap in snapshots:
+        date = snap.get("date", "")
+        for p in snap.get("my_team", {}).get("players", []):
+            pid = str(p.get("id", ""))
+            meta = {
+                "name":        p.get("name", ""),
+                "nickname":    p.get("nickname", ""),
+                "position":    p.get("position", ""),
+                "position_id": p.get("position_id", 0),
+            }
+            upsert(pid, meta, {
+                "date":           date,
+                "source":         "my_team",
+                "market_value":   p.get("market_value", 0),
+                "average_points": p.get("average_points", 0),
+                "week_points":    p.get("week_points", 0),
+                "status":         p.get("status", "ok"),
+                "buyout_clause":  p.get("buyout_clause", 0),
+                "owner":          "me",
+            })
+
+    # ── 2. Plantillas rivales ─────────────────────────────────────────────────
+    for snap in snapshots:
+        date = snap.get("date", "")
+        for team_id, team_data in snap.get("rival_squads", {}).items():
+            manager = team_data.get("manager", "")
+            for p in team_data.get("players", []):
+                pm = p.get("playerMaster", {})
+                pid = str(pm.get("id", ""))
+                if not pid:
+                    continue
+                pos_map = {1: "Portero", 2: "Defensa", 3: "Centrocampista", 4: "Delantero"}
+                pos_id = pm.get("positionId", 0)
+                meta = {
+                    "name":        pm.get("name", ""),
+                    "nickname":    pm.get("nickname", ""),
+                    "position":    pos_map.get(pos_id, ""),
+                    "position_id": pos_id,
+                }
+                upsert(pid, meta, {
+                    "date":           date,
+                    "source":         "rival_squad",
+                    "market_value":   pm.get("marketValue", 0),
+                    "average_points": pm.get("averagePoints", 0),
+                    "week_points":    pm.get("points", 0),
+                    "status":         pm.get("playerStatus", "ok"),
+                    "buyout_clause":  p.get("buyoutClause", 0),
+                    "owner":          manager,
+                })
+
+    # ── 3. Mercado diario (subastas + clausulazos) ───────────────────────────
+    for mkt in markets:
+        date = mkt.get("date", "")
+        for p in mkt.get("subastas", []) + mkt.get("clausulazos", []):
+            pid = str(p.get("player_id", ""))
+            meta = {
+                "name":        p.get("name", ""),
+                "nickname":    p.get("nickname", ""),
+                "position":    p.get("position", ""),
+                "position_id": p.get("position_id", 0),
+            }
+            upsert(pid, meta, {
+                "date":           date,
+                "source":         "market",
+                "market_value":   p.get("market_value", 0),
+                "average_points": p.get("average_points", 0),
+                "week_points":    p.get("week_points", 0),
+                "status":         p.get("status", "ok"),
+                "buyout_clause":  p.get("buyout_clause", 0),
+                "sale_price":     p.get("sale_price", 0),
+                "market_type":    p.get("market_type", ""),
+                "seller":         p.get("seller", ""),
+                "agent_score":    p.get("score", 0),
+                "owner":          p.get("seller") or "mercado_laliga",
+            })
+
+    # ── 4. Actividad de liga (jugadores que se compraron/vendieron) ───────────
+    for activity in activities:
+        date = activity.get("date", "")
+        for op in activity.get("activity", []):
+            pid = str(op.get("playerMasterId", ""))
+            if not pid:
+                continue
+            # La actividad solo tiene pid y amount, sin datos del jugador
+            # Solo registramos la operación si el jugador ya está en el universo
+            if pid in universe:
+                entry = universe[pid]["history"].get(date, {})
+                ops = entry.get("operations", [])
+                ops.append({
+                    "type":   op.get("type_label", ""),
+                    "amount": op.get("amount", 0),
+                    "user":   op.get("user1Id", ""),
+                })
+                if date not in universe[pid]["history"]:
+                    upsert(pid, {}, {
+                        "date":       date,
+                        "source":     "activity",
+                        "operations": ops,
+                    })
+                else:
+                    universe[pid]["history"][date]["operations"] = ops
+            else:
+                # Jugador en actividad pero sin datos — registrar mínimo
+                upsert(pid, {}, {
+                    "date":   date,
+                    "source": "activity",
+                    "operations": [{
+                        "type":   op.get("type_label", ""),
+                        "amount": op.get("amount", 0),
+                    }],
+                })
+
+    # ── Serializar (convertir sets y dicts de history a listas) ──────────────
+    result = []
+    for pid, u in universe.items():
+        history_list = sorted(u["history"].values(), key=lambda x: x.get("date", ""))
+        # Calcular resumen del período
+        values = [h["market_value"] for h in history_list if h.get("market_value", 0) > 0]
+        avgs   = [h["average_points"] for h in history_list if h.get("average_points", 0) > 0]
+        first_val = values[0] if values else 0
+        last_val  = values[-1] if values else 0
+        value_change_pct = round((last_val - first_val) / first_val * 100, 1) if first_val else 0
+
+        result.append({
+            "player_id":        pid,
+            "name":             u["name"],
+            "nickname":         u["nickname"],
+            "position":         u["position"],
+            "position_id":      u["position_id"],
+            "sources":          sorted(u["sources"]),
+            "days_tracked":     len(history_list),
+            "value_start":      first_val,
+            "value_end":        last_val,
+            "value_change_pct": value_change_pct,
+            "avg_points":       round(sum(avgs) / len(avgs), 2) if avgs else 0,
+            "history":          history_list,
+        })
+
+    # Ordenar: primero los que más días tenemos, luego por cambio de valor
+    result.sort(key=lambda x: (-x["days_tracked"], -abs(x["value_change_pct"])))
+    return {
+        "total_players":  len(result),
+        "sources_legend": {
+            "my_team":     "Jugador en mi plantilla ese día",
+            "rival_squad": "Jugador en plantilla de rival ese día",
+            "market":      "Jugador disponible en el mercado ese día",
+            "activity":    "Jugador que apareció en operación de la liga",
+        },
+        "players": result,
+    }
+
 def generate_report():
     snapshots  = get_all_snapshots()
     markets    = get_all_market_snapshots()
@@ -869,12 +1151,23 @@ def generate_report():
 
     logger.info(f"Snapshots: {len(snapshots)}, Mercados: {len(markets)}, Actividades: {len(activities)}")
 
-    patrimony       = analyze_patrimony(snapshots)
+    # Filtrar snapshots contaminados antes de cualquier análisis
+    clean_snapshots, contaminated = filter_clean_snapshots(snapshots)
+    if contaminated:
+        logger.warning(f"{len(contaminated)} días excluidos por datos inválidos: "
+                       f"{[c['date'] for c in contaminated]}")
+    if not clean_snapshots:
+        logger.error("Todos los snapshots contaminados — usando datos sin filtrar")
+        clean_snapshots = snapshots  # fallback
+
+    patrimony       = analyze_patrimony(clean_snapshots)
+    points          = analyze_points(clean_snapshots)
     points          = analyze_points(snapshots)
     decisions       = analyze_decisions(executed)
-    market_analysis  = analyze_market_history(markets, snapshots, executed)
-    rival_strategies = analyze_rival_strategies(snapshots, activities)
-    raw_data         = collect_raw_data(snapshots, markets, activities, executed)
+    market_analysis  = analyze_market_history(markets, clean_snapshots, executed)
+    rival_strategies    = analyze_rival_strategies(clean_snapshots, activities)
+    raw_data            = collect_raw_data(clean_snapshots, markets, activities, executed)
+    league_universe     = collect_all_league_players(clean_snapshots, markets, activities)
 
     report = {
         "generated_at": datetime.now().isoformat(),
@@ -895,6 +1188,12 @@ def generate_report():
         "rival_strategies": rival_strategies,
         "agent_rules": AGENT_RULES,
         "raw_data": raw_data,
+        "league_universe": league_universe,
+        "data_quality": {
+            "clean_days":        len(clean_snapshots),
+            "contaminated_days": len(contaminated),
+            "contaminated":      contaminated,
+        },
     }
 
     # JSON
