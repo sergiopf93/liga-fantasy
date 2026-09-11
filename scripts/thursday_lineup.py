@@ -76,16 +76,16 @@ def run():
         return
 
     formation = best["formation"]
-    gk        = best["goalkeeper"]
+    gk        = best["goalkeeper"]   # ahora es dict con keys: id, name, avg_pts, status
     defs      = best["defenders"]
     mids      = best["midfielders"]
     strs      = best["strikers"]
 
     logger.info(f"Mejor alineación: {formation[0]}-{formation[1]}-{formation[2]}")
-    logger.info(f"Portero: {gk.nickname}")
-    logger.info(f"Defensas: {[p.nickname for p in defs]}")
-    logger.info(f"Centros: {[p.nickname for p in mids]}")
-    logger.info(f"Delanteros: {[p.nickname for p in strs]}")
+    logger.info(f"Portero: {gk['name']}")
+    logger.info(f"Defensas: {[p['name'] for p in defs]}")
+    logger.info(f"Centros: {[p['name'] for p in mids]}")
+    logger.info(f"Delanteros: {[p['name'] for p in strs]}")
     logger.info(f"Media total: {best['total_avg_points']:.2f} pts/j")
 
     # Guardar en JSON para el dashboard
@@ -94,11 +94,12 @@ def run():
         "dry_run": DRY_RUN,
         "formation": formation,
         "total_avg_points": best["total_avg_points"],
-        "goalkeeper": {"id": gk.id, "name": gk.nickname, "avg_pts": gk.average_points},
-        "defenders": [{"id": p.id, "name": p.nickname, "avg_pts": p.average_points} for p in defs],
-        "midfielders": [{"id": p.id, "name": p.nickname, "avg_pts": p.average_points} for p in mids],
-        "strikers": [{"id": p.id, "name": p.nickname, "avg_pts": p.average_points} for p in strs],
-        "bench": [{"id": p.id, "name": p.nickname, "position": p.position} for p in best["bench"]],
+        "alerts": best.get("alerts", []),
+        "goalkeeper": gk,
+        "defenders": defs,
+        "midfielders": mids,
+        "strikers": strs,
+        "bench": best.get("bench", []),
     }
 
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -125,10 +126,10 @@ def run():
 
         result = set_lineup(
             token=TOKEN,
-            goalkeeper=get_player_team_id(gk.id),
-            defenders=[get_player_team_id(p.id) for p in defs],
-            midfielders=[get_player_team_id(p.id) for p in mids],
-            strikers=[get_player_team_id(p.id) for p in strs],
+            goalkeeper=get_player_team_id(gk["id"]),
+            defenders=[get_player_team_id(p["id"]) for p in defs],
+            midfielders=[get_player_team_id(p["id"]) for p in mids],
+            strikers=[get_player_team_id(p["id"]) for p in strs],
             formation=formation,
             dry_run=False,
         )
