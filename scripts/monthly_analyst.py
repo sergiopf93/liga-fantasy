@@ -158,20 +158,8 @@ def analyze_decisions(executed):
 
 
 def generate_chatgpt_prompt(report):
-    import json as _json
     pat = report.get("patrimony", {})
     period = pat.get("period_start", "") + " al " + pat.get("period_end", "")
-
-    # Serializar datos clave del informe (sin campos voluminosos)
-    data_summary = {
-        "month": report.get("month", ""),
-        "summary": report.get("summary", {}),
-        "patrimony": report.get("patrimony", {}),
-        "points": report.get("points", {}),
-        "decisions": report.get("decisions", {}),
-        "market": report.get("market", {}),
-    }
-
     return (
         "# INSTRUCCIONES PARA CHATGPT — ANÁLISIS FANTASY LALIGA\n\n"
         "Eres un experto analista de Fantasy LaLiga. Analiza el informe mensual del período "
@@ -191,7 +179,6 @@ def generate_chatgpt_prompt(report):
         "- Tabla resumen con las 3 principales mejoras recomendadas\n\n"
         "Responde en español. Sé específico con nombres y cifras.\n\n"
         "---\n## DATOS DEL INFORME:\n"
-        + _json.dumps(data_summary, ensure_ascii=False, indent=2)
     )
 
 
@@ -284,9 +271,28 @@ def generate_html(report):
         "<title>Informe Analista Fantasy RH - " + month + "</title>"
         "<style>" + css + "</style></head><body>"
         "<div class='prompt-box'>"
-        "<h2>🤖 Instrucciones para ChatGPT</h2>"
+        "<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:8px'>"
+        "<h2 style='margin:0'>🤖 Instrucciones para ChatGPT</h2>"
+        "<button id='copy-btn' onclick='copyPrompt()' style='background:#1a73e8;color:#fff;border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer'>📋 Copiar prompt</button>"
+        "</div>"
         "<p style='font-size:12px;color:#666;margin-bottom:8px'>Copia este prompt y pégalo en ChatGPT junto con el informe:</p>"
-        "<div class='prompt-content'>" + prompt + "</div></div>"
+        "<div id='prompt-text' class='prompt-content'>" + prompt + "</div></div>"
+        "<script>"
+        "function copyPrompt(){"
+        "  const text=document.getElementById('prompt-text').innerText;"
+        "  navigator.clipboard.writeText(text).then(function(){"
+        "    const btn=document.getElementById('copy-btn');"
+        "    btn.textContent='\u2705 Copiado';"
+        "    btn.style.background='#2ea043';"
+        "    setTimeout(function(){btn.textContent='\U0001f4cb Copiar prompt';btn.style.background='#1a73e8';},2000);"
+        "  }).catch(function(){"
+        "    const ta=document.createElement('textarea');"
+        "    ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);"
+        "    const btn=document.getElementById('copy-btn');"
+        "    btn.textContent='\u2705 Copiado';btn.style.background='#2ea043';"
+        "    setTimeout(function(){btn.textContent='\U0001f4cb Copiar prompt';btn.style.background='#1a73e8';},2000);"
+        "  });}"
+        "</script>"
         "<h1>📊 Informe Analista Fantasy R.H.</h1>"
         "<div class='period'>Período: " + pat.get("period_start","") + " → " + pat.get("period_end","") + " · " + str(report.get("period_days",0)) + " días</div>"
         "<h2>Resumen ejecutivo</h2><div class='grid'>"
