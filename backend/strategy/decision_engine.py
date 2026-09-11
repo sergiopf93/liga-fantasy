@@ -272,7 +272,24 @@ def evaluate_best_lineups(players: List[Player], top_n: int = 3) -> List[dict]:
     ok_status   = "ok"
     never_play  = "out_of_league"
 
-    def by_pts(lst): return sorted(lst, key=lambda x: x.average_points, reverse=True)
+    # Si average_points están bugueados (mayoría a 0), usar last_season_points como fallback
+    field_players = [p for p in players if p.position_id != 1]
+    zero_avg = sum(1 for p in field_players if p.average_points <= 0)
+    avg_buggy = len(field_players) > 0 and (zero_avg / len(field_players)) >= 0.40
+    if avg_buggy:
+        logger.warning(
+            f"evaluate_best_lineups: {zero_avg}/{len(field_players)} jugadores con avg=0 "
+            f"— usando last_season_points como fallback para ordenar alineación"
+        )
+
+    def _score(p) -> float:
+        """Puntuación para ordenar: average_points si fiable, last_season_points/38 si no."""
+        if avg_buggy or p.average_points <= 0:
+            # Normalizar last_season_points a escala similar a average_points
+            return (p.last_season_points or 0) / 38.0
+        return p.average_points
+
+    def by_pts(lst): return sorted(lst, key=lambda x: _score(x), reverse=True)
 
     gks_ok  = by_pts([p for p in players if p.position_id == 1 and p.status == ok_status])
     defs_ok = by_pts([p for p in players if p.position_id == 2 and p.status == ok_status])
@@ -307,7 +324,7 @@ def evaluate_best_lineups(players: List[Player], top_n: int = 3) -> List[dict]:
         bench = [p for p in players if p not in lineup and p.status != never_play]
 
         # Puntos solo de jugadores disponibles (ok)
-        pts_ok = sum(p.average_points for p in lineup if p.status == ok_status)
+        pts_ok = sum(_score(p) for p in lineup if p.status == ok_status)
         # Penalización por lesionados en el 11 (para ordenar correctamente)
         penalty = len(unavailable) * 100
 

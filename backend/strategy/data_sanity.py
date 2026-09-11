@@ -102,14 +102,30 @@ def validate_api_data(
     my_team: MyTeam,
     market_players: Optional[List[MarketPlayer]] = None,
     history_dir: str = HISTORY_DIR,
+    players_raw: Optional[list] = None,
 ) -> Tuple[bool, SanityReport]:
     """
     Valida los datos actuales contra el historial real.
+    Acepta my_team (objeto MyTeam) o players_raw (lista de dicts del JSON).
     Devuelve (passed, SanityReport).
     passed=False → el motor de decisiones debe abortarse.
     """
     report = SanityReport()
-    players = my_team.players if my_team else []
+
+    # Soportar tanto objetos Player como dicts crudos del JSON
+    if players_raw is not None:
+        # Modo dict: crear objetos duck-typing mínimos
+        class _P:
+            def __init__(self, d):
+                self.id              = str(d.get("id", ""))
+                self.nickname        = d.get("nickname", d.get("name", ""))
+                self.position_id     = d.get("position_id", 0)
+                self.average_points  = d.get("average_points", 0) or 0
+                self.market_value    = d.get("market_value", 0) or 0
+                self.last_season_points = d.get("last_season_points", 0) or 0
+        players = [_P(p) for p in players_raw]
+    else:
+        players = my_team.players if my_team else []
 
     # ── Cargar historial ─────────────────────────────────────────────────────
     snapshots = _load_recent_snapshots(history_dir)
