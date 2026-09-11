@@ -90,12 +90,19 @@ def run() -> bool:
     status_check = client.get_daily_reward_status(TOKEN)
     logger.info(f"Estado final: {status_check}")
 
+    # El POST devuelve teamMoney (presupuesto tras la recompensa)
+    # El GET final devuelve lista de tipos de recompensa disponibles — no usarlo para el amount
     reward_amount = (
         result.get("amount", 0) or
         result.get("reward", 0) or
         result.get("money", 0) or
-        status_check.get("amount", 0) if status_check else 0
+        0
     )
+    # Intentar extraer el amount de la recompensa pública si es lista
+    if not reward_amount and isinstance(status_check, list):
+        public = next((r for r in status_check if r.get("leagueType") == "public"), None)
+        if public:
+            reward_amount = public.get("money", 0)
 
     save_reward_state({
         "last_check": datetime.now().isoformat(),
