@@ -52,8 +52,34 @@ def get_executed_actions():
 
 def analyze_patrimony(snapshots):
     """Analiza la evolución del patrimonio."""
-    if len(snapshots) < 2:
-        return {"error": "Insuficientes datos históricos"}
+    if len(snapshots) < 1:
+        return {"error": "Sin datos históricos"}
+    if len(snapshots) == 1:
+        # Con un solo snapshot mostramos el estado actual
+        snap = snapshots[0]
+        my = snap.get("my_team", {})
+        rivals = snap.get("rivals", [])
+        rival_analysis = [{
+            "manager": r.get("manager", ""),
+            "first_value": r.get("team_value", 0),
+            "last_value": r.get("team_value", 0),
+            "growth_pct": 0.0,
+            "first_fmt": r.get("team_value_fmt", ""),
+            "last_fmt": r.get("team_value_fmt", ""),
+        } for r in rivals]
+        return {
+            "my_first_value": my.get("team_value", 0),
+            "my_last_value": my.get("team_value", 0),
+            "my_growth_pct": 0.0,
+            "my_first_fmt": my.get("team_value_fmt", "N/D"),
+            "my_last_fmt": my.get("team_value_fmt", "N/D"),
+            "my_rank_by_growth": None,
+            "rivals": rival_analysis,
+            "period_days": 1,
+            "period_start": snap.get("date", ""),
+            "period_end": snap.get("date", ""),
+            "note": "Solo un día de datos — la evolución se calculará cuando haya más histórico"
+        }
 
     first = snapshots[0]
     last  = snapshots[-1]
@@ -105,8 +131,30 @@ def analyze_patrimony(snapshots):
 
 def analyze_points(snapshots):
     """Analiza la evolución de puntos."""
-    if len(snapshots) < 2:
-        return {"error": "Insuficientes datos"}
+    if len(snapshots) < 1:
+        return {"error": "Sin datos"}
+    if len(snapshots) == 1:
+        snap = snapshots[0]
+        my = snap.get("my_team", {})
+        rivals = snap.get("rivals", [])
+        rival_pts = [{
+            "manager": r.get("manager", ""),
+            "points_gained": 0,
+            "first_points": r.get("points", 0),
+            "last_points": r.get("points", 0),
+        } for r in rivals]
+        rival_pts.sort(key=lambda x: x["last_points"], reverse=True)
+        return {
+            "my_first_points": my.get("points", 0),
+            "my_last_points": my.get("points", 0),
+            "my_points_gained": 0,
+            "my_position_start": snap.get("my_position"),
+            "my_position_end": snap.get("my_position"),
+            "position_change": 0,
+            "my_rank_by_points_gained": None,
+            "rivals": rival_pts,
+            "note": "Solo un día de datos"
+        }
 
     first = snapshots[0]
     last  = snapshots[-1]
@@ -311,26 +359,23 @@ def generate_html_report(report: dict) -> str:
 <meta charset="UTF-8">
 <title>Informe Analista Fantasy RH - {month}</title>
 <style>
-  body {{ font-family: -apple-system, Arial, sans-serif; font-size: 13px; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 20px; }}
-  .prompt-box {{ background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 8px; padding: 20px; margin-bottom: 30px; }}
-  .prompt-box h2 {{ color: #1a73e8; margin-top: 0; }}
-  .prompt-content {{ background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 15px; font-size: 12px; white-space: pre-wrap; font-family: monospace; max-height: 300px; overflow-y: auto; }}
-  h1 {{ font-size: 22px; color: #1a1a1a; border-bottom: 3px solid #1a73e8; padding-bottom: 8px; }}
-  h2 {{ font-size: 16px; color: #333; margin-top: 24px; border-bottom: 1px solid #eee; padding-bottom: 4px; }}
-  .summary-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }}
-  .stat {{ background: #f6f8fa; padding: 12px; border-radius: 8px; text-align: center; }}
-  .stat-val {{ font-size: 24px; font-weight: 700; }}
-  .stat-label {{ font-size: 11px; color: #666; margin-top: 4px; }}
-  .green {{ color: #2ea043; }} .red {{ color: #f85149; }} .blue {{ color: #1a73e8; }}
-  table {{ width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }}
-  th {{ background: #f6f8fa; padding: 8px; text-align: left; border-bottom: 2px solid #ddd; font-size: 11px; color: #666; text-transform: uppercase; }}
-  td {{ padding: 7px 8px; border-bottom: 1px solid #eee; }}
-  tr:hover {{ background: #fafafa; }}
-  .period {{ color: #666; font-size: 13px; margin-bottom: 20px; }}
-  @media print {{
-    .prompt-box {{ page-break-after: always; }}
-    body {{ padding: 10px; }}
-  }}
+  body { font-family: -apple-system, Arial, sans-serif; font-size: 13px; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 20px; }
+  .prompt-box { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 8px; padding: 20px; margin-bottom: 30px; }
+  .prompt-box h2 { color: #1a73e8; margin-top: 0; }
+  .prompt-content { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 15px; font-size: 12px; white-space: pre-wrap; font-family: monospace; max-height: 300px; overflow-y: auto; }
+  h1 { font-size: 22px; color: #1a1a1a; border-bottom: 3px solid #1a73e8; padding-bottom: 8px; }
+  h2 { font-size: 16px; color: #333; margin-top: 24px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .stat { background: #f6f8fa; padding: 12px; border-radius: 8px; text-align: center; }
+  .stat-val { font-size: 24px; font-weight: 700; }
+  .stat-label { font-size: 11px; color: #666; margin-top: 4px; }
+  .green { color: #2ea043; } .red { color: #f85149; } .blue { color: #1a73e8; }
+  table {{width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px;}}
+  th {{background: #f6f8fa; padding: 8px; text-align: left; border-bottom: 2px solid #ddd; font-size: 11px; color: #666; text-transform: uppercase;}}
+  td {{padding: 7px 8px; border-bottom: 1px solid #eee;}}
+  tr:hover {{background: #fafafa;}}
+  .period {{color: #666; font-size: 13px; margin-bottom: 20px;}}
+  @media print {{.prompt-box {{page-break-after: always;}} body {{padding: 10px;}}}}
 </style>
 </head>
 <body>
@@ -404,35 +449,35 @@ def generate_report():
     points    = analyze_points(snapshots)
     decisions = analyze_decisions(executed)
 
-    report = {{
+    report = {
         "generated_at": datetime.now().isoformat(),
         "month": MONTH,
         "period_days": len(snapshots),
-        "summary": {{
+        "summary": {
             "patrimony_growth_pct": patrimony.get("my_growth_pct", 0),
             "points_gained": points.get("my_points_gained", 0),
             "position_start": points.get("my_position_start"),
             "position_end": points.get("my_position_end"),
             "decisions_executed": decisions.get("total", 0),
             "success_rate": decisions.get("success_rate_pct", 0),
-        }},
+        },
         "patrimony": patrimony,
         "points": points,
         "decisions": decisions,
         "raw_snapshots_count": len(snapshots),
-    }}
+    }
 
     # Guardar JSON
-    report_path = os.path.join(REPORTS_DIR, f"analyst_{{MONTH}}.json")
+    report_path = os.path.join(REPORTS_DIR, f"analyst_{MONTH}.json")
     with open(report_path, "w") as f:
         json.dump(report, f, ensure_ascii=False, indent=2, default=str)
 
     # Guardar HTML (para PDF)
-    html_path = os.path.join(REPORTS_DIR, f"analyst_{{MONTH}}.html")
+    html_path = os.path.join(REPORTS_DIR, f"analyst_{MONTH}.html")
     html_content = generate_html_report(report)
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    logger.info(f"HTML guardado: {{html_path}}")
+    logger.info(f"HTML guardado: {html_path}")
 
     # Actualizar latest
     latest_path = os.path.join(DATA_DIR, "analyst_latest.json")
@@ -440,12 +485,12 @@ def generate_report():
         json.dump(report, f, ensure_ascii=False, indent=2, default=str)
 
     # Guardar prompt para ChatGPT
-    prompt_path = os.path.join(REPORTS_DIR, f"chatgpt_prompt_{{MONTH}}.txt")
+    prompt_path = os.path.join(REPORTS_DIR, f"chatgpt_prompt_{MONTH}.txt")
     with open(prompt_path, "w", encoding="utf-8") as f:
         f.write(generate_chatgpt_prompt(report))
         f.write("\n\n---\n## DATOS JSON COMPLETOS:\n")
         f.write(json.dumps(report, ensure_ascii=False, indent=2, default=str))
-    logger.info(f"Prompt ChatGPT guardado: {{prompt_path}}")
+    logger.info(f"Prompt ChatGPT guardado: {prompt_path}")
 
     logger.info(f"Informe completado")
     return report
@@ -453,4 +498,4 @@ def generate_report():
 
 if __name__ == "__main__":
     report = generate_report()
-    logger.info(f"Analista completado — período: {{report['period_days']}} días")
+    logger.info(f"Analista completado — período: {report['period_days']} días")
