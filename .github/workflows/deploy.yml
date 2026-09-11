@@ -24,11 +24,13 @@ jobs:
 
       - name: Preparar carpeta de deploy
         run: |
-          mkdir -p _site/data
+          mkdir -p _site/data _site/data/reports
           cp frontend/index.html _site/index.html
           cp -r frontend/css _site/css 2>/dev/null || true
           cp -r frontend/js _site/js 2>/dev/null || true
           cp data/*.json _site/data/ 2>/dev/null || echo "Sin datos JSON aún"
+          cp data/reports/*.json _site/data/reports/ 2>/dev/null || true
+          cp data/reports/*.html _site/data/reports/ 2>/dev/null || true
 
       - name: Deploy a GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
