@@ -158,8 +158,20 @@ def analyze_decisions(executed):
 
 
 def generate_chatgpt_prompt(report):
+    import json as _json
     pat = report.get("patrimony", {})
     period = pat.get("period_start", "") + " al " + pat.get("period_end", "")
+
+    # Serializar datos clave del informe (sin campos voluminosos)
+    data_summary = {
+        "month": report.get("month", ""),
+        "summary": report.get("summary", {}),
+        "patrimony": report.get("patrimony", {}),
+        "points": report.get("points", {}),
+        "decisions": report.get("decisions", {}),
+        "market": report.get("market", {}),
+    }
+
     return (
         "# INSTRUCCIONES PARA CHATGPT — ANÁLISIS FANTASY LALIGA\n\n"
         "Eres un experto analista de Fantasy LaLiga. Analiza el informe mensual del período "
@@ -179,6 +191,7 @@ def generate_chatgpt_prompt(report):
         "- Tabla resumen con las 3 principales mejoras recomendadas\n\n"
         "Responde en español. Sé específico con nombres y cifras.\n\n"
         "---\n## DATOS DEL INFORME:\n"
+        + _json.dumps(data_summary, ensure_ascii=False, indent=2)
     )
 
 
