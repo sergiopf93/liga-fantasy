@@ -65,6 +65,9 @@ jobs:
         run: |
           mkdir -p _site/data
           cp frontend/index.html _site/index.html
+          mkdir -p _site/data/reports
+          cp data/reports/*.json _site/data/reports/ 2>/dev/null || true
+          cp data/reports/*.html _site/data/reports/ 2>/dev/null || true
           for f in data/team.json data/market.json data/report.json data/rivals.json data/decisions.json data/reward.json data/analyst_latest.json; do
             [ -f "$f" ] && cp "$f" _site/data/ || echo "No existe: $f"
           done
