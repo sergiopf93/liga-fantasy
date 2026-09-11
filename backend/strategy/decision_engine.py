@@ -16,6 +16,7 @@ import os
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
 from backend.laliga.models import Player, MarketPlayer, MyTeam
+from backend.strategy.data_sanity import validate_api_data
 from typing import List, Optional, Tuple  # ya importado
 
 logger = logging.getLogger(__name__)
@@ -383,6 +384,21 @@ def run_decision_engine(my_team: MyTeam, market_players: List[MarketPlayer]) -> 
     report = DecisionReport()
     mode = "DRY RUN" if DRY_RUN else "REAL"
     logger.info(f"Motor de decisiones iniciado — Modo: {mode}")
+
+    # 0. Validación de sanidad de datos ANTES de cualquier decisión
+    sanity_ok, sanity_report = validate_api_data(my_team, market_players)
+    if not sanity_ok:
+        report.warnings.append(sanity_report.summary)
+        report.summary = (
+            "🚨 Motor de decisiones abortado por datos incoherentes de la API.\n"
+            + "\n".join(f"  · {issue}" for issue in sanity_report.issues)
+        )
+        logger.warning("Motor abortado — validación de datos fallida")
+        return report  # ← salir sin generar ninguna decisión
+
+    # Propagamos avisos no bloqueantes si los hay
+    for w in sanity_report.warnings:
+        report.warnings.append(w)
 
     # 1. Verificar estado de la plantilla
     gks = [p for p in my_team.players if p.position_id == 1]
