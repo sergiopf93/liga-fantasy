@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T10:03:08.216766",
+  "generated_at": "2026-09-11T12:28:19.720540",
   "summary": {
     "team_value": 221122960,
     "team_value_fmt": "221.12M€",
@@ -39,6 +39,37 @@
         "min_value": 2713464,
         "recent_trend": "subiendo",
         "trend_pct": 26.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Robert Navarro",
+      "nickname": "Navarro",
+      "position": "Centrocampista",
+      "sale_price_fmt": "3.48M€",
+      "market_value_fmt": "4.97M€",
+      "score": 84.0,
+      "recommended_bid_fmt": "3.65M€",
+      "max_bid_fmt": "4.72M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 3.48M€ directamente a Doggy Sanxe. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio 3.48M€ muy por debajo del valor 4.97M€ (+43.0%)",
+        "Cerca de su máximo de temporada 4.97M€ — poco margen de subida",
+        "Tendencia reciente al alza: +65.3%",
+        "Ha subido 50.7% desde inicio de temporada",
+        "Rendimiento excelente: 7.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 7,
+      "trend": {
+        "max_value": 4972019,
+        "max_value_fmt": "4.97M€",
+        "min_value": 1729187,
+        "recent_trend": "subiendo",
+        "trend_pct": 65.3,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
@@ -136,62 +167,9 @@
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
-    },
-    {
-      "name": "Alfonso Herrero",
-      "nickname": "A. Herrero",
-      "position": "Portero",
-      "sale_price_fmt": "13.04M€",
-      "market_value_fmt": "13.98M€",
-      "score": 70.2,
-      "recommended_bid_fmt": "13.30M€",
-      "max_bid_fmt": "12.58M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 13.04M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio inferior al valor de mercado (7.2% de margen)",
-        "Cerca de su máximo de temporada 13.98M€ — poco margen de subida",
-        "Tendencia reciente al alza: +15.2%",
-        "Ha subido 133.0% desde inicio de temporada",
-        "Buen rendimiento: 5.5 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 5.5,
-      "trend": {
-        "max_value": 13982859,
-        "max_value_fmt": "13.98M€",
-        "min_value": 5987379,
-        "recent_trend": "subiendo",
-        "trend_pct": 15.2,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
     }
   ],
   "sell_recommendations": [
-    {
-      "name": "Yuri Berchiche Izeta",
-      "nickname": "Yuri",
-      "position": "",
-      "market_value_fmt": "13.34M€",
-      "sell_score": 55,
-      "reasons": [
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin puntuar última jornada con media baja"
-      ]
-    },
-    {
-      "name": "Sergio Gómez",
-      "nickname": "Sergio Gómez",
-      "position": "",
-      "market_value_fmt": "14.67M€",
-      "sell_score": 55,
-      "reasons": [
-        "Bajo rendimiento: 0.0 pts/jornada",
-        "Sin puntuar última jornada con media baja"
-      ]
-    },
     {
       "name": "Pedro Bigas",
       "nickname": "R.P. Bigas",
@@ -199,12 +177,25 @@
       "market_value_fmt": "2.59M€",
       "sell_score": 55,
       "reasons": [
-        "Bajo rendimiento: 0.0 pts/jornada",
+        "Bajo rendimiento: 0.8 pts/jornada",
         "Sin puntuar última jornada con media baja"
       ]
     }
   ],
   "clause_risks": [
+    {
+      "name": "Jan Oblak",
+      "nickname": "Oblak",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 35.0,
+      "buyout_clause_fmt": "51.09M€",
+      "reasons": [
+        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
+        "Cláusula 51.09M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
     {
       "name": "Einar Galilea",
       "nickname": "Einar",
@@ -214,19 +205,6 @@
       "buyout_clause_fmt": "5.19M€",
       "reasons": [
         "Cláusula 5.19M€ muy cercana al valor de mercado 5.19M€ — fácil de ejecutar"
-      ],
-      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
-      "name": "Jan Oblak",
-      "nickname": "Oblak",
-      "position": "",
-      "risk_level": "MEDIO",
-      "risk_score": 27.0,
-      "buyout_clause_fmt": "51.09M€",
-      "reasons": [
-        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 51.09M€ razonablemente ejecutable"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -243,6 +221,18 @@
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
     {
+      "name": "Sergio Canales",
+      "nickname": "Canales",
+      "position": "",
+      "risk_level": "BAJO",
+      "risk_score": 20.0,
+      "buyout_clause_fmt": "30.86M€",
+      "reasons": [
+        "Cláusula 30.86M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    },
+    {
       "name": "Wojciech Szczesny",
       "nickname": "Szczesny",
       "position": "",
@@ -252,18 +242,6 @@
       "reasons": [
         "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
         "Cláusula 4.57M€ elevada respecto al valor 1.56M€ — protección moderada"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
-    },
-    {
-      "name": "Sergio Gómez",
-      "nickname": "Sergio Gómez",
-      "position": "",
-      "risk_level": "BAJO",
-      "risk_score": 12.0,
-      "buyout_clause_fmt": "15.66M€",
-      "reasons": [
-        "Cláusula 15.66M€ razonablemente ejecutable"
       ],
       "recommendation": "Riesgo bajo. Sin acción necesaria."
     }
