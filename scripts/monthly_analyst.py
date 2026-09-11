@@ -353,92 +353,108 @@ def generate_html_report(report: dict) -> str:
             <td style="font-size:11px;color:#666">{a.get('result_detail','')}</td>
         </tr>"""
 
-    return f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Informe Analista Fantasy RH - {month}</title>
-<style>
-  body { font-family: -apple-system, Arial, sans-serif; font-size: 13px; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 20px; }
-  .prompt-box { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 8px; padding: 20px; margin-bottom: 30px; }
-  .prompt-box h2 { color: #1a73e8; margin-top: 0; }
-  .prompt-content { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 15px; font-size: 12px; white-space: pre-wrap; font-family: monospace; max-height: 300px; overflow-y: auto; }
-  h1 { font-size: 22px; color: #1a1a1a; border-bottom: 3px solid #1a73e8; padding-bottom: 8px; }
-  h2 { font-size: 16px; color: #333; margin-top: 24px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-  .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
-  .stat { background: #f6f8fa; padding: 12px; border-radius: 8px; text-align: center; }
-  .stat-val { font-size: 24px; font-weight: 700; }
-  .stat-label { font-size: 11px; color: #666; margin-top: 4px; }
-  .green { color: #2ea043; } .red { color: #f85149; } .blue { color: #1a73e8; }
-  table {{width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px;}}
-  th {{background: #f6f8fa; padding: 8px; text-align: left; border-bottom: 2px solid #ddd; font-size: 11px; color: #666; text-transform: uppercase;}}
-  td {{padding: 7px 8px; border-bottom: 1px solid #eee;}}
-  tr:hover {{background: #fafafa;}}
-  .period {{color: #666; font-size: 13px; margin-bottom: 20px;}}
-  @media print {{.prompt-box {{page-break-after: always;}} body {{padding: 10px;}}}}
-</style>
-</head>
-<body>
+        # Generar HTML usando concatenación para evitar problemas con llaves CSS
+    css = """
+    body { font-family: -apple-system, Arial, sans-serif; font-size: 13px; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 20px; }
+    .prompt-box { background: #f0f7ff; border: 2px solid #1a73e8; border-radius: 8px; padding: 20px; margin-bottom: 30px; }
+    .prompt-box h2 { color: #1a73e8; margin-top: 0; }
+    .prompt-content { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 15px; font-size: 12px; white-space: pre-wrap; font-family: monospace; max-height: 300px; overflow-y: auto; }
+    h1 { font-size: 22px; color: #1a1a1a; border-bottom: 3px solid #1a73e8; padding-bottom: 8px; }
+    h2 { font-size: 16px; color: #333; margin-top: 24px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+    .stat { background: #f6f8fa; padding: 12px; border-radius: 8px; text-align: center; }
+    .stat-val { font-size: 24px; font-weight: 700; }
+    .stat-label { font-size: 11px; color: #666; margin-top: 4px; }
+    .green { color: #2ea043; } .red { color: #f85149; } .blue { color: #1a73e8; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+    th { background: #f6f8fa; padding: 8px; text-align: left; border-bottom: 2px solid #ddd; font-size: 11px; color: #666; text-transform: uppercase; }
+    td { padding: 7px 8px; border-bottom: 1px solid #eee; }
+    tr:hover { background: #fafafa; }
+    .period { color: #666; font-size: 13px; margin-bottom: 20px; }
+    @media print { .prompt-box { page-break-after: always; } body { padding: 10px; } }
+    """
 
-<!-- PROMPT PARA CHATGPT -->
-<div class="prompt-box">
-  <h2>🤖 Instrucciones para ChatGPT</h2>
-  <p style="font-size:12px;color:#666;margin-bottom:8px">Copia este prompt y pégalo en ChatGPT junto con el informe completo para obtener el análisis:</p>
-  <div class="prompt-content">{prompt}</div>
-</div>
+    s = report.get("summary", {})
+    pat = report.get("patrimony", {})
+    pts = report.get("points", {})
+    dec = report.get("decisions", {})
+    month = report.get("month", "")
+    prompt = generate_chatgpt_prompt(report)
 
-<!-- INFORME -->
-<h1>📊 Informe Analista Fantasy R.H.</h1>
-<div class="period">Período: {pat.get('period_start','')} → {pat.get('period_end','')} · {report.get('period_days',0)} días analizados</div>
+    pat_rows = ""
+    for r in pat.get("rivals", []):
+        is_me = r["manager"] == "Serpa93"
+        color = "#2ea043" if r.get("growth_pct", 0) >= 0 else "#f85149"
+        bold = "font-weight:bold" if is_me else ""
+        pat_rows += (
+            f'<tr style="{bold}"><td>{"⭐ " if is_me else ""}{r["manager"]}</td>'
+            f'<td>{r.get("first_fmt","")}</td><td>{r.get("last_fmt","")}</td>'
+            f'<td style="color:{color}">{("+" if r.get("growth_pct",0)>=0 else "")}{r.get("growth_pct",0)}%</td></tr>'
+        )
 
-<h2>Resumen ejecutivo</h2>
-<div class="summary-grid">
-  <div class="stat">
-    <div class="stat-val {'green' if s.get('patrimony_growth_pct',0)>=0 else 'red'}">{'+' if s.get('patrimony_growth_pct',0)>=0 else ''}{s.get('patrimony_growth_pct',0)}%</div>
-    <div class="stat-label">Crecimiento patrimonio</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val blue">+{s.get('points_gained',0)}</div>
-    <div class="stat-label">Puntos ganados</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">{s.get('position_start','?')}º → {s.get('position_end','?')}º</div>
-    <div class="stat-label">Posición en liga</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">{pat.get('my_first_fmt','')}</div>
-    <div class="stat-label">Patrimonio inicial</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">{pat.get('my_last_fmt','')}</div>
-    <div class="stat-label">Patrimonio final</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val green">{s.get('success_rate',0)}%</div>
-    <div class="stat-label">Tasa de éxito operaciones</div>
-  </div>
-</div>
+    pts_rows = ""
+    for r in pts.get("rivals", []):
+        is_me = r["manager"] == "Serpa93"
+        bold = "font-weight:bold" if is_me else ""
+        pts_rows += (
+            f'<tr style="{bold}"><td>{"⭐ " if is_me else ""}{r["manager"]}</td>'
+            f'<td>{r.get("first_points","")}</td><td>{r.get("last_points","")}</td>'
+            f'<td style="color:#1a73e8">+{r.get("points_gained","")}</td></tr>'
+        )
 
-<h2>💰 Evolución patrimonial comparativa</h2>
-<table>
-  <tr><th>Manager</th><th>Valor inicial</th><th>Valor final</th><th>Crecimiento</th></tr>
-  {pat_rows}
-</table>
+    dec_rows = ""
+    result_colors = {"won":"#2ea043","sold":"#2ea043","executed":"#2ea043","lost":"#f85149","unknown":"#666","pending":"#d29922"}
+    for a in dec.get("actions", []):
+        color = result_colors.get(a.get("result","unknown"), "#666")
+        dec_rows += (
+            f'<tr><td>{str(a.get("executed_at",""))[:10]}</td>'
+            f'<td>{a.get("action","").upper()}</td>'
+            f'<td>{a.get("player_name","")}</td>'
+            f'<td>{a.get("amount",0)/1e6:.2f}M€</td>'
+            f'<td style="color:{color}">{a.get("result","?")}</td>'
+            f'<td style="font-size:11px;color:#666">{a.get("result_detail","")}</td></tr>'
+        )
 
-<h2>🏆 Evolución de puntos comparativa</h2>
-<table>
-  <tr><th>Manager</th><th>Puntos inicio</th><th>Puntos final</th><th>Ganados período</th></tr>
-  {pts_rows}
-</table>
+    growth_color = "#2ea043" if s.get("patrimony_growth_pct",0) >= 0 else "#f85149"
+    growth_sign = "+" if s.get("patrimony_growth_pct",0) >= 0 else ""
+    period_start = pat.get("period_start","")
+    period_end = pat.get("period_end","")
+    period_days = report.get("period_days",0)
 
-<h2>📋 Detalle de decisiones ejecutadas</h2>
-<table>
-  <tr><th>Fecha</th><th>Tipo</th><th>Jugador</th><th>Importe</th><th>Resultado</th><th>Detalle</th></tr>
-  {dec_rows if dec_rows else '<tr><td colspan="6" style="color:#666;text-align:center">Sin decisiones registradas este período</td></tr>'}
-</table>
+    html = (
+        "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n"
+        "<meta charset=\"UTF-8\">\n"
+        f"<title>Informe Analista Fantasy RH - {month}</title>\n"
+        f"<style>{css}</style>\n</head>\n<body>\n"
+        '<div class="prompt-box">\n'
+        '<h2>🤖 Instrucciones para ChatGPT</h2>\n'
+        '<p style="font-size:12px;color:#666;margin-bottom:8px">Copia este prompt y pégalo en ChatGPT junto con el informe completo:</p>\n'
+        f'<div class="prompt-content">{prompt}</div>\n</div>\n'
+        f'<h1>📊 Informe Analista Fantasy R.H.</h1>\n'
+        f'<div class="period">Período: {period_start} → {period_end} · {period_days} días</div>\n'
+        '<h2>Resumen ejecutivo</h2>\n<div class="summary-grid">\n'
+        f'<div class="stat"><div class="stat-val" style="color:{growth_color}">{growth_sign}{s.get("patrimony_growth_pct",0)}%</div><div class="stat-label">Crecimiento patrimonio</div></div>\n'
+        f'<div class="stat"><div class="stat-val blue">+{s.get("points_gained",0)}</div><div class="stat-label">Puntos ganados</div></div>\n'
+        f'<div class="stat"><div class="stat-val">{s.get("position_start","?")}º → {s.get("position_end","?")}º</div><div class="stat-label">Posición en liga</div></div>\n'
+        f'<div class="stat"><div class="stat-val">{pat.get("my_first_fmt","")}</div><div class="stat-label">Patrimonio inicial</div></div>\n'
+        f'<div class="stat"><div class="stat-val">{pat.get("my_last_fmt","")}</div><div class="stat-label">Patrimonio final</div></div>\n'
+        f'<div class="stat"><div class="stat-val green">{s.get("success_rate",0)}%</div><div class="stat-label">Tasa de éxito</div></div>\n'
+        '</div>\n'
+        '<h2>💰 Evolución patrimonial comparativa</h2>\n'
+        '<table><tr><th>Manager</th><th>Valor inicial</th><th>Valor final</th><th>Crecimiento</th></tr>\n'
+        f'{pat_rows}</table>\n'
+        '<h2>🏆 Evolución de puntos comparativa</h2>\n'
+        '<table><tr><th>Manager</th><th>Puntos inicio</th><th>Puntos final</th><th>Ganados período</th></tr>\n'
+        f'{pts_rows}</table>\n'
+        '<h2>📋 Detalle de decisiones ejecutadas</h2>\n'
+        '<table><tr><th>Fecha</th><th>Tipo</th><th>Jugador</th><th>Importe</th><th>Resultado</th><th>Detalle</th></tr>\n'
+        f'{dec_rows or "<tr><td colspan=\"6\" style=\"color:#666;text-align:center\">Sin decisiones registradas este período</td></tr>"}'
+        '</table>\n</body>\n</html>'
+    )
+    return html
 
-</body>
-</html>"""
+
+
 
 
 def generate_report():
