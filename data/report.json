@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T13:59:38.966481",
+  "generated_at": "2026-09-11T20:17:26.062540",
   "summary": {
     "team_value": 221122960,
     "team_value_fmt": "221.12M€",
@@ -12,68 +12,6 @@
     "goalkeeper_recommendation": "Tienes 2 porteros. Situación segura."
   },
   "top_buys": [
-    {
-      "name": "Julen Agirrezabala",
-      "nickname": "Agirrezabala",
-      "position": "Portero",
-      "sale_price_fmt": "12.58M€",
-      "market_value_fmt": "14.83M€",
-      "score": 84.0,
-      "recommended_bid_fmt": "13.20M€",
-      "max_bid_fmt": "14.08M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 12.58M€ directamente a Doggy Sanxe. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio 12.58M€ muy por debajo del valor 14.83M€ (+17.9%)",
-        "Cerca de su máximo de temporada 14.83M€ — poco margen de subida",
-        "Tendencia reciente al alza: +26.0%",
-        "Ha subido 411.2% desde inicio de temporada",
-        "Rendimiento excelente: 6.8 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 6.75,
-      "trend": {
-        "max_value": 14825119,
-        "max_value_fmt": "14.83M€",
-        "min_value": 2713464,
-        "recent_trend": "subiendo",
-        "trend_pct": 26.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Robert Navarro",
-      "nickname": "Navarro",
-      "position": "Centrocampista",
-      "sale_price_fmt": "3.48M€",
-      "market_value_fmt": "4.97M€",
-      "score": 84.0,
-      "recommended_bid_fmt": "3.65M€",
-      "max_bid_fmt": "4.72M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 3.48M€ directamente a Doggy Sanxe. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio 3.48M€ muy por debajo del valor 4.97M€ (+43.0%)",
-        "Cerca de su máximo de temporada 4.97M€ — poco margen de subida",
-        "Tendencia reciente al alza: +65.3%",
-        "Ha subido 50.7% desde inicio de temporada",
-        "Rendimiento excelente: 7.0 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 7,
-      "trend": {
-        "max_value": 4972019,
-        "max_value_fmt": "4.97M€",
-        "min_value": 1729187,
-        "recent_trend": "subiendo",
-        "trend_pct": 65.3,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
     {
       "name": "Yoel Lago",
       "nickname": "Yoel Lago",
@@ -164,6 +102,68 @@
         "min_value": 4594956,
         "recent_trend": "subiendo",
         "trend_pct": 20.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Alfonso Herrero",
+      "nickname": "A. Herrero",
+      "position": "Portero",
+      "sale_price_fmt": "13.04M€",
+      "market_value_fmt": "13.98M€",
+      "score": 70.2,
+      "recommended_bid_fmt": "13.30M€",
+      "max_bid_fmt": "12.58M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 13.04M€ directamente a JavierRH. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio inferior al valor de mercado (7.2% de margen)",
+        "Cerca de su máximo de temporada 13.98M€ — poco margen de subida",
+        "Tendencia reciente al alza: +15.2%",
+        "Ha subido 133.0% desde inicio de temporada",
+        "Buen rendimiento: 5.5 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5.5,
+      "trend": {
+        "max_value": 13982859,
+        "max_value_fmt": "13.98M€",
+        "min_value": 5987379,
+        "recent_trend": "subiendo",
+        "trend_pct": 15.2,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Aitor Paredes",
+      "nickname": "Paredes",
+      "position": "Defensa",
+      "sale_price_fmt": "11.25M€",
+      "market_value_fmt": "12.00M€",
+      "score": 70.2,
+      "recommended_bid_fmt": "11.48M€",
+      "max_bid_fmt": "10.80M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 11.25M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio inferior al valor de mercado (6.7% de margen)",
+        "Cerca de su máximo de temporada 12.00M€ — poco margen de subida",
+        "Tendencia reciente al alza: +15.1%",
+        "Ha subido 93.6% desde inicio de temporada",
+        "Buen rendimiento: 5.8 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 5.75,
+      "trend": {
+        "max_value": 12000435,
+        "max_value_fmt": "12.00M€",
+        "min_value": 4200857,
+        "recent_trend": "subiendo",
+        "trend_pct": 15.1,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
