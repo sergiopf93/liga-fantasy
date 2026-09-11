@@ -1,3 +1,32 @@
+# INSTRUCCIONES PARA CHATGPT — ANÁLISIS FANTASY LALIGA
+
+Eres un experto analista de Fantasy LaLiga. Analiza el informe mensual del período 2026-09-10 al 2026-09-11 y proporciona:
+
+## 1. ANÁLISIS GENERAL
+- Rendimiento global: patrimonio y puntos vs rivales
+- ¿La estrategia general fue correcta?
+
+## 2. ANÁLISIS DE DECISIONES
+- Evalúa cada decisión ejecutada y su resultado
+- ¿Las pujas fueron demasiado bajas? ¿Se vendió en el momento correcto?
+
+## 3. ANÁLISIS DE RIVALES
+- ¿Qué estrategias siguieron los más exitosos?
+- ¿Qué podemos aprender?
+
+## 4. RECOMENDACIONES PARA MEJORAR EL AGENTE
+- Cambios concretos en los pesos del motor de puntuación
+- ¿El umbral de venta del 15% es correcto?
+- Tabla resumen con las 3 principales mejoras recomendadas
+
+Responde en español. Sé específico con nombres y cifras.
+
+---
+## DATOS DEL INFORME:
+
+
+---
+## DATOS JSON:
 {
   "generated_at": "2026-09-11T08:48:32.181410",
   "month": "2026-09",
