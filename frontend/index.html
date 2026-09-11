@@ -166,7 +166,7 @@
   <div class="section" id="sec-analista">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div class="section-title" style="margin-bottom:0">Analista</div>
-      <button onclick="downloadPDF()" style="background:var(--blue-dim);border:1px solid var(--blue);color:var(--blue);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer">📄 PDF</button>
+      <a id="pdf-link" href="#" target="_blank" style="background:var(--blue-dim);border:1px solid var(--blue);color:var(--blue);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none">📄 PDF</a>
     </div>
     <div id="analista-content"><div class="loading">Cargando análisis...</div></div>
   </div>
@@ -441,7 +441,10 @@ async function init() {
   renderMarketList(market?.clausulazos, 'market-clausulazos', 'jugadores de rivales');
   renderRivals(rivals);
   renderAgente(decisions);
+  DATA.analyst = analyst;
   if (typeof renderAnalista === 'function') renderAnalista(analyst);
+  updatePDFLink();
+  updatePDFLink();
 }
 
 
@@ -784,15 +787,16 @@ async function markExecuted(d, btnId) {
 
 // ── PDF ───────────────────────────────────────────────────────────────────────
 
-function downloadPDF() {
+function updatePDFLink() {
   const analyst = DATA.analyst;
-  if (!analyst) { alert('Sin datos del analista aún. Ejecuta el workflow "Analista mensual" primero.'); return; }
-  const month = analyst.month || '';
-  // Abrir el HTML pre-generado que ya incluye el prompt de ChatGPT
-  const url = `data/reports/analyst_${month}.html`;
-  const win = window.open(url, '_blank');
-  if (!win) {
-    alert('Activa las ventanas emergentes para abrir el informe. Luego usa Ctrl+P para imprimir como PDF.');
+  const link = document.getElementById('pdf-link');
+  if (!link) return;
+  if (!analyst || !analyst.month) {
+    link.href = '#';
+    link.onclick = () => { alert('Sin datos del analista aún. Ejecuta el workflow "Analista mensual" primero.'); return false; };
+  } else {
+    link.href = `data/reports/analyst_${analyst.month}.html`;
+    link.onclick = null;
   }
 }
 
