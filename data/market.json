@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T19:58:19.123996",
+  "updated_at": "2026-09-12T20:37:31.768913",
   "count": 22,
   "subastas": [
     {
@@ -262,7 +262,7 @@
         "Por debajo de su máximo de temporada 41.06M€ — recuperación potencial 48%",
         "Tendencia reciente a la baja: -7.2%",
         "Ha bajado 47.9% desde inicio de temporada",
-        "Bajo rendimiento: 2.2 pts/jornada",
+        "Bajo rendimiento: 2.4 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -277,7 +277,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-13T20:48:00+02:00",
       "status": "ok",
-      "average_points": 2.2,
+      "average_points": 2.4,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t186/p2428/256x256/p2428_t186_1_001_000.png",
       "is_shielded": false,
@@ -1701,7 +1701,7 @@
         "Por debajo de su máximo de temporada 41.06M€ — recuperación potencial 48%",
         "Tendencia reciente a la baja: -7.2%",
         "Ha bajado 47.9% desde inicio de temporada",
-        "Bajo rendimiento: 2.2 pts/jornada",
+        "Bajo rendimiento: 2.4 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia",
         "Precio alto respecto al presupuesto disponible"
       ],
@@ -1716,7 +1716,7 @@
       "seller_team_id": "",
       "expiration": "2026-09-13T20:48:00+02:00",
       "status": "ok",
-      "average_points": 2.2,
+      "average_points": 2.4,
       "week_points": 0,
       "image_url": "https://assets-fantasy.llt-services.com/players/t186/p2428/256x256/p2428_t186_1_001_000.png",
       "is_shielded": false,
