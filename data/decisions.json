@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-12T20:42:01.395411",
+  "updated_at": "2026-09-12T20:59:31.176554",
   "dry_run": true,
-  "summary": "Mejor formación posible: [5, 4, 1] con 32.8 pts/j de media",
+  "summary": "Mejor formación posible: [5, 4, 1] con 33.8 pts/j de media",
   "warnings": [],
   "decisions": [
     {
@@ -34,7 +34,7 @@
       "action": "sell",
       "player_id": "1300",
       "player_name": "Camavinga",
-      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.0 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 8.42M€",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 1.0 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 8.42M€",
       "amount": 8420621,
       "amount_fmt": "8.42M€",
       "market_id": "",
@@ -51,7 +51,7 @@
       4,
       1
     ],
-    "total_avg_points": 32.75,
+    "total_avg_points": 33.75,
     "has_unavailable": false,
     "alerts": [],
     "goalkeeper": {
@@ -141,7 +141,7 @@
       {
         "id": "1300",
         "name": "Camavinga",
-        "avg_pts": 0,
+        "avg_pts": 1,
         "status": "ok",
         "position": "",
         "position_id": 3,
@@ -187,7 +187,7 @@
         4,
         1
       ],
-      "total_avg_points": 32.75,
+      "total_avg_points": 33.75,
       "has_unavailable": false,
       "alerts": [],
       "goalkeeper": {
@@ -277,7 +277,7 @@
         {
           "id": "1300",
           "name": "Camavinga",
-          "avg_pts": 0,
+          "avg_pts": 1,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -322,7 +322,7 @@
         4,
         2
       ],
-      "total_avg_points": 32.75,
+      "total_avg_points": 33.75,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -405,7 +405,7 @@
         {
           "id": "1300",
           "name": "Camavinga",
-          "avg_pts": 0,
+          "avg_pts": 1,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -582,7 +582,7 @@
         {
           "id": "1300",
           "name": "Camavinga",
-          "avg_pts": 0,
+          "avg_pts": 1,
           "status": "ok",
           "position": "",
           "position_id": 3,
