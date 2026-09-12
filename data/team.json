@@ -1,16 +1,16 @@
 {
   "team_id": "37889563",
-  "team_value": 220336843,
-  "team_value_fmt": "220.34M€",
+  "team_value": 214997149,
+  "team_value_fmt": "215.00M€",
   "team_points": 158,
-  "budget": 22304426,
-  "budget_fmt": "22.30M€",
+  "budget": 27644120,
+  "budget_fmt": "27.64M€",
   "formation": [
     5,
     3,
     2
   ],
-  "updated_at": "2026-09-11T14:33:10+02:00",
+  "updated_at": "2026-09-12T20:17:04+02:00",
   "players": [
     {
       "id": "2322",
@@ -72,9 +72,9 @@
       "market_value_fmt": "15.63M€",
       "buyout_clause": 22017086,
       "buyout_clause_fmt": "22.02M€",
-      "points": 15,
+      "points": 18,
       "week_points": 0,
-      "average_points": 5,
+      "average_points": 4.5,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t174/p74/256x256/p74_t174_1_001_000.png",
       "trend": {
@@ -84,31 +84,6 @@
         "recent_trend": "subiendo",
         "trend_pct": 16.5,
         "recovery_potential": 13.4,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "id": "3042",
-      "name": "Einar Galilea",
-      "nickname": "Einar",
-      "position": "",
-      "position_id": 2,
-      "market_value": 5339694,
-      "market_value_fmt": "5.34M€",
-      "buyout_clause": 5339694,
-      "buyout_clause_fmt": "5.34M€",
-      "points": 19,
-      "week_points": 0,
-      "average_points": 4.75,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t182/p3042/256x256/p3042_t182_1_001_000.png",
-      "trend": {
-        "max_value": 5339694,
-        "max_value_fmt": "5.34M€",
-        "min_value": 3692084,
-        "recent_trend": "subiendo",
-        "trend_pct": 13.6,
-        "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
     },
@@ -149,7 +124,7 @@
       "buyout_clause_fmt": "10.22M€",
       "points": 3,
       "week_points": 0,
-      "average_points": 0.75,
+      "average_points": 0.6,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2294/256x256/p2294_t954_1_001_000.png",
       "trend": {
@@ -247,9 +222,9 @@
       "market_value_fmt": "4.36M€",
       "buyout_clause": 8042943,
       "buyout_clause_fmt": "8.04M€",
-      "points": 10,
+      "points": 17,
       "week_points": 0,
-      "average_points": 2,
+      "average_points": 3.4,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t177/p2622/256x256/p2622_t177_1_001_000.png",
       "trend": {
