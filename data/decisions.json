@@ -1,10 +1,8 @@
 {
-  "updated_at": "2026-09-13T09:50:07.576731",
+  "updated_at": "2026-09-13T13:29:05.837614",
   "dry_run": true,
-  "summary": "Mejor formación posible: [4, 4, 2] con 35.5 pts/j de media",
+  "summary": "Mejor formación posible: [4, 4, 2] con 35.0 pts/j de media",
   "warnings": [
-    "⚠️ R.P. Bigas: valor cayó -68.2% en un día (7.80M€ → 2.48M€). Verifica.",
-    "⚠️ Iago Aspas: valor cayó -28.4% en un día (9.37M€ → 6.72M€). Verifica.",
     "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
   ],
   "decisions": [
@@ -47,7 +45,7 @@
       4,
       2
     ],
-    "total_avg_points": 35.55,
+    "total_avg_points": 34.95,
     "has_unavailable": true,
     "alerts": [
       "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -141,7 +139,7 @@
       {
         "id": "2492",
         "name": "Iago Aspas",
-        "avg_pts": 3.6,
+        "avg_pts": 3,
         "status": "ok",
         "position": "",
         "position_id": 4,
@@ -176,7 +174,7 @@
         4,
         2
       ],
-      "total_avg_points": 35.55,
+      "total_avg_points": 34.95,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -270,7 +268,7 @@
         {
           "id": "2492",
           "name": "Iago Aspas",
-          "avg_pts": 3.6,
+          "avg_pts": 3,
           "status": "ok",
           "position": "",
           "position_id": 4,
