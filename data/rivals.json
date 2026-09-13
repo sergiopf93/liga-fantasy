@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T21:06:31.341513",
+  "updated_at": "2026-09-13T09:50:07.559017",
   "my_position": 6,
   "rivals": [
     {
@@ -25,8 +25,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 202109768,
-      "team_value_fmt": "202.11M€",
+      "team_value": 190495210,
+      "team_value_fmt": "190.50M€",
       "points": 162,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -45,8 +45,8 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 197227452,
-      "team_value_fmt": "197.23M€",
+      "team_value": 215695768,
+      "team_value_fmt": "215.70M€",
       "points": 159,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,8 +55,8 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 214997149,
-      "team_value_fmt": "215.00M€",
+      "team_value": 208143391,
+      "team_value_fmt": "208.14M€",
       "points": 158,
       "budget_fmt": "N/D",
       "is_me": true,
