@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-15T21:19:40.044944",
+  "generated_at": "2026-09-15T21:32:33.013226",
   "summary": {
-    "team_value": 152975844,
-    "team_value_fmt": "152.98M€",
-    "budget": 104145015,
-    "budget_fmt": "104.15M€",
+    "team_value": 176091934,
+    "team_value_fmt": "176.09M€",
+    "budget": 80826663,
+    "budget_fmt": "80.83M€",
     "points": 204,
     "my_position": 3,
     "goalkeeper_risk": "BAJO",
@@ -18,7 +18,7 @@
       "position": "Portero",
       "sale_price_fmt": "14.87M€",
       "market_value_fmt": "15.99M€",
-      "score": 81.2,
+      "score": 75.2,
       "recommended_bid_fmt": "15.17M€",
       "max_bid_fmt": "14.39M€",
       "market_type": "clausulazo",
@@ -29,8 +29,7 @@
         "Cerca de su máximo de temporada 15.99M€ — poco margen de subida",
         "Tendencia reciente al alza: +14.3%",
         "Ha subido 166.4% desde inicio de temporada",
-        "Rendimiento excelente: 6.0 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
+        "Rendimiento excelente: 6.0 pts/jornada"
       ],
       "status": "ok",
       "average_points": 6,
@@ -45,12 +44,44 @@
       }
     },
     {
+      "name": "Nahuel Tenaglia",
+      "nickname": "Tenaglia",
+      "position": "Defensa",
+      "sale_price_fmt": "34.24M€",
+      "market_value_fmt": "34.24M€",
+      "score": 72.5,
+      "recommended_bid_fmt": "34.93M€",
+      "max_bid_fmt": "30.82M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 34.24M€. Puja máxima recomendada: 30.82M€.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 34.24M€ — poco margen de subida",
+        "Tendencia reciente al alza: +3.0%",
+        "Ha subido 90.2% desde inicio de temporada",
+        "Rendimiento excelente: 6.2 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 6.17,
+      "trend": {
+        "max_value": 34243030,
+        "max_value_fmt": "34.24M€",
+        "min_value": 14342822,
+        "recent_trend": "subiendo",
+        "trend_pct": 3.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
       "name": "Arsen Zakharyan",
       "nickname": "Zakharyan",
       "position": "Centrocampista",
       "sale_price_fmt": "0.60M€",
       "market_value_fmt": "0.60M€",
-      "score": 66.2,
+      "score": 60.2,
       "recommended_bid_fmt": "0.61M€",
       "max_bid_fmt": "0.54M€",
       "market_type": "clausulazo",
@@ -61,8 +92,7 @@
         "Muy por debajo de su máximo de temporada 3.01M€ — potencial de recuperación 80%",
         "Tendencia reciente a la baja: -3.7%",
         "Ha bajado 80.1% desde inicio de temporada",
-        "Bajo rendimiento: 0.5 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
+        "Bajo rendimiento: 0.5 pts/jornada"
       ],
       "status": "ok",
       "average_points": 0.5,
@@ -82,7 +112,7 @@
       "position": "Delantero",
       "sale_price_fmt": "1.67M€",
       "market_value_fmt": "1.67M€",
-      "score": 66.2,
+      "score": 60.2,
       "recommended_bid_fmt": "1.70M€",
       "max_bid_fmt": "1.50M€",
       "market_type": "clausulazo",
@@ -93,8 +123,7 @@
         "Muy por debajo de su máximo de temporada 7.03M€ — potencial de recuperación 76%",
         "Tendencia reciente a la baja: -9.1%",
         "Ha bajado 76.2% desde inicio de temporada",
-        "Bajo rendimiento: 0.8 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
+        "Bajo rendimiento: 0.8 pts/jornada"
       ],
       "status": "ok",
       "average_points": 0.83,
@@ -109,44 +138,12 @@
       }
     },
     {
-      "name": "Nacho Pérez",
-      "nickname": "Nacho Perez",
-      "position": "Defensa",
-      "sale_price_fmt": "2.07M€",
-      "market_value_fmt": "2.17M€",
-      "score": 70.0,
-      "recommended_bid_fmt": "2.11M€",
-      "max_bid_fmt": "1.95M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 2.07M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio inferior al valor de mercado (5.0% de margen)",
-        "Cerca de su máximo de temporada 2.17M€ — poco margen de subida",
-        "Tendencia reciente al alza: +13.7%",
-        "Ha subido 262.0% desde inicio de temporada",
-        "Rendimiento moderado: 3.6 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
-      ],
-      "status": "ok",
-      "average_points": 3.6,
-      "trend": {
-        "max_value": 2172219,
-        "max_value_fmt": "2.17M€",
-        "min_value": 564466,
-        "recent_trend": "subiendo",
-        "trend_pct": 13.7,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
       "name": "Julen Agirrezabala",
       "nickname": "Agirrezabala",
       "position": "Portero",
       "sale_price_fmt": "18.38M€",
       "market_value_fmt": "18.38M€",
-      "score": 68.5,
+      "score": 66.5,
       "recommended_bid_fmt": "18.38M€",
       "max_bid_fmt": "18.38M€",
       "market_type": "clausulazo",
@@ -214,6 +211,30 @@
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
     {
+      "name": "Andrés Castrín",
+      "nickname": "A. Castrín",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "4.60M€",
+      "reasons": [
+        "Cláusula 4.60M€ muy cercana al valor de mercado 4.40M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Igor Zubeldia",
+      "nickname": "Zubeldia",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "10.73M€",
+      "reasons": [
+        "Cláusula 10.73M€ muy cercana al valor de mercado 10.73M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
       "name": "Eduardo Celmi Camavinga",
       "nickname": "Camavinga",
       "position": "",
@@ -224,31 +245,6 @@
         "Cláusula 8.87M€ muy cercana al valor de mercado 8.87M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
-      "name": "Wojciech Szczesny",
-      "nickname": "Szczesny",
-      "position": "",
-      "risk_level": "BAJO",
-      "risk_score": 15.0,
-      "buyout_clause_fmt": "4.57M€",
-      "reasons": [
-        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
-        "Cláusula 4.57M€ elevada respecto al valor 1.22M€ — protección moderada"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
-    },
-    {
-      "name": "Yuri Berchiche Izeta",
-      "nickname": "Yuri",
-      "position": "",
-      "risk_level": "BAJO",
-      "risk_score": 8.0,
-      "buyout_clause_fmt": "22.02M€",
-      "reasons": [
-        "Cláusula 22.02M€ elevada respecto al valor 14.69M€ — protección moderada"
-      ],
-      "recommendation": "Riesgo bajo. Sin acción necesaria."
     }
   ],
   "goalkeeper": "Tienes 2 porteros. Situación segura."
