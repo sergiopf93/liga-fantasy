@@ -1,68 +1,12 @@
 {
-  "updated_at": "2026-09-15T15:04:39.601909",
+  "updated_at": "2026-09-15T20:43:27.995908",
   "dry_run": true,
-  "summary": "⚠️ Sugerencia de alineación no disponible — los datos de rendimiento de los jugadores no son fiables hoy. Consulta la alineación manualmente.",
-  "warnings": [],
-  "decisions": [
-    {
-      "action": "offer",
-      "player_id": "2932",
-      "player_name": "Ángel Pérez",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 16.55M€ muy por debajo del valor 19.48M€, Rendimiento excelente: 8.6 pts/j",
-      "amount": 16548727,
-      "amount_fmt": "16.55M€",
-      "market_id": "27378094",
-      "priority": 3,
-      "position": "Delantero",
-      "position_id": 4,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2520",
-      "player_name": "Roberto",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio 26.36M€ muy por debajo del valor 30.97M€, Rendimiento excelente: 9.2 pts/j",
-      "amount": 26358784,
-      "amount_fmt": "26.36M€",
-      "market_id": "27378151",
-      "priority": 3,
-      "position": "Delantero",
-      "position_id": 4,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "2418",
-      "player_name": "Marc Roca",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (10.2% margen), Rendimiento excelente: 6.0 pts/j",
-      "amount": 11680919,
-      "amount_fmt": "11.68M€",
-      "market_id": "26875480",
-      "priority": 5,
-      "position": "Centrocampista",
-      "position_id": 3,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "3040",
-      "player_name": "A. Herrero",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (7.5% margen), Rendimiento excelente: 6.0 pts/j",
-      "amount": 14870789,
-      "amount_fmt": "14.87M€",
-      "market_id": "27033794",
-      "priority": 5,
-      "position": "Portero",
-      "position_id": 1,
-      "status": "ok"
-    }
+  "summary": "🚨 Motor de decisiones abortado por datos incoherentes de la API.\n  · Plantilla incompleta: 10 jugadores recibidos (mínimo 11).",
+  "warnings": [
+    "🚨 VALIDACIÓN FALLIDA — Motor de decisiones ABORTADO.\nProblemas detectados:\n  · Plantilla incompleta: 10 jugadores recibidos (mínimo 11).\n\nLa API de LaLiga Fantasy puede estar experimentando un bug. El agente no tomará ninguna acción hasta que los datos se normalicen."
   ],
-  "blocked": [
-    {
-      "player": "R.P. Bigas",
-      "reason": "BLOQUEADA: No hay formación válida posible con la plantilla restante tras la venta. Señales: Bajo rendimiento: 0.6 pts/j, Sin puntuar última jornada con media baja"
-    }
-  ],
+  "decisions": [],
+  "blocked": [],
   "best_lineup": null,
   "top_lineups": [],
   "position_needs": [
