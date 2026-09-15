@@ -1,16 +1,16 @@
 {
   "team_id": "37889563",
-  "team_value": 189142375,
-  "team_value_fmt": "189.14M€",
+  "team_value": 152975844,
+  "team_value_fmt": "152.98M€",
   "team_points": 204,
-  "budget": 59742775,
-  "budget_fmt": "59.74M€",
+  "budget": 104145015,
+  "budget_fmt": "104.15M€",
   "formation": [
-    5,
-    3,
+    4,
+    4,
     2
   ],
-  "updated_at": "2026-09-13T20:50:08+02:00",
+  "updated_at": "2026-09-15T21:04:19+02:00",
   "players": [
     {
       "id": "2322",
@@ -99,7 +99,7 @@
       "buyout_clause_fmt": "10.22M€",
       "points": 3,
       "week_points": 0,
-      "average_points": 0.6,
+      "average_points": 0.5,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t954/p2294/256x256/p2294_t954_1_001_000.png",
       "trend": {
@@ -138,31 +138,6 @@
       }
     },
     {
-      "id": "3125",
-      "name": "Sergio Canales",
-      "nickname": "Canales",
-      "position": "",
-      "position_id": 3,
-      "market_value": 28471666,
-      "market_value_fmt": "28.47M€",
-      "buyout_clause": 30859640,
-      "buyout_clause_fmt": "30.86M€",
-      "points": 26,
-      "week_points": 0,
-      "average_points": 5.2,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t189/p3125/256x256/p3125_t189_1_001_000.png",
-      "trend": {
-        "max_value": 28471666,
-        "max_value_fmt": "28.47M€",
-        "min_value": 18515784,
-        "recent_trend": "subiendo",
-        "trend_pct": 4.8,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
       "id": "2622",
       "name": "Urko González",
       "nickname": "Urko",
@@ -172,9 +147,9 @@
       "market_value_fmt": "4.37M€",
       "buyout_clause": 8042943,
       "buyout_clause_fmt": "8.04M€",
-      "points": 17,
+      "points": 19,
       "week_points": 0,
-      "average_points": 3.4,
+      "average_points": 3.17,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t177/p2622/256x256/p2622_t177_1_001_000.png",
       "trend": {
@@ -185,6 +160,31 @@
         "trend_pct": -0.9,
         "recovery_potential": 37.9,
         "potential_label": "MEDIO"
+      }
+    },
+    {
+      "id": "2418",
+      "name": "Marc Roca",
+      "nickname": "Marc Roca",
+      "position": "",
+      "position_id": 3,
+      "market_value": 12870122,
+      "market_value_fmt": "12.87M€",
+      "buyout_clause": 12870122,
+      "buyout_clause_fmt": "12.87M€",
+      "points": 30,
+      "week_points": 0,
+      "average_points": 6,
+      "status": "ok",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t185/p2418/256x256/p2418_t185_1_001_000.png",
+      "trend": {
+        "max_value": 12870122,
+        "max_value_fmt": "12.87M€",
+        "min_value": 4594956,
+        "recent_trend": "subiendo",
+        "trend_pct": 14.1,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
       }
     },
     {
@@ -199,7 +199,7 @@
       "buyout_clause_fmt": "8.87M€",
       "points": 14,
       "week_points": 0,
-      "average_points": 2.8,
+      "average_points": 2.33,
       "status": "ok",
       "image_url": "https://assets-fantasy.llt-services.com/players/t186/p1300/256x256/p1300_t186_1_001_000.png",
       "trend": {
@@ -209,31 +209,6 @@
         "recent_trend": "estable",
         "trend_pct": 1.4,
         "recovery_potential": 63.2,
-        "potential_label": "ALTO"
-      }
-    },
-    {
-      "id": "701",
-      "name": "Ander Barrenetxea Muguruza",
-      "nickname": "Barrenetxea",
-      "position": "",
-      "position_id": 3,
-      "market_value": 20564987,
-      "market_value_fmt": "20.56M€",
-      "buyout_clause": 26412722,
-      "buyout_clause_fmt": "26.41M€",
-      "points": 21,
-      "week_points": 0,
-      "average_points": 3.5,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t188/p701/256x256/p701_t188_1_001_000.png",
-      "trend": {
-        "max_value": 41529776,
-        "max_value_fmt": "41.53M€",
-        "min_value": 20564987,
-        "recent_trend": "bajando",
-        "trend_pct": -5.3,
-        "recovery_potential": 50.5,
         "potential_label": "ALTO"
       }
     },
