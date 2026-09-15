@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T21:19:40.044435",
+  "updated_at": "2026-09-15T21:32:33.012589",
   "my_position": 3,
   "rivals": [
     {
@@ -25,8 +25,8 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 152975844,
-      "team_value_fmt": "152.98M€",
+      "team_value": 176091934,
+      "team_value_fmt": "176.09M€",
       "points": 204,
       "budget_fmt": "N/D",
       "is_me": true,
