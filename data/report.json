@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-16T09:34:40.620498",
+  "generated_at": "2026-09-16T14:31:48.641320",
   "summary": {
-    "team_value": 176091934,
-    "team_value_fmt": "176.09M€",
+    "team_value": 176182481,
+    "team_value_fmt": "176.18M€",
     "budget": 80926663,
     "budget_fmt": "80.93M€",
     "points": 204,
@@ -12,37 +12,6 @@
     "goalkeeper_recommendation": "Tienes 2 porteros. Situación segura."
   },
   "top_buys": [
-    {
-      "name": "Alfonso Herrero",
-      "nickname": "A. Herrero",
-      "position": "Portero",
-      "sale_price_fmt": "14.87M€",
-      "market_value_fmt": "16.49M€",
-      "score": 75.2,
-      "recommended_bid_fmt": "15.61M€",
-      "max_bid_fmt": "15.67M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 14.87M€ directamente a JavierRH. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio inferior al valor de mercado (10.9% de margen)",
-        "Cerca de su máximo de temporada 16.49M€ — poco margen de subida",
-        "Tendencia reciente al alza: +14.1%",
-        "Ha subido 174.9% desde inicio de temporada",
-        "Rendimiento excelente: 6.0 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 6,
-      "trend": {
-        "max_value": 16493493,
-        "max_value_fmt": "16.49M€",
-        "min_value": 5987379,
-        "recent_trend": "subiendo",
-        "trend_pct": 14.1,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
     {
       "name": "Nahuel Tenaglia",
       "nickname": "Tenaglia",
@@ -66,7 +35,7 @@
       "status": "ok",
       "average_points": 6.17,
       "trend": {
-        "max_value": 34421938,
+        "max_value": 34421626,
         "max_value_fmt": "34.42M€",
         "min_value": 14342822,
         "recent_trend": "subiendo",
@@ -99,7 +68,7 @@
       "trend": {
         "max_value": 3011588,
         "max_value_fmt": "3.01M€",
-        "min_value": 591123,
+        "min_value": 591122,
         "recent_trend": "bajando",
         "trend_pct": -3.8,
         "recovery_potential": 80.4,
@@ -107,65 +76,98 @@
       }
     },
     {
-      "name": "Ángel Pérez",
-      "nickname": "Ángel Pérez",
-      "position": "Delantero",
-      "sale_price_fmt": "20.25M€",
-      "market_value_fmt": "20.25M€",
-      "score": 68.5,
-      "recommended_bid_fmt": "20.25M€",
-      "max_bid_fmt": "20.25M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 20.25M€ directamente a fruizmata7. Precio fijo.",
+      "name": "Álvaro Vallés",
+      "nickname": "Á. Valles",
+      "position": "Portero",
+      "sale_price_fmt": "50.61M€",
+      "market_value_fmt": "51.01M€",
+      "score": 66.5,
+      "recommended_bid_fmt": "51.62M€",
+      "max_bid_fmt": "45.91M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 50.61M€. Puja máxima recomendada: 45.91M€.",
       "season_gap": "",
       "reasons": [
         "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 20.25M€ — poco margen de subida",
-        "Tendencia reciente al alza: +22.3%",
-        "Ha subido 35.0% desde inicio de temporada",
-        "Rendimiento excelente: 8.5 pts/jornada"
+        "Cerca de su máximo de temporada 51.01M€ — poco margen de subida",
+        "Tendencia reciente al alza: +2.4%",
+        "Ha subido 410.1% desde inicio de temporada",
+        "Rendimiento excelente: 11.2 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia",
+        "Precio alto respecto al presupuesto disponible"
       ],
       "status": "ok",
-      "average_points": 8.5,
+      "average_points": 11.2,
       "trend": {
-        "max_value": 20245661,
-        "max_value_fmt": "20.25M€",
-        "min_value": 6395423,
+        "max_value": 51013567,
+        "max_value_fmt": "51.01M€",
+        "min_value": 10000000,
         "recent_trend": "subiendo",
-        "trend_pct": 22.3,
+        "trend_pct": 2.4,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
     },
     {
-      "name": "Alexandre Zurawski",
-      "nickname": "Alemâo",
-      "position": "Delantero",
-      "sale_price_fmt": "1.67M€",
-      "market_value_fmt": "1.63M€",
-      "score": 60.2,
-      "recommended_bid_fmt": "1.70M€",
-      "max_bid_fmt": "1.47M€",
+      "name": "Julen Agirrezabala",
+      "nickname": "Agirrezabala",
+      "position": "Portero",
+      "sale_price_fmt": "18.38M€",
+      "market_value_fmt": "19.16M€",
+      "score": 66.5,
+      "recommended_bid_fmt": "18.74M€",
+      "max_bid_fmt": "17.25M€",
       "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 1.67M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "Actualmente al 23% de su máximo de temporada (7.03M€)",
+      "strategy_note": "CLAUSULAZO — Pagas 18.38M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "Actualmente al 100% de su máximo de temporada (19.16M€)",
       "reasons": [
         "Precio en línea con el valor de mercado",
-        "Muy por debajo de su máximo de temporada 7.03M€ — potencial de recuperación 77%",
-        "Tendencia reciente a la baja: -9.0%",
-        "Ha bajado 76.7% desde inicio de temporada",
-        "Bajo rendimiento: 0.8 pts/jornada"
+        "Cerca de su máximo de temporada 19.16M€ — poco margen de subida",
+        "Tendencia reciente al alza: +23.3%",
+        "Ha subido 560.8% desde inicio de temporada",
+        "Rendimiento excelente: 7.2 pts/jornada"
       ],
       "status": "ok",
-      "average_points": 0.83,
+      "average_points": 7.2,
       "trend": {
-        "max_value": 7027042,
-        "max_value_fmt": "7.03M€",
-        "min_value": 1632206,
-        "recent_trend": "bajando",
-        "trend_pct": -9.0,
-        "recovery_potential": 76.8,
-        "potential_label": "ALTO"
+        "max_value": 19163944,
+        "max_value_fmt": "19.16M€",
+        "min_value": 2713464,
+        "recent_trend": "subiendo",
+        "trend_pct": 23.3,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Nacho Pérez",
+      "nickname": "Nacho Perez",
+      "position": "Defensa",
+      "sale_price_fmt": "2.07M€",
+      "market_value_fmt": "2.22M€",
+      "score": 64.0,
+      "recommended_bid_fmt": "2.11M€",
+      "max_bid_fmt": "2.00M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 2.07M€ directamente a JavierRH. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio inferior al valor de mercado (7.4% de margen)",
+        "Cerca de su máximo de temporada 2.22M€ — poco margen de subida",
+        "Tendencia reciente al alza: +11.1%",
+        "Ha subido 270.2% desde inicio de temporada",
+        "Rendimiento moderado: 3.6 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 3.6,
+      "trend": {
+        "max_value": 2220951,
+        "max_value_fmt": "2.22M€",
+        "min_value": 564466,
+        "recent_trend": "subiendo",
+        "trend_pct": 11.1,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
       }
     }
   ],
