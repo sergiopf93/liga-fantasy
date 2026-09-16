@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T09:34:40.647209",
+  "updated_at": "2026-09-16T14:31:48.663292",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 4, 1] con 37.2 pts/j de media",
   "warnings": [
@@ -11,25 +11,12 @@
       "player_id": "2294",
       "player_name": "R.P. Bigas",
       "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.5 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.17M€",
-      "amount": 2170881,
+      "amount": 2170879,
       "amount_fmt": "2.17M€",
       "market_id": "",
       "priority": 5,
       "position": "",
       "position_id": 2,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "3040",
-      "player_name": "A. Herrero",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (10.9% margen), Rendimiento excelente: 6.0 pts/j",
-      "amount": 14870789,
-      "amount_fmt": "14.87M€",
-      "market_id": "27033794",
-      "priority": 5,
-      "position": "Portero",
-      "position_id": 1,
       "status": "ok"
     }
   ],
