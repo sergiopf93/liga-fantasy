@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T21:49:20.053207",
+  "updated_at": "2026-09-16T09:34:40.647209",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 4, 1] con 37.2 pts/j de media",
   "warnings": [
@@ -10,9 +10,9 @@
       "action": "sell",
       "player_id": "2294",
       "player_name": "R.P. Bigas",
-      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.5 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.23M€",
-      "amount": 2228216,
-      "amount_fmt": "2.23M€",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.5 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.17M€",
+      "amount": 2170881,
+      "amount_fmt": "2.17M€",
       "market_id": "",
       "priority": 5,
       "position": "",
@@ -23,7 +23,7 @@
       "action": "offer",
       "player_id": "3040",
       "player_name": "A. Herrero",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (7.5% margen), Rendimiento excelente: 6.0 pts/j",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (10.9% margen), Rendimiento excelente: 6.0 pts/j",
       "amount": 14870789,
       "amount_fmt": "14.87M€",
       "market_id": "27033794",
