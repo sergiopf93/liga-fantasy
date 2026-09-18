@@ -1,8 +1,602 @@
 {
-  "updated_at": "2026-09-18T14:02:01.709042",
+  "updated_at": "2026-09-18T16:12:58.415050",
   "dry_run": true,
-  "decisions": [],
+  "summary": "Mejor formación posible: [5, 4, 1] con 35.8 pts/j de media",
+  "warnings": [
+    "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
+  ],
+  "decisions": [
+    {
+      "action": "sell",
+      "player_id": "2294",
+      "player_name": "R.P. Bigas",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.5 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
+      "amount": 2054179,
+      "amount_fmt": "2.05M€",
+      "market_id": "",
+      "priority": 5,
+      "position": "",
+      "position_id": 2,
+      "status": "ok"
+    },
+    {
+      "action": "offer",
+      "player_id": "1219",
+      "player_name": "Agirrezabala",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (13.4% margen), Rendimiento excelente: 6.8 pts/j",
+      "amount": 18377032,
+      "amount_fmt": "18.38M€",
+      "market_id": "37978683",
+      "priority": 5,
+      "position": "Portero",
+      "position_id": 1,
+      "status": "ok"
+    }
+  ],
   "blocked": [],
-  "warnings": [],
-  "best_lineup": null
+  "best_lineup": {
+    "formation": [
+      5,
+      4,
+      1
+    ],
+    "total_avg_points": 35.77,
+    "has_unavailable": true,
+    "alerts": [
+      "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
+    ],
+    "goalkeeper": {
+      "id": "2322",
+      "name": "Oblak",
+      "avg_pts": 7,
+      "status": "ok",
+      "position": "",
+      "position_id": 1,
+      "is_available": true
+    },
+    "defenders": [
+      {
+        "id": "2680",
+        "name": "A. Castrín",
+        "avg_pts": 5.5,
+        "status": "ok",
+        "position": "",
+        "position_id": 2,
+        "is_available": true
+      },
+      {
+        "id": "2562",
+        "name": "Marc Pubill",
+        "avg_pts": 4,
+        "status": "ok",
+        "position": "",
+        "position_id": 2,
+        "is_available": true
+      },
+      {
+        "id": "74",
+        "name": "Yuri",
+        "avg_pts": 3.6,
+        "status": "ok",
+        "position": "",
+        "position_id": 2,
+        "is_available": true
+      },
+      {
+        "id": "265",
+        "name": "Zubeldia",
+        "avg_pts": 2.4,
+        "status": "ok",
+        "position": "",
+        "position_id": 2,
+        "is_available": true
+      },
+      {
+        "id": "2294",
+        "name": "R.P. Bigas",
+        "avg_pts": 0.5,
+        "status": "ok",
+        "position": "",
+        "position_id": 2,
+        "is_available": true
+      }
+    ],
+    "midfielders": [
+      {
+        "id": "2418",
+        "name": "Marc Roca",
+        "avg_pts": 5,
+        "status": "ok",
+        "position": "",
+        "position_id": 3,
+        "is_available": true
+      },
+      {
+        "id": "2622",
+        "name": "Urko",
+        "avg_pts": 2.8333333333333335,
+        "status": "ok",
+        "position": "",
+        "position_id": 3,
+        "is_available": true
+      },
+      {
+        "id": "3205",
+        "name": "Iván Martín",
+        "avg_pts": 2.6,
+        "status": "ok",
+        "position": "",
+        "position_id": 3,
+        "is_available": true
+      },
+      {
+        "id": "1300",
+        "name": "Camavinga",
+        "avg_pts": 2.3333333333333335,
+        "status": "ok",
+        "position": "",
+        "position_id": 3,
+        "is_available": true
+      }
+    ],
+    "strikers": [
+      {
+        "id": "3073",
+        "name": "Andrés Martín",
+        "avg_pts": 6,
+        "status": "injured",
+        "position": "",
+        "position_id": 4,
+        "is_available": false
+      }
+    ],
+    "bench": [
+      {
+        "id": "2783",
+        "name": "Szczesny",
+        "avg_pts": 0.16666666666666666,
+        "status": "ok",
+        "position": "",
+        "position_id": 1,
+        "is_available": true
+      },
+      {
+        "id": "2492",
+        "name": "Iago Aspas",
+        "avg_pts": 3.3333333333333335,
+        "status": "injured",
+        "position": "",
+        "position_id": 4,
+        "is_available": false
+      }
+    ]
+  },
+  "top_lineups": [
+    {
+      "formation": [
+        5,
+        4,
+        1
+      ],
+      "total_avg_points": 35.77,
+      "has_unavailable": true,
+      "alerts": [
+        "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
+      ],
+      "goalkeeper": {
+        "id": "2322",
+        "name": "Oblak",
+        "avg_pts": 7,
+        "status": "ok",
+        "position": "",
+        "position_id": 1,
+        "is_available": true
+      },
+      "defenders": [
+        {
+          "id": "2680",
+          "name": "A. Castrín",
+          "avg_pts": 5.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "2562",
+          "name": "Marc Pubill",
+          "avg_pts": 4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "74",
+          "name": "Yuri",
+          "avg_pts": 3.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "265",
+          "name": "Zubeldia",
+          "avg_pts": 2.4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "2294",
+          "name": "R.P. Bigas",
+          "avg_pts": 0.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        }
+      ],
+      "midfielders": [
+        {
+          "id": "2418",
+          "name": "Marc Roca",
+          "avg_pts": 5,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.8333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "3205",
+          "name": "Iván Martín",
+          "avg_pts": 2.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        }
+      ],
+      "strikers": [
+        {
+          "id": "3073",
+          "name": "Andrés Martín",
+          "avg_pts": 6,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        }
+      ],
+      "bench": [
+        {
+          "id": "2783",
+          "name": "Szczesny",
+          "avg_pts": 0.16666666666666666,
+          "status": "ok",
+          "position": "",
+          "position_id": 1,
+          "is_available": true
+        },
+        {
+          "id": "2492",
+          "name": "Iago Aspas",
+          "avg_pts": 3.3333333333333335,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        }
+      ]
+    },
+    {
+      "formation": [
+        4,
+        4,
+        2
+      ],
+      "total_avg_points": 35.27,
+      "has_unavailable": true,
+      "alerts": [
+        "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
+        "Iago Aspas () — LESIONADO: buscar sustituto en el mercado"
+      ],
+      "goalkeeper": {
+        "id": "2322",
+        "name": "Oblak",
+        "avg_pts": 7,
+        "status": "ok",
+        "position": "",
+        "position_id": 1,
+        "is_available": true
+      },
+      "defenders": [
+        {
+          "id": "2680",
+          "name": "A. Castrín",
+          "avg_pts": 5.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "2562",
+          "name": "Marc Pubill",
+          "avg_pts": 4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "74",
+          "name": "Yuri",
+          "avg_pts": 3.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "265",
+          "name": "Zubeldia",
+          "avg_pts": 2.4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        }
+      ],
+      "midfielders": [
+        {
+          "id": "2418",
+          "name": "Marc Roca",
+          "avg_pts": 5,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.8333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "3205",
+          "name": "Iván Martín",
+          "avg_pts": 2.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        }
+      ],
+      "strikers": [
+        {
+          "id": "3073",
+          "name": "Andrés Martín",
+          "avg_pts": 6,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        },
+        {
+          "id": "2492",
+          "name": "Iago Aspas",
+          "avg_pts": 3.3333333333333335,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        }
+      ],
+      "bench": [
+        {
+          "id": "2783",
+          "name": "Szczesny",
+          "avg_pts": 0.16666666666666666,
+          "status": "ok",
+          "position": "",
+          "position_id": 1,
+          "is_available": true
+        },
+        {
+          "id": "2294",
+          "name": "R.P. Bigas",
+          "avg_pts": 0.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        }
+      ]
+    },
+    {
+      "formation": [
+        5,
+        3,
+        2
+      ],
+      "total_avg_points": 33.43,
+      "has_unavailable": true,
+      "alerts": [
+        "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
+        "Iago Aspas () — LESIONADO: buscar sustituto en el mercado"
+      ],
+      "goalkeeper": {
+        "id": "2322",
+        "name": "Oblak",
+        "avg_pts": 7,
+        "status": "ok",
+        "position": "",
+        "position_id": 1,
+        "is_available": true
+      },
+      "defenders": [
+        {
+          "id": "2680",
+          "name": "A. Castrín",
+          "avg_pts": 5.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "2562",
+          "name": "Marc Pubill",
+          "avg_pts": 4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "74",
+          "name": "Yuri",
+          "avg_pts": 3.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "265",
+          "name": "Zubeldia",
+          "avg_pts": 2.4,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        },
+        {
+          "id": "2294",
+          "name": "R.P. Bigas",
+          "avg_pts": 0.5,
+          "status": "ok",
+          "position": "",
+          "position_id": 2,
+          "is_available": true
+        }
+      ],
+      "midfielders": [
+        {
+          "id": "2418",
+          "name": "Marc Roca",
+          "avg_pts": 5,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.8333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "3205",
+          "name": "Iván Martín",
+          "avg_pts": 2.6,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        }
+      ],
+      "strikers": [
+        {
+          "id": "3073",
+          "name": "Andrés Martín",
+          "avg_pts": 6,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        },
+        {
+          "id": "2492",
+          "name": "Iago Aspas",
+          "avg_pts": 3.3333333333333335,
+          "status": "injured",
+          "position": "",
+          "position_id": 4,
+          "is_available": false
+        }
+      ],
+      "bench": [
+        {
+          "id": "2783",
+          "name": "Szczesny",
+          "avg_pts": 0.16666666666666666,
+          "status": "ok",
+          "position": "",
+          "position_id": 1,
+          "is_available": true
+        },
+        {
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        }
+      ]
+    }
+  ],
+  "position_needs": [
+    {
+      "position_id": 4,
+      "position": "Delantero",
+      "unavailable_players": [
+        "Andrés Martín",
+        "Iago Aspas"
+      ],
+      "ok_count": 0,
+      "urgency": "URGENTE",
+      "message": "URGENTE: Andrés Martín, Iago Aspas están lesionados. Buscar delantero en el mercado."
+    }
+  ]
 }
