@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T21:16:59.738522",
+  "updated_at": "2026-09-18T21:21:39.908270",
   "my_position": 6,
   "rivals": [
     {
@@ -45,8 +45,8 @@
     {
       "team_id": "37859310",
       "manager": "Migu V",
-      "team_value": 276880259,
-      "team_value_fmt": "276.88M€",
+      "team_value": 276871916,
+      "team_value_fmt": "276.87M€",
       "points": 208,
       "budget_fmt": "N/D",
       "is_me": false,
