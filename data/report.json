@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T20:14:55.252280",
+  "generated_at": "2026-09-18T20:53:14.487847",
   "summary": {
     "team_value": 175767672,
     "team_value_fmt": "175.77M€",
@@ -179,7 +179,7 @@
       "market_value_fmt": "2.16M€",
       "sell_score": 55,
       "reasons": [
-        "Bajo rendimiento: 0.4 pts/jornada",
+        "Bajo rendimiento: 0.6 pts/jornada",
         "Sin puntuar última jornada con media baja"
       ]
     }

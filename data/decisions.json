@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-18T20:14:55.266887",
+  "updated_at": "2026-09-18T20:53:14.511975",
   "dry_run": true,
-  "summary": "Mejor formación posible: [5, 4, 1] con 35.1 pts/j de media",
+  "summary": "Mejor formación posible: [5, 4, 1] con 35.3 pts/j de media",
   "warnings": [
     "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
   ],
@@ -10,7 +10,7 @@
       "action": "sell",
       "player_id": "2294",
       "player_name": "R.P. Bigas",
-      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.4 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.6 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
       "amount": 2054179,
       "amount_fmt": "2.05M€",
       "market_id": "",
@@ -27,7 +27,7 @@
       4,
       1
     ],
-    "total_avg_points": 35.15,
+    "total_avg_points": 35.29,
     "has_unavailable": true,
     "alerts": [
       "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -81,7 +81,7 @@
       {
         "id": "2294",
         "name": "R.P. Bigas",
-        "avg_pts": 0.42857142857142855,
+        "avg_pts": 0.5714285714285714,
         "status": "ok",
         "position": "",
         "position_id": 2,
@@ -165,7 +165,7 @@
         4,
         1
       ],
-      "total_avg_points": 35.15,
+      "total_avg_points": 35.29,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -219,7 +219,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.42857142857142855,
+          "avg_pts": 0.5714285714285714,
           "status": "ok",
           "position": "",
           "position_id": 2,
@@ -426,7 +426,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.42857142857142855,
+          "avg_pts": 0.5714285714285714,
           "status": "ok",
           "position": "",
           "position_id": 2,
@@ -440,7 +440,7 @@
         3,
         2
       ],
-      "total_avg_points": 32.86,
+      "total_avg_points": 33.0,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
@@ -495,7 +495,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.42857142857142855,
+          "avg_pts": 0.5714285714285714,
           "status": "ok",
           "position": "",
           "position_id": 2,
