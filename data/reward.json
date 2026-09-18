@@ -1,5 +1,30 @@
 {
-  "last_check": "2026-09-18T14:02:00.634684",
-  "status": "not_available",
-  "last_claimed_date": "2026-09-16"
+  "last_check": "2026-09-18T16:12:54.230647",
+  "last_claimed_date": "2026-09-18",
+  "status": "claimed",
+  "reward_amount": 100000,
+  "reward_amount_fmt": "100,000€",
+  "claim_response": {
+    "teamId": 37889563,
+    "teamMoney": 81026663,
+    "dailyRewardsRedeemed": 1,
+    "dailyRewardLimit": 1
+  },
+  "status_response": [
+    {
+      "leagueType": "public",
+      "money": 100000,
+      "dailyLimit": 1
+    },
+    {
+      "leagueType": "private",
+      "money": 100000,
+      "dailyLimit": 1
+    },
+    {
+      "leagueType": "premium",
+      "money": 200000,
+      "dailyLimit": 1
+    }
+  ]
 }
