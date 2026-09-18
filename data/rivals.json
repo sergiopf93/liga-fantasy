@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:12:58.389459",
+  "updated_at": "2026-09-18T20:14:55.251877",
   "my_position": 6,
   "rivals": [
     {
@@ -35,8 +35,8 @@
     {
       "team_id": "37865104",
       "manager": "Juan Hornillos",
-      "team_value": 277363917,
-      "team_value_fmt": "277.36M€",
+      "team_value": 295688591,
+      "team_value_fmt": "295.69M€",
       "points": 217,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,7 +55,7 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 175772834,
+      "team_value": 175767672,
       "team_value_fmt": "175.77M€",
       "points": 204,
       "budget_fmt": "N/D",
