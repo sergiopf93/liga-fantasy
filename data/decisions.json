@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-18T21:02:08.443120",
+  "updated_at": "2026-09-18T21:16:59.757527",
   "dry_run": true,
-  "summary": "Mejor formación posible: [5, 4, 1] con 35.4 pts/j de media",
+  "summary": "Mejor formación posible: [5, 4, 1] con 35.6 pts/j de media",
   "warnings": [
     "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
   ],
@@ -27,7 +27,7 @@
       4,
       1
     ],
-    "total_avg_points": 35.43,
+    "total_avg_points": 35.58,
     "has_unavailable": true,
     "alerts": [
       "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -108,18 +108,18 @@
         "is_available": true
       },
       {
-        "id": "1300",
-        "name": "Camavinga",
-        "avg_pts": 2.3333333333333335,
+        "id": "2622",
+        "name": "Urko",
+        "avg_pts": 2.4285714285714284,
         "status": "ok",
         "position": "",
         "position_id": 3,
         "is_available": true
       },
       {
-        "id": "2622",
-        "name": "Urko",
-        "avg_pts": 2.2857142857142856,
+        "id": "1300",
+        "name": "Camavinga",
+        "avg_pts": 2.3333333333333335,
         "status": "ok",
         "position": "",
         "position_id": 3,
@@ -165,7 +165,7 @@
         4,
         1
       ],
-      "total_avg_points": 35.43,
+      "total_avg_points": 35.58,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -246,18 +246,18 @@
           "is_available": true
         },
         {
-          "id": "1300",
-          "name": "Camavinga",
-          "avg_pts": 2.3333333333333335,
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.4285714285714284,
           "status": "ok",
           "position": "",
           "position_id": 3,
           "is_available": true
         },
         {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.2857142857142856,
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -302,7 +302,7 @@
         4,
         2
       ],
-      "total_avg_points": 34.72,
+      "total_avg_points": 34.86,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
@@ -375,18 +375,18 @@
           "is_available": true
         },
         {
-          "id": "1300",
-          "name": "Camavinga",
-          "avg_pts": 2.3333333333333335,
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.4285714285714284,
           "status": "ok",
           "position": "",
           "position_id": 3,
           "is_available": true
         },
         {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.2857142857142856,
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -440,7 +440,7 @@
         3,
         2
       ],
-      "total_avg_points": 33.15,
+      "total_avg_points": 33.24,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
@@ -522,9 +522,9 @@
           "is_available": true
         },
         {
-          "id": "1300",
-          "name": "Camavinga",
-          "avg_pts": 2.3333333333333335,
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.4285714285714284,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -562,9 +562,9 @@
           "is_available": true
         },
         {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.2857142857142856,
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
           "status": "ok",
           "position": "",
           "position_id": 3,
