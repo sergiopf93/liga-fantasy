@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-18T16:12:58.415050",
+  "updated_at": "2026-09-18T20:14:55.266887",
   "dry_run": true,
-  "summary": "Mejor formación posible: [5, 4, 1] con 35.8 pts/j de media",
+  "summary": "Mejor formación posible: [5, 4, 1] con 35.1 pts/j de media",
   "warnings": [
     "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
   ],
@@ -10,26 +10,13 @@
       "action": "sell",
       "player_id": "2294",
       "player_name": "R.P. Bigas",
-      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.5 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.4 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
       "amount": 2054179,
       "amount_fmt": "2.05M€",
       "market_id": "",
       "priority": 5,
       "position": "",
       "position_id": 2,
-      "status": "ok"
-    },
-    {
-      "action": "offer",
-      "player_id": "1219",
-      "player_name": "Agirrezabala",
-      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (13.4% margen), Rendimiento excelente: 6.8 pts/j",
-      "amount": 18377032,
-      "amount_fmt": "18.38M€",
-      "market_id": "37978683",
-      "priority": 5,
-      "position": "Portero",
-      "position_id": 1,
       "status": "ok"
     }
   ],
@@ -40,7 +27,7 @@
       4,
       1
     ],
-    "total_avg_points": 35.77,
+    "total_avg_points": 35.15,
     "has_unavailable": true,
     "alerts": [
       "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -94,7 +81,7 @@
       {
         "id": "2294",
         "name": "R.P. Bigas",
-        "avg_pts": 0.5,
+        "avg_pts": 0.42857142857142855,
         "status": "ok",
         "position": "",
         "position_id": 2,
@@ -106,15 +93,6 @@
         "id": "2418",
         "name": "Marc Roca",
         "avg_pts": 5,
-        "status": "ok",
-        "position": "",
-        "position_id": 3,
-        "is_available": true
-      },
-      {
-        "id": "2622",
-        "name": "Urko",
-        "avg_pts": 2.8333333333333335,
         "status": "ok",
         "position": "",
         "position_id": 3,
@@ -133,6 +111,15 @@
         "id": "1300",
         "name": "Camavinga",
         "avg_pts": 2.3333333333333335,
+        "status": "ok",
+        "position": "",
+        "position_id": 3,
+        "is_available": true
+      },
+      {
+        "id": "2622",
+        "name": "Urko",
+        "avg_pts": 2.2857142857142856,
         "status": "ok",
         "position": "",
         "position_id": 3,
@@ -178,7 +165,7 @@
         4,
         1
       ],
-      "total_avg_points": 35.77,
+      "total_avg_points": 35.15,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
@@ -232,7 +219,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.5,
+          "avg_pts": 0.42857142857142855,
           "status": "ok",
           "position": "",
           "position_id": 2,
@@ -244,15 +231,6 @@
           "id": "2418",
           "name": "Marc Roca",
           "avg_pts": 5,
-          "status": "ok",
-          "position": "",
-          "position_id": 3,
-          "is_available": true
-        },
-        {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.8333333333333335,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -271,6 +249,15 @@
           "id": "1300",
           "name": "Camavinga",
           "avg_pts": 2.3333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.2857142857142856,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -315,7 +302,7 @@
         4,
         2
       ],
-      "total_avg_points": 35.27,
+      "total_avg_points": 34.72,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
@@ -379,15 +366,6 @@
           "is_available": true
         },
         {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.8333333333333335,
-          "status": "ok",
-          "position": "",
-          "position_id": 3,
-          "is_available": true
-        },
-        {
           "id": "3205",
           "name": "Iván Martín",
           "avg_pts": 2.6,
@@ -400,6 +378,15 @@
           "id": "1300",
           "name": "Camavinga",
           "avg_pts": 2.3333333333333335,
+          "status": "ok",
+          "position": "",
+          "position_id": 3,
+          "is_available": true
+        },
+        {
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.2857142857142856,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -439,7 +426,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.5,
+          "avg_pts": 0.42857142857142855,
           "status": "ok",
           "position": "",
           "position_id": 2,
@@ -453,7 +440,7 @@
         3,
         2
       ],
-      "total_avg_points": 33.43,
+      "total_avg_points": 32.86,
       "has_unavailable": true,
       "alerts": [
         "Andrés Martín () — LESIONADO: buscar sustituto en el mercado",
@@ -508,7 +495,7 @@
         {
           "id": "2294",
           "name": "R.P. Bigas",
-          "avg_pts": 0.5,
+          "avg_pts": 0.42857142857142855,
           "status": "ok",
           "position": "",
           "position_id": 2,
@@ -526,18 +513,18 @@
           "is_available": true
         },
         {
-          "id": "2622",
-          "name": "Urko",
-          "avg_pts": 2.8333333333333335,
+          "id": "3205",
+          "name": "Iván Martín",
+          "avg_pts": 2.6,
           "status": "ok",
           "position": "",
           "position_id": 3,
           "is_available": true
         },
         {
-          "id": "3205",
-          "name": "Iván Martín",
-          "avg_pts": 2.6,
+          "id": "1300",
+          "name": "Camavinga",
+          "avg_pts": 2.3333333333333335,
           "status": "ok",
           "position": "",
           "position_id": 3,
@@ -575,9 +562,9 @@
           "is_available": true
         },
         {
-          "id": "1300",
-          "name": "Camavinga",
-          "avg_pts": 2.3333333333333335,
+          "id": "2622",
+          "name": "Urko",
+          "avg_pts": 2.2857142857142856,
           "status": "ok",
           "position": "",
           "position_id": 3,

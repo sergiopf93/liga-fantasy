@@ -1,10 +1,26 @@
 {
   "date": "2026-09-18",
-  "timestamp": "2026-09-18T16:12:58.564895",
+  "timestamp": "2026-09-18T20:14:55.357764",
   "my_user_id": 1715449,
-  "total_operations": 60,
+  "total_operations": 61,
   "my_operations": 3,
   "activity": [
+    {
+      "activityTypeId": 31,
+      "id": "63823241",
+      "user1Id": 2607835,
+      "playerMasterId": 2548,
+      "amount": 18324674,
+      "createdAt": "2026-09-18T20:48:18+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
     {
       "activityTypeId": 7,
       "id": "62390867",
@@ -1026,6 +1042,22 @@
     }
   ],
   "rival_activity": [
+    {
+      "activityTypeId": 31,
+      "id": "63823241",
+      "user1Id": 2607835,
+      "playerMasterId": 2548,
+      "amount": 18324674,
+      "createdAt": "2026-09-18T20:48:18+02:00",
+      "type_label": "compra_mercado_laliga",
+      "is_mine": false,
+      "i_bought_from_rival": false,
+      "rival_bought_from_me": false,
+      "i_bought_from_market": false,
+      "i_sold_to_market": false,
+      "i_shielded": false,
+      "i_received_reward": false
+    },
     {
       "activityTypeId": 7,
       "id": "62390797",
