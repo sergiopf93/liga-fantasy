@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-18T21:21:39.909114",
+  "generated_at": "2026-09-19T09:02:30.176838",
   "summary": {
     "team_value": 175767672,
     "team_value_fmt": "175.77M€",
-    "budget": 81026663,
-    "budget_fmt": "81.03M€",
+    "budget": 81126663,
+    "budget_fmt": "81.13M€",
     "points": 204,
     "my_position": 6,
     "goalkeeper_risk": "BAJO",
@@ -13,22 +13,86 @@
   },
   "top_buys": [
     {
+      "name": "Julen Agirrezabala",
+      "nickname": "Agirrezabala",
+      "position": "Portero",
+      "sale_price_fmt": "20.84M€",
+      "market_value_fmt": "21.62M€",
+      "score": 72.5,
+      "recommended_bid_fmt": "21.26M€",
+      "max_bid_fmt": "19.46M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 20.84M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 21.62M€ — poco margen de subida",
+        "Tendencia reciente al alza: +17.7%",
+        "Ha subido 645.6% desde inicio de temporada",
+        "Rendimiento excelente: 6.8 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 6.83,
+      "trend": {
+        "max_value": 21622307,
+        "max_value_fmt": "21.62M€",
+        "min_value": 2713464,
+        "recent_trend": "subiendo",
+        "trend_pct": 17.7,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Lucien Agoumé",
+      "nickname": "Agoumé",
+      "position": "Centrocampista",
+      "sale_price_fmt": "10.78M€",
+      "market_value_fmt": "11.21M€",
+      "score": 72.5,
+      "recommended_bid_fmt": "10.99M€",
+      "max_bid_fmt": "10.09M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 10.78M€ directamente a Migu V. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 11.21M€ — poco margen de subida",
+        "Tendencia reciente al alza: +15.8%",
+        "Ha subido 72.4% desde inicio de temporada",
+        "Rendimiento excelente: 6.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 6,
+      "trend": {
+        "max_value": 11209214,
+        "max_value_fmt": "11.21M€",
+        "min_value": 5534022,
+        "recent_trend": "subiendo",
+        "trend_pct": 15.8,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
       "name": "Giovani Lo Celso",
       "nickname": "Lo Celso",
       "position": "Centrocampista",
       "sale_price_fmt": "14.00M€",
-      "market_value_fmt": "14.00M€",
+      "market_value_fmt": "13.66M€",
       "score": 66.2,
       "recommended_bid_fmt": "14.29M€",
-      "max_bid_fmt": "12.60M€",
+      "max_bid_fmt": "12.30M€",
       "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 14.00M€. Puja máxima recomendada: 12.60M€.",
-      "season_gap": "Actualmente al 34% de su máximo de temporada (41.71M€)",
+      "strategy_note": "SUBASTA — Precio salida 14.00M€. Puja máxima recomendada: 12.30M€.",
+      "season_gap": "Actualmente al 33% de su máximo de temporada (41.71M€)",
       "reasons": [
         "Precio en línea con el valor de mercado",
-        "Muy por debajo de su máximo de temporada 41.71M€ — potencial de recuperación 66%",
+        "Muy por debajo de su máximo de temporada 41.71M€ — potencial de recuperación 67%",
         "Tendencia reciente a la baja: -8.9%",
-        "Ha bajado 30.0% desde inicio de temporada",
+        "Ha bajado 31.7% desde inicio de temporada",
         "Bajo rendimiento: 1.0 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia"
       ],
@@ -37,10 +101,10 @@
       "trend": {
         "max_value": 41707837,
         "max_value_fmt": "41.71M€",
-        "min_value": 14004925,
+        "min_value": 13662014,
         "recent_trend": "bajando",
         "trend_pct": -8.9,
-        "recovery_potential": 66.4,
+        "recovery_potential": 67.2,
         "potential_label": "ALTO"
       }
     },
@@ -49,18 +113,18 @@
       "nickname": "Dieng",
       "position": "Centrocampista",
       "sale_price_fmt": "2.05M€",
-      "market_value_fmt": "2.05M€",
+      "market_value_fmt": "2.02M€",
       "score": 66.2,
       "recommended_bid_fmt": "2.09M€",
-      "max_bid_fmt": "1.85M€",
+      "max_bid_fmt": "1.82M€",
       "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 2.05M€. Puja máxima recomendada: 1.85M€.",
+      "strategy_note": "SUBASTA — Precio salida 2.05M€. Puja máxima recomendada: 1.82M€.",
       "season_gap": "Actualmente al 36% de su máximo de temporada (5.68M€)",
       "reasons": [
         "Precio en línea con el valor de mercado",
         "Muy por debajo de su máximo de temporada 5.68M€ — potencial de recuperación 64%",
-        "Tendencia reciente a la baja: -4.8%",
-        "Ha bajado 63.9% desde inicio de temporada",
+        "Tendencia reciente a la baja: -5.5%",
+        "Ha bajado 64.4% desde inicio de temporada",
         "Bajo rendimiento: 1.7 pts/jornada",
         "Sin ofertas activas — oportunidad sin competencia"
       ],
@@ -69,42 +133,11 @@
       "trend": {
         "max_value": 5684613,
         "max_value_fmt": "5.68M€",
-        "min_value": 2053520,
+        "min_value": 2023483,
         "recent_trend": "bajando",
-        "trend_pct": -4.8,
-        "recovery_potential": 63.9,
+        "trend_pct": -5.5,
+        "recovery_potential": 64.4,
         "potential_label": "ALTO"
-      }
-    },
-    {
-      "name": "Jonathan Castro Otto",
-      "nickname": "Jonny Otto",
-      "position": "Defensa",
-      "sale_price_fmt": "13.84M€",
-      "market_value_fmt": "14.22M€",
-      "score": 61.5,
-      "recommended_bid_fmt": "14.12M€",
-      "max_bid_fmt": "12.79M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 13.84M€ directamente a fruizmata7. Precio fijo.",
-      "season_gap": "",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 14.22M€ — poco margen de subida",
-        "Tendencia reciente al alza: +8.8%",
-        "Ha subido 57.9% desde inicio de temporada",
-        "Buen rendimiento: 4.7 pts/jornada"
-      ],
-      "status": "ok",
-      "average_points": 4.67,
-      "trend": {
-        "max_value": 14215187,
-        "max_value_fmt": "14.22M€",
-        "min_value": 5399739,
-        "recent_trend": "subiendo",
-        "trend_pct": 8.8,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
       }
     },
     {
@@ -112,7 +145,7 @@
       "nickname": "Olasagasti",
       "position": "Centrocampista",
       "sale_price_fmt": "9.47M€",
-      "market_value_fmt": "9.47M€",
+      "market_value_fmt": "9.48M€",
       "score": 61.5,
       "recommended_bid_fmt": "9.47M€",
       "max_bid_fmt": "9.47M€",
@@ -121,53 +154,21 @@
       "season_gap": "",
       "reasons": [
         "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 9.47M€ — poco margen de subida",
-        "Tendencia reciente al alza: +5.7%",
-        "Ha subido 57.8% desde inicio de temporada",
+        "Cerca de su máximo de temporada 9.48M€ — poco margen de subida",
+        "Tendencia reciente al alza: +3.2%",
+        "Ha subido 58.0% desde inicio de temporada",
         "Buen rendimiento: 4.5 pts/jornada"
       ],
       "status": "ok",
       "average_points": 4.5,
       "trend": {
-        "max_value": 9468612,
-        "max_value_fmt": "9.47M€",
+        "max_value": 9479558,
+        "max_value_fmt": "9.48M€",
         "min_value": 3663579,
         "recent_trend": "subiendo",
-        "trend_pct": 5.7,
+        "trend_pct": 3.2,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
-      }
-    },
-    {
-      "name": "Diego Rico",
-      "nickname": "Diego Rico",
-      "position": "Defensa",
-      "sale_price_fmt": "2.19M€",
-      "market_value_fmt": "2.19M€",
-      "score": 66.2,
-      "recommended_bid_fmt": "2.24M€",
-      "max_bid_fmt": "1.97M€",
-      "market_type": "subasta",
-      "strategy_note": "SUBASTA — Precio salida 2.19M€. Puja máxima recomendada: 1.97M€.",
-      "season_gap": "Actualmente al 45% de su máximo de temporada (4.91M€)",
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Muy por debajo de su máximo de temporada 4.91M€ — potencial de recuperación 55%",
-        "Tendencia reciente a la baja: -10.7%",
-        "Ha bajado 55.2% desde inicio de temporada",
-        "Bajo rendimiento: -0.2 pts/jornada",
-        "Sin ofertas activas — oportunidad sin competencia"
-      ],
-      "status": "ok",
-      "average_points": -0.17,
-      "trend": {
-        "max_value": 4912863,
-        "max_value_fmt": "4.91M€",
-        "min_value": 2193297,
-        "recent_trend": "bajando",
-        "trend_pct": -10.7,
-        "recovery_potential": 55.4,
-        "potential_label": "ALTO"
       }
     }
   ],
@@ -176,7 +177,7 @@
       "name": "Pedro Bigas",
       "nickname": "R.P. Bigas",
       "position": "",
-      "market_value_fmt": "2.16M€",
+      "market_value_fmt": "2.11M€",
       "sell_score": 55,
       "reasons": [
         "Bajo rendimiento: 0.7 pts/jornada",
@@ -205,9 +206,9 @@
       "position": "",
       "risk_level": "MEDIO",
       "risk_score": 33.0,
-      "buyout_clause_fmt": "5.16M€",
+      "buyout_clause_fmt": "5.53M€",
       "reasons": [
-        "Cláusula 5.16M€ muy cercana al valor de mercado 5.16M€ — fácil de ejecutar"
+        "Cláusula 5.53M€ muy cercana al valor de mercado 5.53M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -217,9 +218,9 @@
       "position": "",
       "risk_level": "MEDIO",
       "risk_score": 33.0,
-      "buyout_clause_fmt": "14.34M€",
+      "buyout_clause_fmt": "14.66M€",
       "reasons": [
-        "Cláusula 14.34M€ muy cercana al valor de mercado 14.34M€ — fácil de ejecutar"
+        "Cláusula 14.66M€ muy cercana al valor de mercado 14.66M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -229,9 +230,9 @@
       "position": "",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "11.06M€",
+      "buyout_clause_fmt": "11.13M€",
       "reasons": [
-        "Cláusula 11.06M€ muy cercana al valor de mercado 11.06M€ — fácil de ejecutar"
+        "Cláusula 11.13M€ muy cercana al valor de mercado 11.13M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
@@ -241,9 +242,9 @@
       "position": "",
       "risk_level": "MEDIO",
       "risk_score": 25.0,
-      "buyout_clause_fmt": "8.62M€",
+      "buyout_clause_fmt": "8.49M€",
       "reasons": [
-        "Cláusula 8.62M€ muy cercana al valor de mercado 8.62M€ — fácil de ejecutar"
+        "Cláusula 8.49M€ muy cercana al valor de mercado 8.49M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     }
