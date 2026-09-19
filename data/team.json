@@ -1,7 +1,7 @@
 {
   "team_id": "37889563",
-  "team_value": 175767672,
-  "team_value_fmt": "175.77M€",
+  "team_value": 175455008,
+  "team_value_fmt": "175.46M€",
   "team_points": 204,
   "budget": 81126663,
   "budget_fmt": "81.13M€",
@@ -75,7 +75,7 @@
       "points": 12,
       "week_points": 0,
       "average_points": 2.4,
-      "status": "ok",
+      "status": "injured",
       "image_url": "https://assets-fantasy.llt-services.com/players/t188/p265/256x256/p265_t188_1_001_000.png",
       "trend": {
         "max_value": 14054086,
