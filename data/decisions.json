@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T21:21:39.933131",
+  "updated_at": "2026-09-19T09:02:30.200389",
   "dry_run": true,
   "summary": "Mejor formación posible: [5, 4, 1] con 35.6 pts/j de media",
   "warnings": [
@@ -10,13 +10,26 @@
       "action": "sell",
       "player_id": "2294",
       "player_name": "R.P. Bigas",
-      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.7 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.05M€",
-      "amount": 2054179,
-      "amount_fmt": "2.05M€",
+      "reason": "VENTA RECOMENDADA: Bajo rendimiento: 0.7 pts/j, Sin puntuar última jornada con media baja. Precio sugerido: 2.00M€",
+      "amount": 2002257,
+      "amount_fmt": "2.00M€",
       "market_id": "",
       "priority": 5,
       "position": "",
       "position_id": 2,
+      "status": "ok"
+    },
+    {
+      "action": "offer",
+      "player_id": "3147",
+      "player_name": "Fer Niño",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (7.0% margen), Rendimiento excelente: 6.9 pts/j",
+      "amount": 11639051,
+      "amount_fmt": "11.64M€",
+      "market_id": "35943043",
+      "priority": 5,
+      "position": "Delantero",
+      "position_id": 4,
       "status": "ok"
     }
   ],
