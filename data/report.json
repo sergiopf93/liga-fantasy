@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-19T09:02:30.176838",
+  "generated_at": "2026-09-19T13:38:53.197630",
   "summary": {
-    "team_value": 175767672,
-    "team_value_fmt": "175.77M€",
+    "team_value": 175455008,
+    "team_value_fmt": "175.46M€",
     "budget": 81126663,
     "budget_fmt": "81.13M€",
     "points": 204,
@@ -183,6 +183,17 @@
         "Bajo rendimiento: 0.7 pts/jornada",
         "Sin puntuar última jornada con media baja"
       ]
+    },
+    {
+      "name": "Igor Zubeldia",
+      "nickname": "Zubeldia",
+      "position": "",
+      "market_value_fmt": "11.13M€",
+      "sell_score": 50,
+      "reasons": [
+        "Lesionado",
+        "Sin puntuar última jornada con media baja"
+      ]
     }
   ],
   "clause_risks": [
@@ -225,18 +236,6 @@
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     },
     {
-      "name": "Igor Zubeldia",
-      "nickname": "Zubeldia",
-      "position": "",
-      "risk_level": "MEDIO",
-      "risk_score": 25.0,
-      "buyout_clause_fmt": "11.13M€",
-      "reasons": [
-        "Cláusula 11.13M€ muy cercana al valor de mercado 11.13M€ — fácil de ejecutar"
-      ],
-      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
-    },
-    {
       "name": "Eduardo Celmi Camavinga",
       "nickname": "Camavinga",
       "position": "",
@@ -245,6 +244,18 @@
       "buyout_clause_fmt": "8.49M€",
       "reasons": [
         "Cláusula 8.49M€ muy cercana al valor de mercado 8.49M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Iván Martín",
+      "nickname": "Iván Martín",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "7.99M€",
+      "reasons": [
+        "Cláusula 7.99M€ muy cercana al valor de mercado 7.71M€ — fácil de ejecutar"
       ],
       "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
     }
