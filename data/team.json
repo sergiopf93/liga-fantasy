@@ -1,16 +1,16 @@
 {
   "team_id": "37889563",
-  "team_value": 118948057,
-  "team_value_fmt": "118.95M€",
+  "team_value": 132611883,
+  "team_value_fmt": "132.61M€",
   "team_points": 236,
-  "budget": 141877608,
-  "budget_fmt": "141.88M€",
+  "budget": 121866918,
+  "budget_fmt": "121.87M€",
   "formation": [
-    5,
     4,
+    5,
     1
   ],
-  "updated_at": "2026-09-25T16:48:08+02:00",
+  "updated_at": "2026-09-25T16:52:26+02:00",
   "players": [
     {
       "id": "2783",
@@ -63,6 +63,56 @@
       }
     },
     {
+      "id": "2680",
+      "name": "Andrés Castrín",
+      "nickname": "A. Castrín",
+      "position": "",
+      "position_id": 2,
+      "market_value": 7584074,
+      "market_value_fmt": "7.58M€",
+      "buyout_clause": 7584074,
+      "buyout_clause_fmt": "7.58M€",
+      "points": 34,
+      "week_points": 0,
+      "average_points": 4.86,
+      "status": "ok",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t179/p2680/256x256/p2680_t179_1_001_000.png",
+      "trend": {
+        "max_value": 7584074,
+        "max_value_fmt": "7.58M€",
+        "min_value": 3777255,
+        "recent_trend": "subiendo",
+        "trend_pct": 20.0,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "id": "2562",
+      "name": "Marc Pubill",
+      "nickname": "Marc Pubill",
+      "position": "",
+      "position_id": 2,
+      "market_value": 37849490,
+      "market_value_fmt": "37.85M€",
+      "buyout_clause": 54871142,
+      "buyout_clause_fmt": "54.87M€",
+      "points": 25,
+      "week_points": 0,
+      "average_points": 3.57,
+      "status": "ok",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2562/256x256/p2562_t175_1_001_000.png",
+      "trend": {
+        "max_value": 73720685,
+        "max_value_fmt": "73.72M€",
+        "min_value": 37849490,
+        "recent_trend": "bajando",
+        "trend_pct": -6.4,
+        "recovery_potential": 48.7,
+        "potential_label": "ALTO"
+      }
+    },
+    {
       "id": "74",
       "name": "Yuri Berchiche Izeta",
       "nickname": "Yuri",
@@ -110,56 +160,6 @@
         "trend_pct": -10.9,
         "recovery_potential": 81.9,
         "potential_label": "ALTO"
-      }
-    },
-    {
-      "id": "2562",
-      "name": "Marc Pubill",
-      "nickname": "Marc Pubill",
-      "position": "",
-      "position_id": 2,
-      "market_value": 37849490,
-      "market_value_fmt": "37.85M€",
-      "buyout_clause": 54871142,
-      "buyout_clause_fmt": "54.87M€",
-      "points": 25,
-      "week_points": 0,
-      "average_points": 3.57,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t175/p2562/256x256/p2562_t175_1_001_000.png",
-      "trend": {
-        "max_value": 73720685,
-        "max_value_fmt": "73.72M€",
-        "min_value": 37849490,
-        "recent_trend": "bajando",
-        "trend_pct": -6.4,
-        "recovery_potential": 48.7,
-        "potential_label": "ALTO"
-      }
-    },
-    {
-      "id": "2680",
-      "name": "Andrés Castrín",
-      "nickname": "A. Castrín",
-      "position": "",
-      "position_id": 2,
-      "market_value": 7584074,
-      "market_value_fmt": "7.58M€",
-      "buyout_clause": 7584074,
-      "buyout_clause_fmt": "7.58M€",
-      "points": 34,
-      "week_points": 0,
-      "average_points": 4.86,
-      "status": "ok",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t179/p2680/256x256/p2680_t179_1_001_000.png",
-      "trend": {
-        "max_value": 7584074,
-        "max_value_fmt": "7.58M€",
-        "min_value": 3777255,
-        "recent_trend": "subiendo",
-        "trend_pct": 20.0,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
       }
     },
     {
@@ -238,6 +238,31 @@
       }
     },
     {
+      "id": "2569",
+      "name": "Pablo Ibáñez",
+      "nickname": "Ibañez",
+      "position": "",
+      "position_id": 3,
+      "market_value": 13663826,
+      "market_value_fmt": "13.66M€",
+      "buyout_clause": 20010690,
+      "buyout_clause_fmt": "20.01M€",
+      "points": 37,
+      "week_points": 0,
+      "average_points": 5.29,
+      "status": "ok",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t173/p2569/256x256/p2569_t173_1_001_000.png",
+      "trend": {
+        "max_value": 13663826,
+        "max_value_fmt": "13.66M€",
+        "min_value": 3227143,
+        "recent_trend": "subiendo",
+        "trend_pct": 10.8,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
       "id": "2418",
       "name": "Marc Roca",
       "nickname": "Marc Roca",
@@ -263,31 +288,6 @@
       }
     },
     {
-      "id": "2492",
-      "name": "Iago Aspas",
-      "nickname": "Iago Aspas",
-      "position": "",
-      "position_id": 4,
-      "market_value": 4913283,
-      "market_value_fmt": "4.91M€",
-      "buyout_clause": 7100001,
-      "buyout_clause_fmt": "7.10M€",
-      "points": 20,
-      "week_points": 0,
-      "average_points": 3.33,
-      "status": "injured",
-      "image_url": "https://assets-fantasy.llt-services.com/players/t176/p2492/256x256/p2492_t176_1_001_000.png",
-      "trend": {
-        "max_value": 11942858,
-        "max_value_fmt": "11.94M€",
-        "min_value": 4913283,
-        "recent_trend": "bajando",
-        "trend_pct": -10.7,
-        "recovery_potential": 58.9,
-        "potential_label": "ALTO"
-      }
-    },
-    {
       "id": "3073",
       "name": "Andrés Martín",
       "nickname": "Andrés Martín",
@@ -309,6 +309,31 @@
         "recent_trend": "bajando",
         "trend_pct": -11.1,
         "recovery_potential": 66.1,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "id": "2492",
+      "name": "Iago Aspas",
+      "nickname": "Iago Aspas",
+      "position": "",
+      "position_id": 4,
+      "market_value": 4913283,
+      "market_value_fmt": "4.91M€",
+      "buyout_clause": 7100001,
+      "buyout_clause_fmt": "7.10M€",
+      "points": 20,
+      "week_points": 0,
+      "average_points": 3.33,
+      "status": "injured",
+      "image_url": "https://assets-fantasy.llt-services.com/players/t176/p2492/256x256/p2492_t176_1_001_000.png",
+      "trend": {
+        "max_value": 11942858,
+        "max_value_fmt": "11.94M€",
+        "min_value": 4913283,
+        "recent_trend": "bajando",
+        "trend_pct": -10.7,
+        "recovery_potential": 58.9,
         "potential_label": "ALTO"
       }
     }
