@@ -1,18 +1,261 @@
 {
-  "generated_at": "2026-09-25T09:53:38.381358",
+  "generated_at": "2026-09-25T14:49:15.313646",
   "summary": {
-    "team_value": 0,
-    "team_value_fmt": "N/D",
-    "budget": 0,
-    "budget_fmt": "N/D",
-    "points": 0,
-    "my_position": null,
-    "goalkeeper_risk": "N/D",
-    "goalkeeper_count": 0,
-    "goalkeeper_recommendation": ""
+    "team_value": 118948057,
+    "team_value_fmt": "118.95M€",
+    "budget": 141877608,
+    "budget_fmt": "141.88M€",
+    "points": 236,
+    "my_position": 6,
+    "goalkeeper_risk": "ALTO",
+    "goalkeeper_count": 1,
+    "goalkeeper_recommendation": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
   },
-  "top_buys": [],
-  "sell_recommendations": [],
-  "clause_risks": [],
-  "goalkeeper": ""
+  "top_buys": [
+    {
+      "name": "Miguel Román",
+      "nickname": "M. Román",
+      "position": "Centrocampista",
+      "sale_price_fmt": "17.28M€",
+      "market_value_fmt": "17.28M€",
+      "score": 72.5,
+      "recommended_bid_fmt": "17.63M€",
+      "max_bid_fmt": "15.55M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 17.28M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 17.28M€ — poco margen de subida",
+        "Tendencia reciente al alza: +24.2%",
+        "Ha subido 103.3% desde inicio de temporada",
+        "Rendimiento excelente: 7.1 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 7.14,
+      "trend": {
+        "max_value": 17279964,
+        "max_value_fmt": "17.28M€",
+        "min_value": 5007217,
+        "recent_trend": "subiendo",
+        "trend_pct": 24.2,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Jirí Letácek",
+      "nickname": "Letacek",
+      "position": "Portero",
+      "sale_price_fmt": "0.49M€",
+      "market_value_fmt": "0.49M€",
+      "score": 68.8,
+      "recommended_bid_fmt": "0.50M€",
+      "max_bid_fmt": "0.44M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.49M€. Puja máxima recomendada: 0.44M€.",
+      "season_gap": "Actualmente al 26% de su máximo de temporada (1.91M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 1.91M€ — potencial de recuperación 74%",
+        "Ha bajado 74.4% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 1907339,
+        "max_value_fmt": "1.91M€",
+        "min_value": 486374,
+        "recent_trend": "estable",
+        "trend_pct": -1.0,
+        "recovery_potential": 74.5,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Marcos do Nascimento Teixeira",
+      "nickname": "Marcao",
+      "position": "Defensa",
+      "sale_price_fmt": "0.47M€",
+      "market_value_fmt": "0.47M€",
+      "score": 68.8,
+      "recommended_bid_fmt": "0.48M€",
+      "max_bid_fmt": "0.43M€",
+      "market_type": "subasta",
+      "strategy_note": "SUBASTA — Precio salida 0.47M€. Puja máxima recomendada: 0.43M€.",
+      "season_gap": "Actualmente al 29% de su máximo de temporada (1.61M€)",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Muy por debajo de su máximo de temporada 1.61M€ — potencial de recuperación 70%",
+        "Ha bajado 70.4% desde inicio de temporada",
+        "Bajo rendimiento: 0.0 pts/jornada",
+        "Sin ofertas activas — oportunidad sin competencia"
+      ],
+      "status": "ok",
+      "average_points": 0,
+      "trend": {
+        "max_value": 1606179,
+        "max_value_fmt": "1.61M€",
+        "min_value": 473265,
+        "recent_trend": "estable",
+        "trend_pct": -0.5,
+        "recovery_potential": 70.5,
+        "potential_label": "ALTO"
+      }
+    },
+    {
+      "name": "Ionut Radu",
+      "nickname": "Ionut Radu",
+      "position": "Portero",
+      "sale_price_fmt": "44.50M€",
+      "market_value_fmt": "44.50M€",
+      "score": 68.5,
+      "recommended_bid_fmt": "44.50M€",
+      "max_bid_fmt": "44.50M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 44.50M€ directamente a fruizmata7. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 44.50M€ — poco margen de subida",
+        "Tendencia reciente al alza: +5.8%",
+        "Ha subido 122.5% desde inicio de temporada",
+        "Rendimiento excelente: 8.0 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 8,
+      "trend": {
+        "max_value": 44498642,
+        "max_value_fmt": "44.50M€",
+        "min_value": 20000000,
+        "recent_trend": "subiendo",
+        "trend_pct": 5.8,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    },
+    {
+      "name": "Ángel Pérez",
+      "nickname": "Ángel Pérez",
+      "position": "Delantero",
+      "sale_price_fmt": "28.28M€",
+      "market_value_fmt": "28.28M€",
+      "score": 68.5,
+      "recommended_bid_fmt": "28.28M€",
+      "max_bid_fmt": "28.28M€",
+      "market_type": "clausulazo",
+      "strategy_note": "CLAUSULAZO — Pagas 28.28M€ directamente a Migu V. Precio fijo.",
+      "season_gap": "",
+      "reasons": [
+        "Precio en línea con el valor de mercado",
+        "Cerca de su máximo de temporada 28.28M€ — poco margen de subida",
+        "Tendencia reciente al alza: +11.8%",
+        "Ha subido 88.5% desde inicio de temporada",
+        "Rendimiento excelente: 7.6 pts/jornada"
+      ],
+      "status": "ok",
+      "average_points": 7.57,
+      "trend": {
+        "max_value": 28276606,
+        "max_value_fmt": "28.28M€",
+        "min_value": 6395423,
+        "recent_trend": "subiendo",
+        "trend_pct": 11.8,
+        "recovery_potential": 0.0,
+        "potential_label": "BAJO"
+      }
+    }
+  ],
+  "sell_recommendations": [
+    {
+      "name": "Pedro Bigas",
+      "nickname": "R.P. Bigas",
+      "position": "",
+      "market_value_fmt": "1.77M€",
+      "sell_score": 55,
+      "reasons": [
+        "Bajo rendimiento: 0.7 pts/jornada",
+        "Sin puntuar última jornada con media baja"
+      ]
+    },
+    {
+      "name": "Maguette Gueye",
+      "nickname": "Maguette",
+      "position": "",
+      "market_value_fmt": "1.57M€",
+      "sell_score": 55,
+      "reasons": [
+        "Bajo rendimiento: 1.4 pts/jornada",
+        "Sin puntuar última jornada con media baja"
+      ]
+    }
+  ],
+  "clause_risks": [
+    {
+      "name": "Wojciech Szczesny",
+      "nickname": "Szczesny",
+      "position": "",
+      "risk_level": "ALTO",
+      "risk_score": 50.0,
+      "buyout_clause_fmt": "4.57M€",
+      "reasons": [
+        "ALERTA: Es tu único portero. Quedarte sin portero implica penalización grave",
+        "Portero: posición especialmente sensible a clausulazos tácticos de rivales",
+        "Cláusula 4.57M€ elevada respecto al valor 1.21M€ — protección moderada"
+      ],
+      "recommendation": "⚠️ URGENTE: Compra un segundo portero. Sin portero tu equipo no puede puntuar."
+    },
+    {
+      "name": "Andrés Castrín",
+      "nickname": "A. Castrín",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "7.58M€",
+      "reasons": [
+        "Cláusula 7.58M€ muy cercana al valor de mercado 7.58M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Marc Roca",
+      "nickname": "Marc Roca",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 33.0,
+      "buyout_clause_fmt": "17.17M€",
+      "reasons": [
+        "Cláusula 17.17M€ muy cercana al valor de mercado 17.17M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Maguette Gueye",
+      "nickname": "Maguette",
+      "position": "",
+      "risk_level": "MEDIO",
+      "risk_score": 25.0,
+      "buyout_clause_fmt": "1.61M€",
+      "reasons": [
+        "Cláusula 1.61M€ muy cercana al valor de mercado 1.57M€ — fácil de ejecutar"
+      ],
+      "recommendation": "Monitorizar diariamente. Sin urgencia inmediata."
+    },
+    {
+      "name": "Igor Zubeldia",
+      "nickname": "Zubeldia",
+      "position": "",
+      "risk_level": "BAJO",
+      "risk_score": 12.0,
+      "buyout_clause_fmt": "10.73M€",
+      "reasons": [
+        "Cláusula 10.73M€ razonablemente ejecutable"
+      ],
+      "recommendation": "Riesgo bajo. Sin acción necesaria."
+    }
+  ],
+  "goalkeeper": "Solo tienes a Szczesny (cláusula 4.57M€). Un rival puede ejecutar la cláusula y dejarte sin portero. Considera comprar un segundo portero de bajo coste como seguro."
 }
