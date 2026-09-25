@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T14:49:15.313112",
+  "updated_at": "2026-09-25T14:55:46.163731",
   "my_position": 6,
   "rivals": [
     {
@@ -35,8 +35,8 @@
     {
       "team_id": "37859310",
       "manager": "Migu V",
-      "team_value": 142479030,
-      "team_value_fmt": "142.48M€",
+      "team_value": 128815204,
+      "team_value_fmt": "128.82M€",
       "points": 256,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,8 +55,8 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 118948057,
-      "team_value_fmt": "118.95M€",
+      "team_value": 132611883,
+      "team_value_fmt": "132.61M€",
       "points": 236,
       "budget_fmt": "N/D",
       "is_me": true,

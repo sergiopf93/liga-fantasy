@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "timestamp": "2026-09-25T14:49:15.442689",
+  "timestamp": "2026-09-25T14:55:46.322503",
   "subastas": [
     {
       "market_id": "278742291",
@@ -953,53 +953,6 @@
         "min_value": 5756991,
         "recent_trend": "subiendo",
         "trend_pct": 7.8,
-        "recovery_potential": 0.0,
-        "potential_label": "BAJO"
-      }
-    },
-    {
-      "market_id": "43759058",
-      "player_id": "2569",
-      "name": "Pablo Ibáñez",
-      "nickname": "Ibañez",
-      "position": "Centrocampista",
-      "position_id": 3,
-      "sale_price": 13663826,
-      "sale_price_fmt": "13.66M€",
-      "market_value": 13663826,
-      "market_value_fmt": "13.66M€",
-      "buyout_clause": 20010690,
-      "buyout_clause_fmt": "20.01M€",
-      "score": 61.5,
-      "reasons": [
-        "Precio en línea con el valor de mercado",
-        "Cerca de su máximo de temporada 13.66M€ — poco margen de subida",
-        "Tendencia reciente al alza: +10.8%",
-        "Ha subido 127.7% desde inicio de temporada",
-        "Buen rendimiento: 5.3 pts/jornada"
-      ],
-      "recommended_bid": 13937102,
-      "recommended_bid_fmt": "13.94M€",
-      "max_bid": 12297443,
-      "max_bid_fmt": "12.30M€",
-      "market_type": "clausulazo",
-      "strategy_note": "CLAUSULAZO — Pagas 13.66M€ directamente a Migu V. Precio fijo.",
-      "season_gap": "",
-      "seller": "Migu V",
-      "seller_team_id": "37859310",
-      "expiration": "2026-09-28T11:57:43+02:00",
-      "status": "ok",
-      "average_points": 5.29,
-      "week_points": 0,
-      "image_url": "https://assets-fantasy.llt-services.com/players/t173/p2569/256x256/p2569_t173_1_001_000.png",
-      "is_shielded": false,
-      "offers": 1,
-      "trend": {
-        "max_value": 13663826,
-        "max_value_fmt": "13.66M€",
-        "min_value": 3227143,
-        "recent_trend": "subiendo",
-        "trend_pct": 10.8,
         "recovery_potential": 0.0,
         "potential_label": "BAJO"
       }
@@ -2038,5 +1991,5 @@
       }
     }
   ],
-  "count": 43
+  "count": 42
 }
