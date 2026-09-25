@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-25T14:55:46.163731",
+  "updated_at": "2026-09-25T20:57:16.838710",
   "my_position": 6,
   "rivals": [
     {
       "team_id": "37868413",
       "manager": "JavierRH",
-      "team_value": 187822256,
-      "team_value_fmt": "187.82M€",
+      "team_value": 195524535,
+      "team_value_fmt": "195.52M€",
       "points": 374,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -15,8 +15,8 @@
     {
       "team_id": "37859264",
       "manager": "fruizmata7",
-      "team_value": 397107737,
-      "team_value_fmt": "397.11M€",
+      "team_value": 371849841,
+      "team_value_fmt": "371.85M€",
       "points": 331,
       "budget_fmt": "N/D",
       "is_me": false,
