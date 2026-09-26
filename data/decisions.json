@@ -1,12 +1,26 @@
 {
-  "updated_at": "2026-09-25T21:54:03.880179",
+  "updated_at": "2026-09-26T09:36:21.253669",
   "dry_run": true,
   "summary": "Mejor formación posible: [4, 5, 1] con 30.9 pts/j de media",
   "warnings": [
     "⚠️ Solo tienes 1 portero(s). Recomendado: 2 mínimo.",
     "🏥 Andrés Martín () — LESIONADO: buscar sustituto en el mercado"
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "action": "offer",
+      "player_id": "2387",
+      "player_name": "Camello",
+      "reason": "COMPRA RECOMENDADA (CLAUSULAZO): Precio inferior al valor de mercado (6.1% margen), Rendimiento excelente: 7.7 pts/j",
+      "amount": 32068069,
+      "amount_fmt": "32.07M€",
+      "market_id": "42883983",
+      "priority": 5,
+      "position": "Delantero",
+      "position_id": 4,
+      "status": "ok"
+    }
+  ],
   "blocked": [
     {
       "player": "R.P. Bigas",

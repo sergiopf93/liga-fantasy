@@ -1,12 +1,12 @@
 {
-  "last_check": "2026-09-25T14:48:58.344751",
-  "last_claimed_date": "2026-09-25",
+  "last_check": "2026-09-26T09:36:13.702055",
+  "last_claimed_date": "2026-09-26",
   "status": "claimed",
   "reward_amount": 100000,
   "reward_amount_fmt": "100,000€",
   "claim_response": {
     "teamId": 37889563,
-    "teamMoney": 141877608,
+    "teamMoney": 121966918,
     "dailyRewardsRedeemed": 1,
     "dailyRewardLimit": 2
   },
