@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:54:03.862375",
+  "updated_at": "2026-09-26T09:36:21.242427",
   "my_position": 6,
   "rivals": [
     {
@@ -25,8 +25,8 @@
     {
       "team_id": "37861648",
       "manager": "MAP Cardinals",
-      "team_value": 203763886,
-      "team_value_fmt": "203.76M€",
+      "team_value": 204556117,
+      "team_value_fmt": "204.56M€",
       "points": 299,
       "budget_fmt": "N/D",
       "is_me": false,
@@ -55,8 +55,8 @@
     {
       "team_id": "37889563",
       "manager": "Serpa93",
-      "team_value": 132611883,
-      "team_value_fmt": "132.61M€",
+      "team_value": 132345836,
+      "team_value_fmt": "132.35M€",
       "points": 236,
       "budget_fmt": "N/D",
       "is_me": true,
