@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T21:53:39.184971",
+  "generated_at": "2026-10-03T20:40:25.842134",
   "month": "2026-10",
-  "period_days": 23,
+  "period_days": 24,
   "summary": {
     "patrimony_growth_pct": -40.38,
     "points_gained": 78,
@@ -75,8 +75,8 @@
       }
     ],
     "period_start": "2026-09-10",
-    "period_end": "2026-10-02",
-    "period_days": 23
+    "period_end": "2026-10-03",
+    "period_days": 24
   },
   "points": {
     "my_first_points": 158,
@@ -16929,6 +16929,15 @@
             "week_points": 0,
             "average_points": 0.14,
             "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 1188783,
+            "market_value_fmt": "1.19M€",
+            "buyout_clause": 4568101,
+            "week_points": 0,
+            "average_points": 0.14,
+            "status": "ok"
           }
         ]
       },
@@ -17136,6 +17145,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 17268797,
+            "market_value_fmt": "17.27M€",
+            "buyout_clause": 22017086,
+            "week_points": 0,
+            "average_points": 4.5,
+            "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 17268797,
             "market_value_fmt": "17.27M€",
             "buyout_clause": 22017086,
@@ -17448,6 +17466,15 @@
             "week_points": 0,
             "average_points": 0.71,
             "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 1725603,
+            "market_value_fmt": "1.73M€",
+            "buyout_clause": 10220690,
+            "week_points": 0,
+            "average_points": 0.71,
+            "status": "ok"
           }
         ]
       },
@@ -17655,6 +17682,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 37289056,
+            "market_value_fmt": "37.29M€",
+            "buyout_clause": 54871142,
+            "week_points": 0,
+            "average_points": 3.57,
+            "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 37289056,
             "market_value_fmt": "37.29M€",
             "buyout_clause": 54871142,
@@ -17961,6 +17997,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 3816932,
+            "market_value_fmt": "3.82M€",
+            "buyout_clause": 8042943,
+            "week_points": 0,
+            "average_points": 2.43,
+            "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 3816932,
             "market_value_fmt": "3.82M€",
             "buyout_clause": 8042943,
@@ -18390,6 +18435,15 @@
             "week_points": 0,
             "average_points": 3.33,
             "status": "injured"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 4777481,
+            "market_value_fmt": "4.78M€",
+            "buyout_clause": 7100001,
+            "week_points": 0,
+            "average_points": 3.33,
+            "status": "injured"
           }
         ]
       },
@@ -18603,6 +18657,15 @@
             "week_points": 0,
             "average_points": 6,
             "status": "injured"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 9563933,
+            "market_value_fmt": "9.56M€",
+            "buyout_clause": 33971131,
+            "week_points": 0,
+            "average_points": 6,
+            "status": "injured"
           }
         ]
       },
@@ -18756,6 +18819,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 9192939,
+            "market_value_fmt": "9.19M€",
+            "buyout_clause": 10732275,
+            "week_points": 0,
+            "average_points": 2.4,
+            "status": "doubtful"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 9192939,
             "market_value_fmt": "9.19M€",
             "buyout_clause": 10732275,
@@ -18921,6 +18993,15 @@
             "week_points": 0,
             "average_points": 4.86,
             "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 7862355,
+            "market_value_fmt": "7.86M€",
+            "buyout_clause": 7862355,
+            "week_points": 0,
+            "average_points": 4.86,
+            "status": "ok"
           }
         ]
       },
@@ -19074,6 +19155,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 6584585,
+            "market_value_fmt": "6.58M€",
+            "buyout_clause": 7986076,
+            "week_points": 0,
+            "average_points": 2.67,
+            "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 6584585,
             "market_value_fmt": "6.58M€",
             "buyout_clause": 7986076,
@@ -19239,6 +19329,15 @@
             "week_points": 0,
             "average_points": 5.29,
             "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 17614010,
+            "market_value_fmt": "17.61M€",
+            "buyout_clause": 17614010,
+            "week_points": 0,
+            "average_points": 5.29,
+            "status": "ok"
           }
         ]
       },
@@ -19308,6 +19407,15 @@
             "week_points": 0,
             "average_points": 1.43,
             "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
+            "market_value": 1526802,
+            "market_value_fmt": "1.53M€",
+            "buyout_clause": 1611250,
+            "week_points": 0,
+            "average_points": 1.43,
+            "status": "ok"
           }
         ]
       },
@@ -19371,6 +19479,15 @@
           },
           {
             "date": "2026-10-02",
+            "market_value": 13934560,
+            "market_value_fmt": "13.93M€",
+            "buyout_clause": 20010690,
+            "week_points": 0,
+            "average_points": 5.29,
+            "status": "ok"
+          },
+          {
+            "date": "2026-10-03",
             "market_value": 13934560,
             "market_value_fmt": "13.93M€",
             "buyout_clause": 20010690,
@@ -29464,6 +29581,13 @@
         "team_value": 132345836,
         "points": 236,
         "position": null
+      },
+      {
+        "date": "2026-10-03",
+        "budget": 121966918,
+        "team_value": 132345836,
+        "points": 236,
+        "position": null
       }
     ],
     "rival_evolution": {
@@ -31289,6 +31413,12 @@
         "subastas_count": 0,
         "clausulazos_count": 0,
         "top_scored": []
+      },
+      {
+        "date": "2026-10-03",
+        "subastas_count": 0,
+        "clausulazos_count": 0,
+        "top_scored": []
       }
     ],
     "decision_analysis": [
@@ -32083,7 +32213,7 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 15343173,
         "value_end": 9563933,
         "value_change_pct": -37.7,
@@ -32318,6 +32448,16 @@
             "status": "injured",
             "buyout_clause": 33971131,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 9563933,
+            "average_points": 6,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 33971131,
+            "owner": "me"
           }
         ]
       },
@@ -32330,11 +32470,11 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 12799050,
         "value_end": 17268797,
         "value_change_pct": 34.9,
-        "avg_points": 4.26,
+        "avg_points": 4.27,
         "history": [
           {
             "date": "2026-09-10",
@@ -32565,6 +32705,16 @@
             "status": "ok",
             "buyout_clause": 22017086,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 17268797,
+            "average_points": 4.5,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 22017086,
+            "owner": "me"
           }
         ]
       },
@@ -32577,7 +32727,7 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 2649484,
         "value_end": 1725603,
         "value_change_pct": -34.9,
@@ -32812,6 +32962,16 @@
             "status": "ok",
             "buyout_clause": 10220690,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 1725603,
+            "average_points": 0.71,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 10220690,
+            "owner": "me"
           }
         ]
       },
@@ -32824,7 +32984,7 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 6475834,
         "value_end": 4777481,
         "value_change_pct": -26.2,
@@ -33059,6 +33219,16 @@
             "status": "injured",
             "buyout_clause": 7100001,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 4777481,
+            "average_points": 3.33,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 7100001,
+            "owner": "me"
           }
         ]
       },
@@ -33071,11 +33241,11 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 46681652,
         "value_end": 37289056,
         "value_change_pct": -20.1,
-        "avg_points": 3.86,
+        "avg_points": 3.85,
         "history": [
           {
             "date": "2026-09-10",
@@ -33306,6 +33476,16 @@
             "status": "ok",
             "buyout_clause": 54871142,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 37289056,
+            "average_points": 3.57,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 54871142,
+            "owner": "me"
           }
         ]
       },
@@ -33318,11 +33498,11 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 4474809,
         "value_end": 3816932,
         "value_change_pct": -14.7,
-        "avg_points": 2.62,
+        "avg_points": 2.61,
         "history": [
           {
             "date": "2026-09-10",
@@ -33553,6 +33733,16 @@
             "status": "ok",
             "buyout_clause": 8042943,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 3816932,
+            "average_points": 2.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 8042943,
+            "owner": "me"
           }
         ]
       },
@@ -33565,11 +33755,11 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 23,
+        "days_tracked": 24,
         "value_start": 1345863,
         "value_end": 1188783,
         "value_change_pct": -11.7,
-        "avg_points": 0.16,
+        "avg_points": 0.15,
         "history": [
           {
             "date": "2026-09-10",
@@ -33800,6 +33990,16 @@
             "status": "ok",
             "buyout_clause": 4568101,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 1188783,
+            "average_points": 0.14,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 4568101,
+            "owner": "me"
           }
         ]
       },
@@ -33815,7 +34015,7 @@
           "my_team",
           "rival_squad"
         ],
-        "days_tracked": 22,
+        "days_tracked": 23,
         "value_start": 10821788,
         "value_end": 17614010,
         "value_change_pct": 62.8,
@@ -34074,6 +34274,16 @@
             "status": "ok",
             "buyout_clause": 17614010,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 17614010,
+            "average_points": 5.29,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 17614010,
+            "owner": "me"
           }
         ]
       },
@@ -34086,11 +34296,11 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 17,
+        "days_tracked": 18,
         "value_start": 4587600,
         "value_end": 7862355,
         "value_change_pct": 71.4,
-        "avg_points": 5.01,
+        "avg_points": 5.0,
         "history": [
           {
             "date": "2026-09-16",
@@ -34282,6 +34492,16 @@
             "status": "ok",
             "buyout_clause": 7862355,
             "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 7862355,
+            "average_points": 4.86,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 7862355,
+            "owner": "me"
           }
         ]
       },
@@ -34294,7 +34514,7 @@
         "sources": [
           "my_team"
         ],
-        "days_tracked": 17,
+        "days_tracked": 18,
         "value_start": 7937539,
         "value_end": 6584585,
         "value_change_pct": -17.0,
@@ -34489,6 +34709,234 @@
             "week_points": 0,
             "status": "ok",
             "buyout_clause": 7986076,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 6584585,
+            "average_points": 2.67,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 7986076,
+            "owner": "me"
+          }
+        ]
+      },
+      {
+        "player_id": "265",
+        "name": "Igor Zubeldia",
+        "nickname": "Zubeldia",
+        "position": "",
+        "position_id": 2,
+        "sources": [
+          "my_team"
+        ],
+        "days_tracked": 18,
+        "value_start": 10946407,
+        "value_end": 9192939,
+        "value_change_pct": -16.0,
+        "avg_points": 2.4,
+        "history": [
+          {
+            "date": "2026-09-16",
+            "source": "my_team",
+            "market_value": 10946407,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 10946407,
+            "owner": "me",
+            "operations": [
+              {
+                "type": "compra_mercado_laliga",
+                "amount": 10732275,
+                "user": 2621832
+              }
+            ]
+          },
+          {
+            "date": "2026-09-17",
+            "source": "my_team",
+            "market_value": 10946370,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 10946370,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-18",
+            "source": "my_team",
+            "market_value": 10946370,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 10946370,
+            "owner": "me",
+            "operations": [
+              {
+                "type": "compra_mercado_laliga",
+                "amount": 10732275,
+                "user": 2621832
+              }
+            ]
+          },
+          {
+            "date": "2026-09-19",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 11127753,
+            "owner": "me",
+            "operations": [
+              {
+                "type": "compra_mercado_laliga",
+                "amount": 10732275,
+                "user": 2621832
+              }
+            ]
+          },
+          {
+            "date": "2026-09-20",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-21",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-22",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-23",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-24",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-25",
+            "source": "my_team",
+            "market_value": 11127753,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "injured",
+            "buyout_clause": 11127753,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-26",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-27",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-28",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-29",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-30",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-01",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-02",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 9192939,
+            "average_points": 2.4,
+            "week_points": 0,
+            "status": "doubtful",
+            "buyout_clause": 10732275,
             "owner": "me"
           }
         ]
@@ -34692,214 +35140,6 @@
                 "user": 1234410
               }
             ]
-          }
-        ]
-      },
-      {
-        "player_id": "265",
-        "name": "Igor Zubeldia",
-        "nickname": "Zubeldia",
-        "position": "",
-        "position_id": 2,
-        "sources": [
-          "my_team"
-        ],
-        "days_tracked": 17,
-        "value_start": 10946407,
-        "value_end": 9192939,
-        "value_change_pct": -16.0,
-        "avg_points": 2.4,
-        "history": [
-          {
-            "date": "2026-09-16",
-            "source": "my_team",
-            "market_value": 10946407,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 10946407,
-            "owner": "me",
-            "operations": [
-              {
-                "type": "compra_mercado_laliga",
-                "amount": 10732275,
-                "user": 2621832
-              }
-            ]
-          },
-          {
-            "date": "2026-09-17",
-            "source": "my_team",
-            "market_value": 10946370,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 10946370,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-18",
-            "source": "my_team",
-            "market_value": 10946370,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 10946370,
-            "owner": "me",
-            "operations": [
-              {
-                "type": "compra_mercado_laliga",
-                "amount": 10732275,
-                "user": 2621832
-              }
-            ]
-          },
-          {
-            "date": "2026-09-19",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 11127753,
-            "owner": "me",
-            "operations": [
-              {
-                "type": "compra_mercado_laliga",
-                "amount": 10732275,
-                "user": 2621832
-              }
-            ]
-          },
-          {
-            "date": "2026-09-20",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-21",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-22",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-23",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-24",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-25",
-            "source": "my_team",
-            "market_value": 11127753,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "injured",
-            "buyout_clause": 11127753,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-26",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-27",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-28",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-29",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-30",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-10-01",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
-          },
-          {
-            "date": "2026-10-02",
-            "source": "my_team",
-            "market_value": 9192939,
-            "average_points": 2.4,
-            "week_points": 0,
-            "status": "doubtful",
-            "buyout_clause": 10732275,
-            "owner": "me"
           }
         ]
       },
@@ -35116,11 +35356,11 @@
           "my_team",
           "rival_squad"
         ],
-        "days_tracked": 15,
+        "days_tracked": 16,
         "value_start": 8631192,
         "value_end": 13934560,
         "value_change_pct": 61.4,
-        "avg_points": 5.56,
+        "avg_points": 5.54,
         "history": [
           {
             "date": "2026-09-10",
@@ -35308,6 +35548,16 @@
           },
           {
             "date": "2026-10-02",
+            "source": "my_team",
+            "market_value": 13934560,
+            "average_points": 5.29,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 20010690,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
             "source": "my_team",
             "market_value": 13934560,
             "average_points": 5.29,
@@ -41976,6 +42226,122 @@
         ]
       },
       {
+        "player_id": "3012",
+        "name": "Maguette Gueye",
+        "nickname": "Maguette",
+        "position": "",
+        "position_id": 3,
+        "sources": [
+          "activity",
+          "my_team"
+        ],
+        "days_tracked": 9,
+        "value_start": 1526802,
+        "value_end": 1526802,
+        "value_change_pct": 0.0,
+        "avg_points": 1.43,
+        "history": [
+          {
+            "date": "2026-09-25",
+            "source": "activity",
+            "operations": [
+              {
+                "type": "compra_mercado_laliga",
+                "amount": 1611250,
+                "user": 2621832
+              }
+            ]
+          },
+          {
+            "date": "2026-09-26",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me",
+            "operations": [
+              {
+                "type": "compra_mercado_laliga",
+                "amount": 1611250,
+                "user": 2621832
+              }
+            ]
+          },
+          {
+            "date": "2026-09-27",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-28",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-29",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-09-30",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-01",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-02",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          },
+          {
+            "date": "2026-10-03",
+            "source": "my_team",
+            "market_value": 1526802,
+            "average_points": 1.43,
+            "week_points": 0,
+            "status": "ok",
+            "buyout_clause": 1611250,
+            "owner": "me"
+          }
+        ]
+      },
+      {
         "player_id": "2549",
         "name": "Robert Navarro",
         "nickname": "Navarro",
@@ -44337,112 +44703,6 @@
                 "user": 6337312
               }
             ]
-          }
-        ]
-      },
-      {
-        "player_id": "3012",
-        "name": "Maguette Gueye",
-        "nickname": "Maguette",
-        "position": "",
-        "position_id": 3,
-        "sources": [
-          "activity",
-          "my_team"
-        ],
-        "days_tracked": 8,
-        "value_start": 1526802,
-        "value_end": 1526802,
-        "value_change_pct": 0.0,
-        "avg_points": 1.43,
-        "history": [
-          {
-            "date": "2026-09-25",
-            "source": "activity",
-            "operations": [
-              {
-                "type": "compra_mercado_laliga",
-                "amount": 1611250,
-                "user": 2621832
-              }
-            ]
-          },
-          {
-            "date": "2026-09-26",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me",
-            "operations": [
-              {
-                "type": "compra_mercado_laliga",
-                "amount": 1611250,
-                "user": 2621832
-              }
-            ]
-          },
-          {
-            "date": "2026-09-27",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-28",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-29",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
-          },
-          {
-            "date": "2026-09-30",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
-          },
-          {
-            "date": "2026-10-01",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
-          },
-          {
-            "date": "2026-10-02",
-            "source": "my_team",
-            "market_value": 1526802,
-            "average_points": 1.43,
-            "week_points": 0,
-            "status": "ok",
-            "buyout_clause": 1611250,
-            "owner": "me"
           }
         ]
       },
@@ -49245,7 +49505,7 @@
     ]
   },
   "data_quality": {
-    "clean_days": 23,
+    "clean_days": 24,
     "contaminated_days": 0,
     "contaminated": []
   }
