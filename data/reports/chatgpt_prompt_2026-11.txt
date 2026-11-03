@@ -169,7 +169,7 @@ Cierra con una tabla de las 5 mejoras más importantes ordenadas por impacto esp
 ---
 ## DATOS JSON COMPLETOS:
 {
-  "generated_at": "2026-11-03T00:38:03.377272",
+  "generated_at": "2026-11-03T22:58:02.983894",
   "month": "2026-11",
   "period_days": 55,
   "summary": {
